@@ -1,8 +1,7 @@
 # PHD thesis in Nagoya University
 # 28, Jan, 2023@Tingting WANG
 # Usage: 
-# make  # compile all scripts
-# make clean   # remove ALL files on output directory
+# make pdf to generate phd thesis pdf version # compile all scripts
 
 # set python environment
 
@@ -29,7 +28,8 @@ pdf:
 	pandoc -s "$(INPUTDIR)"/metadata.yaml "$(INPUTDIR)"/*.md \
 	--toc \
 	-o "$(OUTPUTDIR)"/thesis.pdf \
-	--bibliography="$(INPUTDIR)/bibliography.bib" \
+	--bibliography="$(UTILSDIR)/bibliography-fixl.bib" \
+	--citeproc \
 	--filter pandoc-crossref \
 	--csl="$(UTILSDIR)/american-chemical-society.csl" \
 	# --lua-filter="$(UTILSDIR)/scholarly-metadata.lua" \
@@ -37,7 +37,7 @@ pdf:
 	--lua-filter="$(UTILSDIR)/author-info-blocks.lua" \
 	-V fontsize=12pt \
 	-V papersize=a4paper \
-	--citeproc \
-	--to=latex
+	--to=latex 
+
 
 
