@@ -25,14 +25,15 @@ help:
 
 
 pdf: 
-	pandoc -s "$(INPUTDIR)"/metadata.yaml "$(INPUTDIR)"/*.md \
+	pandoc \
+	-s "$(INPUTDIR)"/metadata.yaml "$(INPUTDIR)"/*.md \
 	--toc \
 	-o "$(OUTPUTDIR)"/thesis.pdf \
-	--bibliography="$(UTILSDIR)/bibliography-fixl.bib" \
+	--bibliography="$(UTILSDIR)"/*.bib \
 	--citeproc \
 	--filter pandoc-crossref \
 	--csl="$(UTILSDIR)/american-chemical-society.csl" \
-	# --lua-filter="$(UTILSDIR)/scholarly-metadata.lua" \
+	--lua-filter="$(UTILSDIR)/scholarly-metadata.lua" \
 	--lua-filter="$(UTILSDIR)/pandoc-list-table.lua" \
 	--lua-filter="$(UTILSDIR)/author-info-blocks.lua" \
 	-V fontsize=12pt \

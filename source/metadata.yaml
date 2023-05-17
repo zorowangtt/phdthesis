@@ -23,7 +23,6 @@ header-includes:
 
 include-before:
     - \newpage{}
-    # - \documentstyle 
 
 bibliography: 
     - "utils/bibliography-hp36.bib"
