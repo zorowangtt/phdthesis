@@ -1,5 +1,4 @@
 
-
 \newpage
 
 # Effects of Ligand Binding on the Dimeric Sensory Domain of *Bj*FixL: Computational Analysis of Vibrational Energy Transfer Pathways
@@ -8,8 +7,8 @@
 
 *Bradyrhizobium japonicum* lives symbiotically with leguminous plants in
 root nodules, where they fix nitrogen gas from the atmosphere into
-nitrogenous fertilizer for the plants under hypoxic conditions. Its
-FixL/FixJ two-component system (TCS) is responsible for sensing diatomic
+nitrogenous fertilizer for the plants under hypoxic conditions.
+Its FixL/FixJ two-component system (TCS) is responsible for sensing diatomic
 gas molecules (such as O~2~, CO, and NO) and regulates the expression of
 the genes related to nitrogen fixation.[@zschiedrich2016] The FixL protein of
 *Bradyrhizobium japonicum* (*Bj*FixL) is comprised of two distinct
@@ -48,7 +47,7 @@ with an orientation change breaking its hydrogen bond with heme
 propionate side chain 7 to form a new one with oxygen to stabilize the
 oxygen molecule.[@jasaitis2006;@dunham2003;@balland2006] ARG206 has a common positive influence on
 different ligands binding during signal transduction through
-interactions with the heme edge.[@gong2000;@gilles-gonzalez2006;@gong1998] ARG208, ILE209 and ILE 210 of
+interactions with the heme edge.[@gong2000;@gilles-gonzalez2006;@gong1998] ARG208, ILE209 and ILE210 of
 *Rhizobium meliloti* (*Rm*FixL) corresponding to residue 214-216 of the
 FG loop in *Bj*FixL, regulate the activity of the HK domain through
 their interactions with O~2~.[@miyatake2000;@mukai2000] Crystallographic data analysis and
@@ -62,9 +61,9 @@ water-soluble sensor and forms a homodimer in the
 cytoplasm.[@möglich2009;@miyatake2000;@möglich2009;@wright2018] The sensory domain of *Bj*FixLs forms inner and
 outer surfaces after folding, where the inner surface binds to a heme
 *b* cofactor and the outer surface makes contacts with the opposing
-monomer and the flanking J$\alpha$ helix to form a homodimer.[@bhate2015] The dimer
+monomer and the flanking Jα helix to form a homodimer.[@bhate2015] The dimer
 interface in FixLH homodimer is continuous and highly connected,
-comprising of $\alpha$'$\alpha$, A$\alpha$, B$\alpha$ helices, G$\beta$, H$\beta$, I$\beta$ strands and the J$\alpha$
+comprising of α'α, Aα, Bα helices, Gα, Hα, Iα strands and the Jα
 helix.[@ayers2008] Mutation experiments[@jasaitis2006;@dunham2003;@balland2006;@gilles-gonzalez2006;@miyatake2000;@mukai2000;@yamawaki2016;@tanaka2006] pointed out that
 multiple residues surrounding the heme core and on the dimer interface
 may play a key role in the signal transmission event according to the
@@ -76,16 +75,17 @@ enzymatic activity.[@skalova2020] The importance of the potential dimer interfac
 was highlighted by studies of the monomeric form of *Bj*FixLHs.[@ota2019] As
 pointed out by a previous study, there are no direct interactions
 between the PAS-B domain and HK domain in *Bj*FixL but a coiled-coil
-linker (J$\alpha$ helix) connecting them and the reduction of HK domain
-activity in met-*Bj*FixL by residues mutagenesis of J$\alpha$ helix suggested
-the J$\alpha$ helix could be a potential signal transmission gate from PAS-B
+linker (Jα helix) connecting them and the reduction of HK domain
+activity in met-*Bj*FixL by residues mutagenesis of Jα helix suggested
+the Jα helix could be a potential signal transmission gate from PAS-B
 domain to the HK domain.[@wright2018] However, the precise roles of the dimer
 interface and the coiled-coil linker region between the PAS-B domain and
 HK domain have not been detailed yet, due to the lack of structural
-information at the atomic level for the *Bj*FixL dimer so far (Figure
-1). There remain questions about the role of the dimer interface and
-coiled-coil linker J$\alpha$ helix in the signal transduction mechanism from
+information at the atomic level for the *Bj*FixL dimer so far (@fig:CrystalStructure). There remain questions about the role of the dimer interface and
+coiled-coil linker Jα helix in the signal transduction mechanism from
 the heme-bound PAS domain to the HK domain.
+
+![Crystal structure of met-BjFixLH dimer. The role of the dimer interface and the coiled-coil linker region in the Jα helix is unclear.](figures/fixl/CrystalStructure.jpg){#fig:CrystalStructure width=100%}
 
 The dynamics and changes in quaternary structures also play roles in the
 signaling mechanism of the PAS sensor domain[@ayers2008;@yamawaki2021] Considering the
@@ -127,7 +127,9 @@ Proteins, [https://curp.jp](https://curp.jp)),[@ishikura2012;@leitner2009;@yamat
 
 ## COMPUTATIONAL METHODS
 
-The computational procedures are summarized in Figure 2.
+![Computational procedure.](figures/fixl/method.jpg){#fig:method width=100%}
+
+The computational procedures are summarized in @fig:method.
 
 ### Protein Structures.
 We constructed two models of ferric FixLH
@@ -137,16 +139,21 @@ FixL dimer. It is known that the deletion of the transmembrane region
 from *Rm*FixL, which corresponds to the PAS-A domain of *Bj*FixL, gives
 rise to no significant defect in the signaling functions.[@shiro2002]
 Besides,
-the A'$\alpha$ and J$\alpha$ helices are involved in the formation of the dimer
+the A'α and Jα helices are involved in the formation of the dimer
 interface, and considering the potential influence of the FixLHs dimer
 interface on the signaling process, 142 residues from E128 to L269 are
 considered in the subsequent MD simulations.
 
-### Parameterization of the Fe^3+^ Metal Cofactor.
+### Parameterization of the Fe^3+^ Metal Cofactor{#sec:parameterization}
+
+![Molecules used to obtain the tuned force field parameters for met-FixLH dimer system. (a) Molecule used in Gaussian optimization calculations to obtain the Fe3+ metal associated bond and angle parameters. (b) Molecule used used in Gaussian RESP partial charge calculations to obtain the partial charges for the metal site.](figures/fixl/met-fixl-force-field.jpg){#fig:met-fixl-force-field width=100%}
+
+![Molecules used to obtain the tuned force field parameters for met-FixLH-imd dimer system. (a) Molecule used in Gaussian optimization calculations to obtain the Fe3+ metal associated bond and angle parameters. (b) Molecule used used in Gaussian RESP partial charge calculations to obtain the partial charges for the metal site.](figures/fixl/met-fixl-imd-force-field.jpg){#fig:met-fixl-imd-force-field width=100%}
+
 The force-field parameters of the non-standard part of dimeric FixLHs were
 generated using MCPB.py module[@li2016;@li2017] in AmberTools 15. A small
 model and a large model of two dimeric FixLH proteins generated from
-MCPB.py (Figure S1: met-FixLH, Figure S2: met-FixLH-imd) were used to
+MCPB.py (@fig:met-fixl-force-field: met-FixLH, @fig:met-fixl-imd-force-field: met-FixLH-imd) were used to
 obtain the Fe^3+^ metal associated bond and angle parameters and
 generate the atomic partial charges for the metal site, respectively.
 The small model consists of heme, the coordinated sidechains of the
@@ -158,10 +165,18 @@ RESP charge calculations for the large model were performed using
 Gaussian 16 package with the B3LYP/6-31G(d) level of
 theory[@goerigk2011;@sousa2007a] and the ultrafine grid. Fe^3+^ with spin state S=5/2 and
 S=1/2[@edler2014] were used in Gaussian calculations for met-FixLH and
-met-FixLH-imd protein, respectively (Table S1). The optimized geometry,
+met-FixLH-imd protein, respectively (@tbl:quantumcalculation). The optimized geometry,
 the atom types, partial charges for the RESP fittings and force field
 parameters of the metal site generated from MCPB.py are shown in
 Supporting Information (SI).
+  
+|               | Spin=2              | Spin=4        | Spin=6         |
+| :------------ | :------------------- | :------------ | :--------------- |
+| Met-Heme      | -3402.1853060                  | -3402.1959457 | \textcolor{red}{-3402.1976629} |
+| Imdazole-Heme | \textcolor{red}{-3627.8693349} | -             | -3627.8189808                  |
+
+: Quantum calculation results of met-FixLH and met-FixLH-IMD. Hart Fork Energy (unit: a.u.) comparison among different spin states of met-FiLH and met-FixLH-IMD. {#tbl:quantumcalculation}
+
 
 ### MD Simulations
 For both protein structures, the N- and C-
@@ -177,14 +192,13 @@ Each solvated system contains about \~ 60, 000 atoms.
 
 All molecular simulations were performed by Amber 14. The Amber
 ff14SB force field[@maier2015] was used to model the standard residues of the
-proteins except for H200, tuned force field from quantum calculations at
-section *2.2 Parameterization of the Fe^3+^ Metal Cofactor* was used to
+proteins except for H200, tuned force field from quantum calculations at @sec:parameterization was used to
 model the heme, ligands, and H200. The long-range electrostatic
 interactions were treated with the particle mesh Ewald method[@essmann1995] and
 nonbonded particle-particle interactions[@duan2001] were considered using a 9.0
 Å cutoff. The time step for all MD simulations was set as 2.0 fs and
 SHAKE was used to constrain hydrogens for product run MD simulations. To
-prevent the dissociation of A'$\alpha$ helices, a harmonic restraint with a
+prevent the dissociation of A'α helices, a harmonic restraint with a
 spring force of 10 kcal/mol·Å^2^ was applied on the bond between two CA
 atoms of residue I128 of chain A and chain B. After minimization,
 heating, and equilibration of the systems (SI Appendix has a full
@@ -203,7 +217,7 @@ contacts.
 We evaluated a measure of energy
 transport, denoted by *G*, between each pair of residues in native
 contact[@yamashita2018] using the *CURrent calculations in Proteins* (CURP) program
-developed by our lab (<https://curp.jp/>).[@ishikura2012;@leitner2009;@yamato2022]
+developed by our lab (<https://curp.jp>).[@ishikura2012;@leitner2009;@yamato2022]
 The derivation
 process of *G* is as follows. The energy flow between two atoms can be
 described using the equation:
@@ -231,32 +245,37 @@ separated father than this threshold.
 ## RESULTS AND DISSCUSSION 
 
 ### Effects of Ligand Binding and Dimerization
+
+![Heatmap of G of (1) met-FixLH dimer protein and (2) met-FixLH-imd dimer protein. The unit of measure on the color bar on the right is kcal^2^/(mol^2^ fs). Residue numbers and secondary structure names are labeled on the axes. Secondary structures α-helixes (green) and α-sheets (orange) are distinguished by different colors.](figures/fixl/heatmap.jpg){#fig:heatmap width=100%}
+
 For the energy flow
 analysis of met-FixLH and met-FixLH-imd models by using the CURP
 program, we considered 3485 and 4069 residue pairs, respectively, in
 native contacts whose nearest interatomic distances are less than 6 Å
-(Figure 3). Overall, the heatmap of *G*, which appear in the lower left
+(@fig:heatmap). Overall, the heatmap of *G*, which appear in the lower left
 (chain A) and upper right (chain B), are similar to each other. To more
 quantitatively evaluate the degree of similarity between the monomers,
 we conducted linear regression analysis and examined the correlation of
 *G*-values for the corresponding residue pairs between chain A and B
-(Figure S4). As a result, the correlation coefficients are 0.9998 (R^2^
-= 0.997) and 0.9823 (R^2^ = 0.984) for met-FixLH and met-FixLH-imd,
+(@fig:linear-regression). As a result, the correlation coefficients are 0.9998 (R^2^ = 0.997) and 0.9823 (R^2^ = 0.984) for met-FixLH and met-FixLH-imd,
 respectively. This observation indicates that chain A and B of
 met-FixLH-imd behave slightly more independently than met-FixLH, in line
 with the ligand-induced asymmetry found in the other histidine sensor
-kinase family.[@neiditch2006] In the previous study, we investigated the effect of
-ligand binding on the reside interactions of the PAS-B domain of FixL
+kinase family.[@neiditch2006] In the previous study, we investigated the effect of ligand binding on the reside interactions of the PAS-B domain of FixL
 based on the MD simulation of the monomeric unit.[@ota2019] Regarding ligand
 binding to FixL, it should be noted there is no cooperativity observed
 between the monomers.[@reid2020] The correlation coefficient of *G*-values
-between the chain A of met-FixLH (this study) and the deoxy FixLH[@ota2019]is 0.9843 (R^2^ = 0.994), which is slightly smaller than that for the
+between the chain A of met-FixLH (this study) and the deoxy FixLH[@ota2019] is 0.984 (R^2^ = 0.994), which is slightly smaller than that for the
 met-FixLH dimer, indicating that the interactions across the dimer
 interface enhance the synchronization between the monomers, although the
 essential feature of the sensory domain is determined by the monomeric
 structure itself.
 
-The network pattern of *G*, illustrated in Figure S5, shows the hotspots
+![(a) Linear regression of G between chain A and chain B in met-FixLH dimer. (b) Linear regression of G between met-FixLH dimer and deoxy-FixLH monomer. G of deoxy-FixLH is from the previous study of our group1. (c) Relationship of G between chain A and chain B in met-FixLH-imd dimer.](figures/fixl/linear-regression.jpg){#fig:linear-regression width=100%}
+
+![Energy exchange network of (a) met-FixLH dimer protein and (b) imd-FixL dimer protein.](figures/fixl/hot-spots.jpg){#fig:hot-spots width=100%}
+
+The network pattern of *G*, illustrated in @fig:hot-spots, shows the hotspots
 where busy traffic of energy flow occurs: two heme-cores and the dimer
 interface. This reflects that the heme core as the active center of the
 FixLH protein has a dense network framework base for the signaling
@@ -268,27 +287,27 @@ feature of FixLH[@ayers2008]. Also, the strong interactions on the dimer
 interface imply its potential functional contributions to signaling
 transduction as a bridge between the heme core and HK domain.
 
-### Vibrational energy transfer pathways and residue interaction
-network
+### Vibrational energy transfer pathways and residue interaction network
+
+![The strong interactions, represented by dash lines, are defined by the residue pairs with G values > G~met~ + 2σ~met~ = 6.58 × 10^–3^ [kcal^2^/(mol^2^ fs)], where G~met~ (= 2.42 × 10–4 ) and σ~met~ (= 3.17 × 10–3) [kcal^2^/(mol^2^ fs)] are the mean and the standard deviation of the G-values of all residue pairs, respectively. (A1) met-FixL dimer, (B1) met-FixLH dimer. The interactions involved with the heme and the dimer interface, shown in red, are distinguished from the other interactions, shown in blue. Panels A/B2; A/B3; and A/B4 show important amino acid residues in the regions around the heme ligand and on the dimer interface; close to the N-terminus; and close to the C-terminus, respectively. It should be noted that the connections between the imidazole ligand and residue HIS200, ARG206, ARG220 and LEU236 are not shown in Panel B1.](figures/fixl/interactions.jpg){#fig:interactions width=70%}
+
 Important pathways with busy energy traffic are highlighted
-in Figure 4 and also listed in Table S2 (met-FixLH) and Table S3
-(met-FixLH-imd). The strong interactions are mainly on the dimer
-interface and surrounding the heme core, where the EF loop, F$\alpha$, FG loop,
-G$\beta$, and H$\beta$ form a shell to wrap the heme and its ligand around.
+in @fig:interactions. The strong interactions are mainly on the dimer
+interface and surrounding the heme core, where the EF loop, Fα, FG loop,
+Gα, and Hα form a shell to wrap the heme and its ligand around.
 
 In addition to the dimer interface, we found busy traffic of vibrational
 energy transfer in two regions: (1) residue groups in direct contact
 with heme, and (2) those having no direct contact with heme. **Region
-(1),** highlighted with stick model, of met-FixLH and met-FixLH-imd is
-consisted of MET192 (EF loop), HIS200(F$\alpha$), TYR203(F$\alpha$), ARG206(F$\alpha$),
-HIS214(FG loop), ARG220(G$\beta$), VAL-222(G$\beta$), and ILE238(H$\beta$), shown in
-Figure 4A(2) and ASP196(F$\alpha$), ARG199(F$\alpha$), HIS200(F$\alpha$), TYR203(F$\alpha$),
-ARG206(F$\alpha$), ASP212(FG loop), ARG220(G$\beta$), LEU236(H$\beta$), shown in Figure
-4B(2), respectively. Residues HIS200, TYR203, and ARG206 of F$\alpha$ helix are
+(1)**, highlighted with stick model, of met-FixLH and met-FixLH-imd is
+consisted of MET192 (EF loop), HIS200(Fα), TYR203(Fα), ARG206(Fα),
+HIS214(FG loop), ARG220(Gα), VAL-222(Gα), and ILE238(Hα), shown in
+@fig:interactions A(2) and ASP196(Fα), ARG199(Fα), HIS200(Fα), TYR203(Fα),
+ARG206(Fα), ASP212(FG loop), ARG220(Gα), LEU236(Hα), shown in @fig:interactions B(2), respectively. Residues HIS200, TYR203, and ARG206 of Fα helix are
 found to have strong interactions with heme both in met-FixLH and
 met-FixLH-imd. The strong interaction between HIS200 and heme is due to
 the Fe-N coordination bonding. The proximal ARG206 was regarded as an
-important residue ﻿strongly influencing affinity and regulation through
+important residue strongly influencing affinity and regulation through
 interaction with HIS214 of the FG loop in the *Bj*FixL active state of
 the heme propionate 6 in its inactive state.[@gong2000;@dunham2003;@gilles-gonzalez2006;@tanaka2006;@2008]
 Few studies investigated the role of TYR203 in the signaling process, but its
@@ -310,40 +329,42 @@ oxygen molecule.[@shimizu2015;@balland2006;@tanaka2006;@2008;@key2005;@buhrke202
 recognized. TYR207 and GLU240 form a hydrogen bonding in the crystal
 structure and its strength varies between oxy and deoxy forms of
 *Sm*FixL.[@yano2013]
-A stable triangle is formed among ARG-208(F$\alpha$), HIS162(B$\beta$),
-and GLU-246(I$\beta$). It is noteworthy that a vibrational energy transfer
-pathway in met-FixLH (Figure 4A) is spanned all the way from G$\beta$ (VAL222)
-to the junction between the PAS core and the J$\alpha$ helix via H$\beta$ (MET234,
-HIS235), I$\beta$ (VAL253, ARG254), and the highly conserved DxT motif,[@möglich2009a]
+A stable triangle is formed among ARG-208(Fα), HIS162(Bα),
+and GLU-246(Iα). It is noteworthy that a vibrational energy transfer
+pathway in met-FixLH ( @fig:interactions A) is spanned all the way from Gα (VAL222)
+to the junction between the PAS core and the Jα helix via Hα (MET234,
+HIS235), Iα (VAL253, ARG254), and the highly conserved DxT motif,[@möglich2009a]
 (ASP-LEU-THR). It has been suggested that the hydrophobic residue,
 ILE215, VAL222, MET234, LEU236, ILE238, and VAL253 form a signal
-transduction pathway from heme to the J$\alpha$ helix. In fact, these
+transduction pathway from heme to the Jα helix. In fact, these
 hydrophobic residues have been found not only in *Bj*FixL but also in
 the equivalent sites of the other PAS domains.[@perutz1999;@bashford1987] In contrast, we
-cannot recognize such a pathway for met-FixLH-imd (Figure 4B). Although
+cannot recognize such a pathway for met-FixLH-imd (@fig:interactions B). Although
 the structural change between met-FixLH and met-FixLH-imd is not so
 large, the vibrational energy transfer pathways are markedly different
 between them. Only heme-ARG220 interaction is common between met-FixLH
 and met-FixLH-imd. The heme-protein interactions are almost completely
-localized in the F$\alpha$ helix and the FG loop.
+localized in the Fα helix and the FG loop.
 
 Strong interactions across the dimer interface are mainly found in two
 regions: (3) N terminus and (4) C terminus.
 
-**Region (3),** highlighted with stick models (Figure 4A(3) and B(3)),
+![Molecular dynamic simulations of met-BjFixLH without force restraints on N-terminal of A’α helix. (A) The crystal structure model of MD simulations. (B) The time evolution of distance between carbon atom of residue ILE128s.](figures/fixl/force-restraint.jpg){#fig:force-restraint width=100%}
+
+**Region (3),** highlighted with stick models (@fig:interactions A(3) and B(3)),
 includes charged residue pairs with ARG139, ARG141, and ARG146, for
 met-FixLH and met-FixLH-imd, respectively. It should be noted that this
 region is close to neither PAS core nor heme. To save computational
-time, we imposed harmonic restraints on each C$\alpha$ atom of ILE128 of chains
+time, we imposed harmonic restraints on each Cα atom of ILE128 of chains
 A and B, and neglected PAS-A domains in the calculations. Without such
-restraints, the pair of A'$\alpha$ helices undergo considerable fluctuations
-(Figure S3). Although the role of the *Bj*FixL PAS-A domain remains
+restraints, the pair of A'α helices undergo considerable fluctuations
+(@fig:force-restraint). Although the role of the *Bj*FixL PAS-A domain remains
 unclear,[@wright2018] a possible role, speculated from the study of *Sm*FixL,[@yamawaki2021]
 may be stabilization of the dimer interface of *Bj*FixL.
 
 In **Region (4),** located in the coiled-coil linker, we recognize four
 residue-residue interactions among (2 × 2 =) 4 charged residues, ASP154
-and ARG254 of chain A and B (Figure 4A(4) and B(4)). On the downstream
+and ARG254 of chain A and B (@fig:interactions A(4) and B(4)). On the downstream
 of this region, we also recognized a densely connected intra-monomer
 network of vibrational energy transfer pathways with ASP255, THR257,
 GLU258, GLN261, THR262, ARG265 GLN267 and GLU268 (Table S2), in line
@@ -352,25 +373,27 @@ exhibited marked decrease of the kinase activity of *Bj*FixL.[@wright2018]
 
 ### Reorganization of vibrational energy transfer pathways upon ligand binding
 
+![Reorganization of the network of vibrational energy transfer pathways. Strengthened (Weakened) paths upon ligand binding with rΔG > (<) 0.5 are indicated by dotted lines in red (blue). The residue name and residue number colored in purple and black represent the residues from chain A and chain B, respectively.](figures/fixl/difference.jpg){#fig:difference width=100%}
+
 Superposition of the x-ray crystallographic structures of met-FixLH and
-met-FixLH-imd (Figure 5B) shows a movement of the FG loop, with an
+met-FixLH-imd (@fig:difference B) shows a movement of the FG loop, with an
 average positional displacement of 1.4 Å,[@gong2000] together with a slight
-movement of the G$\beta$ strand and the reorientation of heme propionate 6 and
+movement of the Gα strand and the reorientation of heme propionate 6 and
 7 side chains. We speculate that this structural change induced the
 reorganization of the vibrational energy transfer network between heme
-and the FG loop or G$\beta$ strand, leading to the modulation of signal
+and the FG loop or Gα strand, leading to the modulation of signal
 transmission to the downstream of PAS-B domain. To evaluate the effect
 of ligand binding quantitatively, we calculated the difference (Δ*G*)
 and the relative difference (rΔ*G*) of the *G*-values for residue pairs
 in native contact between met-FixLH (*G*~met~) and met-FixLH-imd
 (*G*~imd~), where Δ*G* = *G*~imd~ -- *G*~met~ and rΔ*G* = Δ*G* /
-*G*~met~. In Figure 5A, we illustrated the reorganization of the network
+*G*~met~. In @fig:difference A, we illustrated the reorganization of the network
 of vibrational energy transfer pathways (see also Table S4), where those
 with increased *G*, shown in red, are distinguished from those with
 decreased *G*, shown in blue. Ligand binding to the heme weakened
 (enhanced) the interaction between heme with HIS214 (HIS200, TYR203,
-ARG206, and ARG220). The intrahelical interactions within F$\alpha$ were
-decreased, while those between the F$\alpha$ helix and the nearby secondary
+ARG206, and ARG220). The intrahelical interactions within Fα were
+decreased, while those between the Fα helix and the nearby secondary
 structural units, such as ARG208-GLU246, ARG206-ASP212, TYR207-GLU240,
 ASN189-HIS200, and ARG197-LYS225, were increased. Across the dimer
 interface, we recognized that the ligand binding induced considerable
@@ -379,12 +402,12 @@ ASP154, GLU135/142, ARG139/141/146/174 (ARG254) in the N(C)-terminus of
 the PAS-B domain. In addition, two residue pairs on the dimer interface,
 ASP154-ARG254 and THR262-ARG265, exhibit increased *G*-values by ligand
 binding, where the latter of which belongs to the coiled-coil linker. In
-summary, ligand binding enhanced the interactions between F$\alpha$ and heme or
-the terminal regions of G/H/I $\beta$ strands, while it weakened those within
-the F$\alpha$ helix, $\beta$ sheet, and those across the dimer interface. These
+summary, ligand binding enhanced the interactions between Fα and heme or
+the terminal regions of G/H/I α strands, while it weakened those within
+the Fα helix, α sheet, and those across the dimer interface. These
 observations suggest that the signal transmission from the heme core to
 the coiled-coil linker may be mainly blocked at the bridge of G/H/I
-$\beta$-strands, together with the synergetic reorganization of the compact
+α-strands, together with the synergetic reorganization of the compact
 networks constructed by multiple highly conserved amino acid residues.
 
 ## Summary 
@@ -397,7 +420,7 @@ interactions of dimeric FixL protein are described. A vibrational energy
 transfer pathway characterized in the active form of *Bj*FixLH protein,
 could be a possible signaling pathway. Upon imidazole bound with heme,
 the allosteric effect induced from heme core is propagated starting from
-the FG loop, through G/H/I $\beta$ strands bridge and coiled-coil linker
+the FG loop, through G/H/I α strands bridge and coiled-coil linker
 region, to the kinase domain. The salt bridge, constructed by four
 charged residues (ASP154 and ARG254) and the DxT motif, might be as a
 gate controlling the signaling from PAS-B domain to a residue cluster of
@@ -412,8 +435,8 @@ between two states is very small, through the interaction changes in
 native contacts between the active form (met-*Bj*FixLH dimer) and
 (met-FixLH-imd dimer), the significant changes in inter-residue
 interactions are characterized by the energy exchange network. The
-strengthened interactions between heme and F$\alpha$ helix while the weakened
-interactions between heme-7 propionate -HIS214 and within G/H/I $\beta$
+strengthened interactions between heme and Fα helix while the weakened
+interactions between heme-7 propionate -HIS214 and within G/H/I α
 antiparallel strands upon imidazole binding, indicates the signal
 regulation process is responsible by a synergetic effect of
 rearrangement of the compact interactions network constructed by
@@ -426,4 +449,3 @@ problem in biomolecules integrating with static structural information.
 This also highlighted the importance of dynamic behavior on biomolecular
 functions in uncovering the biomolecules functions.
 
-## REFERENCES 

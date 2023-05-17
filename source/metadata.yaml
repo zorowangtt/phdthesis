@@ -1,40 +1,29 @@
 ---
+documentclass: book
 ## mandatory (subtitle and header-left are optional)
 title: "Thermal and Energy Transfer Properties in Proteins using Equilibrium All-atom Molecular Dynamics Simulations and Illustration of Protein Functions with Energy Exchange Network and Refinement of"
-
-#subtitle: "From Markdown to LaTeX to PDF"
 
 author: "Tingting WANG"
 keywords: []
 header-includes:
     - \usepackage{times}
-    - \usepackage{bm}
-    - \usepackage{textalpha} 
+    - \usepackage{amsmath,amssymb,bm}
+    - \usepackage{textalpha}
     - \usepackage{hyperref}
-    # - \usepackage[left]{lineno}
-    # - \linenumbers
+    - \hypersetup{colorlinks=true}
     - \usepackage{setspace}
     - \usepackage{color}
     - \linespread{1.5}
-    # - \usepackage{fancyhdr}
-    # - \lhead{Left of header}
-    # - \chead{center of header (on page \thepage)}
-    # - \rhead{Right of header}
+    - 
 
-include-before:
-    - \newpage{}
-
-bibliography: 
-    - "utils/bibliography-hp36.bib"
-    - "utils/bibliography-fixl.bib"
-
-csl: "utils/american-chemical-society.csl"
 link-citations: True
 urlcolor: blue
 refcolor: blue
 numbersections: true
 autoSectionLabels: True
 linkReferences: True
+colorlinks: true
+indent: true
 
 #fontfamily: libertineotf
 output:
@@ -45,36 +34,27 @@ output:
       - --lua-filter=author-info-blocks.lua
     pdf_document:
       latex_engine: xelatex
+      fig_caption: true
       keep_tex: true
       pandoc_args:
       - --lua-filter=scholarly-metadata.lua
       - --lua-filter=author-info-blocks.lua
-# mainfont: Times New Roman
-# sansfont: Linux Biolinum O
 fontsize: 12pt
-spacing: 1.5
-
-# pdf or word page format
-## margins = 1''
+papersize: a4paper 
 geometry: margin=2.5cm
 
 # citations
 citation_package: biblatex
-# zotero:
-#   library: hp36 # omitted to use your personal library
-#   scannable-cite: false # only relevant when you're compiling to scannable-cite .odt
-#   client: zotero # defaults to zotero
-#   author-in-text: false # when true, enabled fake author-name-only cites by replacing it with the text of the last names of the authors
-#   csl-style: "the-journal-of-chemical-physics.csl" # pre-fill the style
+zotero:
+  library: hp36 # omitted to use your personal library
+  scannable-cite: false # only relevant when you're compiling to scannable-cite .odt
+  client: zotero # defaults to zotero
+  author-in-text: false # when true, enabled fake author-name-only cites by replacing it with the text of the last names of the authors
+  csl-style: "the-journal-of-chemical-physics.csl" # pre-fill the style
 
 # pandoc-crossref controll
 secPrefix: "Section"
 eqnPrefix: "Equation"
 figPrefix: "Figure"
-
+tblPrefix: "Table"
 ---
-
-\newpage
-
-\newpage
-

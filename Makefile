@@ -26,19 +26,19 @@ help:
 
 pdf: 
 	pandoc \
+	--filter pandoc-crossref \
 	-s "$(INPUTDIR)"/metadata.yaml "$(INPUTDIR)"/*.md \
 	--toc \
-	-o "$(OUTPUTDIR)"/thesis.pdf \
-	--bibliography="$(UTILSDIR)"/*.bib \
+	--to=latex \
 	--citeproc \
-	--filter pandoc-crossref \
+	--bibliography="$(UTILSDIR)"/bibliography-hp36.bib \
+	--bibliography="$(UTILSDIR)"/bibliography-fixl.bib \
+	--bibliography="$(UTILSDIR)"/bibliography-cp12.bib \
 	--csl="$(UTILSDIR)/american-chemical-society.csl" \
 	--lua-filter="$(UTILSDIR)/scholarly-metadata.lua" \
 	--lua-filter="$(UTILSDIR)/pandoc-list-table.lua" \
 	--lua-filter="$(UTILSDIR)/author-info-blocks.lua" \
-	-V fontsize=12pt \
-	-V papersize=a4paper \
-	--to=latex 
+	-o "$(OUTPUTDIR)"/thesis.pdf 
 
 
 
