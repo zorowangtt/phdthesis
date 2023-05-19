@@ -1,3 +1,3 @@
 \newpage
 
-# BIBLIOGRAPHY 
+# Bibliography {-}
