@@ -1,11 +1,4 @@
 \newpage
-# Introduction 
-## Energy and Thermal Transfer in Proteins 
-
-##
-
-##
-
-
+# Materials and Methods 
 
 

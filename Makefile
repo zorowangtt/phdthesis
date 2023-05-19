@@ -18,8 +18,7 @@ dir:
 
 titlepage: 
 	pdflatex \
-	$(INPUTDIR)/titlepage.tex \
-	-o $(OUTPUTDIR)/titlepage.pdf
+	$(INPUTDIR)/titlepage.tex
 		
 contents: 
 	pandoc \
@@ -38,6 +37,6 @@ contents:
 	-o $(OUTPUTDIR)/contents.pdf
 
 thesis:
-	pandoc \
-	<$(BASEDIR)/titlepage.pdf $(OUTPUTDIR)/contents.pdf> \
-	-o $(OUTPUTDIR)/thesis.pdf
+	pdfunite \
+	$(BASEDIR)/titlepage.pdf $(OUTPUTDIR)/contents.pdf \
+	$(OUTPUTDIR)/thesis.pdf

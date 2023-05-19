@@ -1,14 +1,14 @@
 ---
 documentclass: book
 
-title: | 
-  ![](figures/titlepage/images.jpeg){width=50% .right}
-  \newline
-  Heat, Energy and Signal Transport in Proteins: A Molecular Dynamics Simulation Study
-  \newline
+# title: | 
+#   ![](figures/titlepage/images.jpeg){width=50% .right}
+#   \newline
+#   Heat, Energy and Signal Transport in Proteins: A Molecular Dynamics Simulation Study
+#   \newline
 
 # subtitle: 
-author: "Tingting WANG"
+# author: "Tingting WANG"
 
 degree: Doctor of Philosophy
 location: |
