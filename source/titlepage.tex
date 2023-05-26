@@ -1,28 +1,42 @@
-\documentclass[12pt, oneside]{book}
- 
+\documentclass[12pt, oneside]{article}
+
 \usepackage{graphicx}
+\usepackage{times}
+% \usepackage{bf}
+
 \begin{document}
+\graphicspath{ {figures/titlepage/} }
  
 %titlepage
 \thispagestyle{empty}
 \begin{center}
-\begin{minipage}{0.75\linewidth}
+\begin{minipage}{1\linewidth}
     \centering
 %University logo
-    %\includegraphics[width=0.3\linewidth]{logo.pdf}
-    \rule{0.4\linewidth}{0.15\linewidth}\par
-    \vspace{3cm}
+    \includegraphics[width=0.6\linewidth]{images.jpeg}\par
+    \vspace{1cm}
 %Thesis title
-    {\uppercase{\Large the title of my thesis project which may span multiple lines\par}}
-    \vspace{3cm}
+    {{\Huge \textbf {Heat, Energy and Signal Transport in Proteins: 
+    A Molecular Dynamics Simulation Study}\par}}
+    \vspace{2cm}
 %Author's name
-    {\Large Author Name\par}
-    \vspace{3cm}
+    {\Large \textbf {Tingting WANG}\par}
+    \vspace{1cm}
+%Supervisor's name
+    {\Large Supervisor: Takahisa YAMATO \par}
+    \vspace{1.5cm}
 %Degree
-    {\Large A thesis submitted for the degree of Doctor of Philosophy\par}
-    \vspace{3cm}
+    {\Large DISSERTATION \par
+    Submitted in Partial Fulfilment of the Requirements 
+    for the Degree of 
+    Philosophy Doctor in Physics\par}
+    \vspace{1.5cm}
 %Date
-    {\Large May 2014}
+    {\Large  \linespread{1.5}{
+    Computational Biophysics Laboratory (B-Lab) \par
+    Graduate School of Science \par
+    % Nagoya University\par
+    September 2023 \par}}
 \end{minipage}
 \end{center}
 \clearpage

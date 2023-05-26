@@ -159,7 +159,7 @@ $$
 {#eq:eq8}
 
 In this study, the integration time of auto-correlation function for both heat current and energy flux was set as 60 ps.
-All calculations of $\lambda_{\alpha, \beta}$ and $G_{\alpha, \beta}$ between each pair of residues in native contact using the _CURrent calculations in Proteins_ (CURP) program of version 1.3 developed by our lab[@yamato2022;@takahisayamato2021]
+All calculations of $\lambda_{\alpha, \beta}$ and $G_{\alpha, \beta}$ between each pair of residues in native contact using the _CURrent calculations in Proteins_ (CURP) program of version 1.3 developed by our lab[@yamato2022]
 
 ### Equilibrium MD Simulations
 

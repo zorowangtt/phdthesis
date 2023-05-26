@@ -1,2 +1,2 @@
-\newpage
-# ABBREVIATIONS {-}
+<!-- \newpage
+# ABBREVIATIONS {-} -->
