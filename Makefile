@@ -10,7 +10,7 @@ INPUTDIR=$(BASEDIR)/source
 OUTPUTDIR=$(BASEDIR)/output
 UTILSDIR=$(BASEDIR)/utils
 
-all: dir titlepage contents thesis
+all: dir titlepage acknow contents 
 
 dir: 
 	mkdir -p output
@@ -19,7 +19,11 @@ dir:
 titlepage: 
 	pdflatex \
 	$(INPUTDIR)/titlepage.tex
-		
+
+acknow: 
+	pdflatex \
+	$(INPUTDIR)/acknowledgement.tex
+
 contents: 
 	pandoc \
 	--filter pandoc-crossref \
@@ -36,7 +40,9 @@ contents:
 	--lua-filter=$(UTILSDIR)/author-info-blocks.lua \
 	-o $(OUTPUTDIR)/contents.pdf
 
-thesis:
-	pdfunite \
-	$(BASEDIR)/titlepage.pdf $(OUTPUTDIR)/contents.pdf \
-	$(OUTPUTDIR)/thesis.pdf
+# thesis:
+# 	pdfunite \
+# 	$(BASEDIR)/titlepage.pdf \
+# 	$(BASEDIR)/acknowledgement.pdf \
+# 	$(OUTPUTDIR)/contents.pdf \
+# 	$(OUTPUTDIR)/thesis.pdf

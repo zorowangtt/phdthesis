@@ -1,2 +1,0 @@
-\newpage 
-# List of Figures {-}
