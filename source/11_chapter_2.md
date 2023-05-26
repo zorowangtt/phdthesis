@@ -53,7 +53,7 @@ Finally, we present concluding remarks in [@sec:conclusion].
 
 ![Thermal conductivity of the entire HP36 protein molecule. The heat current autocorrelation function was ensemble-averaged and plotted as a function of time (blue), and the short-time region (0 - 0.2ps) is shown in the inset. The heat current autocorrelation function was integrated with respect to time using trapezoidal rule to obtain $\lambda$ (orange), and the running mean of $\lambda$ is shown with a window size of 100 fs (red). The value of volume was set as 4845.447 $\AA^3$.[@yamato2022]](figures/cross/hcacf-100ps.jpeg){#fig:hcacf-100ps width=50%}
 
-The overall thermal conductivity, $\lambda$, of the HP36 protein was calculated using @eq:eq1.
+The overall thermal conductivity, $\lambda$, of the HP36 protein was calculated using @eq:eqc1.
 We used the web server[@esque2013] to calculate the total volume of HP36 and individual atom volumes using VLDP (Voronoi Laguerre Delaunay Protein) method.
 It also calculates the volume of each amino acid residue as a summation of the volumes of constituent atoms.
 Unlike other Voronoi-based methods that assume the same radii for all the atoms, the VLDP method takes into account the atom type and performs tessellation.
@@ -68,7 +68,7 @@ In the following, we set the upper limit of the time-integration of the local he
 
 ### Local Thermal Transport
 
-![Contribution factors without cross-correlation corrections. Intra-residue ($c(\alpha, \alpha)$, red) and inter-residue ($c(\alpha, \alpha+1)$, green) contribution factors (@eq:eq11, @eq:eq12) are plotted. For instance, data point $c(1,2)$ is shown between $\alpha$ = 1 and 2. The horizontal axis shows the amino acid residue number, $\alpha$, together with residue name in one-letter code. The areas shaded by grey correspond to the $\alpha$-helical regions.](figures/cross/heat-conductivity-before-corrected.jpeg){#fig:heat_before width=50%}
+![Contribution factors without cross-correlation corrections. Intra-residue ($c(\alpha, \alpha)$, red) and inter-residue ($c(\alpha, \alpha+1)$, green) contribution factors (@eq:eqc11, @eq:eqc12) are plotted. For instance, data point $c(1,2)$ is shown between $\alpha$ = 1 and 2. The horizontal axis shows the amino acid residue number, $\alpha$, together with residue name in one-letter code. The areas shaded by grey correspond to the $\alpha$-helical regions.](figures/cross/heat-conductivity-before-corrected.jpeg){#fig:heat_before width=50%}
 
 The contribution factors for the intra-residue and inter-residue heat currents were plotted in [@fig:heat_before].
 Overall, the intra-residue contribution factors are greater than the inter-residue ones, expect for the terminal residue pairs (Met1-Leu2, Leu35-Phn36) and Gly12-Met13.
@@ -193,84 +193,6 @@ Interestingly, residuewise thermal conductivity demonstrated distinct residue-ty
 <!-- # SUPPLEMENTARY MATERIAL
 See supplementary material for residue volume, cross-correlation data, and regression analysis of residue-wise thermal conductivity. -->
 
-## APPENDICES {-}
-
-### APPENDIX A: Atomic Expression of Heat Current {-}
-<!--
-Renew counter of equations and set prefix "A".
-If you have two or more appendix, reuse this and set "B" instead of "A".
--->
-\setcounter{equation}{0}
-\renewcommand{\theequation}{A\arabic{equation}}
-
-The potential energy function, $V(\bm r_1, \cdots, \bm r_N)$ is usually defined as a function of atomic positions.
-Alternatively, it can also be expressed as a function of the interatomic distances, $r_{ij} = |\bm r_{ij}| = |\bm r_i - \bm r_j |$, between all the atom pairs, $(i,j)$.
-Then, the force acting on atom $i$ is obtained as a partial derivative of $V$ with respect to the position of atom $i$,
-
-$$
-\begin{aligned}
-\mathbf F_i &= - \displaystyle \sum_{(k,j)} \frac{\partial V}{\partial r_{kj}}\nabla_i (r_{kj}) = \displaystyle \sum_{j(\ne i)} - \frac{\partial V}{\partial r_{ij}} \frac{\bm r_{ij}}{r_{ij}} \\ 
-&= \sum_{j(\ne i)} \bm F_{ij}
-\end{aligned}
-$$
-{#eq:eqA1}
-
-, where $\nabla_i = (\partial / \partial \{\bm {r_i}\}_x, {\partial /\partial \{\bm r_i}\}_y, {\partial /\partial \{\bm r_i}\}_z)$.[@ishikura2012]
-
-The time derivatives of the potential energy and the total energy respectively become:
-
-$$
-\frac{dV}{dt} =  \displaystyle \sum_{(i,j)} \frac{\partial V}{\partial r_{ij}} \frac{d\bm r_{ij}}{dt} = - \frac{1}{2} \sum_i^N \sum_j^N \bm F_{ij} \cdot (\bm v_i - \bm v_j)
-$$
-{#eq:eqA2}
-
-and
-
-$$
-\begin{aligned}
-\frac{dE}{dt} &= \displaystyle \sum_i^N \bm v_i \cdot \bm F_i + \frac{dV}{dt} \\ &= 
-\sum_i^N \sum_j^N \frac{1}{2} \bm F_{ij} \cdot (v_i + v_j)
-= \sum_i \frac{dE_i}{dt}
-\end{aligned}
-$$
-{#eq:eqA3}
-, where $E_i$ represents the per atom energy of atom $i$. Although the time derivative of $E_i$ can be calculated using the above formula, it is not practical to derive the explicit form of $E_i$ itself.
-
-Consequently, the total heat current is obtained as follows:
-
-$$
-\begin{aligned}
-\bm h &= 
-\displaystyle \sum_i^N \bm r_i \frac{dE_i}{dt} = 
-\sum_i^N\sum_j^N \mathbf r_i \left\{\frac {1}{2} \bm F_{ij} \cdot (\bm v_i + \bm v_j) \right\} \\
-&= \frac{1}{2}
-\Biggl[ \sum_i^N\sum_j^N \bm r_i \left\{\frac {1}{2} \bm F_{ij} \cdot (\bm v_i + \bm v_j) \right\} \\
-&+ \sum_j^N\sum_i^N \bm r_j \left\{\frac {1}{2} \bm F_{ji} \cdot (\bm v_j + \bm v_j) \right\}
-\Biggr] \\
-&= \frac{1}{2} \sum_i^N\sum_j^N \bm (r_i - r_j) \left\{\frac {1}{2} \bm F_{ij} \cdot (\bm v_i + \bm v_j) \right\} \\
-&=
-\sum_{(i,j)} \bm (r_i - r_j) \left\{\frac {1}{2} \bm F_{ij} \cdot (\bm v_i + \bm v_j) \right\} \equiv \sum_{(i,j)} \bm h_{ij}
-\end{aligned}
-$$
-{#eq:eqA4}
-<!-- 
-$$
-\begin{aligned}
-\bm h &= 
-\displaystyle \sum_i^N \bm r_i \frac{dE_i}{dt} = 
-\sum_i^N\sum_j^N \mathbf r_i \left\{\frac {1}{2} \bm F_{ij} \cdot (\bm v_i + \bm v_j) \right\} \\
-&= \frac{1}{2}
-\left[ \sum_i^N\sum_j^N \bm r_i \left\{\frac {1}{2} \bm F_{ij} \cdot (\bm v_i + \bm v_j) \right\} + \sum_j^N\sum_i^N \bm r_j \left\{\frac {1}{2} \bm F_{ji} \cdot (\bm v_j + \bm v_j) \right\}
-\right] \\
-&= \frac{1}{2} \sum_i^N\sum_j^N \bm (r_i - r_j) \left\{\frac {1}{2} \bm F_{ij} \cdot (\bm v_i + \bm v_j) \right\} \\
-&=
-\sum_{(i,j)} \bm (r_i - r_j) \left\{\frac {1}{2} \bm F_{ij} \cdot (\bm v_i + \bm v_j) \right\} \equiv \sum_{(i,j)} \bm h_{ij}
-\end{aligned}
-$$
-{#eq:eqA4} -->
-
-
-, where we used $\bm F_{ij} = - \bm F_{ji}$.
 
 ### APPENDIX B: Derivation of Scalar Constants for Allocation of Cross-correlation Terms{-}
 <!--
@@ -280,7 +202,7 @@ If you have two or more appendix, reuse this and set "B" instead of "A".
 \setcounter{equation}{0}
 \renewcommand{\theequation}{B\arabic{equation}}
 
-It is required that the total weight of $\xi_{\alpha, \alpha+1}$ in @eq:eq13 should be one ([@fig:allocation]), i.e.,
+It is required that the total weight of $\xi_{\alpha, \alpha+1}$ in @eq:eqc13 should be one ([@fig:allocation]), i.e.,
 
 $$
 2u+2v+w=1
@@ -302,7 +224,7 @@ $$
 {#eq:B3}
 
 From @eq:B1, @eq:B2, and @eq:B3, we obtain $u=\frac{1}{8}$, $v=w=\frac{1}{4}$.
-Accordingly, @eq:eq14 and @eq:eq15 become $\tilde\Lambda_{\alpha,\alpha} = \Lambda_{\alpha,\alpha} + \frac{1}{4}(\xi_{\alpha-1, \alpha} + \xi_{\alpha, \alpha+1})$, and $\tilde\Lambda_{\alpha, \alpha+1} \,=\, \Lambda_{\alpha, \alpha+1} + \frac{1}{4}\,\xi_{\alpha, \alpha+1} + \frac{1}{8}(\xi_{\alpha-1, \alpha} + \xi_{\alpha+1, \alpha+2} )$, respectively.
+Accordingly, @eq:eqc14 and @eq:eqc15 become $\tilde\Lambda_{\alpha,\alpha} = \Lambda_{\alpha,\alpha} + \frac{1}{4}(\xi_{\alpha-1, \alpha} + \xi_{\alpha, \alpha+1})$, and $\tilde\Lambda_{\alpha, \alpha+1} \,=\, \Lambda_{\alpha, \alpha+1} + \frac{1}{4}\,\xi_{\alpha, \alpha+1} + \frac{1}{8}(\xi_{\alpha-1, \alpha} + \xi_{\alpha+1, \alpha+2} )$, respectively.
 
 For the terminal residues, we assume that 
 

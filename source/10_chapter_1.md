@@ -1,15 +1,14 @@
 \newpage
 # Theory, Materials and Methods 
 
-## THEORETICAL AND COMPUTATIONAL METHODS
-### Thermal Conductivity and Inter-atomic Heat Current
+## Thermal Conductivity and Inter-atomic Heat Current
 In this section, we derived an atomistic expression of heat current and thermal conductivity for the molecular system.
 Based on linear response theory, the thermal conductivity of material is expressed in terms of the time autocorrelation function (ACF) of the heat current vector, $\bm{h}$, as
 
 $$
 \lambda = \frac {1} {3Vk_BT^2} \bm{\int_0^\infty} \langle \bm{h}(t) \cdot \bm{h}(0) \rangle dt,
 $$
-{#eq:eq1}
+{#eq:eqc1}
 
 where $\lambda$ is the thermal conductivity, $V$ is the volume, $k_B$ is the Boltzmann constant, $T$ is the absolute temperature, the angle brackets of $\langle \bm{h}(t) \cdot \bm{h}(0) \rangle$ denote ensemble average.[@mcquarrie2000]
 
@@ -18,11 +17,11 @@ In a molecular system, the atomistic representation of the instantaneous heat cu
 $$
   {\bm{h} }\equiv \frac{d}{dt} \bm{\sum}_{i=1}^N(E_i  \bm{\bm{r}_i})=\bm{\sum}_{i=1}^N { (E_i\frac{d\bm{r}_i}{dt} + \bm{r}_i} \frac{dE_i}{dt})
 $$
-{#eq:eq2}
+{#eq:eqc2}
 
 where $E_i$, $\bm{r}_i$ are per atom energy and the position vector of atom $i$, and $N$ is the total number of atoms.
 
-The first and the second terms of the right hand side of @eq:eq2 are called convective term and virial term, respectively.
+The first and the second terms of the right hand side of [@eq:eqc2] are called convective term and virial term, respectively.
 It is widely accepted that the former is dominant for the gaseous system and barely contributes in solids, while the latter is dominant for solids and biomolecular materials including proteins.[@babaei2012]
 
 In classical molecular mechanics, the total energy of a protein system, $E$, is expressed as the sum of its kinetic energy and potential energy:
@@ -30,39 +29,92 @@ In classical molecular mechanics, the total energy of a protein system, $E$, is 
 $$
   {E} = \bm{\sum}_{i=1}^N  \frac{\bm{p}_{i}^2} {2m_i} + V(\bm{r}_1, \bm{r}_2, ..., \, \bm{r}_N),
 $$
-{#eq:eq3}
+{#eq:eqc3}
 
 where $m_i$, $\bm{p}_i$ are the mass and the momentum of atom $i$, and $V(\bm{r}_1, \bm{r}_2, ..., \, \bm{r}_N)$ is the potential energy term.
 
-The time derivative of ${E_i}$ can be expressed as
+The potential energy function, $V(\bm r_1, \cdots, \bm r_N)$ is usually defined as a function of atomic positions.
+Alternatively, it can also be expressed as a function of the interatomic distances, $r_{ij} = |\bm r_{ij}| = |\bm r_i - \bm r_j |$, between all the atom pairs, $(i,j)$.
+Then, the force acting on atom $i$ is obtained as a partial derivative of $V$ with respect to the position of atom $i$,
+
+$$
+\begin{aligned}
+\mathbf F_i = - \displaystyle \sum_{(k,j)} \frac{\partial V}{\partial r_{kj}}\nabla_i (r_{kj}) = \displaystyle \sum_{j(\ne i)} - \frac{\partial V}{\partial r_{ij}} \frac{\bm r_{ij}}{r_{ij}}
+= \sum_{j(\ne i)} \bm F_{ij}
+\end{aligned}
+$$
+{#eq:eqA1}
+
+, where $\nabla_i = (\partial / \partial \{\bm {r_i}\}_x, {\partial /\partial \{\bm r_i}\}_y, {\partial /\partial \{\bm r_i}\}_z)$.[@ishikura2012]
+
+The time derivatives of the potential energy and the total energy respectively become:
+
+$$
+\frac{dV}{dt} =  \displaystyle \sum_{(i,j)} \frac{\partial V}{\partial r_{ij}} \frac{d\bm r_{ij}}{dt} = - \frac{1}{2} \sum_i^N \sum_j^N \bm F_{ij} \cdot (\bm v_i - \bm v_j)
+$$
+{#eq:eqA2}
+
+and
+
+$$
+\begin{aligned}
+\frac{dE}{dt} = \displaystyle \sum_i^N \bm v_i \cdot \bm F_i + \frac{dV}{dt} = 
+\sum_i^N \sum_j^N \frac{1}{2} \bm F_{ij} \cdot (v_i + v_j)
+= \sum_i \frac{dE_i}{dt}
+\end{aligned}
+$$
+{#eq:eqA3}
+, where $E_i$ represents the per atom energy of atom $i$. Although the time derivative of $E_i$ can be calculated using the above formula, it is not practical to derive the explicit form of $E_i$ itself.
+
+Consequently, the total heat current is obtained as follows:
+
+$$
+\begin{aligned}
+\bm h &= 
+\displaystyle \sum_i^N \bm r_i \frac{dE_i}{dt} = 
+\sum_i^N\sum_j^N \mathbf r_i \left\{\frac {1}{2} \bm F_{ij} \cdot (\bm v_i + \bm v_j) \right\} \\
+&= \frac{1}{2}
+\Biggl[ \sum_i^N\sum_j^N \bm r_i \left\{\frac {1}{2} \bm F_{ij} \cdot (\bm v_i + \bm v_j) \right\} \\
+&+ \sum_j^N\sum_i^N \bm r_j \left\{\frac {1}{2} \bm F_{ji} \cdot (\bm v_j + \bm v_j) \right\}
+\Biggr] \\
+&= \frac{1}{2} \sum_i^N\sum_j^N \bm (r_i - r_j) \left\{\frac {1}{2} \bm F_{ij} \cdot (\bm v_i + \bm v_j) \right\} \\
+&=
+\sum_{(i,j)} \bm (r_i - r_j) \left\{\frac {1}{2} \bm F_{ij} \cdot (\bm v_i + \bm v_j) \right\} \equiv \sum_{(i,j)} \bm h_{ij}
+\end{aligned}
+$$
+{#eq:eqA4}
+
+, where we used $\bm F_{ij} = - \bm F_{ji}$.
+
+The time derivative of ${E_i}$ thus can be expressed as
 
 $$
 \frac{dE_i}{dt} = \bm{\sum}_{j(\neq{i})}^N \frac{1}{2} \bm{F}_{ij} \cdot ({\bm{v}_i} + {\bm{v}_j}),
 $$
-{#eq:eq4}
+{#eq:eqc4}
 
-where $\bm{F}_{ij}$ is the force acting on atom $i$ due to atom $j$. A detailed derivative process can be found in [APPENDIX A](#a-atomic-expression-of-heat-current)
+where $\bm{F}_{ij}$ is the force acting on atom $i$ due to atom $j$. 
 
 Thus, we obtained atomistic expression for the heat current as
 
 $$
 \bm{h}=\bm{\sum}_{i=1}^N \bm{r}_i \frac{dE_i}{dt} =  \bm{\sum}_{i}^N \bm{r}_i \bm{\sum}_{j}^N  \{ \frac{1}{2} \bm{F}_{ij} \cdot ({\bm{v}_i} + {\bm{v}_j})\}, 
 $$
-{#eq:eq5}
+{#eq:eqc5}
 
 with the inter-atomic heat current between atoms $i$ and $j$, $\bm{h_{ij}}$, denoted as
 
 $$
 {\bm{h_{ij}}} = ({\bm{r}_i}-{\bm{r}_j}) \{\frac{1}{2}  \bm{F}_{ij} \cdot ({\bm{v}_i} + {\bm{v}_j})\}.
 $$
-{#eq:eq6}
+{#eq:eqc6}
 
 
 ### Local Thermal Transport
 
 ![Thermal transport through backbone model. Local heat currents, $\bm{h}_{\alpha, \alpha}$ and $\bm{h}_{\alpha, \alpha+1}$, occur within each residue $\alpha$ and between each pair of residues $\alpha$ and $\alpha+1$.](figures/cross/divided_model.jpeg){#fig:divided_model width=50%}
 
-The local heat current, @eq:eq6, characterizes the essential biophysical nature of a protein molecule, i.e. its structure, dynamics and interactions.
+The local heat current, @eq:eqc6, characterizes the essential biophysical nature of a protein molecule, i.e. its structure, dynamics and interactions.
 We expect that the local thermal transport of a highly non-uniform molecule such as protein can naturally be illustrated with ACF of the local heat current within each residue and between each residue pair.
 It is needless to say that amino acids work as the building blocks of proteins.
 Therefore, it would be helpful if we could characterize the local thermal transport residuewise.
@@ -82,7 +134,7 @@ Then, the overall heat current can be expressed as a summation of the partial he
 $$
 \bm {h} = \bm{\sum}_{\alpha = 1}^{N} \bm{h}_{\alpha, \alpha} + \bm{\sum}_{\alpha = 1}^{N-1} \bm{h}_{\alpha, \alpha+1}
 $$
-{#eq:eq7}
+{#eq:eqc7}
 
 where $\bm{h}_{\alpha, \alpha} = \bm{\sum}_{i}^{n_\alpha} \bm{\sum}_{j}^{n_\alpha} \bm{h}_{ij}$ is the intra-residue heat current within residue $\alpha$ consisting of $n_\alpha$ atoms; $\bm{h}_{\alpha, \alpha+1} = \bm{\sum}_{i}^{n_\alpha} \bm{\sum}_{j}^{n_{\alpha+1}} \bm{h}_{ij}$ is the inter-residue heat current between a pair of adjacent residues, $\alpha$ and $\alpha+1$, consisting of $n_\alpha$ and $n_{\alpha + 1}$ atoms, respectively.
 
@@ -94,25 +146,25 @@ $$
 \Lambda_{\alpha, \alpha+1} = \bm{\int} \langle \bm{h}_{\alpha, \alpha+1}(t) \cdot \bm{h}_{\alpha, \alpha+1}(0) \rangle dt
 \end{aligned}
 $$
-{#eq:eq8}
+{#eq:eqc8}
 
 $$
 \Lambda  = \bm{\int} \langle \bm{h}(t) \cdot \bm{h}(0) \rangle dt 
 $$
-{#eq:eq9}
+{#eq:eqc9}
 
 The contribution of the partial heat current, $\bm{h}_{\alpha,\beta}$, to the thermal transport property of the entire molecule can be expressed by a contribution factor, $c$, as follows:
 
 $$
 c(\alpha,\beta) \equiv \Lambda_{\alpha, \beta} / \Lambda
 $$
-{#eq:eq10}
+{#eq:eqc10}
 
 ### Cross-Correlation Correction {#sec:method-cross-correlation}
 
 Before we move on to the main subject in this section, let us consider a hypothetical dipeptide consisting of residues A and B.
 The thermal conductivity, $\lambda$, of the molecule can be calculated using the autocorrelation function, $\langle\bm h(0) \cdot \bm h(t)\rangle$, of the total heat current, $\bm h$.
-Using [@eq:eq6], $\bm h$ can be expressed as a summation of $\bm h_{\rm A}$, $\bm h_{\rm B}$, and $\bm h_{\rm AB}$: the first two currents occur within residues A and B, respectively.
+Using [@eq:eqc6], $\bm h$ can be expressed as a summation of $\bm h_{\rm A}$, $\bm h_{\rm B}$, and $\bm h_{\rm AB}$: the first two currents occur within residues A and B, respectively.
 The last one, $\bm h_{\rm AB}$, represents that occurs between residues A and B.
 
 Since we expect that heat flows non-uniformly in the dipeptide, the local thermal conductivity,
@@ -126,7 +178,7 @@ Therefore, we expect non-negligible cross-correlations, $\langle\bm h_{\rm A}(0)
 In such analysis, the values of these local thermal conductivities are not consistent with the overall thermal conductivity of the entire molecule.
 The basic idea, here, is to take the influence of such cross-correlations into account to obtain the effective local thermal conductivities that fairly characterize the non-uniform thermal transport property of proteins.
 
-Although the local thermal transport property can be analyzed using @eq:eq8, there remains a problem: If we divide the overall heat current into the summation of partial heat currents (@eq:eq7), @eq:eq9 consists of both auto-correlation and cross-correlation terms, whereas the cross-correlation terms, $\langle\bm{h}_{\alpha, \beta}(0) \cdot \bm{h}_{\alpha', \beta'}(t)\rangle ((\alpha, \beta) \ne (\alpha', \beta'))$, are missing in @eq:eq8.
+Although the local thermal transport property can be analyzed using @eq:eqc8, there remains a problem: If we divide the overall heat current into the summation of partial heat currents (@eq:eqc7), @eq:eqc9 consists of both auto-correlation and cross-correlation terms, whereas the cross-correlation terms, $\langle\bm{h}_{\alpha, \beta}(0) \cdot \bm{h}_{\alpha', \beta'}(t)\rangle ((\alpha, \beta) \ne (\alpha', \beta'))$, are missing in @eq:eqc8.
 Accordingly, we expect that the summation of all contribution factors, $\sum_{\alpha=1}^{N} c_{\alpha, \alpha} + \sum_{\alpha=1}^{N-1} c_{\alpha, \alpha+1}$, does not equal unity.
 If this summation becomes greater (less) than 1, it means that the average intensity of the local thermal transport is overestimated (underestimated) than it really is.
 
@@ -144,7 +196,7 @@ $$
 &(\Lambda_{\alpha, \alpha} +  \Lambda_{\alpha, \alpha+1}+\Lambda_{\alpha+1, \alpha+1})
 \end{split}
 $$
-{#eq:eq11}
+{#eq:eqc11}
 
 $$
 \begin{split}
@@ -152,17 +204,17 @@ $$
 &\bm{\int} \langle \bm{h}_{ \{\alpha, \alpha+1\},  \{\alpha, \alpha+1\} }(t) \cdot \bm{h}_{ \{\alpha, \alpha+1\} ,  \{\alpha, \alpha+1\} }(0) \rangle dt
 \end{split}
 $$
-{#eq:eq12}
+{#eq:eqc12}
 
 Next, we derived correction terms for $\Lambda_{\alpha, \alpha}$ and $\Lambda_{\alpha, \alpha+1}$ to obtain their cross-correlation corrected terms, $\tilde\Lambda_{\alpha, \alpha}$ and $\tilde\Lambda_{\alpha, \alpha+1}$, so that the summation of these $\tilde\Lambda_{\alpha, \alpha}$ $(\alpha = 1, \cdots, N)$ and $\tilde\Lambda_{\alpha, \alpha+1}$ $(\alpha=1, \cdots, N-1)$ becomes close to $\Lambda$, i.e.,
 
 $$
 \Lambda \simeq \sum_{\alpha = 1}^{N} \tilde\Lambda_{\alpha, \alpha} + \sum_{\alpha = 1}^{N-1} \tilde\Lambda_{\alpha, \alpha+1},
 $$
-{#eq:eq13}
+{#eq:eqc13}
 
 on the assumption that the effect of cross-correlation is short-range and the influence of $\xi_{\alpha, {\alpha+1}}$ is limited to $\Lambda_{\alpha-1, \alpha}, \Lambda_{\alpha, \alpha}, \Lambda_{\alpha, \alpha+1}, \Lambda_{\alpha+1, \alpha+1}$, and $\Lambda_{\alpha+1, \alpha+2}$ ([@fig:allocation]).
-As we shall see later, this model works well, i.e., the L.H.S. and R.H.S. of [@eq:eq13] are 9.79 and 9.88 $\rm{(\AA \cdot kcal)^2/fs}$, respectively.
+As we shall see later, this model works well, i.e., the L.H.S. and R.H.S. of [@eq:eqc13] are 9.79 and 9.88 $\rm{(\AA \cdot kcal)^2/fs}$, respectively.
 We further assume that the contribution of $\xi_{\alpha, \alpha+1}$, to ($\tilde\Lambda_{\alpha-1, \alpha}$ and $\tilde\Lambda_{\alpha+1, \alpha+2}$), ($\tilde\Lambda_{\alpha, \alpha}$ and $\tilde\Lambda_{\alpha+1, \alpha+1}$), ($\tilde\Lambda_{\alpha, \alpha+1}$) are respectively $u\xi_{\alpha, \alpha+1}$, $v\xi_{\alpha, \alpha+1}$, and $w\xi_{\alpha, \alpha+1}$ $(\alpha = 2, \cdots, N-2)$, where $u, v, w$ are scalar constants, shown in [@fig:allocation].
 It should be noted that the model is regarded as like a linear homopolymer in this formalism.
 We obtained a pair of equations for $\tilde\Lambda_{\alpha, \alpha}$ and $\tilde\Lambda_{\alpha, \alpha+1}$ as follows: 
@@ -170,12 +222,12 @@ We obtained a pair of equations for $\tilde\Lambda_{\alpha, \alpha}$ and $\tilde
 $$
 \tilde\Lambda_{\alpha,\alpha} = \Lambda_{\alpha,\alpha} +v (\xi_{\alpha-1, \alpha} + \xi_{\alpha, \alpha+1})
 $$
-{#eq:eq14}
+{#eq:eqc14}
 
 $$
 \tilde\Lambda_{\alpha, \alpha+1} = \Lambda_{\alpha, \alpha+1} + w \xi_{\alpha, \alpha+1} + u(\xi_{\alpha-1, \alpha} + \xi_{\alpha+1, \alpha+2})
 $$
-{#eq:eq15}
+{#eq:eqc15}
 
 ![Allocation of cross-correlation term](figures/cross/allocation_principle.jpeg){#fig:allocation width=50%}
 
@@ -185,7 +237,7 @@ Then, we obtain the following equation:
 $$
 \bm{\tilde\Lambda} = \bm{\Lambda} + \bm{T} \bm{\xi} + \bm{\xi} \bm{T},
 $$
-{#eq:eq16}
+{#eq:eqc16}
 
 where, $\bm{I}$ is the $N \times N$ identity matrix, 
 
@@ -211,21 +263,21 @@ $$
     &                &        &        &                & \hspace{-4pt}0 
 \end{pmatrix},
 $$
-{#eq:eq17}
+{#eq:eqc17}
 
 
 $$
 \bm{T} = \frac{w}{2}\bm{I} + v\bm{T}_1 + u\bm{T}_2,
 $$
-{#eq:eq18}
+{#eq:eqc18}
 
 with $u, v, w$ are $\frac{1}{8}, \frac{1}{4}, \frac{1}{4}$, respectively (see [APPENDIX B](#b-derivation-of-scalar-constants-for-allocation-of-cross-correlatio-terms) for details).
-To take into account the terminal effects, $\tilde\Lambda_{1, 1}, \tilde\Lambda_{1, 2}, \tilde\Lambda_{N-1, 1}$ and $\tilde\Lambda_{N, N}$ were separately evaluated using @eq:eq14 and @eq:eq15 with $v', w' = \frac{5}{24}, \frac{5}{12}$, instead of $v = w = \frac{1}{4}$.
+To take into account the terminal effects, $\tilde\Lambda_{1, 1}, \tilde\Lambda_{1, 2}, \tilde\Lambda_{N-1, 1}$ and $\tilde\Lambda_{N, N}$ were separately evaluated using @eq:eqc14 and @eq:eqc15 with $v', w' = \frac{5}{24}, \frac{5}{12}$, instead of $v = w = \frac{1}{4}$.
 We defined the contribution factor after cross-correlation correction as:
 $$
 \tilde c_{\alpha,\beta} \equiv \frac{\tilde{\Lambda}_{\alpha, \beta}} {\Lambda} 
 $$
-{#eq:eq19}
+{#eq:eqc19}
 
 All of the heat currents and their ACF calculations were conducted by our CURP program, version 1.3[@yamato2022] based on 50 trajectories of _NVE_ MD simulations.
 
@@ -270,7 +322,7 @@ The inter-atomic heat current between atoms $i$ and $j$ in a molecule, denoted a
 $$
 {\bm{h_{ij}}} = ({\bm{r}_i}-{\bm{r}_j}) \{ \frac{1}{2} \bm{F}_{ij} \cdot ({\bm{v}_i} + {\bm{v}_j} )\}
 $$
-{#eq:eq1}
+{#eq:eqd1}
 <!-- prettier-ignore-end -->
 
 where $\bm{F}_{ij}$ is the force acting on atom $i$ from atom $j$, ${\bm{r}_i}$(${\bm{r}_j}$) and ${\bm{v}_i}$ (${\bm{v}_j}$) position vector are positional vector and velocities of atom $i$($j$).
@@ -283,21 +335,21 @@ Then, the heat current between residue $\alpha$ and $\beta$ can be expressed as:
 $$
 \bm{h}_{\alpha, \beta} = \bm{\sum}_{i\in\alpha}\bm{\sum}_{j\in\beta}\bm{h_{ij}}
 $$
-{#eq:eq2}
+{#eq:eqd2}
 <!-- prettier-ignore-end -->
 
 The inter-residue heat conductivity between residue $\alpha$ and $\beta$, denoted by $\Lambda_{\alpha,\beta}$, can be expressed by the time-integral of their heat current auto-correlation function as:
 $$
 \Lambda_{\alpha, \beta} = \bm{\int} \langle \bm{h}_{\alpha, \beta}(t) \cdot \bm{h}_{\alpha, \beta}(0) \rangle dt
 $$
-{#eq:eq3}
+{#eq:eqd3}
 <!-- prettier-ignore-end -->
 
 The inter-residue thermal conductivity, $\lambda_{{\alpha, \beta}}$, can be expressed as,
 $$
 \lambda_{\alpha, \beta} = \frac {1} {3(V_{\alpha}+V_{\beta})k_BT^2} \bm{\int} \langle \bm{h}_{\alpha, \beta}(t) \cdot \bm{h}_{\alpha, \beta}(0) \rangle dt
 $$
-{#eq:eq4}
+{#eq:eqd4}
 where $V_{\alpha}$($V_{\beta}$) is the volume of residue $\alpha$($\beta$), $k_B$ is the Boltzmann constant, $T$ is the absolute temperature.
 
 
@@ -320,7 +372,7 @@ Then, the energy flow between residue $\alpha$ and $\beta$ can be expressed as:
 $$
 \bm{J}_{\alpha, \beta} =  \bm{\sum}_{i\in\alpha}\bm{\sum}_{j\in\beta}\bm{J_{ij}}
 $$
-{#eq:eq6}
+{#eq:eqd6}
 
 Here, we introduced a transport coefficient-like quantity, _energy conductivity_, donated as $G_{\alpha,\beta}$, to measure the amount of energy transferred per unit time between two residues through native contacts.
 
@@ -328,14 +380,14 @@ Here, we introduced a transport coefficient-like quantity, _energy conductivity_
 $$
 G_{\alpha, \beta} = \bm{\int} \langle \bm{J}_{\alpha, \beta}(t) \bm{J}_{\alpha, \beta}(0) \rangle dt
 $$
-{#eq:eq7}
+{#eq:eqd7}
 
-From [@eq:eq1] and [@eq:eq4], we can see that the relationship between atomistic heat current and energy flux is: 
+From [@eq:eqd1] and [@eq:eqd4], we can see that the relationship between atomistic heat current and energy flux is: 
 
 $$
 \bm{h}_{ij} = ({\bm{r}_i}-{\bm{r}_j}) \bm{J_{ij}}
 $$
-{#eq:eq8}
+{#eq:eqd8}
 
 In this study, the integration time of auto-correlation function for both heat current and energy flux was set as 60 ps.
 All calculations of $\lambda_{\alpha, \beta}$ and $G_{\alpha, \beta}$ between each pair of residues in native contact using the _CURrent calculations in Proteins_ (CURP) program of version 1.3 developed by our lab[@yamato2022]
@@ -388,7 +440,7 @@ The hydrogen bonds occurrence probability can be calculated by the following for
 $$
 P_{HB} = \frac {\sum_{i=1}^{N} n_i}{N}
 $$
-{#eq:eq9}
+{#eq:eqd9}
 
 where $P_{HB}$ is the probability of hydrogen bond occurrence probability between residue $\alpha$ and residue $\beta$ during a certain simulation time with $N$ snapshots, $n_i$ is the number of hydrogen bond formed between residue A and B.
 
@@ -418,7 +470,7 @@ The formula for this transformation is:
 $$
 V_{scaled} = \frac{V-V_{min}}{V_{max}-V_{min}}
 $$
-{#eq:eq10}
+{#eq:eqd10}
 
 where $V$ represents either $w_{\alpha,\beta}$, $\log{G}_{\alpha, \beta}$, or $\log{\lambda}_{\alpha, \beta}$.
 
@@ -518,22 +570,39 @@ developed by our lab (<https://curp.jp>).[@ishikura2012;@leitner2009;@yamato2022
 The derivation
 process of *G* is as follows. The energy flow between two atoms can be
 described using the equation:
-$J_{i \leftarrow j}^{k}(t) = \frac{1}{2}\left( v_{i} \bullet F_{ij} - v_{j} \bullet F_{ji} \right)$,
+
+$$
+\bm J_{i \leftarrow j}^{k}(t) = \frac{1}{2}( \bm v_{i} \cdot \bm F_{ij} - \bm v_{j} \cdot \bm F_{ji})
+$$
+
 where *k* (= 1, 2, 3, ..., 200) is used to mark different trajectories
 from *NVE* simulations; $J_{i \leftarrow j}^{k}$ is the inter-atom
-energy flow between atom *i* and atom *j* for trajectory *k*; $v_{i}$
-and $v_{j}$ are the velocities of atom *i* and atom *j*, respectively;
-$F_{ij}$($F_{ji})$ is the force from atom *j*(*i*) to atom *i*(*j*).
+energy flow between atom *i* and atom *j* for trajectory *k*; $v_i$
+and $\bm v_j$ are the velocities of atom *i* and atom *j*, respectively;
+$\bm F_{ij}$($\bm F_{ji})$ is the force from atom *j*(*i*) to atom *i*(*j*).
 Then, the inter-residue energy flow can be calculated by:
-$J_{A \leftarrow B}^{k}(t) = \sum_{i \in A}^{N_{A}}{\sum_{i \in B}^{N_{B}}{J_{i \leftarrow j}^{k}(t)}}$,
+
+$$
+\bm J_{A \leftarrow B}^{k}(t) = \sum_{i \in A}^{N_{A}}{\sum_{i\in B}^{N_{B}}{\bm J_{i \leftarrow j}^{k}(t)}}
+$$
+
 where *N* is the total number of side-chain atoms in residue A or B;
 atoms *i* and *j* belong to the side chain of residue A and B,
-respectively. To calculate *G*, the equation of
-$G_{AB}^{k} = \lim_{\tau \rightarrow \infty}{\int_{0}^{\tau}{< J_{A \leftarrow B}^{k}(0)J_{A \leftarrow B}^{k}(t) > dt}}$
-was used.[@ota2019;@ishikura2015;@leitner2009]
+respectively. To calculate *G*, the equation of was used[@ota2019;@ishikura2015;@leitner2009]
+
+
+$$
+G_{AB}^{k} = \lim_{\tau \rightarrow \infty} \int_{0}^{\tau} \langle \bm J_{A \leftarrow B}^{k}(0) \cdot \bm J_{A \leftarrow B}^{k}(t)  \rangle dt
+$$
+
 Finally, the values of *G* were averaged,
-$G_{AB} = \frac{1}{N_{traj}}\sum_{k = 1}^{N_{traj}}G_{AB}^{k}$, where
-*N*~traj~ = 200.[@ota2019;@leitner2009;@leitner2020a]
+
+$$
+G_{AB} = \frac{1}{N_{traj}}\sum_{k = 1}^{N_{traj}}G_{AB}^{k}
+$$
+
+where *N*~traj~ = 200.[@ota2019;@leitner2009;@leitner2020a]
+
 In this study, the $\tau$ was set as 50ps. We only
 considered the sidechain pairs whose shortest interatomic distance is
 within 6 Å because energy transport becomes negligible for the pairs

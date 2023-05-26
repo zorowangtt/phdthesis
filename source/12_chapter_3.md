@@ -154,7 +154,7 @@ As a carrier of energy for heat, we are wondering whether there are any correlat
 
 ![Plot of inter-residue thermal conductivity ($\lambda_{\alpha, \beta}$) and energy conductivity ($G_{\alpha, \beta}$). Residue pairs are classified by residue type of native contacts.](figures/non-bonded/lambda-energy.png){#fig:lambda_energy}
 
-From [@eq:eq1;@eq:eq4;@eq:eq5; and @eq:eq7], we can see that the difference between thermal conductivity $\lambda_{\alpha, \beta}$ and energy conductivity ($G_{\alpha, \beta}$) is that for the latter its energy flow term ($\bm J_{ij}$) lacks of position vector, ($\bm r_i- \bm r_j$), which represents the distance information of the residues while MD simulations.
+From [@eq:eqd1;@eq:eqd4;@eq:eqd5; and @eq:eqd7], we can see that the difference between thermal conductivity $\lambda_{\alpha, \beta}$ and energy conductivity ($G_{\alpha, \beta}$) is that for the latter its energy flow term ($\bm J_{ij}$) lacks of position vector, ($\bm r_i- \bm r_j$), which represents the distance information of the residues while MD simulations.
 To investigate this issue, we plotted the scatter dots $\lambda_{\alpha, \beta}$ and $G_{\alpha, \beta}$ in [@fig:lambda_energy] and performed the linear regression analysis.
 Interestingly, the Pearson correlation analysis showed a significant relationship statistically between $\lambda_{\alpha, \beta}$ and $G_{\alpha, \beta}$, with $r = 0.97, \, p << 0.05 \,(4.47 \times 10^{-168})$.
 To get an estimated linear regression model that can expresses their relationship, a fitted model is given here: $\log{\lambda_{\alpha, \beta}} = 0.73 \times \log{{G}_{\alpha, \beta}} - 0.30$ with $R^2 = 0.94$.
@@ -182,7 +182,7 @@ We predicted $\lambda_{\alpha,\beta}$ values with these features by using the re
 The model applied all data points resulted in an $r^2$ value of 0.94 and RMSE of $5.7 \times 10^{-4}$.
 According to the ranking of feature importance shown in [@fig:random-forest]b, the top three most important features decreased in an order of $1/ \langle d_c^2 \rangle$ > $P_{HB}$ > $1/ \langle \delta d_{c}^2 \rangle$ > 0.15.
 Interestingly, for non-covalent contacts containing both short-range (hydrogen bonded) contacts and van der Waals contacts, the most important feature is the averaged contact distance ($\langle 1/ d_c^2 \rangle$).
-It is reasonable that two terms of heat current expression in @eq:eq1, i.e. (${\bm{r}_i}-{\bm{r}_j}$) and $\bm{F}_{ij}$, are highly related to the distance.
+It is reasonable that two terms of heat current expression in @eq:eqd1, i.e. (${\bm{r}_i}-{\bm{r}_j}$) and $\bm{F}_{ij}$, are highly related to the distance.
 The role of $P_{HB}$, as the second most important feature, has been disscussed in @sec:role-of-hb.
 For the third most important feature, $1/\langle \delta d_c^2 \rangle$,
 a proportional correlation relationship between $1/ \langle \delta d_c^2 \rangle$ and energy transport rate was first introduced by David M. Leitner, et al. in HP36 protein,[@buchenberg2016;@reid2018] and was further applied in other proteins.[@leitner2019;@reid2020;@leitner2020a;@poudel2022;@poudel2023]
