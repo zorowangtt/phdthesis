@@ -1,9 +1,8 @@
 \newpage
-# Theory, Materials and Methods 
+# Theory, Materials and Methods {#cha2}
 
-## Thermal Conductivity and Inter-atomic Heat Current
-In this section, we derived an atomistic expression of heat current and thermal conductivity for the molecular system.
-Based on linear response theory, the thermal conductivity of material is expressed in terms of the time autocorrelation function (ACF) of the heat current vector, $\bm{h}$, as
+## Thermal conductivity derived from Green-Kubo transport theory
+According to the Green–Kubo relations, the steady-state transport coefficient can be obtained by dividing the space–time integral of the flux–flux equilibrium correlation function by k~B~T. A very detailed derivation process of can be found in APPENDIX B: _Derivation of Green–Kubo Relation_ of book _Heat transfer physics_ by Massoud Kaviany.[@kaviany2008] Like other transport process, e.g. viscosity, the thermal conductivity of material can be derived from Green–Kubo relation and expressed in terms of the time autocorrelation function (ACF) of the heat current vector, $\bm{h}$, based on equilibrium fluctuation,
 
 $$
 \lambda = \frac {1} {3Vk_BT^2} \bm{\int_0^\infty} \langle \bm{h}(t) \cdot \bm{h}(0) \rangle dt,
@@ -12,7 +11,17 @@ $$
 
 where $\lambda$ is the thermal conductivity, $V$ is the volume, $k_B$ is the Boltzmann constant, $T$ is the absolute temperature, the angle brackets of $\langle \bm{h}(t) \cdot \bm{h}(0) \rangle$ denote ensemble average.[@mcquarrie2000]
 
-In a molecular system, the atomistic representation of the instantaneous heat current, $\bm{h}$, is derived as the time derivative of energy distribution as[@yamato2022]
+Autocorrelation is a measure of how well a dynamic system's signature aligns with a time-shifted version of itself,
+representing the cross-correlation of a signal with its own shifted counterpart.
+In the case of thermal conductivity, the duration of auto-correlation is related to the material's ability to transfer heat and energy.
+Materials with high thermal conductivity exhibit long-lasting correlation, indicating slow dissipation of fluctuations from equilibrium.
+In contrast, materials with low thermal conductivity display short-lived correlation.
+One important point is that the Green-Kubo approach allows for the calculation of transport properties from an equilibrium system, providing valuable insights even in non-equilibrium scenarios.
+
+## Derivation of inter-atomic heat current
+
+In this section, we have obtained an atomistic formulation for the heat current term of thermal conductivity expression (@eq:eqc1) in a molecular system.
+The atomistic representation of the instantaneous heat current, denoted as $\bm{h}$, is derived by taking the time derivative of the energy distribution,[@yamato2022]
 
 $$
   {\bm{h} }\equiv \frac{d}{dt} \bm{\sum}_{i=1}^N(E_i  \bm{\bm{r}_i})=\bm{\sum}_{i=1}^N { (E_i\frac{d\bm{r}_i}{dt} + \bm{r}_i} \frac{dE_i}{dt})
@@ -21,21 +30,25 @@ $$
 
 where $E_i$, $\bm{r}_i$ are per atom energy and the position vector of atom $i$, and $N$ is the total number of atoms.
 
-The first and the second terms of the right hand side of [@eq:eqc2] are called convective term and virial term, respectively.
-It is widely accepted that the former is dominant for the gaseous system and barely contributes in solids, while the latter is dominant for solids and biomolecular materials including proteins.[@babaei2012]
+The on the right-hand side of [@eq:eqc2] can be divided into two terms: the convective term and the virial term.
+In the context of this equation, it is commonly recognized that the convective term plays a significant role in gaseous systems, but its contribution is minimal in solids.
+On the other hand, the virial term is predominant in solids and biomolecular materials, such as proteins [@babaei2012].
 
-In classical molecular mechanics, the total energy of a protein system, $E$, is expressed as the sum of its kinetic energy and potential energy:
+The total energy ($E$) of a protein system, shown in @eq:eqc3, 
+in classical molecular mechanics is calculated by summing the kinetic energy contributions from each atom,
+which is determined by its mass ($m_i$) and momentum ($\bm{p}_i$),
+and the potential energy term ($V(\bm{r}_1, \bm{r}_2, ..., , \bm{r}_N)$) that depends on the positions of all atoms ($\bm{r}_1, \bm{r}_2, ..., , \bm{r}_N$).
 
 $$
   {E} = \bm{\sum}_{i=1}^N  \frac{\bm{p}_{i}^2} {2m_i} + V(\bm{r}_1, \bm{r}_2, ..., \, \bm{r}_N),
 $$
 {#eq:eqc3}
 
-where $m_i$, $\bm{p}_i$ are the mass and the momentum of atom $i$, and $V(\bm{r}_1, \bm{r}_2, ..., \, \bm{r}_N)$ is the potential energy term.
+<!-- Alternatively, it can also be expressed as a function of the inter-atomic distances, $r_{ij} = |\bm r_{ij}| = |\bm r_i - \bm r_j |$, between all the atom pairs, $(i,j)$.
+Then, the force acting on atom $i$ is obtained as a partial derivative of $V$ with respect to the position of atom $i$, -->
 
-The potential energy function, $V(\bm r_1, \cdots, \bm r_N)$ is usually defined as a function of atomic positions.
-Alternatively, it can also be expressed as a function of the interatomic distances, $r_{ij} = |\bm r_{ij}| = |\bm r_i - \bm r_j |$, between all the atom pairs, $(i,j)$.
-Then, the force acting on atom $i$ is obtained as a partial derivative of $V$ with respect to the position of atom $i$,
+Alternatively, the potential energy term ($V(\bm{r}_1, \bm{r}_2, ..., , \bm{r}_N)$) of a protein system in classical molecular mechanics can also be expressed as a function of the inter-atomic distances ($r_{ij} = |\bm r_{ij}| = |\bm r_i - \bm r_j |$) between all pairs of atoms $(i,j)$.
+In this representation, the force acting on atom $i$ is obtained by taking the partial derivative of $V$ with respect to the position of atom $i$.
 
 $$
 \begin{aligned}
@@ -47,7 +60,7 @@ $$
 
 , where $\nabla_i = (\partial / \partial \{\bm {r_i}\}_x, {\partial /\partial \{\bm r_i}\}_y, {\partial /\partial \{\bm r_i}\}_z)$.[@ishikura2012]
 
-The time derivatives of the potential energy and the total energy respectively become:
+The time derivatives of the potential energy ($V$) and the total energy ($E$) can be expressed as:
 
 $$
 \frac{dV}{dt} =  \displaystyle \sum_{(i,j)} \frac{\partial V}{\partial r_{ij}} \frac{d\bm r_{ij}}{dt} = - \frac{1}{2} \sum_i^N \sum_j^N \bm F_{ij} \cdot (\bm v_i - \bm v_j)
@@ -64,9 +77,10 @@ $$
 \end{aligned}
 $$
 {#eq:eqA3}
-, where $E_i$ represents the per atom energy of atom $i$. Although the time derivative of $E_i$ can be calculated using the above formula, it is not practical to derive the explicit form of $E_i$ itself.
+respectively, where $E_i$ denotes the per atom energy of atom $i$.
+While it is possible to calculate the time derivative of $E_i$ using the formula provided, obtaining the explicit form of $E_i$ itself is not feasible in practice.
 
-Consequently, the total heat current is obtained as follows:
+As a result, the total heat current can be obtained through the following derivation process:
 
 $$
 \begin{aligned}
@@ -74,17 +88,17 @@ $$
 \displaystyle \sum_i^N \bm r_i \frac{dE_i}{dt} = 
 \sum_i^N\sum_j^N \mathbf r_i \left\{\frac {1}{2} \bm F_{ij} \cdot (\bm v_i + \bm v_j) \right\} \\
 &= \frac{1}{2}
-\Biggl[ \sum_i^N\sum_j^N \bm r_i \left\{\frac {1}{2} \bm F_{ij} \cdot (\bm v_i + \bm v_j) \right\} \\
-&+ \sum_j^N\sum_i^N \bm r_j \left\{\frac {1}{2} \bm F_{ji} \cdot (\bm v_j + \bm v_j) \right\}
+\Biggl[ \sum_i^N\sum_j^N \bm r_i \left\{\frac {1}{2} \bm F_{ij} \cdot (\bm v_i + \bm v_j) \right\}
++ \sum_j^N\sum_i^N \bm r_j \left\{\frac {1}{2} \bm F_{ji} \cdot (\bm v_j + \bm v_j) \right\}
 \Biggr] \\
-&= \frac{1}{2} \sum_i^N\sum_j^N \bm (r_i - r_j) \left\{\frac {1}{2} \bm F_{ij} \cdot (\bm v_i + \bm v_j) \right\} \\
+&= \frac{1}{2} \sum_i^N\sum_j^N  (\bm r_i - \bm r_j) \left\{\frac {1}{2} \bm F_{ij} \cdot (\bm v_i + \bm v_j) \right\} \\
 &=
-\sum_{(i,j)} \bm (r_i - r_j) \left\{\frac {1}{2} \bm F_{ij} \cdot (\bm v_i + \bm v_j) \right\} \equiv \sum_{(i,j)} \bm h_{ij}
+\sum_{(i,j)}  (\bm r_i - \bm r_j) \left\{\frac {1}{2} \bm F_{ij} \cdot (\bm v_i + \bm v_j) \right\} \equiv \sum_{(i,j)} \bm h_{ij}
 \end{aligned}
 $$
 {#eq:eqA4}
 
-, where we used $\bm F_{ij} = - \bm F_{ji}$.
+, where $\bm F_{ij} = - \bm F_{ji}$.
 
 The time derivative of ${E_i}$ thus can be expressed as
 
@@ -108,7 +122,6 @@ $$
 {\bm{h_{ij}}} = ({\bm{r}_i}-{\bm{r}_j}) \{\frac{1}{2}  \bm{F}_{ij} \cdot ({\bm{v}_i} + {\bm{v}_j})\}.
 $$
 {#eq:eqc6}
-
 
 ### Local Thermal Transport
 
@@ -280,6 +293,11 @@ $$
 {#eq:eqc19}
 
 All of the heat currents and their ACF calculations were conducted by our CURP program, version 1.3[@yamato2022] based on 50 trajectories of _NVE_ MD simulations.
+
+
+## Proteins
+The proteins used in @sec:cha2 and @sec:cha3 was the villin headpiece subdomain (PDB code: HP36) and used in @sec:cha4 was the _Bj_FixL  
+
 
 ### Equilibrium Molecular Dynamics Simulations 
 #### *Simulation Model* 
@@ -640,4 +658,4 @@ After minimization, heating, and equilibration of the simulation system, several
 (3)	If the simulated SAXS curve was in good agreement with the experiment, then we added all-atom spin label CYR1[@jo2014] to residues S39, S46, S56, S83, and C150, respectively, using the reMD Prepper module of CHARMM-GUI[@qi2020], then measured the initial distance of each spin pairs. 
 (4)	If all distances of spin pairs fell in the experimentally measured range, then we moved on to the reMD simulations by using a modified version of NAMD 2[@shen2015;@qi2020] with all-atom CHARMM36m protein force field[@huang2017]. We attached 25 copies of all-atom CYR1 spin labels to residues S39, S46, S56, S83 and C150, respectively, with reMD Prepper in vacuum for saving the computational resources. During the whole reMD simulations, the N, Cα, C, and O atoms of each spin label were fixed to the corresponding atoms in the labeled residues (@fig:spin-label) using a force constant of 10 kcal/(mol·Å^2^). The force field of all-atom CYR1 spin label[@islam2015] is provided by CHARMM-GUI. Spatial overlap among the 25 copies of CYR1 spin labels was allowed by neglecting the interactions among them. Five independent all-atom reMD simulations were conducted at 303.15 K with different random number seeds using Langevin dynamics with a damping coefficient of 5 ps^–1^. Before each reMD production run, we performed minimization and equilibration, during which only sidechain atoms were relaxed, keeping the backbone atom positions with harmonic restraints of 2 kcal/(mol·Å^2^) imposed on them. For further structural refinement, we switched off the harmonic restraints imposed on the backbone atoms, and conducted production runs of reMD simulations for 2 ns with a time step of 0.5 fs. The long-range electrostatic interactions were treated with the particle mesh Ewald (PME) method[@petersen1995] and the nonbonded interactions were truncated at a 10 Å distance cutoff. The distance distributions of each spin label pair were restrained with a force constant of 100 kcal/(mol·Å^2^) toward the experimental distance distribution histograms with a bin width of 0.025 nm. The atomic coordinates of each reMD production run were saved every 1ps. Since each spin label has 25 copies, a total number of 625 distances for each spin label pair were obtained from a single snapshot of trajectories and a total of 1, 250, 000 data points were yielded for every spin label pair from one single reMD production run. Trajectory analysis and protein visualization were performed with VMD[@humphrey1996] and PyMOL[@llc2015], respectively.
 
-![The fixation between CYR1 spin label and its attached residues. The all-atom CYR1 spin label has a main chain like amino acid. The reMD simulation adds and fixes the spin label model by overlapping the main chain of spin label attached residue and the main chain of spin labels with a harmonic force constant of 10 kcal/(mol·Å^2^).](figures/cp12/spin-label.jpg){#fig:spin-label width=100%}
+![The fixation between CYR1 spin label and its attached residues. The all-atom CYR1 spin label has a main chain like amino acid. The reMD simulation adds and fixes the spin label model by overlapping the main chain of spin label attached residue and the main chain of spin labels with a harmonic force constant of 10 kcal/(mol·Å^2^).](figures/cp12/spin-label.jpg){#fig:spin-label width=100%})

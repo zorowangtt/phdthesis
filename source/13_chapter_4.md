@@ -1,7 +1,7 @@
 
 \newpage
 
-# Effects of Ligand Binding on the Dimeric Sensory Domain of *Bj*FixL: Computational Analysis of Vibrational Energy Transfer Pathways
+# Effects of Ligand Binding on the Dimeric Sensory Domain of *Bj*FixL: Computational Analysis of Vibrational Energy Transfer Pathways {#cha5}
 
 ## INTRODUCTION
 

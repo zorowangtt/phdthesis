@@ -34,7 +34,7 @@ lot: true
 toc: true
 
 # pandoc-crossref control
-secPrefix: "Section"
+secPrefix: "Chapter"
 eqnPrefix: "Equation"
 figPrefix: "Figure"
 tblPrefix: "Table"

@@ -1,6 +1,6 @@
 \newpage
 
-# Local Thermal Transport in an $\alpha$-helical Protein 
+# Local Thermal Transport in an $\alpha$-helical Protein {#cha3}
 ## Abstract
 
 Although thermal transport is among the essential biophysical properties of proteins, its relationship with protein structures, dynamics, and functions is still elusive.
