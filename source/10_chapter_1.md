@@ -125,18 +125,22 @@ $$
 
 ### Local Thermal Transport
 
-![Thermal transport through backbone model. Local heat currents, $\bm{h}_{\alpha, \alpha}$ and $\bm{h}_{\alpha, \alpha+1}$, occur within each residue $\alpha$ and between each pair of residues $\alpha$ and $\alpha+1$.](figures/cross/divided_model.jpeg){#fig:divided_model width=50%}
+![Thermal transport through backbone model. Local heat currents, $\bm{h}_{\alpha, \alpha}$ and $\bm{h}_{\alpha, \alpha+1}$, occur within each residue $\alpha$ and between each pair of residues $\alpha$ and $\alpha+1$.](figures/cross/divided_model.jpeg){#fig:divided_model}
 
-The local heat current, @eq:eqc6, characterizes the essential biophysical nature of a protein molecule, i.e. its structure, dynamics and interactions.
-We expect that the local thermal transport of a highly non-uniform molecule such as protein can naturally be illustrated with ACF of the local heat current within each residue and between each residue pair.
-It is needless to say that amino acids work as the building blocks of proteins.
-Therefore, it would be helpful if we could characterize the local thermal transport residuewise.
-Spatial scale of each residue, however, is far from macroscopic, and also local fluctuation within each residue may not occur independently from the surrounding protein environment.
-Therefore, we need a special care when we discuss about the local thermal transport property based on the ACF formalism.
+The inter-atomic heat current, as described in @eq:eqc6, provides insight into the essential biophysical nature of a protein molecule, i.e. its structure (${\bm{r}_i}-{\bm{r}_j}$), dynamics (${\bm{v}_i} + {\bm{v}_j}$) and interactions ($\bm{F}_{ij}$).
+We expect that the local thermal transport of a highly non-uniform molecule such as proteins can naturally be effectively illustrated by analyzing the ACF of the local heat current within individual residues and between pairs of residues.
+It is well-known that amino acids serve as the fundamental building blocks of proteins.
+Therefore, it would be advantageous if we could investigate the local thermal transport characteristics on a residue-by-residue basis.
+The spatial scale of each residue is considerably smaller than the macroscopic level, and the local fluctuations within each residue  can be influenced by the surrounding protein environment.
+As a result, we need a special care when discussing the local thermal transport property using the ACF formalism.
 
-To address the issue, here we proposed a two-stage strategy.
-First, we introduced a simple model ([@fig:divided_model]) with special emphasis on the thermal transport along the polypeptide chain.
-In the next section ([@sec:method-cross-correlation]), we considered the theoretical consistency between the ACF formalism based on the local heat current and that on the overall heat current, and derived correction terms to the former.
+To address this issue, we have devised a two-stage strategy.
+In the first stage, we have introduced a simple model ([@fig:divided_model]) that focuses on the thermal transport along the polypeptide chain.
+This simple model allows us to analyze and understand the local thermal transport phenomena more effectively.
+In the second stage ([@sec:method-cross-correlation]), we have carefully examined the theoretical consistency between the ACF formalism based on the local heat current and the ACF formalism based on the overall heat current.
+As a result, we have derived correction terms that ensure the accuracy of the local heat current analysis.
+
+<stops here>
 
 Previously, we demonstrated that the thermal transport between the entire mainchain and sidechain at each residue position was weak in magnitude and exhibited no noticeable positional dependence.[@yamato2022]
 Also, we observed that the thermal transport in a protein molecule mainly occurs either along the polypeptide chain or within each sidechain.
