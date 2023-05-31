@@ -72,7 +72,7 @@ and
 $$
 \begin{aligned}
 \frac{dE}{dt} = \displaystyle \sum_i^N \bm v_i \cdot \bm F_i + \frac{dV}{dt} = 
-\sum_i^N \sum_j^N \frac{1}{2} \bm F_{ij} \cdot (v_i + v_j)
+\sum_i^N \sum_j^N \frac{1}{2} \bm F_{ij} \cdot ( \bm v_i +  \bm v_j)
 = \sum_i \frac{dE_i}{dt}
 \end{aligned}
 $$
@@ -123,7 +123,8 @@ $$
 $$
 {#eq:eqc6}
 
-### Local Thermal Transport
+## Linear-homopolymer-like model
+<!-- Local Thermal Transport -->
 
 ![Thermal transport through backbone model. Local heat currents, $\bm{h}_{\alpha, \alpha}$ and $\bm{h}_{\alpha, \alpha+1}$, occur within each residue $\alpha$ and between each pair of residues $\alpha$ and $\alpha+1$.](figures/cross/divided_model.jpeg){#fig:divided_model}
 
@@ -140,22 +141,24 @@ This simple model allows us to analyze and understand the local thermal transpor
 In the second stage ([@sec:method-cross-correlation]), we have carefully examined the theoretical consistency between the ACF formalism based on the local heat current and the ACF formalism based on the overall heat current.
 As a result, we have derived correction terms that ensure the accuracy of the local heat current analysis.
 
-<stops here>
-
-Previously, we demonstrated that the thermal transport between the entire mainchain and sidechain at each residue position was weak in magnitude and exhibited no noticeable positional dependence.[@yamato2022]
-Also, we observed that the thermal transport in a protein molecule mainly occurs either along the polypeptide chain or within each sidechain.
-Here, we introduced a model consisting of $N$-nodes (residues) connected along the chain ([@fig:divided_model]), where $N$ is the total number of residues.
-In this model, we assumed that heat current occurs within each residue and also between each pair of adjacent residues in a sequence, and no long-range heat current was allowed.
-Then, the overall heat current can be expressed as a summation of the partial heat currents:
+In our previous study,[@yamato2022] we found that the thermal transport between the entire mainchain and each sidechain exhibited negligible magnitude and showed no significant positional dependence.
+Additionally, our observations revealed that the thermal transport in a protein molecule predominantly takes place either along the polypeptide chain or within individual sidechains.
+To better understand the thermal transport properties at residue level,
+we introduced a model comprising $N$ nodes representing the residues, as depicted in [@fig:divided_model].
+Here, $N$ denotes the total number of residues in the protein.
+Within this model, we assumed the occurrence of heat currents within each residue as well as between adjacent residue pairs along the sequence,
+while disregarding the possibility of long-range heat currents.
+Then, the total heat current can be represented as a summation of the partial heat currents:
 
 $$
 \bm {h} = \bm{\sum}_{\alpha = 1}^{N} \bm{h}_{\alpha, \alpha} + \bm{\sum}_{\alpha = 1}^{N-1} \bm{h}_{\alpha, \alpha+1}
 $$
 {#eq:eqc7}
 
-where $\bm{h}_{\alpha, \alpha} = \bm{\sum}_{i}^{n_\alpha} \bm{\sum}_{j}^{n_\alpha} \bm{h}_{ij}$ is the intra-residue heat current within residue $\alpha$ consisting of $n_\alpha$ atoms; $\bm{h}_{\alpha, \alpha+1} = \bm{\sum}_{i}^{n_\alpha} \bm{\sum}_{j}^{n_{\alpha+1}} \bm{h}_{ij}$ is the inter-residue heat current between a pair of adjacent residues, $\alpha$ and $\alpha+1$, consisting of $n_\alpha$ and $n_{\alpha + 1}$ atoms, respectively.
+Here, $\bm{h}_{\alpha, \alpha}$ represents the intra-residue heat current within residue $\alpha$, which is the sum of heat currents between all pairs of atoms $i$ and $j$ within the residue ($\bm{\sum}_{i}^{n_\alpha} \bm{\sum}_{j}^{n_\alpha} \bm{h}_{ij}$). Similarly, $\bm{h}_{\alpha, \alpha+1}$ represents the inter-residue heat current between a pair of adjacent residues $\alpha$ and $\alpha+1$, calculated as the sum of heat currents between all atoms $i$ in residue $\alpha$ and all atoms $j$ in residue $\alpha+1$ ($\bm{\sum}_{i}^{n_\alpha} \bm{\sum}_{j}^{n_{\alpha+1}} \bm{h}_{ij}$).
 
-To characterize local thermal transport property, we defined some quantities, $\Lambda_{\alpha, \alpha}$, $\Lambda_{\alpha, \alpha+1}$, and $\Lambda$, as time-integrated ACF of partial heat currents and that for the total heat current: 
+In order to characterize the residuewise thermal transport property, we introduced several quantities: $\Lambda_{\alpha, \alpha}$, $\Lambda_{\alpha, \alpha+1}$, and $\Lambda$.
+These quantities are defined as the time-integrated autocorrelation functions (ACFs) of the partial heat currents within a residue ($\Lambda_{\alpha, \alpha}$), between adjacent residues ($\Lambda_{\alpha, \alpha+1}$), and for the total heat current ($\Lambda$), respectively,
 
 $$
 \begin{aligned}
@@ -170,71 +173,71 @@ $$
 $$
 {#eq:eqc9}
 
-The contribution of the partial heat current, $\bm{h}_{\alpha,\beta}$, to the thermal transport property of the entire molecule can be expressed by a contribution factor, $c$, as follows:
+The contribution of the partial heat current, $\bm{h}_{\alpha,\beta}$, to the overall thermal transport property of the molecule can be expressed using a contribution factor, denoted as $c$,
 
 $$
 c(\alpha,\beta) \equiv \Lambda_{\alpha, \beta} / \Lambda
 $$
 {#eq:eqc10}
 
-### Cross-Correlation Correction {#sec:method-cross-correlation}
+## Cross-Correlation Correction on linear-homopolymer-like model {#sec:method-cross-correlation}
 
-Before we move on to the main subject in this section, let us consider a hypothetical dipeptide consisting of residues A and B.
-The thermal conductivity, $\lambda$, of the molecule can be calculated using the autocorrelation function, $\langle\bm h(0) \cdot \bm h(t)\rangle$, of the total heat current, $\bm h$.
-Using [@eq:eqc6], $\bm h$ can be expressed as a summation of $\bm h_{\rm A}$, $\bm h_{\rm B}$, and $\bm h_{\rm AB}$: the first two currents occur within residues A and B, respectively.
-The last one, $\bm h_{\rm AB}$, represents that occurs between residues A and B.
+To explain why we need to do cross-correlation on the linear-homopolymer-like model, we use a simple molecule containing two residues to make it clear.
+Now, let's consider a hypothetical dipeptide composed of residues A and B.
+The thermal conductivity, denoted as $\lambda$, of the molecule can be determined by calculating the heat current ($\bm h$) auto-correlation function, $\langle\bm h(0) \cdot \bm h(t)\rangle$.
+Based on [@eq:eqc6], $\bm h$ can be expressed as the sum of three components: $\bm h_{\rm A}$, $\bm h_{\rm B}$, and $\bm h_{\rm AB}$.
+The first two components represent the heat currents occurring within residues A and B, respectively, while the third component, $\bm h_{\rm AB}$, corresponds to the heat current between residues A and B.
 
-Since we expect that heat flows non-uniformly in the dipeptide, the local thermal conductivity,
-$\lambda_A$, $\lambda_{\rm B}$, and $\lambda_{\rm AB}$, should be calculated independently for each of the three regions using $\langle\bm h_{\rm A}(0) \cdot \bm h_{\rm A}(t)\rangle$, $\langle\bm h_{\rm B}(0) \cdot \bm h_{\rm B}(t)\rangle$, and $\langle\bm h_{\rm AB}(0) \cdot \bm h_{\rm AB}(t)\rangle$, respectively.
-In an ideal case, where $\bm h_{\rm A}$, $\bm h_{\rm B}$, and $\bm h_{\rm AB}$ fluctuate independently, we are allowed to neglect the cross-correlation terms between them,
-i.e., $\langle\bm h(0) \cdot \bm h(t)\rangle = \langle\bm h_{\rm A}(0) \cdot \bm h_{\rm A}(t)\rangle + \langle\bm h_{\rm B}(0) \cdot \bm h_{\rm B}(t)\rangle + \langle\bm h_{\rm AB}(0) \cdot \bm h_{\rm AB}(t)\rangle$.
-Furthermore, we can calculate the value of $\lambda$ using the values of $\lambda_{\rm A}$, $\lambda_{\rm B}$, and $\lambda_{\rm AB}$.
+Considering the non-uniform heat flow in the dipeptide, we need to calculate the local thermal conductivities, denoted as $\lambda_A$, $\lambda_{\rm B}$, and $\lambda_{\rm AB}$, independently for each of the three parts.
+This can be achieved by calculating the heat current auto-correlation functions $\langle\bm h_{\rm A}(0) \cdot \bm h_{\rm A}(t)\rangle$, $\langle\bm h_{\rm B}(0) \cdot \bm h_{\rm B}(t)\rangle$, and $\langle\bm h_{\rm AB}(0) \cdot \bm h_{\rm AB}(t)\rangle$.
+In an ideal case where $\bm h_{\rm A}$, $\bm h_{\rm B}$, and $\bm h_{\rm AB}$ fluctuate independently, we can neglect the cross-correlation terms between them. Thus, we have $\langle\bm h(0) \cdot \bm h(t)\rangle = \langle\bm h_{\rm A}(0) \cdot \bm h_{\rm A}(t)\rangle + \langle\bm h_{\rm B}(0) \cdot \bm h_{\rm B}(t)\rangle + \langle\bm h_{\rm AB}(0) \cdot \bm h_{\rm AB}(t)\rangle$.
+Finally, we can obtain the value of $\lambda$ by combining the calculated values of $\lambda_{\rm A}$, $\lambda_{\rm B}$, and $\lambda_{\rm AB}$.
 
-In reality, however, there exist strong interactions between residues A and B through the peptide bonding.
-Therefore, we expect non-negligible cross-correlations, $\langle\bm h_{\rm A}(0) \cdot \bm h_{\rm B}(t)\rangle$, $\langle\bm h_{\rm A}(0) \cdot \bm h_{\rm AB}(t)\rangle$, and $\langle\bm h_{B}(0) \cdot \bm h_{\rm AB}(t)\rangle$, and the value of $\lambda$ can not be reconstructed by using $\lambda_{\rm {\rm A}}$, $\lambda_{\rm {\rm B}}$, and $\lambda_{\rm AB}$, anymore.
-In such analysis, the values of these local thermal conductivities are not consistent with the overall thermal conductivity of the entire molecule.
-The basic idea, here, is to take the influence of such cross-correlations into account to obtain the effective local thermal conductivities that fairly characterize the non-uniform thermal transport property of proteins.
+In reality, strong interactions exist between residues A and B through the peptide bonding, leading to non-negligible cross-correlations.
+These cross-correlations are represented by $\langle\bm h_{\rm A}(0) \cdot \bm h_{\rm B}(t)\rangle$, $\langle\bm h_{\rm A}(0) \cdot \bm h_{\rm AB}(t)\rangle$, and $\langle\bm h_{\rm B}(0) \cdot \bm h_{\rm AB}(t)\rangle$.
+As a result, the value of $\lambda$ cannot be accurately reconstructed using only $\lambda_{\rm A}$, $\lambda_{\rm B}$, and $\lambda_{\rm AB}$.
+In this analysis, it is essential to consider the influence of these cross-correlations in order to obtain effective local thermal conductivities that accurately characterize the non-uniform thermal transport property of proteins.
+Thus, by incorporating the cross-correlations, we aim to derive local thermal conductivities that are consistent with the overall thermal conductivity of the entire molecule.
 
-Although the local thermal transport property can be analyzed using @eq:eqc8, there remains a problem: If we divide the overall heat current into the summation of partial heat currents (@eq:eqc7), @eq:eqc9 consists of both auto-correlation and cross-correlation terms, whereas the cross-correlation terms, $\langle\bm{h}_{\alpha, \beta}(0) \cdot \bm{h}_{\alpha', \beta'}(t)\rangle ((\alpha, \beta) \ne (\alpha', \beta'))$, are missing in @eq:eqc8.
-Accordingly, we expect that the summation of all contribution factors, $\sum_{\alpha=1}^{N} c_{\alpha, \alpha} + \sum_{\alpha=1}^{N-1} c_{\alpha, \alpha+1}$, does not equal unity.
-If this summation becomes greater (less) than 1, it means that the average intensity of the local thermal transport is overestimated (underestimated) than it really is.
+The analysis of the local thermal transport property using @eq:eqc8 faces a problem: when dividing the overall heat current into the summation of partial heat currents (@eq:eqc7), @eq:eqc9 includes both auto-correlation and cross-correlation terms, while the cross-correlation terms, $\langle\bm{h}{\alpha, \beta}(0) \cdot \bm{h}{\alpha', \beta'}(t)\rangle$ with $(\alpha, \beta) \ne (\alpha', \beta')$, are missing in equation (8).
+As a result, we anticipate that the summation of all contribution factors, $\sum_{\alpha=1}^{N} c_{\alpha, \alpha} + \sum_{\alpha=1}^{N-1} c_{\alpha, \alpha+1}$, does not equal unity. If this summation is greater (or less) than 1, it implies that the average intensity of the local thermal transport is overestimated (or underestimated) compared to its actual value.
 
-![Short-range cross-correlation approximation. Cross-correlations are considered only for nearby pairs (dashed line).](figures/cross/cross-correlation.jpeg){#fig:cross-correlation width=50%}
+![Short-range cross-correlation approximation. Cross-correlations are considered only for nearby pairs (dashed line).](figures/cross/cross-correlation.jpeg){#fig:cross-correlation}
 
-To resolve the issue, we examined the role of cross-correlations in this section.
-We can assume that the local fluctuation of thermal transfer at one particular site in a protein is not affected by that at another distant site.
-Thereby, we introduced a short-range cross-correlation approximation ([@fig:cross-correlation]).
-To evaluate such cross-correlations, it is helpful to define a "dimer", denoted as $\{ \alpha, \alpha+1 \}$, consisting of a pair of residues, $\alpha$ and $\alpha+1$ ($\alpha = 1, \cdots, N-1$), adjacent in a sequence, and also its intra-dimer heat current, $\bm{h}_{ \{\alpha, \alpha+1 \}, \{ \alpha, \alpha+1 \}}$.
-Then, the cross-correlation, denoted as $\xi$, arising in residues $\alpha$ and $\alpha+1$ can be expressed as (see red dashed line in [@fig:cross-correlation]):
+To address this issue, we explored the role of cross-correlations in this section.
+We made the assumption that the local fluctuation of thermal transfer at one specific site in a protein is not influenced by the fluctuation at another distant site.
+Based on this assumption, we introduced a short-range cross-correlation approximation, shown in [@fig:cross-correlation].
+In order to evaluate these cross-correlations, it is useful to define a "dimer" as a pair of adjacent residues, $\alpha$ and $\alpha+1$ ($\alpha = 1, \cdots, N-1$),
+and introduce the concept of intra-dimer heat current, denoted as $\bm{h}_{ {\alpha, \alpha+1 }, { \alpha, \alpha+1 }}$.
+The cross-correlation between residues $\alpha$ and $\alpha+1$, denoted as $\xi$, can then be expressed as shown by the red dashed line in [@fig:cross-correlation],
 
 $$
 \begin{split}
-&\xi_{\alpha, \alpha+1} = \Lambda_{\{\alpha,\alpha+1\}, \{\alpha,\alpha+1\}} - \\
-&(\Lambda_{\alpha, \alpha} +  \Lambda_{\alpha, \alpha+1}+\Lambda_{\alpha+1, \alpha+1})
+\xi_{\alpha, \alpha+1} = \Lambda_{\{\alpha,\alpha+1\}, \{\alpha,\alpha+1\}} - 
+(\Lambda_{\alpha, \alpha} +  \Lambda_{\alpha, \alpha+1}+\Lambda_{\alpha+1, \alpha+1})
 \end{split}
 $$
 {#eq:eqc11}
 
 $$
 \begin{split}
-&\Lambda_{ \{\alpha, \alpha+1\}, \{\alpha, \alpha+1\} } = \\
-&\bm{\int} \langle \bm{h}_{ \{\alpha, \alpha+1\},  \{\alpha, \alpha+1\} }(t) \cdot \bm{h}_{ \{\alpha, \alpha+1\} ,  \{\alpha, \alpha+1\} }(0) \rangle dt
+\Lambda_{ \{\alpha, \alpha+1\}, \{\alpha, \alpha+1\} } = 
+\bm{\int} \langle \bm{h}_{ \{\alpha, \alpha+1\},  \{\alpha, \alpha+1\} }(t) \cdot \bm{h}_{ \{\alpha, \alpha+1\} ,  \{\alpha, \alpha+1\} }(0) \rangle dt
 \end{split}
 $$
 {#eq:eqc12}
 
-Next, we derived correction terms for $\Lambda_{\alpha, \alpha}$ and $\Lambda_{\alpha, \alpha+1}$ to obtain their cross-correlation corrected terms, $\tilde\Lambda_{\alpha, \alpha}$ and $\tilde\Lambda_{\alpha, \alpha+1}$, so that the summation of these $\tilde\Lambda_{\alpha, \alpha}$ $(\alpha = 1, \cdots, N)$ and $\tilde\Lambda_{\alpha, \alpha+1}$ $(\alpha=1, \cdots, N-1)$ becomes close to $\Lambda$, i.e.,
+Next, we derived correction terms for $\Lambda_{\alpha, \alpha}$ and $\Lambda_{\alpha, \alpha+1}$ in order to obtain their cross-correlation corrected counterparts, $\tilde\Lambda_{\alpha, \alpha}$ and $\tilde\Lambda_{\alpha, \alpha+1}$.
+The goal was to ensure that the summation of these corrected terms, $\tilde\Lambda_{\alpha, \alpha}$ $(\alpha = 1, \cdots, N)$ and $\tilde\Lambda_{\alpha, \alpha+1}$ $(\alpha=1, \cdots, N-1)$, approaches the value of $\Lambda$. In other words, we aimed to achieve the condition:
 
 $$
 \Lambda \simeq \sum_{\alpha = 1}^{N} \tilde\Lambda_{\alpha, \alpha} + \sum_{\alpha = 1}^{N-1} \tilde\Lambda_{\alpha, \alpha+1},
 $$
 {#eq:eqc13}
 
-on the assumption that the effect of cross-correlation is short-range and the influence of $\xi_{\alpha, {\alpha+1}}$ is limited to $\Lambda_{\alpha-1, \alpha}, \Lambda_{\alpha, \alpha}, \Lambda_{\alpha, \alpha+1}, \Lambda_{\alpha+1, \alpha+1}$, and $\Lambda_{\alpha+1, \alpha+2}$ ([@fig:allocation]).
-As we shall see later, this model works well, i.e., the L.H.S. and R.H.S. of [@eq:eqc13] are 9.79 and 9.88 $\rm{(\AA \cdot kcal)^2/fs}$, respectively.
-We further assume that the contribution of $\xi_{\alpha, \alpha+1}$, to ($\tilde\Lambda_{\alpha-1, \alpha}$ and $\tilde\Lambda_{\alpha+1, \alpha+2}$), ($\tilde\Lambda_{\alpha, \alpha}$ and $\tilde\Lambda_{\alpha+1, \alpha+1}$), ($\tilde\Lambda_{\alpha, \alpha+1}$) are respectively $u\xi_{\alpha, \alpha+1}$, $v\xi_{\alpha, \alpha+1}$, and $w\xi_{\alpha, \alpha+1}$ $(\alpha = 2, \cdots, N-2)$, where $u, v, w$ are scalar constants, shown in [@fig:allocation].
-It should be noted that the model is regarded as like a linear homopolymer in this formalism.
-We obtained a pair of equations for $\tilde\Lambda_{\alpha, \alpha}$ and $\tilde\Lambda_{\alpha, \alpha+1}$ as follows: 
+Based on the assumption that the effect of cross-correlation is short-range and that the influence of $\xi_{\alpha, {\alpha+1}}$ is limited to $\Lambda_{\alpha-1, \alpha}, \Lambda_{\alpha, \alpha}, \Lambda_{\alpha, \alpha+1}, \Lambda_{\alpha+1, \alpha+1}$, and $\Lambda_{\alpha+1, \alpha+2}$ (see [@fig:allocation]), we derived a model where the contribution of $\xi_{\alpha, \alpha+1}$ to ($\tilde\Lambda_{\alpha-1, \alpha}$ and $\tilde\Lambda_{\alpha+1, \alpha+2}$), ($\tilde\Lambda_{\alpha, \alpha}$ and $\tilde\Lambda_{\alpha+1, \alpha+1}$), and ($\tilde\Lambda_{\alpha, \alpha+1}$) is represented by $u\xi_{\alpha, \alpha+1}$, $v\xi_{\alpha, \alpha+1}$, and $w\xi_{\alpha, \alpha+1}$, respectively, where $u, v, w$ are scalar constants as shown in Figure [@fig:allocation].
+This model can be regarded as similar to a linear homopolymer in this formalism.
+Then, we obtained a pair of equations for $\tilde\Lambda_{\alpha, \alpha}$ and $\tilde\Lambda_{\alpha, \alpha+1}$ as follows:
 
 $$
 \tilde\Lambda_{\alpha,\alpha} = \Lambda_{\alpha,\alpha} +v (\xi_{\alpha-1, \alpha} + \xi_{\alpha, \alpha+1})
@@ -246,17 +249,15 @@ $$
 $$
 {#eq:eqc15}
 
-![Allocation of cross-correlation term](figures/cross/allocation_principle.jpeg){#fig:allocation width=50%}
+![Allocation of cross-correlation term](figures/cross/allocation_principle.jpeg){#fig:allocation}
 
-Here, we introduce $N \times N$ matrices, $\{\bm{\Lambda}\}_{\alpha, \beta} = \Lambda_{\alpha, \beta}$, $\{\bm{\tilde\Lambda}\}_{\alpha, \beta} = \tilde\Lambda_{\alpha, \beta}$, and $\{\bm{\xi}_{\alpha, \beta}\} = \xi_{\alpha, \beta}$, where $\bm{\xi}$ is symmetrized , i.e., $\xi_{\alpha+1, \alpha} = \xi_{\alpha, \alpha+1}$, $(\alpha = 1, 2, \cdots, N-1)$.
-Then, we obtain the following equation:
+Let us introduce three $N \times N$ matrices: ${\bm{\Lambda}}{\alpha, \beta} = \Lambda{\alpha, \beta}$, ${\bm{\tilde\Lambda}}{\alpha, \beta} = \tilde\Lambda{\alpha, \beta}$, and ${\bm{\xi}{\alpha, \beta}} = \xi{\alpha, \beta}$, where $\bm{\xi}$ is symmetrized, i.e., $\xi_{\alpha+1, \alpha} = \xi_{\alpha, \alpha+1}$ for $(\alpha = 1, 2, \cdots, N-1)$.
+Using these matrices, we can express $\tilde\Lambda$ by the following equation:
 
 $$
 \bm{\tilde\Lambda} = \bm{\Lambda} + \bm{T} \bm{\xi} + \bm{\xi} \bm{T},
 $$
 {#eq:eqc16}
-
-where, $\bm{I}$ is the $N \times N$ identity matrix, 
 
 $$
 \bm{T}_1 =
@@ -282,29 +283,118 @@ $$
 $$
 {#eq:eqc17}
 
-
 $$
 \bm{T} = \frac{w}{2}\bm{I} + v\bm{T}_1 + u\bm{T}_2,
 $$
 {#eq:eqc18}
 
-with $u, v, w$ are $\frac{1}{8}, \frac{1}{4}, \frac{1}{4}$, respectively (see [APPENDIX B](#b-derivation-of-scalar-constants-for-allocation-of-cross-correlatio-terms) for details).
-To take into account the terminal effects, $\tilde\Lambda_{1, 1}, \tilde\Lambda_{1, 2}, \tilde\Lambda_{N-1, 1}$ and $\tilde\Lambda_{N, N}$ were separately evaluated using @eq:eqc14 and @eq:eqc15 with $v', w' = \frac{5}{24}, \frac{5}{12}$, instead of $v = w = \frac{1}{4}$.
-We defined the contribution factor after cross-correlation correction as:
+where $\bm{I}$ is the $N \times N$ identity matrix.
+
+To determine the values of $u, v, w$, the following derivation process are implemented.
+The total weight of $\xi_{\alpha, \alpha+1}$ in @eq:eqc13 should be one, shown in @fig:allocation. Therefore, we have the following equation:
+
 $$
-\tilde c_{\alpha,\beta} \equiv \frac{\tilde{\Lambda}_{\alpha, \beta}} {\Lambda} 
+2u+2v+w=1
+$$
+{#eq:B1}
+
+and if we assume that the influence of $\xi_{\alpha, \alpha+1}$ on $\Lambda_{\alpha, \alpha+1}$ is greater than that of either $\xi_{\alpha-1, \alpha}$ or $\xi_{\alpha+1, \alpha+2}$, and we can introduce the following relation:
+
+$$
+2u=w
+$$
+{#eq:B2}
+
+Furthermore, if we assume that the total weight of $\xi_{\alpha-1, \alpha}, \xi_{\alpha, \alpha+1}, \xi_{\alpha+1, \alpha+2}$ in $\tilde\Lambda_{\alpha, \alpha+1}$ is equal to the total weight of $\xi_{\alpha, \alpha+1}, \xi_{\alpha+1, \alpha+2}$ in $\tilde\Lambda_{\alpha+1, \alpha+1}$ for $\alpha=2, \cdots, N-2$, then we can express the relation as follows:
+
+$$
+2u + w = 2v
+$$
+{#eq:B3}
+
+From @eq:B1, @eq:B2, and @eq:B3, we obtain $u=\frac{1}{8}$, $v=w=\frac{1}{4}$.
+Accordingly, @eq:eqc14 and @eq:eqc15 become $\tilde\Lambda_{\alpha,\alpha} = \Lambda_{\alpha,\alpha} + \frac{1}{4}(\xi_{\alpha-1, \alpha} + \xi_{\alpha, \alpha+1})$, and $\tilde\Lambda_{\alpha, \alpha+1} \,=\, \Lambda_{\alpha, \alpha+1} + \frac{1}{4}\,\xi_{\alpha, \alpha+1} + \frac{1}{8}(\xi_{\alpha-1, \alpha} + \xi_{\alpha+1, \alpha+2} )$, respectively.
+
+For the terminal residues, we assume that 
+
+$$
+\tilde\Lambda_{1,1} = \Lambda_{1,1} + v'\xi_{1,2}
+$$
+{#eq:B6}
+
+$$
+\tilde\Lambda_{1,2} = \Lambda_{1,2} + w'\xi_{1,2} + u \xi_{2,3}
+$$
+{#eq:B7}
+
+$$
+\tilde\Lambda_{N-1,N} = \Lambda_{N-1,N} + u\xi_{N-2,N-1} + w'\xi_{N-1,N}
+$$
+{#eq:B8}
+
+$$
+\tilde\Lambda_{N,N} = \Lambda_{N,N} + v'\xi_{N-1,N}
+$$
+{#eq:B9}
+
+
+Therefore, it is necessary for the total weight of $\xi_{1,2} (\xi_{N-1,N})$ in $\tilde\Lambda_{1,1}, \tilde\Lambda_{1,2}, \tilde\Lambda_{2,2}, \tilde\Lambda_{2,3}$ ($\tilde\Lambda_{N,N}, \tilde\Lambda_{N-1,N}, \tilde\Lambda_{N-1,N-1}, \tilde\Lambda_{N-2,N-1}$) to be equal to one.
+In other words, we have the following equation:
+
+$$
+v'+w'+v+u = 1.
+$$
+{#eq:B10}
+
+Additionally, we assume that the weight $v'$ is greater than the weight $u'$, and we introduce the following relation:
+$$
+w' = 2v'.
+$$
+{#eq:B11}
+
+As a result, we obtain the values of $v'$ and $w'$ as $\frac{5}{24}$ and $\frac{5}{12}$ respectively, based on equations @eq:B10 and @eq:B11.
+
+In summary, the values of $u, v, w$ in @eq:eqc18 are $\frac{1}{8}, \frac{1}{4}, \frac{1}{4}$, respectively.
+To account for the terminal effects, we separately evaluated $\tilde\Lambda_{1, 1}$, $\tilde\Lambda_{1, 2}$, $\tilde\Lambda_{N-1, 1}$, and $\tilde\Lambda_{N, N}$ using @eq:eqc14 and @eq:eqc15 with values of $v'$ and $w'$ as $\frac{5}{24}$ and $\frac{5}{12}$ respectively, instead of using $v = w = \frac{1}{4}$.
+
+We defined the contribution factor after cross-correlation correction as follows,
+
+$$
+\tilde c_{\alpha,\beta} \equiv \frac{\tilde{\Lambda}_{\alpha, \beta}} {\Lambda}
 $$
 {#eq:eqc19}
 
-All of the heat currents and their ACF calculations were conducted by our CURP program, version 1.3[@yamato2022] based on 50 trajectories of _NVE_ MD simulations.
+All of the heat currents and their auto-correlation function calculations were performed using our CURP program, version 1.3[@yamato2022] based on 50 trajectories of constant volume and energy (_NVE_) molecular dynamics simulations.
 
+<!-- ## Proteins
+The proteins used in @sec:cha2 and @sec:cha3 was the villin headpiece subdomain (PDB code: HP36) and used in @sec:cha4 was the _Bj_FixL -->
 
-## Proteins
-The proteins used in @sec:cha2 and @sec:cha3 was the villin headpiece subdomain (PDB code: HP36) and used in @sec:cha4 was the _Bj_FixL  
+(stops here)
 
+## Equilibrium Molecular Dynamics Simulations
 
-### Equilibrium Molecular Dynamics Simulations 
-#### *Simulation Model* 
+The procedures of MD simulations for heat current and energy flow calculation on HP36 in @sec:cha3 and @sec:cha4, and on _Bj_FixLs protiens in @sec:cha5 were described in this chapter.
+
+### System setup for MD simulations 
+(1) HP36 system
+
+The structure of villin headpiece protein (HP36) was obtained from the protein data bank and its PDB code is 1VII, which was characterized by the nuclear magnetic resonance (NMR) technique.[@mcknight1997]
+The HP36 protein molecule was placed in an octahedral solvent box containing 2329 water molecules modeled with the TIP3P model,[@mark2001;@price2004] using the LEaP program of AmberTools 19.
+
+(2) _Bj_FixL systems
+
+We constructed two models of ferric FixLH dimer, (a) the ligand-free state (met-FixLH) and (b) the imidazole-bound state (met-FixLH-imd), based on the X-ray crystallographic structure of FixL dimer.
+It is known that the deletion of the transmembrane region from RmFixL, which corresponds to the PAS-A domain of BjFixL, gives rise to no significant defect in the signaling functions.[@shiro2002]
+Besides, the A’α and Jα helices are involved in the formation of the dimer interface, and considering the potential influence of the FixLHs dimer interface on the signaling process, 142 residues from E128 to L269 are considered in the subsequent MD simulations.
+
+For all systems, equilibrium molecular dynamics (MD) simulations were performed using the AMBER 19 package.[@d.a.case2019]
+
+The protein atoms were parameterized with the Amber ff19SB force field functions.[@tian2020]
+All charged residues were assumed to be in their standard protonation state at pH 7.0.
+To neutralize the system, four chloride ions and two sodium ions were added to the simulation box.
+The periodic boundary condition was applied to the system.
+Nonbonded particle-particle interactions were taken into account using a distance cutoff of 9 Å, and long-range electrostatic interactions were handled using the particle mesh Ewald (PME) method [@sagui2004].
+
 Equilibrium molecular dynamics simulations were carried out with AMBER 19 package[@d.a.case2019] based on the nuclear magnetic resonance (NMR) structure of villin headpiece, HP36 (PDB code: 1VII[@mcknight1997]).
 The protein molecule was immersed in an octahedral solvent box with 2329 water molecules of TIP3P model[@mark2001;@price2004] using LEaP program of AmberTools 19.
 Amber ff19SB force field functions[@tian2020] were used for the protein atoms.
@@ -313,7 +403,7 @@ Four chloride and two sodium ions were added to neutralize the simulation box.
 The periodic boundary condition was imposed on the system.
 Nonbonded particle-particle interactions[@cornell1995] were considered using a distance cutoff of 9 $\rm\r{A}$ and the long-range electrostatic interactions were treated with the particle mesh Ewald (PME) method.[@sagui2004]
  
-#### *Minimization and Equilibration, and Sampling MD Simulations*
+### *Minimization and Equilibration, and Sampling MD Simulations*
 Energy minimization of simulation system started from the relaxation of hydrogen atom positions with the heavy atom positions restrained.
 Then, the sidechain atom positions were optimized, and the entire protein system was subsequently optimized.
 
@@ -325,7 +415,7 @@ The thermal equilibrium of the system was achieved by using the constant tempera
 Next, we continued five independent _NPT_ MD simulations for 56 ns, including 50-ns run with a time step, $\Delta t$, of 2 fs with SHAKE constraints imposed on the bonds involving hydrogen atoms, 1-ns run with a time step of 0.5 fs with SHAKE constraints switched off only for the protein part.
 We, then, continued another 5-ns run with the same condition for conformational sampling.
 
-#### *NVE MD simulations*
+### System setup for MD simulations
 During the last 5-ns trajectories of the five independent _NPT_ MD simulations, we saved snapshots with atomic coordinates and velocities every 500 ps.
 We thus obtained 50 different initial conditions, each of which was used for the subsequent constant volume, constant energy (_NVE_) MD simulation for 1 ns with a time step of 0.5 fs.
 During these _NVE_ MD simulations, we saved atomic velocities every 0.5 fs, while atomic coordinates were saved every 1 fs.
