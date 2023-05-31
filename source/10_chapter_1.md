@@ -369,65 +369,7 @@ All of the heat currents and their auto-correlation function calculations were p
 <!-- ## Proteins
 The proteins used in @sec:cha2 and @sec:cha3 was the villin headpiece subdomain (PDB code: HP36) and used in @sec:cha4 was the _Bj_FixL -->
 
-(stops here)
-
-## Equilibrium Molecular Dynamics Simulations
-
-The procedures of MD simulations for heat current and energy flow calculation on HP36 in @sec:cha3 and @sec:cha4, and on _Bj_FixLs protiens in @sec:cha5 were described in this chapter.
-
-### System setup for MD simulations 
-(1) HP36 system
-
-The structure of villin headpiece protein (HP36) was obtained from the protein data bank and its PDB code is 1VII, which was characterized by the nuclear magnetic resonance (NMR) technique.[@mcknight1997]
-The HP36 protein molecule was placed in an octahedral solvent box containing 2329 water molecules modeled with the TIP3P model,[@mark2001;@price2004] using the LEaP program of AmberTools 19.
-
-(2) _Bj_FixL systems
-
-We constructed two models of ferric FixLH dimer, (a) the ligand-free state (met-FixLH) and (b) the imidazole-bound state (met-FixLH-imd), based on the X-ray crystallographic structure of FixL dimer.
-It is known that the deletion of the transmembrane region from RmFixL, which corresponds to the PAS-A domain of BjFixL, gives rise to no significant defect in the signaling functions.[@shiro2002]
-Besides, the A’α and Jα helices are involved in the formation of the dimer interface, and considering the potential influence of the FixLHs dimer interface on the signaling process, 142 residues from E128 to L269 are considered in the subsequent MD simulations.
-
-For all systems, equilibrium molecular dynamics (MD) simulations were performed using the AMBER 19 package.[@d.a.case2019]
-
-The protein atoms were parameterized with the Amber ff19SB force field functions.[@tian2020]
-All charged residues were assumed to be in their standard protonation state at pH 7.0.
-To neutralize the system, four chloride ions and two sodium ions were added to the simulation box.
-The periodic boundary condition was applied to the system.
-Nonbonded particle-particle interactions were taken into account using a distance cutoff of 9 Å, and long-range electrostatic interactions were handled using the particle mesh Ewald (PME) method [@sagui2004].
-
-Equilibrium molecular dynamics simulations were carried out with AMBER 19 package[@d.a.case2019] based on the nuclear magnetic resonance (NMR) structure of villin headpiece, HP36 (PDB code: 1VII[@mcknight1997]).
-The protein molecule was immersed in an octahedral solvent box with 2329 water molecules of TIP3P model[@mark2001;@price2004] using LEaP program of AmberTools 19.
-Amber ff19SB force field functions[@tian2020] were used for the protein atoms.
-All charged residues were considered in their standard protonation state at pH = 7.0.
-Four chloride and two sodium ions were added to neutralize the simulation box.
-The periodic boundary condition was imposed on the system.
-Nonbonded particle-particle interactions[@cornell1995] were considered using a distance cutoff of 9 $\rm\r{A}$ and the long-range electrostatic interactions were treated with the particle mesh Ewald (PME) method.[@sagui2004]
- 
-### *Minimization and Equilibration, and Sampling MD Simulations*
-Energy minimization of simulation system started from the relaxation of hydrogen atom positions with the heavy atom positions restrained.
-Then, the sidechain atom positions were optimized, and the entire protein system was subsequently optimized.
-
-We started five independent MD simulations from the minimum-energy conformation, with different Maxwell-Boltzmann velocity distributions at _T_ = 0.1 K, while keeping positional restraints imposed on the mainchain atoms.
-Subsequently, the system temperature was gradually increased from 0.1 to 300 K.
-We, then, continued constant temperature, constant volume (_NVT_) MD simulation at $T$ = 300 K for 200 ps without positional restraints.
-The thermal equilibrium of the system was achieved by using the constant temperature, constant pressure (_NPT_) MD simulation at $T$ = 300 K, $P$ = 1 atm for another 700 ps.
-
-Next, we continued five independent _NPT_ MD simulations for 56 ns, including 50-ns run with a time step, $\Delta t$, of 2 fs with SHAKE constraints imposed on the bonds involving hydrogen atoms, 1-ns run with a time step of 0.5 fs with SHAKE constraints switched off only for the protein part.
-We, then, continued another 5-ns run with the same condition for conformational sampling.
-
-### System setup for MD simulations
-During the last 5-ns trajectories of the five independent _NPT_ MD simulations, we saved snapshots with atomic coordinates and velocities every 500 ps.
-We thus obtained 50 different initial conditions, each of which was used for the subsequent constant volume, constant energy (_NVE_) MD simulation for 1 ns with a time step of 0.5 fs.
-During these _NVE_ MD simulations, we saved atomic velocities every 0.5 fs, while atomic coordinates were saved every 1 fs.
-
-
-## METHODS
-
-Heat current and energy flux in proteins should be highly inhomogeneous and anisotropic, and the behavior of them should vary from site to site.
-To depict such nature in more detail, we will further investigate the heat and energy transfer though non-covalent bonded residue pairs using site-selective heat current analysis.
-The following two subsections [2.1](#inter-residue-heat-transport) and [2.2](#inter-residue-energy-transport) described the derivation process of inter-residue thermal conductivity ($\lambda_{\alpha,\beta}$) and energy conductivity ($G_{\alpha,\beta}$), respectively.
-
-### Inter-residue Heat Current Analysis
+## Inter-residue heat current analysis
 
 Before deriving the inter-residue heat conductivity and heat conductivity, we first derived atomistic expression of heat current for molecular system based on linear response theory, and the derivation process are detailed in Supplementary Material.
 The inter-atomic heat current between atoms $i$ and $j$ in a molecule, denoted as $\bm{h_{ij}}$, can be expressed as:
@@ -464,8 +406,7 @@ $$
 {#eq:eqd4}
 where $V_{\alpha}$($V_{\beta}$) is the volume of residue $\alpha$($\beta$), $k_B$ is the Boltzmann constant, $T$ is the absolute temperature.
 
-
-### Inter-residue Energy Flow Analysis
+## Inter-residue energy flow analysis
 
 The atomistic representation of the instantaneous  energy flow ($\bm{J}$) between two atoms in a molecule, $i$ and $j$, can be expressed by: 
 
@@ -504,49 +445,122 @@ $$
 In this study, the integration time of auto-correlation function for both heat current and energy flux was set as 60 ps.
 All calculations of $\lambda_{\alpha, \beta}$ and $G_{\alpha, \beta}$ between each pair of residues in native contact using the _CURrent calculations in Proteins_ (CURP) program of version 1.3 developed by our lab[@yamato2022]
 
-### Equilibrium MD Simulations
+## Equilibrium Molecular Dynamics Simulations
 
-#### System setup for MD simulations
-The thermal and energy transport properties of villin headpiece, HP36, were studied by MD simulations based on the nuclear magnetic resonance (NMR) structure (PDB code: 1VII) by using Amber package and AmberTools 19.
-The protonation states of all ionizable residues were kept in their neutral solution states at pH = 7.
+The procedures of MD simulations for heat current and energy flow calculations on HP36 in @sec:cha3 and @sec:cha4, and on two _Bj_FixLs protiens in @sec:cha5 were described in this chapter.
+All molecular simulations in @sec:cha3, @sec:cha4, and @sec:cha5 were performed by Amber 19 package.[@d.a.case2019]
+
+### System setup for MD simulations 
+(1) HP36 system
+
+The structure of villin headpiece protein (HP36) was obtained from the protein data bank and its PDB code is 1VII, which was characterized by the nuclear magnetic resonance (NMR) technique.[@mcknight1997]
 We used a small time step for MD simulations for generating time series of the heat current and energy flow.
 Thus, we keep the system size as small as possible in this study.
-After the protein molecule was solvated by a truncated octahedral box of TIP3P water molecules with 2 sodium and 4 chloride ions, the total number of molecules for the simulation box was 7589.
-Amber ff19SB force field was used for protein molecule.
+The HP36 protein molecule was placed in an octahedral solvent box containing 2329 water molecules modeled with the TIP3P model,[@mark2001;@price2004] using the LEaP program of AmberTools 19.
+All charged residues were considered in their standard protonation state at pH = 7.0.
+Amber ff19SB force field functions[@tian2020] were used for the protein atoms.
+Four chloride and two sodium ions were added to neutralize the simulation box.
 For efficient long-range electrostatic calculations, the particle mesh Ewald (PME) method was used under periodic boundary condition.
 
-#### MD Simulations
-Energy minimization of the system was performed in three-stage optimization for the positions of (1) hydrogen, (2) sidechain, and (3) mainchain atoms.
-Starting from the energy minimum conformation, multiple pre-sampling MD simulations were conducted using the time step of 2.0 fs with the SHAKE constraints applied for any bonds involving hydrogen atoms.
-At the beginning, we generated five different Maxwell-Boltzmann velocity distributions at 0.1 K, then heated the system (0.1 K to 300 K)for 50 ps by performing constant temperature, constant volume (_NVT_) MD simulation with positional restraints on the mainchain atoms.
+(2) _Bj_FixL systems
 
-For each branch of simulation runs, another _NVT_ simulation followed at _T_ = 300 K for 50 ps with keeping the same positional restraints, then a Langevin MD simulation was performed for 200 ps at _T_ = 300 K with no positional restraints.
-Finally, isothermal-isobaric (_NPT_) simulation was performed for 700 ps at _T_ = 300 K, _P_ = 0.987 atm.
+We constructed two models of ferric FixLH dimer, (a) the ligand-free state (met-FixLH) and (b) the imidazole-bound state (met-FixLH-imd), based on the X-ray crystallographic structure of FixL dimer.
+It is known that the deletion of the transmembrane region from _Rm_FixL, which corresponds to the PAS-A domain of _Bj_FixL, gives rise to no significant defect in the signaling functions.[@shiro2002]
+Besides, the A’α and Jα helices are involved in the formation of the dimer interface, and considering the potential influence of the _Bj_FixLHs dimer interface on the signaling process, 142 residues from E128 to L269 are considered in the subsequent MD simulations.
 
-Starting from each end point of the previous simulations, we continued an _NPT_ MD simulation for 56 ns consisting of 50-ns, 1-ns, and 5-ns runs with time steps of 2.0, 0.5, and 0.5 fs, respectively.
-After the first segment, the SHAKE constraints were switched off.
-From the last 5-ns trajectory, 10 snapshots of atomic coordinates and velocities were extracted every 0.5 ns.
-As a result, we obtained 50 (=5 × 10) initial conditions, from each of which we performed constant volume, constant energy (*NVE*) MD simulations for 1 ns with time step of 0.5 fs, and atomic coordinates, and velocities were saved every 1 fs.
+For both protein structures, the N- and C-
+termini were capped with uncharged ACE (acetyl) and NME (N-methylamine)
+groups, respectively. For both systems, we modeled the histidines H235
+and H259 (H144, H150, H162, H200, H214) as neutral forms with each
+epsilon (delta) nitrogen protonated. All other residues were considered
+in their standard protonation state at pH = 7.0. The systems were
+solvated with the TIP3P[@price2004] water molecules in a periodic cubic box, and
+sodium ions were used to neutralize the systems, then, additional Na
+and Cl ions were added to achieve a salt concentration of \~ 0.15 M.
+Each solvated system contains about \~ 60, 000 atoms.
 
-### Definition and Classification of Non-covalent Contacts 
-#### Definition
+The Amber ff14SB force field[@maier2015] was used to model the standard residues of the proteins except for H200.
+Quantum calculations was performed to tune the force field to model the heme, ligands, and H200 and calculation detials were described in @sec:parameterization.
+The long-range electrostatic
+interactions were treated with the particle mesh Ewald method[@essmann1995] and
+nonbonded particle-particle interactions[@duan2001] were considered using a 9.0
+Å cutoff. The time step for all MD simulations was set as 2.0 fs and
+SHAKE was used to constrain hydrogens for product run MD simulations. To
+prevent the dissociation of A'α helices, a harmonic restraint with a
+spring force of 10 kcal/mol·Å^2^ was applied on the bond between two CA
+atoms of residue I128 of chain A and chain B.
+
+### Parameterization of the Fe^3+^ Metal Cofactor{#sec:parameterization}
+
+![Molecules used to obtain the tuned force field parameters for met-FixLH dimer system. (a) Molecule used in Gaussian optimization calculations to obtain the Fe^3+^ metal associated bond and angle parameters. (b) Molecule used used in Gaussian RESP partial charge calculations to obtain the partial charges for the metal site.](figures/fixl/met-fixl-force-field.jpg){#fig:met-fixl-force-field}
+
+![Molecules used to obtain the tuned force field parameters for met-FixLH-imd dimer system. (a) Molecule used in Gaussian optimization calculations to obtain the Fe^3+^ metal associated bond and angle parameters. (b) Molecule used used in Gaussian RESP partial charge calculations to obtain the partial charges for the metal site.](figures/fixl/met-fixl-imd-force-field.jpg){#fig:met-fixl-imd-force-field width=100%}
+
+The force-field parameters of the non-standard part of dimeric FixLHs were
+generated using MCPB.py module[@li2016;@li2017] in AmberTools 15.
+A small model and a large model of two dimeric FixLH proteins generated from
+MCPB.py (@fig:met-fixl-force-field: met-FixLH, @fig:met-fixl-imd-force-field: met-FixLH-imd) were used to obtain the Fe^3+^ metal associated bond and angle parameters and generate the atomic partial charges for the metal site, respectively.
+The small model consists of heme, the coordinated sidechains of the
+proximal H200 with/without ligand. In the large model, the coordinated
+sidechain has its free N- and C- termini capped with N-methyl (NME) and
+acetyl groups (ACE) to mimic the protein backbone. Optimization and
+force constant calculations for the small model and the Merz-Kollman
+RESP charge calculations for the large model were performed using
+Gaussian 16 package with the B3LYP/6-31G(d) level of
+theory[@goerigk2011;@sousa2007a] and the ultrafine grid. Fe^3+^ with spin state S=5/2 and
+S=1/2[@edler2014] were used in Gaussian calculations for met-FixLH and
+met-FixLH-imd protein, respectively (@tbl:quantumcalculation).
+  
+|               | Spin=2              | Spin=4        | Spin=6         |
+| :------------ | :------------------- | :------------ | :--------------- |
+| Met-Heme      | -3402.1853060                  | -3402.1959457 | \textcolor{red}{-3402.1976629} |
+| Imdazole-Heme | \textcolor{red}{-3627.8693349} | -             | -3627.8189808                  |
+
+: Quantum calculation results of met-FixLH and met-FixLH-IMD. Hart Fork Energy (unit: a.u.) comparison among different spin states of met-FiLH and met-FixLH-IMD. {#tbl:quantumcalculation}
+
+### Minimization and Equilibration, and Sampling MD Simulations
+
+The periodic boundary condition was applied to all simulation systems.
+Nonbonded particle-particle interactions[@cornell1995] were taken into account using a distance cutoff of 9 Å, and long-range electrostatic interactions were handled using the particle mesh Ewald (PME) method [@sagui2004].
+
+The energy minimization of simulation systems contains three steps, (1) fixing all the heavy atoms and only relaxing hydrogen atom, (2) optimizing the side-chain atoms with positional restraints of 99.9 (kcal/mol)/Å^2^ on the backbone atoms (N, Cα, C, O), (3) the positions of the main chain atoms were optimized with positional restraints of 2.0 (kcal/mol)/Å^2^. After that, a Maxwell Boltzmann distribution of initial atomic velocities was generated at 0.1 K and each system was heating from 0.1 to 300 K for 50 ps by performing constant temperature, constant volume (_NVT_) MD simulations with the relaxation time of 0.1 ps and a positional restraint of 2.0 (kcal/mol)/Å^2^ on the backbone atoms. With the same positional restraints, a 50 ps _NVT_ MD simulation at _T_ = 300 K was performed, followed by a 200 ps Langevin MD simulation at _T_ = 300 K with a collision frequency of 2.0 ps^-1^ and switched-off positional restraints.
+
+We started five (twenty for _Bj_FixL systems) independent MD simulations from the minimum-energy conformation, with different Maxwell-Boltzmann velocity distributions at _T_ = 0.1 K, while keeping positional restraints imposed on the mainchain atoms.
+Subsequently, the system temperature was gradually increased from 0.1 to 300 K.
+We, then, continued constant temperature, constant volume (_NVT_) MD simulation at $T$ = 300 K for 200 ps without positional restraints.
+The thermal equilibrium of the system was achieved by using the constant temperature, constant pressure (_NPT_) MD simulation at $T$ = 300 K, $P$ = 1 atm for another 700 ps.
+
+Next, for HP36 system, we continued 5 independent _NPT_ MD simulations for 56 ns, including 50-ns run with a time step, $\Delta t$, of 2 fs with SHAKE constraints imposed on the bonds involving hydrogen atoms, 1-ns run with a time step of 0.5 fs with SHAKE constraints switched off only for the protein part.
+We, then, continued another 5-ns run with the same condition for conformational sampling.
+During the last 5-ns trajectories of the five independent _NPT_ MD simulations, we saved snapshots with atomic coordinates and velocities every 500 ps.
+We thus obtained 50 different initial conditions, each of which was used for the subsequent constant volume, constant energy (_NVE_) MD simulation for 1 ns with a time step of 0.5 fs.
+During these _NVE_ MD simulations, we saved atomic velocities every 0.5 fs, while atomic coordinates were saved every 1 fs.
+For _Bj_FixL systems, 20 independent _NPT_ MD simulations were performed for 55 ns at conditions of T = 300 K and P = 0.978 atm, to conduct the conformational samplings. From the last 5-ns trajectory of each _NPT_ simulation, 10 snapshots with their atomic coordinates and velocity information were saved every 0.5 ns.
+The atomic coordinates and velocities of _NVE_ MD simulations were saved every 10 fs for the further calculations of energy flow and energy conductivity of native contacts. 
+
+<!-- Heat current and energy flux in proteins should be highly inhomogeneous and anisotropic, and the behavior of them should vary from site to site.
+To depict such nature in more detail, we will further investigate the heat and energy transfer though non-covalent bonded residue pairs using site-selective heat current analysis.
+The following two subsections [2.1](#inter-residue-heat-transport) and [2.2](#inter-residue-energy-transport) described the derivation process of inter-residue thermal conductivity ($\lambda_{\alpha,\beta}$) and energy conductivity ($G_{\alpha,\beta}$), respectively. -->
+
+## Definition and Classification of Non-covalent Contacts {#sec:definitions}
+### Definition
 
 To describe the intramolecular interaction networks in proteins, the protein contact networks (PCNs) [@dipaola2013;@dipaola2015;@dipaola2022] have been introduced, aiming to unravel the relationship between protein structure and function.
 In PCNs, two residues whose alpha-carbon atoms (CA) are within 4-8 Å of each other are considered to have contacts and interactions.
 In this study, we defined non-covalent contacts based on a geometric criterion where residue pairs with a nearest atom distance of 7 Å or less were considered to have a significant role in heat and energy transport, as the thermal transport becomes negligible for pairs separated farther than this threshold.
 A total of 269 residue pairs in HP36 were screened using the _pickup-respairs_ module of CURP 1.3.
 
-#### Classification
+### Classification
 
 The non-covalent contacts among residues are categorized into five types based on the geometric structure of HP36 and MD simulation trajectories: hydrogen bond contacts, $\pi$ stacking contacts between aromatic side chains, electrostatic contacts for both residues that are charged or polar, and hydrophobic contacts for either of them being hydrophobic residue.
 Hydrogen bond contacts are identified from MD simulation trajectories by the _cpptraj_ module of AmberTools 19, with a geometric criteria, i.e., the distance between atom $i$ and atom $j$ from a pair of shorter than 3.0 Å and the angle $i$-H...$j$ or $j$-H...$i$ within 145-180$^\circ$. Here, $i(j)\in$ residue A (B), and $i(j)$ is either O or N atom in protein.
 On the other hand, $\pi$ stacking contacts are identified using RING3.0 server based on the NMR structure of HP36.
 
-### hydrogen bond occurrence probability
+## Hydrogen bond occurrence probability
 The hydrogen bons are found to facilitate the thermal transport in helices-constructed material.[@mino2014;@he2021] 
 To quantitatively characterize the strength of hydrogen bonds, we assessed their integrity during the simulation process by calculating the lifetime of detected hydrogen bond and term it into hydrogen bond occurrence probability ($P_{HB}$).
 The _cpptraj_ module in AMBER was utilized to probe hydrogen bonds between residues and their lifetime in the simulation.
-The hydrogen bonds definition and screening criterion is same as that in Section [2.4](#definition-and-classification-of-non-covalent-contacts).
+The hydrogen bonds definition and screening criterion is same as that in @sec:definitions.
 The hydrogen bonds occurrence probability can be calculated by the following formula:
 
 $$
@@ -556,16 +570,14 @@ $$
 
 where $P_{HB}$ is the probability of hydrogen bond occurrence probability between residue $\alpha$ and residue $\beta$ during a certain simulation time with $N$ snapshots, $n_i$ is the number of hydrogen bond formed between residue A and B.
 
-### Random Forest Regression
+## Random Forest Regression
 The random forest regression model was applied to predict the $\lambda_{\alpha,\beta}$ by using sklearn's _RandomForestRegressor_ function in Python.
 The whole datasets were split into two groups for model fitting and evaluation: training set (80%) and testing set (20%).
 The mean squared error loss was calculated for the split quality measurement.
 
-
-
 Seven predictors are selected for prediction of $\lambda_{\alpha,\beta}$ of non-covalent contacts in HP36 and using features adapted from structural analysis and MD trajectories analysis.
 
-### Network Models
+## Network Models
 
 We constructed three network models: _Protein Contact Network_, _Energy Exchange Network_, and _Thermal Transport Network_, to map the native contacts in proteins.
 
@@ -586,141 +598,7 @@ $$
 
 where $V$ represents either $w_{\alpha,\beta}$, $\log{G}_{\alpha, \beta}$, or $\log{\lambda}_{\alpha, \beta}$.
 
-## COMPUTATIONAL METHODS
-
-![Computational procedure.](figures/fixl/method.jpg){#fig:method width=100%}
-
-The computational procedures are summarized in @fig:method.
-
-### Protein Structures.
-We constructed two models of ferric FixLH
-dimer, (1) the ligand-free state (met-FixLH) and (2) the imidazole-bound
-state (met-FixLH-imd), based on the X-ray crystallographic structure of
-FixL dimer. It is known that the deletion of the transmembrane region
-from *Rm*FixL, which corresponds to the PAS-A domain of *Bj*FixL, gives
-rise to no significant defect in the signaling functions.[@shiro2002]
-Besides,
-the A'α and Jα helices are involved in the formation of the dimer
-interface, and considering the potential influence of the FixLHs dimer
-interface on the signaling process, 142 residues from E128 to L269 are
-considered in the subsequent MD simulations.
-
-### Parameterization of the Fe^3+^ Metal Cofactor{#sec:parameterization}
-
-![Molecules used to obtain the tuned force field parameters for met-FixLH dimer system. (a) Molecule used in Gaussian optimization calculations to obtain the Fe3+ metal associated bond and angle parameters. (b) Molecule used used in Gaussian RESP partial charge calculations to obtain the partial charges for the metal site.](figures/fixl/met-fixl-force-field.jpg){#fig:met-fixl-force-field width=100%}
-
-![Molecules used to obtain the tuned force field parameters for met-FixLH-imd dimer system. (a) Molecule used in Gaussian optimization calculations to obtain the Fe3+ metal associated bond and angle parameters. (b) Molecule used used in Gaussian RESP partial charge calculations to obtain the partial charges for the metal site.](figures/fixl/met-fixl-imd-force-field.jpg){#fig:met-fixl-imd-force-field width=100%}
-
-The force-field parameters of the non-standard part of dimeric FixLHs were
-generated using MCPB.py module[@li2016;@li2017] in AmberTools 15. A small
-model and a large model of two dimeric FixLH proteins generated from
-MCPB.py (@fig:met-fixl-force-field: met-FixLH, @fig:met-fixl-imd-force-field: met-FixLH-imd) were used to
-obtain the Fe^3+^ metal associated bond and angle parameters and
-generate the atomic partial charges for the metal site, respectively.
-The small model consists of heme, the coordinated sidechains of the
-proximal H200 with/without ligand. In the large model, the coordinated
-sidechain has its free N- and C- termini capped with N-methyl (NME) and
-acetyl groups (ACE) to mimic the protein backbone. Optimization and
-force constant calculations for the small model and the Merz-Kollman
-RESP charge calculations for the large model were performed using
-Gaussian 16 package with the B3LYP/6-31G(d) level of
-theory[@goerigk2011;@sousa2007a] and the ultrafine grid. Fe^3+^ with spin state S=5/2 and
-S=1/2[@edler2014] were used in Gaussian calculations for met-FixLH and
-met-FixLH-imd protein, respectively (@tbl:quantumcalculation). The optimized geometry,
-the atom types, partial charges for the RESP fittings and force field
-parameters of the metal site generated from MCPB.py are shown in
-Supporting Information (SI).
-  
-|               | Spin=2              | Spin=4        | Spin=6         |
-| :------------ | :------------------- | :------------ | :--------------- |
-| Met-Heme      | -3402.1853060                  | -3402.1959457 | \textcolor{red}{-3402.1976629} |
-| Imdazole-Heme | \textcolor{red}{-3627.8693349} | -             | -3627.8189808                  |
-
-: Quantum calculation results of met-FixLH and met-FixLH-IMD. Hart Fork Energy (unit: a.u.) comparison among different spin states of met-FiLH and met-FixLH-IMD. {#tbl:quantumcalculation}
-
-
-### MD Simulations
-For both protein structures, the N- and C-
-termini were capped with uncharged ACE (acetyl) and NME (N-methylamine)
-groups, respectively. For both systems, we modeled the histidines H235
-and H259 (H144, H150, H162, H200, H214) as neutral forms with each
-epsilon (delta) nitrogen protonated. All other residues were considered
-in their standard protonation state at pH = 7.0. The systems were
-solvated with the TIP3P[@price2004] water molecules in a periodic cubic box, and
-sodium ions were used to neutralize the systems, then, additional Na
-and Cl ions were added to achieve a salt concentration of \~ 0.15 M.
-Each solvated system contains about \~ 60, 000 atoms.
-
-All molecular simulations were performed by Amber 14. The Amber
-ff14SB force field[@maier2015] was used to model the standard residues of the
-proteins except for H200, tuned force field from quantum calculations at @sec:parameterization was used to
-model the heme, ligands, and H200. The long-range electrostatic
-interactions were treated with the particle mesh Ewald method[@essmann1995] and
-nonbonded particle-particle interactions[@duan2001] were considered using a 9.0
-Å cutoff. The time step for all MD simulations was set as 2.0 fs and
-SHAKE was used to constrain hydrogens for product run MD simulations. To
-prevent the dissociation of A'α helices, a harmonic restraint with a
-spring force of 10 kcal/mol·Å^2^ was applied on the bond between two CA
-atoms of residue I128 of chain A and chain B. After minimization,
-heating, and equilibration of the systems (SI Appendix has a full
-description of the procedures of this section), 20 independent *NPT* MD
-simulations were performed for 55 ns at conditions of *T* = 300 K and
-*P* = 0.978 atm, to conduct the conformational samplings. From the last
-5-ns trajectory of each *NPT* simulation, 10 snapshots with their atomic
-coordinates and velocity information were saved every 0.5 ns, from each
-of which we conducted 200 sets of independent 1-ns constant volume,
-constant energy (*NVE*) MD simulations. The atomic coordinates and
-velocities of *NVE* MD simulations were saved every 10 fs for the
-further calculations of energy flow and energy conductivity of native
-contacts.
-
-### Analysis of Energy Flow
-We evaluated a measure of energy
-transport, denoted by *G*, between each pair of residues in native
-contact[@yamashita2018] using the *CURrent calculations in Proteins* (CURP) program
-developed by our lab (<https://curp.jp>).[@ishikura2012;@leitner2009;@yamato2022]
-The derivation
-process of *G* is as follows. The energy flow between two atoms can be
-described using the equation:
-
-$$
-\bm J_{i \leftarrow j}^{k}(t) = \frac{1}{2}( \bm v_{i} \cdot \bm F_{ij} - \bm v_{j} \cdot \bm F_{ji})
-$$
-
-where *k* (= 1, 2, 3, ..., 200) is used to mark different trajectories
-from *NVE* simulations; $J_{i \leftarrow j}^{k}$ is the inter-atom
-energy flow between atom *i* and atom *j* for trajectory *k*; $v_i$
-and $\bm v_j$ are the velocities of atom *i* and atom *j*, respectively;
-$\bm F_{ij}$($\bm F_{ji})$ is the force from atom *j*(*i*) to atom *i*(*j*).
-Then, the inter-residue energy flow can be calculated by:
-
-$$
-\bm J_{A \leftarrow B}^{k}(t) = \sum_{i \in A}^{N_{A}}{\sum_{i\in B}^{N_{B}}{\bm J_{i \leftarrow j}^{k}(t)}}
-$$
-
-where *N* is the total number of side-chain atoms in residue A or B;
-atoms *i* and *j* belong to the side chain of residue A and B,
-respectively. To calculate *G*, the equation of was used[@ota2019;@ishikura2015;@leitner2009]
-
-
-$$
-G_{AB}^{k} = \lim_{\tau \rightarrow \infty} \int_{0}^{\tau} \langle \bm J_{A \leftarrow B}^{k}(0) \cdot \bm J_{A \leftarrow B}^{k}(t)  \rangle dt
-$$
-
-Finally, the values of *G* were averaged,
-
-$$
-G_{AB} = \frac{1}{N_{traj}}\sum_{k = 1}^{N_{traj}}G_{AB}^{k}
-$$
-
-where *N*~traj~ = 200.[@ota2019;@leitner2009;@leitner2020a]
-
-In this study, the $\tau$ was set as 50ps. We only
-considered the sidechain pairs whose shortest interatomic distance is
-within 6 Å because energy transport becomes negligible for the pairs
-separated father than this threshold.
-
-## COMPUTATIONAL MODELING
+## Computational modeling for a homodimer Thalassosira pseudonana CP12
 Considering the spatiotemporal heterogeneity and high conformational flexibility of Thalassosira pseudonana CP12, we designed a three-stage modeling strategy. First, initial guess structures of the CP12 dimer were predicted by AlphaFold2.[@jumper2021;@evans2021]
 Then, the most likely structure of them was roughly refined by the harmonic restrained all-atom molecular dynamics (MD) simulations so as to meet the experimental (SAXS[@shao2021] and EPR/DEER) data. Finally, the structures thus obtained were further refined by restrained-ensemble molecular dynamics (reMD) simulations[@roux2013;@shen2015;@islam2013;@qi2020] so that the distance distributions of all spin pairs agree between reMD simulations and the experimental EPR/DEER data.
 
@@ -750,6 +628,6 @@ After minimization, heating, and equilibration of the simulation system, several
 
 (2)	Using saved snapshots, we stripped the waters and used CRYSOL[@svergun1995] of ATSAS-3.0.4-2[@franke2017] to compare the simulated SAXS curve with the experiment[@shao2021]. 
 (3)	If the simulated SAXS curve was in good agreement with the experiment, then we added all-atom spin label CYR1[@jo2014] to residues S39, S46, S56, S83, and C150, respectively, using the reMD Prepper module of CHARMM-GUI[@qi2020], then measured the initial distance of each spin pairs. 
-(4)	If all distances of spin pairs fell in the experimentally measured range, then we moved on to the reMD simulations by using a modified version of NAMD 2[@shen2015;@qi2020] with all-atom CHARMM36m protein force field[@huang2017]. We attached 25 copies of all-atom CYR1 spin labels to residues S39, S46, S56, S83 and C150, respectively, with reMD Prepper in vacuum for saving the computational resources. During the whole reMD simulations, the N, Cα, C, and O atoms of each spin label were fixed to the corresponding atoms in the labeled residues (@fig:spin-label) using a force constant of 10 kcal/(mol·Å^2^). The force field of all-atom CYR1 spin label[@islam2015] is provided by CHARMM-GUI. Spatial overlap among the 25 copies of CYR1 spin labels was allowed by neglecting the interactions among them. Five independent all-atom reMD simulations were conducted at 303.15 K with different random number seeds using Langevin dynamics with a damping coefficient of 5 ps^–1^. Before each reMD production run, we performed minimization and equilibration, during which only sidechain atoms were relaxed, keeping the backbone atom positions with harmonic restraints of 2 kcal/(mol·Å^2^) imposed on them. For further structural refinement, we switched off the harmonic restraints imposed on the backbone atoms, and conducted production runs of reMD simulations for 2 ns with a time step of 0.5 fs. The long-range electrostatic interactions were treated with the particle mesh Ewald (PME) method[@petersen1995] and the nonbonded interactions were truncated at a 10 Å distance cutoff. The distance distributions of each spin label pair were restrained with a force constant of 100 kcal/(mol·Å^2^) toward the experimental distance distribution histograms with a bin width of 0.025 nm. The atomic coordinates of each reMD production run were saved every 1ps. Since each spin label has 25 copies, a total number of 625 distances for each spin label pair were obtained from a single snapshot of trajectories and a total of 1, 250, 000 data points were yielded for every spin label pair from one single reMD production run. Trajectory analysis and protein visualization were performed with VMD[@humphrey1996] and PyMOL[@llc2015], respectively.
+(4)	If all distances of spin pairs fell in the experimentally measured range, then we moved on to the reMD simulations by using a modified version of NAMD 2[@shen2015;@qi2020] with all-atom CHARMM36m protein force field[@huang2017]. We attached 25 copies of all-atom CYR1 spin labels to residues S39, S46, S56, S83 and C150, respectively, with reMD Prepper in vacuum for saving the computational resources. During the whole reMD simulations, the N, Cα, C, and O atoms of each spin label were fixed to the corresponding atoms in the labeled residues (@fig:spin-label) using a force constant of 10 kcal/(mol·Å^2^). The force field of all-atom CYR1 spin label[@islam2015] is provided by CHARMM-GUI. Spatial overlap among the 25 copies of CYR1 spin labels was allowed by neglecting the interactions among them. Five independent all-atom reMD simulations were conducted at 303.15 K with different random number seeds using Langevin dynamics with a damping coefficient of 5 ps^-1^. Before each reMD production run, we performed minimization and equilibration, during which only sidechain atoms were relaxed, keeping the backbone atom positions with harmonic restraints of 2 kcal/(mol·Å^2^) imposed on them. For further structural refinement, we switched off the harmonic restraints imposed on the backbone atoms, and conducted production runs of reMD simulations for 2 ns with a time step of 0.5 fs. The long-range electrostatic interactions were treated with the particle mesh Ewald (PME) method[@petersen1995] and the nonbonded interactions were truncated at a 10 Å distance cutoff. The distance distributions of each spin label pair were restrained with a force constant of 100 kcal/(mol·Å^2^) toward the experimental distance distribution histograms with a bin width of 0.025 nm. The atomic coordinates of each reMD production run were saved every 1ps. Since each spin label has 25 copies, a total number of 625 distances for each spin label pair were obtained from a single snapshot of trajectories and a total of 1, 250, 000 data points were yielded for every spin label pair from one single reMD production run. Trajectory analysis and protein visualization were performed with VMD[@humphrey1996] and PyMOL[@llc2015], respectively.
 
-![The fixation between CYR1 spin label and its attached residues. The all-atom CYR1 spin label has a main chain like amino acid. The reMD simulation adds and fixes the spin label model by overlapping the main chain of spin label attached residue and the main chain of spin labels with a harmonic force constant of 10 kcal/(mol·Å^2^).](figures/cp12/spin-label.jpg){#fig:spin-label width=100%})
+![The fixation between CYR1 spin label and its attached residues. The all-atom CYR1 spin label has a main chain like amino acid. The reMD simulation adds and fixes the spin label model by overlapping the main chain of spin label attached residue and the main chain of spin labels with a harmonic force constant of 10 kcal/(mol·Å^2^).](figures/cp12/spin-label.jpg){#fig:spin-label}

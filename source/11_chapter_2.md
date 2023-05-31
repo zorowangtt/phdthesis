@@ -1,16 +1,13 @@
 \newpage
 
-# Local Thermal Transport in an $\alpha$-helical Protein {#cha3}
-## Abstract
+# Site-selective heat current analysis of α-helical protein with linear-homopolymer-like model {#cha3}
 
-Although thermal transport is among the essential biophysical properties of proteins, its relationship with protein structures, dynamics, and functions is still elusive.
+<!-- Although thermal transport is among the essential biophysical properties of proteins, its relationship with protein structures, dynamics, and functions is still elusive.
 The structures of folded proteins are highly inhomogeneous, giving rise to anisotropic and non-uniform flow of thermal energy during conformational fluctuations.
 To illustrate such nature of proteins, we developed a theoretical framework for analyzing local thermal transport property based on the autocorrelation function formalism, constructed a linear-homopolymer-like model, and applied it to a small $\rm{\alpha}$-helical protein, villin headpiece subdomain (HP36), using equilibrium molecular dynamics simulations.
 As a result, the model reproduced the exact value of the protein thermal conductivity with an error of less than 1%.
 Interestingly, the site-selective analysis of the local, residue-wise, thermal conductivity demonstrated its distinct residue-type dependence, i.e., its magnitude decreased in the order of charged, polar, and hydrophobic residues.
-In addition, the local density dependence of the residue-wise thermal transport property was also discussed.
-
-## INTRODUCTION
+In addition, the local density dependence of the residue-wise thermal transport property was also discussed. -->
 
 The structure, dynamics, and function of proteins are controlled by thermodynamic and environmental conditions such as temperature[@kashio2022;@thompson2019;@riedel2015;@kiyonaka2013;@weik2010;@johnson2007] and protein-solvent interactions.[@adams2021;@tanimoto2021;@devineau2017;@oroguchi2017;@continibali2014;@mcmahon2014]
 Although thermal transport is among the essential biophysical properties of proteins, the interplay between heat flow and the molecular mechanism of protein function is still elusive.
@@ -46,10 +43,7 @@ In [@sec:method-cross-correlation], we summarize basic formulae for the thermal 
 In [@sec:results-and-discussion], we report the computational results of the site-selective heat current analysis.
 Finally, we present concluding remarks in [@sec:conclusion].
 
-
-## RESULTS AND DISCUSSION {#sec:results-and-discussion}
-
-### The Overall Thermal Conductivity {#sec:overall-thermal-conductivity}
+## The Overall Thermal Conductivity {#sec:overall-thermal-conductivity}
 
 ![Thermal conductivity of the entire HP36 protein molecule. The heat current autocorrelation function was ensemble-averaged and plotted as a function of time (blue), and the short-time region (0 - 0.2ps) is shown in the inset. The heat current autocorrelation function was integrated with respect to time using trapezoidal rule to obtain $\lambda$ (orange), and the running mean of $\lambda$ is shown with a window size of 100 fs (red). The value of volume was set as 4845.447 $\AA^3$.[@yamato2022]](figures/cross/hcacf-100ps.jpeg){#fig:hcacf-100ps width=50%}
 
@@ -66,7 +60,7 @@ It should be noted that the calculated value of $\lambda$ is slightly different 
 We will discuss the water model dependence on the thermal conductivity later.
 In the following, we set the upper limit of the time-integration of the local heat current autocorrelation function as 60 ps.
 
-### Local Thermal Transport
+## Local Thermal Transport
 
 ![Contribution factors without cross-correlation corrections. Intra-residue ($c(\alpha, \alpha)$, red) and inter-residue ($c(\alpha, \alpha+1)$, green) contribution factors (@eq:eqc11, @eq:eqc12) are plotted. For instance, data point $c(1,2)$ is shown between $\alpha$ = 1 and 2. The horizontal axis shows the amino acid residue number, $\alpha$, together with residue name in one-letter code. The areas shaded by grey correspond to the $\alpha$-helical regions.](figures/cross/heat-conductivity-before-corrected.jpeg){#fig:heat_before width=50%}
 
@@ -79,7 +73,7 @@ The summation of these intra- and inter-residue contribution factors were $\bm{\
 It is likely that the deviation of 1.06 + 0.57 = 1.63 from 1 is attributed to the existence of non-negligible cross-correlation effects among different partial heat currents.
 In next section, we considered such cross-correlation effects in more detail.
 
-### Cross-correlation Correction
+## Cross-correlation Correction
 
 ![Nearest neighbor cross-correlation. $c^{\rm{cross}}(\alpha,\alpha+1) \equiv \xi_{\alpha,\alpha+1} / \Lambda$ is plotted as a function of the residue number. For instance, data point $c^{\rm{cross}}(1,2)$ is shown between $\alpha$ = 1 and 2.](figures/cross/cross-correlation-term.jpeg){#fig:cross width=50%}
 
@@ -100,7 +94,7 @@ The total value of contribution factors due to the second nearest cross-correlat
 To examine the validity of linear-homopolymer-like model, we compared the time-integrated ACF between $\Lambda$ and $\tilde \Lambda$, the former is derived for the exact heat current of the entire molecule, while the latter the linear-homopolymer-like model.
 The calculation results showed that $\tilde \Lambda$ is overestimated only by 0.9% than $\Lambda$, inducating that the linear-homopolymer-like model can successfully represent the thermal transport property of the entire molecule.
 
-### Residue-type Dependence{#sec:residue-type-dependence}
+## Residue-type Dependence{#sec:residue-type-dependence}
 
 ![Scatter plot of contribution factors vs residue volume. The intra-residue contribution factor, $\tilde c$, with cross-correlation correction for charged (green), polar (orange) and hydrophobic (blue) residues are plotted against volume of each residue.](figures/cross/residue_type_dependence_volume_after_correction.jpeg){#fig:residue_type width=50%}
 
@@ -112,11 +106,10 @@ We recognize that the values of $\tilde c$ are proportional to the residue volum
 Also, the slope of the linear regression line depends on residue-type, indicating that the value of residue-wise thermal conductivity is sensitive to the residue type and their order decreases in the order of charged, polar, and hydrophobic residues.
 The residuewise thermal conductivity $\lambda_{\alpha}$ of residue $\alpha$ is defined as $\tilde\Lambda_{\alpha,\alpha}/(3V_{\alpha}k_B T)$, in consistent with the report that the thermal diffusion along the $\alpha$-helix composed entirely of polar residues is faster than that of non-polar residues.[@mino2014] 
 
-### Local Density Dependence{#sec:local-density-dependence}
+## Local Density Dependence{#sec:local-density-dependence}
 
 <!-- figures* environment create a two-column-sized figures  -->
 ![Scatter plot and linear correlation of local thermal conductivity and local density. (mass density ($\rho$) = residue mass / residue volume, unit : g/$\rm{cm^3}$](figures/cross/density_combined.jpeg){fig:density}
-
 
 It has been accepted that the density is one of the important determinants of the thermophysical properties of materials.
 The product of material density ($\rho$) and its specific heat ($c_p$), $\rho{c_p}$, is sometimes used as a measure of thermal energy storage capacity.[@bergman2011]
@@ -137,7 +130,7 @@ This result is highly consistent with the observation of two times faster heat d
 For the HP36 protein, the subtotal contribution factor, $\tilde c$, of charged, polar, and hydrophobic residues were 0.32, 0.17, and 0.23, respectively.
 Although the proportion of the charged and hydrophobic residues in this protein molecule were 10/36 and 18/36, indicating the contribution from the former dominates over the latter.
 
-### Thermal Diffusivity and Temperature Relaxation Time
+## Thermal Diffusivity and Temperature Relaxation Time
 In molecular biophysics, vibrational energy relaxation of proteins has been a subject more familiar than the thermal transport property of proteins. In a pioneering study of excess energy dissipation in myoglobin [@mizutani1997], for example, Mizutani and Kitagawa demonstrated that the population of the $\rm \nu_4$ mode of the heme exhibit double exponential decay with the time constants of 1.9 and 16 ps after flash photolysis. Furthermore, they estimated the temperature relaxation times of the vibrational mode to be 3.0 and 25 ps,respectively, assuming Boltzmann distribution for the vibrational mode. We see that the picosecond dynamics play important roles in the temperature relaxation of a protein, which is associated with energy redistribution processes.
 
 It is possible to estimate two parameters, i.e. the thermal diffusivity and temperature relaxation time, using the following equation[@bergman2011;@lervik2010;@kurisaki2023]
@@ -155,13 +148,13 @@ The estimated thermal diffusivity is 7.9 ~ 13.2 $\rm\AA^2{\, } ps^{-1}$, in good
 The density of HP36 was calculated as $\rho$ = 1.57 $\rm{g \, cm^{-3}}$, a little larger than the widely used value (1.35 $\rm{g \,cm^{-3}}$).[@fischer2009]
 The heat capacity was set in the range of 0.30 - 0.50 $\rm {cal \,g^{-1} \, deg^{-1}}$.[@gekko1979]
 
-### Water Model
+## Water Model
 In the previous study on the thermal conductivity of hp36 protein,[@yamato2022] we used Amber ff14SB force-field for the protein atoms and TIP3P water model with the SHAKE constraints switched off, although it is an unusual usage of the TIP3P model.
 It is known that anomalous diffusion occurs for simulations with the standard rigid TIP3P water model.[@wu2006;@takemura2007]
 To examine the water-model dependence on the protein thermal conductivity, we used Amber ff19SB + TIP3P water model with the SHAKE constraints switched off only for protein in this study.
 As mentioned above, the calculated value of $\lambda$ of the whole protein was 0.26 $\mathrm{\pm}$ 0.01 $\mathrm{W{/} (m{\cdot}K)}$, close to 0.3 $\mathrm{\pm}$ 0.01 $\mathrm{W{/} (m{\cdot}K)}$ obtained in the previous study.[@yamato2022] It is possible that the properties of solvent affect the protein thermal conductivity through the protein-solvent interfaces.
 
-As described in **INTRODUCTION**, the structure, dynamics and function of proteins are controlled by protein-solvent interactions. In particular, Straub, Leitner and coworkers reported seminal studies on the energy transport across the protein-water interfaces. Sagnella et al. observed spatially directed "funneling" of kinetic energy from heme to the surrounding solvent for the excess energy dissipation of myoglobin after flash photolysis.[@sagnella2001]
+As described in the beginning of this chapter, the structure, dynamics and function of proteins are controlled by protein-solvent interactions. In particular, Straub, Leitner and coworkers reported seminal studies on the energy transport across the protein-water interfaces. Sagnella et al. observed spatially directed "funneling" of kinetic energy from heme to the surrounding solvent for the excess energy dissipation of myoglobin after flash photolysis.[@sagnella2001]
 Agbo, Xu, Zhang, et al. examined the cytochrome c-water thermal conductance and demonstrated that the protein-water interface poses no greater Kapitza resistance to thermal flow than the protein itself.
 It is interesting to note that the thermal conductance at the protein-solvent interfaces for different types and shapes of proteins exhibits different values of thermal conductance ranges from 100 to 330 $\rm MWK^{-1}m^{-2}$.[@lervik2010;@kurisaki2023;@xu2014;@agbo2014;@agbo2014a]
 Hamzi et al. studied the dependence of the thermal conductance at the protein-water interfaces on the types of amino acid residues.[@hamzi2022]
