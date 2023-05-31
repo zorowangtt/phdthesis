@@ -185,8 +185,3 @@ Interestingly, residuewise thermal conductivity demonstrated distinct residue-ty
 
 <!-- # SUPPLEMENTARY MATERIAL
 See supplementary material for residue volume, cross-correlation data, and regression analysis of residue-wise thermal conductivity. -->
-
-
-
-
-
