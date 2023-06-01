@@ -1,7 +1,6 @@
 \newpage
 
-# Heat and energy transfer through non-covalent contacts in an $\alpha$-helical proteins {#cha4}
-## INTRODUCTION
+# Heat and energy transfer through non-covalent contacts in an $\alpha$-helical protein (HP36) {#cha4}
 
 **importance of thermal and energy transport in proteins**
 
@@ -80,8 +79,7 @@ Using this method, the contributions from backbone and contacts transfer can be 
 
 \newpage
 
-## RESULTS AND DISCUSSION
-### Interaction type dependence on heat transfer through non-covalent contacts
+## Interaction type dependence on heat transfer through non-covalent contacts
 
 ![Histogram distribution of $\lambda_{\alpha,\beta}$ for different types of contacts in HP36 protein. The black and red lines represent the thermal conductivity of bulk water and HP36, respectively, for comparison. The $\lambda$ values of residue-wise and contacts between peptide bonded residue pairs are adopted from our previous study.[@yamato2023]](figures/non-bonded/histogram-lambda-after.png){#fig:histogram_lambda}
 
@@ -93,7 +91,7 @@ In the hydrophobic core of HP36, there are three $\pi$ stacking contacts: Phe7-P
 Hydrophobic contacts, which have the most number of pairs and broad distributions ranging from $10^{-7}$ to $10^{-2}$ W m^-1^ K^-1^, have much lower $\lambda_{\alpha, \beta}$ values, with peaks at around $5.9 \times 10^{-4}$ W m^-1^ K^-1^.
 Overall, the histogram demonstrates that different types of non-covalent contacts have significantly different contributions to thermal transport in the protein, with hydrogen bonds playing the most important role in this HP36 protein.
 
-### Peptide bonds? or Non-covalent contacts?
+## Peptide bonds? or Non-covalent contacts?
 
 ![The $\lambda$ values of contacts between peptide bonded residue pairs](figures/non-bonded/line-intra-inter-lambda.png){#fig:inter_lambda}
 
@@ -105,7 +103,7 @@ The relatively faster thermal transport through contacts of Ser3-Asp6 and Asp4-A
 These contacts are referred to as "shortcuts", as they provide an efficient energy transport pathway despite being distant along the protein sequence.
 This suggests that peptide bonds play a significant role in thermal transport within proteins in HP36, highlighting the importance of considering both peptide bonds and non-covalent contacts in studies of thermal transport in proteins.
 
-### Thermal energy transport through hydrogen bonds {#sec:role-of-hb}
+## Thermal energy transport through hydrogen bonds {#sec:role-of-hb}
 
 ![$\lambda_{\alpha,\beta}$ values of contacts forming hydrogen bonds and their hydrogen bonds capacity ($c_{HB}$) during MD simulations. (a): all contacts forming hydrogen bonds; (b) contacts between residue $\alpha$ and $\alpha+4$.](figures/non-bonded/hb-capacity-lambda-all-ii4.png){#fig:hb_all_ii4}
 
@@ -148,7 +146,7 @@ The contact distance is a factor that can affect the thermal transport through c
 <!-- $\pi$ stacking: Phe7-Phe11, Phe11-Phe18, Phe7-Phe18.
 only Phe7-Phe11 has the largest $\lambda$, while Phe7-18 and Phe11-18 have a same $\lambda$ with no hydrogen bonds for them. -->
 
-### Thermal conductivity and energy conductivity
+## Thermal conductivity and energy conductivity
 
 In previous studies, we explored the energy transport network in proteins by analyzing the _inter-residue energy conductivity_ ($G_{\alpha, \beta}$).[@ishikura2006;@leitner2010;@ishikura2015;@ota2019;@poudel2020]
 As a carrier of energy for heat, we are wondering whether there are any correlations between heat and energy transfer among different partial sites, i.e., different residues. Relating the inter-residue thermal conductivity and energy conductivity will be helpful to understand the property of heat and energy transfer in proteins.
@@ -160,7 +158,7 @@ To investigate this issue, we plotted the scatter dots $\lambda_{\alpha, \beta}$
 Interestingly, the Pearson correlation analysis showed a significant relationship statistically between $\lambda_{\alpha, \beta}$ and $G_{\alpha, \beta}$, with $r = 0.97, \, p << 0.05 \,(4.47 \times 10^{-168})$.
 To get an estimated linear regression model that can expresses their relationship, a fitted model is given here: $\log{\lambda_{\alpha, \beta}} = 0.73 \times \log{{G}_{\alpha, \beta}} - 0.30$ with $R^2 = 0.94$.
 
-### Important features on thermal transport through non-covalent contacts
+## Important features on thermal transport through non-covalent contacts
 <!-- ## Random Forest Analysis -->
 Due to the complexity of protein systems, the thermal energy transport through contacts is affected by a number of properties, including their structure, compositions, dynamics, as well as interaction types suggested in the [@sec:interaction-type-dependence-on-heat-transfer-through-non-covalent-contacts] of this work.
 For structural property, David M. Leitner's group found that the correlations of energy transfer rate is linearly correlated with the mean-square distance for charged contacts between charged residue pairs in myoglobin.[@reid2018]

@@ -180,7 +180,7 @@ c(\alpha,\beta) \equiv \Lambda_{\alpha, \beta} / \Lambda
 $$
 {#eq:eqc10}
 
-## Cross-Correlation Correction on linear-homopolymer-like model {#sec:method-cross-correlation}
+## Cross-correlation correction on linear-homopolymer-like model {#sec:method-cross-correlation}
 
 To explain why we need to do cross-correlation on the linear-homopolymer-like model, we use a simple molecule containing two residues to make it clear.
 Now, let's consider a hypothetical dipeptide composed of residues A and B.
@@ -445,7 +445,7 @@ $$
 In this study, the integration time of auto-correlation function for both heat current and energy flux was set as 60 ps.
 All calculations of $\lambda_{\alpha, \beta}$ and $G_{\alpha, \beta}$ between each pair of residues in native contact using the _CURrent calculations in Proteins_ (CURP) program of version 1.3 developed by our lab[@yamato2022]
 
-## Equilibrium Molecular Dynamics Simulations
+## Equilibrium molecular dynamics simulations
 
 The procedures of MD simulations for heat current and energy flow calculations on HP36 in @sec:cha3 and @sec:cha4, and on two _Bj_FixLs protiens in @sec:cha5 were described in this chapter.
 All molecular simulations in @sec:cha3, @sec:cha4, and @sec:cha5 were performed by Amber 19 package.[@d.a.case2019]
@@ -490,7 +490,7 @@ prevent the dissociation of A'α helices, a harmonic restraint with a
 spring force of 10 kcal/mol·Å^2^ was applied on the bond between two CA
 atoms of residue I128 of chain A and chain B.
 
-### Parameterization of the Fe^3+^ Metal Cofactor{#sec:parameterization}
+### Parameterization of the Fe^3+^ metal cofactor{#sec:parameterization}
 
 ![Molecules used to obtain the tuned force field parameters for met-FixLH dimer system. (a) Molecule used in Gaussian optimization calculations to obtain the Fe^3+^ metal associated bond and angle parameters. (b) Molecule used used in Gaussian RESP partial charge calculations to obtain the partial charges for the metal site.](figures/fixl/met-fixl-force-field.jpg){#fig:met-fixl-force-field}
 
@@ -518,7 +518,7 @@ met-FixLH-imd protein, respectively (@tbl:quantumcalculation).
 
 : Quantum calculation results of met-FixLH and met-FixLH-IMD. Hart Fork Energy (unit: a.u.) comparison among different spin states of met-FiLH and met-FixLH-IMD. {#tbl:quantumcalculation}
 
-### Minimization and Equilibration, and Sampling MD Simulations
+### Minimization, equilibration, sampling, _NVE_ MD Simulations
 
 The periodic boundary condition was applied to all simulation systems.
 Nonbonded particle-particle interactions[@cornell1995] were taken into account using a distance cutoff of 9 Å, and long-range electrostatic interactions were handled using the particle mesh Ewald (PME) method [@sagui2004].
@@ -542,7 +542,7 @@ The atomic coordinates and velocities of _NVE_ MD simulations were saved every 1
 To depict such nature in more detail, we will further investigate the heat and energy transfer though non-covalent bonded residue pairs using site-selective heat current analysis.
 The following two subsections [2.1](#inter-residue-heat-transport) and [2.2](#inter-residue-energy-transport) described the derivation process of inter-residue thermal conductivity ($\lambda_{\alpha,\beta}$) and energy conductivity ($G_{\alpha,\beta}$), respectively. -->
 
-## Definition and Classification of Non-covalent Contacts {#sec:definitions}
+## Definition and classification of non-covalent contacts {#sec:definitions}
 ### Definition
 
 To describe the intramolecular interaction networks in proteins, the protein contact networks (PCNs) [@dipaola2013;@dipaola2015;@dipaola2022] have been introduced, aiming to unravel the relationship between protein structure and function.
@@ -570,14 +570,14 @@ $$
 
 where $P_{HB}$ is the probability of hydrogen bond occurrence probability between residue $\alpha$ and residue $\beta$ during a certain simulation time with $N$ snapshots, $n_i$ is the number of hydrogen bond formed between residue A and B.
 
-## Random Forest Regression
+## Random forest regression
 The random forest regression model was applied to predict the $\lambda_{\alpha,\beta}$ by using sklearn's _RandomForestRegressor_ function in Python.
 The whole datasets were split into two groups for model fitting and evaluation: training set (80%) and testing set (20%).
 The mean squared error loss was calculated for the split quality measurement.
 
 Seven predictors are selected for prediction of $\lambda_{\alpha,\beta}$ of non-covalent contacts in HP36 and using features adapted from structural analysis and MD trajectories analysis.
 
-## Network Models
+## Network models
 
 We constructed three network models: _Protein Contact Network_, _Energy Exchange Network_, and _Thermal Transport Network_, to map the native contacts in proteins.
 
@@ -598,7 +598,7 @@ $$
 
 where $V$ represents either $w_{\alpha,\beta}$, $\log{G}_{\alpha, \beta}$, or $\log{\lambda}_{\alpha, \beta}$.
 
-## Computational modeling for a homodimer Thalassosira pseudonana CP12
+## Computational modeling for a homodimer _Thalassosira pseudonana_ CP12
 Considering the spatiotemporal heterogeneity and high conformational flexibility of Thalassosira pseudonana CP12, we designed a three-stage modeling strategy. First, initial guess structures of the CP12 dimer were predicted by AlphaFold2.[@jumper2021;@evans2021]
 Then, the most likely structure of them was roughly refined by the harmonic restrained all-atom molecular dynamics (MD) simulations so as to meet the experimental (SAXS[@shao2021] and EPR/DEER) data. Finally, the structures thus obtained were further refined by restrained-ensemble molecular dynamics (reMD) simulations[@roux2013;@shen2015;@islam2013;@qi2020] so that the distance distributions of all spin pairs agree between reMD simulations and the experimental EPR/DEER data.
 
@@ -611,10 +611,10 @@ ASDNSVASKAPIVDSEYEAKVKSLSQMLTKTKAELDQVKALADDLKGVKLASPSVGSSAP
 DDSVMKEALAAARAATEEFGQSSPQARLAWETVEEIAASPVDIRAPLDEECLIELIEGCEA
 LEKFQAALGSR}
 
-### Starting model
+### Starting model and AlphaFold2 prediction
 Structure prediction for the CP12 homodimer was performed using AlphaFold v2.1.1-Multimer (AF2) and the default databases[@jumper2021;@evans2021;@tunyasuvunakool2021]. The amino acid sequence of the wild-type (WT) was downloaded from NCBI[@shao2021]. A truncated FASTA sequence containing 163 residues (the blue part of sequence in @sec:sequence) without His-tag was used in the AF2 input file for multiple sequence alignments (MSAs) lookup and structural template matching. For WT, S46C and S56C mutants, their homodimeric structure was predicted with the top five ranked models. For the model confidence, along with the prediction results, a measure called predicted local distance difference test score (pLDDT, on a scale from 0 - 100, where 100 represents the most confident) was used to estimate the per-residue confidence.
 
-### Refinement by Molecular Dynamics Simulations 
+### Refinement by molecular dynamics simulations 
 To refine the starting model thus obtained, all-atom harmonic restrained MD simulations without spin labels followed by restrained-ensemble MD (reMD) simulations with spin labels were performed to obtain a realistic conformational ensemble that fit with both the experimental SAXS curve[@shao2021] and the spin-spin distance distributions derived from EPR/DEER experiments. The simulation process is summarized in a logic diagram, shown in @fig:scheme A. Due to the high flexibility of R1 spin labels with 5 dihedral angles, the reMD simulation[@roux2013] technique for the model with all-atom spin labels is suitable to exploit protein’s structure in their native environment based on multiple distance histograms information obtained from EPR/DEER spectroscopy. It should be noted that a large discrepancy of the spin pair distance in the initial structure of reMD simulation with DEER data may cause extraordinary rapid atomic movements leading to unexpected termination during the simulation process. Thus, to avoid such violation, a screening on the starting model is needed based on the distance information between all spin pairs, before each run of reMD simulation.
 
 We started the structural refinement using MD simulations from a model (@fig:scheme B) that was modified from the AF2 model (S56-2 of @fig:af2-output). Despite their high conformational flexibility that was revealed by DEER (C150 in @fig:scheme C), these two well-structured C-terminal helices were overfolded with the coiled-coil in the AF2 model (@fig:predicted-model) and could not be efficiently sampled by our preliminary calculations with conventional constant temperature, constant pressure MD simulations, even at a temperature higher than room temperature. Therefore, we manually moved two C-terminal helices away from the coiled-coil part of the dimer (@fig:scheme B). The computational detail of the subsequent simulations is explained below.

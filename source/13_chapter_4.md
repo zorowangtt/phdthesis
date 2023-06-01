@@ -3,8 +3,6 @@
 
 # Effects of Ligand Binding on the Dimeric Sensory Domain of *Bj*FixL: Computational Analysis of Vibrational Energy Transfer Pathways {#cha5}
 
-## INTRODUCTION
-
 *Bradyrhizobium japonicum* lives symbiotically with leguminous plants in
 root nodules, where they fix nitrogen gas from the atmosphere into
 nitrogenous fertilizer for the plants under hypoxic conditions.
@@ -125,10 +123,7 @@ mobility of energy flow was quantified for each contact. We used our
 original computer program, CURP (CURrent calculation for
 Proteins, [https://curp.jp](https://curp.jp)),[@ishikura2012;@leitner2009;@yamato2022] for the second and third stages. Finally, our results are discussed in the context of experimental studies in the literatures.
 
-
-## RESULTS AND DISSCUSSION 
-
-### Effects of Ligand Binding and Dimerization
+## Effects of Ligand Binding and Dimerization
 
 ![Heatmap of G of (1) met-FixLH dimer protein and (2) met-FixLH-imd dimer protein. The unit of measure on the color bar on the right is kcal^2^/(mol^2^ fs). Residue numbers and secondary structure names are labeled on the axes. Secondary structures α-helixes (green) and α-sheets (orange) are distinguished by different colors.](figures/fixl/heatmap.jpg){#fig:heatmap width=100%}
 
@@ -171,7 +166,7 @@ feature of FixLH[@ayers2008]. Also, the strong interactions on the dimer
 interface imply its potential functional contributions to signaling
 transduction as a bridge between the heme core and HK domain.
 
-### Vibrational energy transfer pathways and residue interaction network
+## Vibrational energy transfer pathways and residue interaction network
 
 ![The strong interactions, represented by dash lines, are defined by the residue pairs with G values > G~met~ + 2σ~met~ = 6.58 × 10^–3^ [kcal^2^/(mol^2^ fs)], where G~met~ (= 2.42 × 10–4 ) and σ~met~ (= 3.17 × 10–3) [kcal^2^/(mol^2^ fs)] are the mean and the standard deviation of the G-values of all residue pairs, respectively. (A1) met-FixL dimer, (B1) met-FixLH dimer. The interactions involved with the heme and the dimer interface, shown in red, are distinguished from the other interactions, shown in blue. Panels A/B2; A/B3; and A/B4 show important amino acid residues in the regions around the heme ligand and on the dimer interface; close to the N-terminus; and close to the C-terminus, respectively. It should be noted that the connections between the imidazole ligand and residue HIS200, ARG206, ARG220 and LEU236 are not shown in Panel B1.](figures/fixl/interactions.jpg){#fig:interactions width=70%}
 
@@ -255,7 +250,7 @@ GLU258, GLN261, THR262, ARG265 GLN267 and GLU268 (Table S2), in line
 with the site-directed mutagenesis on the coiled-coil linker that
 exhibited marked decrease of the kinase activity of *Bj*FixL.[@wright2018]
 
-### Reorganization of vibrational energy transfer pathways upon ligand binding
+## Reorganization of vibrational energy transfer pathways upon ligand binding
 
 ![Reorganization of the network of vibrational energy transfer pathways. Strengthened (Weakened) paths upon ligand binding with rΔG > (<) 0.5 are indicated by dotted lines in red (blue). The residue name and residue number colored in purple and black represent the residues from chain A and chain B, respectively.](figures/fixl/difference.jpg){#fig:difference width=100%}
 
