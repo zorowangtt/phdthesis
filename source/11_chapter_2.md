@@ -217,8 +217,18 @@ This distinction leads to a broader distribution of residue densities within the
 
 ![Comparison of the residue volumes in this study with  those in water (blue) and the protein interior (green)[@harpaz1994]. The second row of the x-axis represents the amino acid names using one-letter format, with the residues buried into the protein interior highlighted in red. The third row indicates the residue types, with hydrophobic residues shown in blue, charged residues in green, and polar residues in orange.](figures/cross/volume_comparison.jpeg){#fig:volume_comparison}
 
+| Residue type | *r*  | *p*-value | slope                |
+|:-------------|:-----|:----------|:---------------------|
+| overall      | 0.56 | 0.0004    | 1.55 $\times10^{-4}$ |
+| charged      | 0.88 | 0.0008    | 4.3 $\times10^{-4}$  |
+| polar        | 0.95 | 0.0004    | 2.1 $\times10^{-4}$  |
+| hydrophobic  | 0.68 | 0.0019    | 9.4 $\times10^{-5}$  |
+: Pearson correlation coefficient (*r*), *p*-value and slope of linear relationship between $\tilde c$ and volume in Figure 8. 
+Generally, a value of $|r|$ > 0.3 or, a *p*-value < 0.05 is often considered to be statistically significant, indicating that the the pair of variables are correlated. {#tbl:pearson}
+
 The regression analysis with cross-correlation correction, shown in @fig:density a, indicates that the thermal conductivity ($\lambda$) is proportional to the residue mass density, although the slope of the regression line is not steep, suggesting a weak density dependence.
 The data points exhibit a broad distribution, and statistically, the correlation between thermal conductivity and density is not significant, as indicated by a Pearson correlation coefficient of 0.3 and a p-value of 0.078.
+Pearson correlation analysis for all data in @fig:density a and subdata points classified by residue types in @fig:density b are listed in @tbl:pearson.
 
 In @fig:density b, the linear regression lines for hydrophobic and polar residues have almost constant thermal conductivity values, while charged residues show a negative proportionality, although the reason for this observation is unclear.
 One possible explanation is that charged residues tend to have larger volumes compared to other residue types.[@harpaz1994]

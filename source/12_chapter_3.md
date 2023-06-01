@@ -81,7 +81,7 @@ Using this method, the contributions from backbone and contacts transfer can be 
 
 ## Interaction type dependence on heat transfer through non-covalent contacts
 
-![Histogram distribution of $\lambda_{\alpha,\beta}$ for different types of contacts in HP36 protein. The black and red lines represent the thermal conductivity of bulk water and HP36, respectively, for comparison. The $\lambda$ values of residue-wise and contacts between peptide bonded residue pairs are adopted from our previous study.[@yamato2023]](figures/non-bonded/histogram-lambda-after.png){#fig:histogram_lambda}
+![Histogram distribution of $\lambda_{\alpha,\beta}$ for different types of contacts in HP36 protein. The black and red lines represent the thermal conductivity of bulk water and HP36, respectively, for comparison. The $\lambda$ values of residue-wise and contacts between peptide bonded residue pairs are adopted from our previous study.[@wang2023]](figures/non-bonded/histogram-lambda-after.png){#fig:histogram_lambda}
 
 [@fig:histogram_lambda] shows a histogram plot of the calculated $\lambda_{\alpha, \beta}$ through non-covalent contacts, residue-wise $\lambda$ and $\lambda_{\alpha, \beta}$ values of contacts between peptide-bonded residues.
 The x-axis represents the values of $\lambda$, while the y-axis shows the frequency of occurrence of each value.
