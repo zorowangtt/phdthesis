@@ -1,5 +1,12 @@
 \newpage
 # Introduction {#cha1}
+Although proteins and protein-based materials,
+such as meat, egg, silk and leather, have had a place for millennia in society,
+seeing them as a distinct category of materials was in the 18th century
+due to they are found to tend to coagulate or flocculate under high temperature or acid conditions by Antoine Fourcroy and others.
+In 1958, the first X-ray crystallographic structure of myoglobin, a globular protein molecule, were published by John Kendrew, hereafter, it opened a new era in structural biology.[@brändén1999]
+Increasing number of protein structures are characterized by not just X-ray crystallography also nuclear magnetic resonance and high resolution electron microscope, and stored in the protein data bank, https://www.rcsb.org.
+
 
 
 ## Energy and heat transfer in solids
