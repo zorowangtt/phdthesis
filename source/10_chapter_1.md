@@ -338,7 +338,7 @@ $$
 {#eq:B9}
 
 
-Therefore, it is necessary for the total weight of $\xi_{1,2} (\xi_{N-1,N})$ in $\tilde\Lambda_{1,1}, \tilde\Lambda_{1,2}, \tilde\Lambda_{2,2}, \tilde\Lambda_{2,3}$ ($\tilde\Lambda_{N,N}, \tilde\Lambda_{N-1,N}, \tilde\Lambda_{N-1,N-1}, \tilde\Lambda_{N-2,N-1}$) to be equal to one.
+Therefore, it is necessary for the total weight of $\xi_{1,2} (\xi_{N-1,N})$ in $\tilde\Lambda_{1,1}, \tilde\Lambda_{1,2}, \tilde\Lambda_{2,2}, \tilde\Lambda_{2,3}$ ($\tilde\Lambda_{N,N}$, $\tilde\Lambda_{N-1,N}$, $\tilde\Lambda_{N-1,N-1}$, $\tilde\Lambda_{N-2,N-1}$) to be equal to one.
 In other words, we have the following equation:
 
 $$
@@ -367,7 +367,7 @@ $$
 All of the heat currents and their auto-correlation function calculations were performed using our CURP program, version 1.3[@yamato2022] based on 50 trajectories of constant volume and energy (_NVE_) molecular dynamics simulations.
 
 <!-- ## Proteins
-The proteins used in @sec:cha2 and @sec:cha3 was the villin headpiece subdomain (PDB code: HP36) and used in @sec:cha4 was the _Bj_FixL -->
+The proteins used in @sec:cha2 and @sec:cha3 was the villin headpiece subdomain (PDB code: HP36) and used in @sec:cha4 was the *Bj*FixL -->
 
 ## Inter-residue heat current analysis
 
@@ -443,11 +443,11 @@ $$
 {#eq:eqd8}
 
 In this study, the integration time of auto-correlation function for both heat current and energy flux was set as 60 ps.
-All calculations of $\lambda_{\alpha, \beta}$ and $G_{\alpha, \beta}$ between each pair of residues in native contact using the _CURrent calculations in Proteins_ (CURP) program of version 1.3 developed by our lab[@yamato2022]
+All calculations of $\lambda_{\alpha, \beta}$ and $G_{\alpha, \beta}$ between each pair of residues in native contact using the _CURrent calculations in Proteins_ (CURP) program of version 1.3 developed by our lab.[@yamato2022]
 
 ## Equilibrium molecular dynamics simulations
 
-The procedures of MD simulations for heat current and energy flow calculations on HP36 in @sec:cha3 and @sec:cha4, and on two _Bj_FixLs protiens in @sec:cha5 were described in this chapter.
+The procedures of MD simulations for heat current and energy flow calculations on HP36 in @sec:cha3 and @sec:cha4, and on two *Bj*FixLs protiens in @sec:cha5 were described in this chapter.
 All molecular simulations in @sec:cha3, @sec:cha4, and @sec:cha5 were performed by Amber 19 package.[@d.a.case2019]
 
 ### System setup for MD simulations 
@@ -462,11 +462,11 @@ Amber ff19SB force field functions[@tian2020] were used for the protein atoms.
 Four chloride and two sodium ions were added to neutralize the simulation box.
 For efficient long-range electrostatic calculations, the particle mesh Ewald (PME) method was used under periodic boundary condition.
 
-(2) _Bj_FixL systems
+(2) *Bj*FixL systems
 
 We constructed two models of ferric FixLH dimer, (a) the ligand-free state (met-FixLH) and (b) the imidazole-bound state (met-FixLH-imd), based on the X-ray crystallographic structure of FixL dimer.
-It is known that the deletion of the transmembrane region from _Rm_FixL, which corresponds to the PAS-A domain of _Bj_FixL, gives rise to no significant defect in the signaling functions.[@shiro2002]
-Besides, the A’α and Jα helices are involved in the formation of the dimer interface, and considering the potential influence of the _Bj_FixLHs dimer interface on the signaling process, 142 residues from E128 to L269 are considered in the subsequent MD simulations.
+It is known that the deletion of the transmembrane region from _Rm_FixL, which corresponds to the PAS-A domain of *Bj*FixL, gives rise to no significant defect in the signaling functions.[@shiro2002]
+Besides, the A’α and Jα helices are involved in the formation of the dimer interface, and considering the potential influence of the *Bj*FixLHs dimer interface on the signaling process, 142 residues from E128 to L269 are considered in the subsequent MD simulations.
 
 For both protein structures, the N- and C-
 termini were capped with uncharged ACE (acetyl) and NME (N-methylamine)
@@ -525,7 +525,7 @@ Nonbonded particle-particle interactions[@cornell1995] were taken into account u
 
 The energy minimization of simulation systems contains three steps, (1) fixing all the heavy atoms and only relaxing hydrogen atom, (2) optimizing the side-chain atoms with positional restraints of 99.9 (kcal/mol)/Å^2^ on the backbone atoms (N, Cα, C, O), (3) the positions of the main chain atoms were optimized with positional restraints of 2.0 (kcal/mol)/Å^2^. After that, a Maxwell Boltzmann distribution of initial atomic velocities was generated at 0.1 K and each system was heating from 0.1 to 300 K for 50 ps by performing constant temperature, constant volume (_NVT_) MD simulations with the relaxation time of 0.1 ps and a positional restraint of 2.0 (kcal/mol)/Å^2^ on the backbone atoms. With the same positional restraints, a 50 ps _NVT_ MD simulation at _T_ = 300 K was performed, followed by a 200 ps Langevin MD simulation at _T_ = 300 K with a collision frequency of 2.0 ps^-1^ and switched-off positional restraints.
 
-We started five (twenty for _Bj_FixL systems) independent MD simulations from the minimum-energy conformation, with different Maxwell-Boltzmann velocity distributions at _T_ = 0.1 K, while keeping positional restraints imposed on the mainchain atoms.
+We started five (twenty for *Bj*FixL systems) independent MD simulations from the minimum-energy conformation, with different Maxwell-Boltzmann velocity distributions at _T_ = 0.1 K, while keeping positional restraints imposed on the mainchain atoms.
 Subsequently, the system temperature was gradually increased from 0.1 to 300 K.
 We, then, continued constant temperature, constant volume (_NVT_) MD simulation at $T$ = 300 K for 200 ps without positional restraints.
 The thermal equilibrium of the system was achieved by using the constant temperature, constant pressure (_NPT_) MD simulation at $T$ = 300 K, $P$ = 1 atm for another 700 ps.
@@ -535,7 +535,7 @@ We, then, continued another 5-ns run with the same condition for conformational 
 During the last 5-ns trajectories of the five independent _NPT_ MD simulations, we saved snapshots with atomic coordinates and velocities every 500 ps.
 We thus obtained 50 different initial conditions, each of which was used for the subsequent constant volume, constant energy (_NVE_) MD simulation for 1 ns with a time step of 0.5 fs.
 During these _NVE_ MD simulations, we saved atomic velocities every 0.5 fs, while atomic coordinates were saved every 1 fs.
-For _Bj_FixL systems, 20 independent _NPT_ MD simulations were performed for 55 ns at conditions of T = 300 K and P = 0.978 atm, to conduct the conformational samplings. From the last 5-ns trajectory of each _NPT_ simulation, 10 snapshots with their atomic coordinates and velocity information were saved every 0.5 ns.
+For *Bj*FixL systems, 20 independent _NPT_ MD simulations were performed for 55 ns at conditions of T = 300 K and P = 0.978 atm, to conduct the conformational samplings. From the last 5-ns trajectory of each _NPT_ simulation, 10 snapshots with their atomic coordinates and velocity information were saved every 0.5 ns.
 The atomic coordinates and velocities of _NVE_ MD simulations were saved every 10 fs for the further calculations of energy flow and energy conductivity of native contacts. 
 
 <!-- Heat current and energy flux in proteins should be highly inhomogeneous and anisotropic, and the behavior of them should vary from site to site.
@@ -558,7 +558,7 @@ On the other hand, $\pi$ stacking contacts are identified using RING3.0 server b
 
 ## Hydrogen bond occurrence probability
 The hydrogen bons are found to facilitate the thermal transport in helices-constructed material.[@mino2014;@he2021] 
-To quantitatively characterize the strength of hydrogen bonds, we assessed their integrity during the simulation process by calculating the lifetime of detected hydrogen bond and term it into hydrogen bond occurrence probability ($P_{HB}$).
+To quantitatively characterize the strength of hydrogen bonds, we assessed their integrity during the simulation process by calculating the lifetime of detected hydrogen bond and term it into hydrogen bond occurrence probability (P~HB~).
 The _cpptraj_ module in AMBER was utilized to probe hydrogen bonds between residues and their lifetime in the simulation.
 The hydrogen bonds definition and screening criterion is same as that in @sec:definitions.
 The hydrogen bonds occurrence probability can be calculated by the following formula:
@@ -568,7 +568,7 @@ P_{HB} = \frac {\sum_{i=1}^{N} n_i}{N}
 $$
 {#eq:eqd9}
 
-where $P_{HB}$ is the probability of hydrogen bond occurrence probability between residue $\alpha$ and residue $\beta$ during a certain simulation time with $N$ snapshots, $n_i$ is the number of hydrogen bond formed between residue A and B.
+where P~HB~ is the probability of hydrogen bond occurrence probability between residue $\alpha$ and residue $\beta$ during a certain simulation time with $N$ snapshots, $n_i$ is the number of hydrogen bond formed between residue A and B.
 
 ## Random forest regression
 The random forest regression model was applied to predict the $\lambda_{\alpha,\beta}$ by using sklearn's _RandomForestRegressor_ function in Python.

@@ -26,12 +26,16 @@ autoSectionLabels: True
 linkReferences: True
 colorlinks: true
 # indent: true
-fontsize: 12pt
+# fontsize: 12pt
 papersize: a4paper 
 geometry: margin=2.5cm
 lof: true
 lot: true
 toc: true
+
+output:
+  pdf_document:
+    latex_engine: lualatex
 
 # pandoc-crossref control
 secPrefix: "Chapter"

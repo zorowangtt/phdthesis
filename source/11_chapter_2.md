@@ -9,7 +9,7 @@ As a result, the model reproduced the exact value of the protein thermal conduct
 Interestingly, the site-selective analysis of the local, residue-wise, thermal conductivity demonstrated its distinct residue-type dependence, i.e., its magnitude decreased in the order of charged, polar, and hydrophobic residues.
 In addition, the local density dependence of the residue-wise thermal transport property was also discussed. -->
 
-Thermodynamic and other environmental factors, such as temperature[@kashio2022;@thompson2019;@riedel2015;@kiyonaka2013;@weik2010;@johnson2007] as well as interactions between proteins and solvents,[@adams2021;@tanimoto2021;@devineau2017;@oroguchi2017;@continibali2014;@mcmahon2014] govern the structure, dynamics, and function of proteins.  interactions between proteins and solvents. 
+Thermodynamic and other environmental factors, such as temperature[@kashio2022;@thompson2019;@riedel2015;@kiyonaka2013;@weik2010;@johnson2007] as well as interactions between proteins and solvents,[@adams2021;@tanimoto2021;@devineau2017;@oroguchi2017;@continibali2014;@mcmahon2014] govern the structure, dynamics, and function of proteins.
 Although thermal transport is one of the fundamental biophysical characteristics of proteins, it is still unclear how heat flow interacts with the molecular mechanism of protein activity.
 
 Experimental studies[@mizutani2022;@yamashita2018;@botan2007;@deniz2021] have primarily concentrated on investigating the transmission of vibrational energy in peptides and proteins.
@@ -28,7 +28,7 @@ Theoretical analyses have been conducted to investigate these aspects[@agbo2014;
 
 Molecular dynamics simulation is a powerful tool for studying thermal transport in proteins as it allows for the _direct_ measurement of heat current with high spatiotemporal resolution.
 One advantage of this approach is that it enables the computation of protein thermal conductivity based on the time series of heat current at equilibrium state and these computed values can be experimentally verified.
-To facilitate such simulations, we have developed an open-source code called _CURrent Calculations for Proteins_ (CURP), which is available at https://curp.jp.
+To facilitate such simulations, we have developed an open-source code called _CURrent Calculations for Proteins_ (CURP), which is available at [https://curp.jp](https://curp.jp).
 In our study, we applied CURP to investigate the thermal conductivity of an $\alpha$-helical protein, specifically villin headpiece (HP36).
 The computed thermal conductivity of HP36 showed good agreement with values reported in the literature for other globular proteins.
 Additionally, the Fourier transform of the autocorrelation function of the polypeptide backbone heat current accurately reproduced the characteristic peaks of amide bands, further validating our results.[@yamato2022]

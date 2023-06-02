@@ -189,6 +189,8 @@ A pairwise correlation analysis of all features and $\lambda_{\alpha,\beta}$ val
 Their correlation coefficient ($r$) values are all greater than 0.3 and the corresponding $**p$ values are all below 0.01, indicating a statistically significant relationship between each other.
 Although the important features on energy transport through non-covalent contacts are explored in this study, due to the limited number of pairs,
 a more comprehensive model that is valid and applicable to a broader range of non-covalent contacts are needed.
-<!-- Although these three features are playing important role on $\lambda_{\alpha,\beta}$ values, the relationship between each other is worth to be explored further. -->
-<!-- The linear correlation relationships of "$P_{HB}$-$\lambda_{\alpha,\beta}$" and "$1/ \langle \delta d_c^2 \rangle$-energy transfer rate" are only applied to the hydrogen bonded contacts. -->
 
+Although these three features are playing important role on $\lambda_{\alpha,\beta}$ values, the relationship between each other is worth to be explored further.
+The linear correlation relationships of "$P_{HB}$-$\lambda_{\alpha,\beta}$" and "$1/ \langle \delta d_c^2 \rangle$-energy transfer rate" are only applied to the hydrogen bonded contacts.
+
+## Summary

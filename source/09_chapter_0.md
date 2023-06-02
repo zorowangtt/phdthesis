@@ -1,6 +1,9 @@
 \newpage
 # Introduction {#cha1}
+
+
 ## Energy and heat transfer in solids
+
 
 ## Proteins
 (Introduce the protein material and their features.)
@@ -28,7 +31,6 @@ David.
 ## Energy transduction mechanism
 covalent bonds, hydrogen bonds, non-bonded contacts
 
-## Important role of solvent and hydration structures
 
 ## Signal transmit in protiens by locating and navigating energy transport networks 
 
