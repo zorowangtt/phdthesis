@@ -1,68 +1,26 @@
 \newpage
 
-# Heat and energy transfer through non-covalent contacts in an $\alpha$-helical protein (HP36) {#cha4}
+# Heat and energy transfer through non-covalent contacts{#cha4}
 
-**importance of thermal and energy transport in proteins**
+<!-- **importance of thermal and energy transport in proteins**
 
 Thermal energy transport is important for understanding how proteins function, interact, and respond to environmental changes.
 
 **Summary the current methods of investigating thermal energy transport process in proteins**
 
-Current methods of investigating thermal energy transport in proteins include experimental and computational approaches.
-From a macroscopic view, experimental methods involve measuring the thermal conductivity or diffusivity of protein samples using techniques such as laser flash analysis, 3ω method, or Raman spectroscopy.
-Computational methods involve simulating the heat transfer or vibrational dynamics of protein structures using models such as molecular dynamics, normal mode analysis, or anharmonic network models.
-Experimental methods such as time-resolved spectroscopy and computational methods like molecular dynamics simulations have been developed to investigate the vibrational energy flow in proteins.
-These methods have been used to identify determinants of vibrational energy transport and its role in allosteric signal transduction.
+
 However,
 
 **Summarize the debate of dominating interactions on energy transfer in protein**
 
-proposed the debating of the dominating interaction on energy transfer in proteins.
-Reference: 
-- van der waals: Series of studies on heme proteins of Mizutani group's
-- backbone dominating in HP36: 
-- hydrogen bond $\beta$-strand case study in _Nature Commu._ 2021.
 
-- classify the interactions 
-
-Proteins are complex biomolecules composed of amino acids that are connected by peptide bonds.
-These molecules exhibit a hierarchical organization, including primary (linear sequence of amino acids), secondary (local patterns such as $\alpha$ helices or $\beta$ strands), tertiary (overall folding of the protein), and quaternary (association of multiple protein subunits).
-
-classify 
-Within this heterogeneous and intricate system, residues participate in various interactions, including bonded interactions and non-bonded interactions.
-Bonded interactions in proteins include covalent bonds (e.g. peptide bonds, disulfide bonds), ionic bonds (e.g. salt bridges between oppositely charged residues), and hydrogen bonds (e.g. interactions between backbone atoms or polar side chains).
-They are responsible for maintaining the primary structure and stabilizing the secondary and tertiary structures of proteins.
-Van der Waals interactions in proteins are a type of non-bonded interaction that occur between atoms that are close to each other but not covalently bonded.
-They are relatively weak and depend on the distance and orientation of the atoms.
-They contribute to the tertiary and quaternary structures of proteins by optimizing the surface contact between residues and subunits.
-Other types of non-bonded interactions in proteins include electrostatic interactions (such as those between charged residues or between dipoles), hydrophobic interactions (such as those between non-polar residues that avoid contact with water), pi-pi stacking (such as those between aromatic residues), etc.
-They also play important roles in protein folding, stability, function, and interactions.
-Energy transfer in proteins is the process of transferring kinetic or potential energy from one part of the protein to another or from the protein to its environment.
-Different types of interactions can affect the rate and efficiency of energy transfer in proteins.
-For example, van der Waals interactions can facilitate energy transfer between residues that are close to each other, but they can also hinder energy transfer if they cause steric hindrance or reduce flexibility.
-Bonded interactions can also affect energy transfer by modulating the vibrational modes and electronic states of the residues.
-The covalent peptide bond as a linker for connecting basic building blocks of protein provides a good structure basis, while the non-covalent contacts in its tertiary structure after folding are considered to be the key of governing the normal physiology, and functioning in various protein activities including allostery.
-
-For investigating the non-covalent contacts in protein, various methods and theories have been proposed and developed.
 
 **What methods used in mapping native contacts based on only structure information: Protein Contact Network**
 
 **locate a gap in the research/describe the problem you will address/**
 present a prediction to be tested
 
-**Polar, nonpolar, charged residue**
-For polar type of residue pairs, they are attractive in nature.
-Charged residue pairs are attractive or repulsive depending on their electric charge types are the same or opposite.
-Nonpolar contacts are basically attractive because according to the classical Lennard-Jones potential plot their distance are far beyond 2 Å where the attractive interaction is the dominated interaction.
 
-**locate a gap in the research: Network model for non-covalent contacts/Comparison between thermal/energy and PCN**
-
-To gain a system-level understanding of biomolecule structures from a network perspective, network analysis has been employed based on 3D structures obtained from X-ray crystallography, NMR spectroscopy, and various types of electron microscopy to elucidate the relationship between protein structures and their functions.
-These networks are typically constructed using nodes (amino acid residues) and links/edges (contacts).
-There are several web-based tools available, such as RING3.0[@clementel2022], Protein Contact Atlas[@kayikci2018], NAPS[@chakrabarty2016], ANCA[@yan2020], and pyProGA[@sladek2021], that make these networks more accessible to users for various applications.
-One notable approach is the AACEN (amino acid contact energy network), which is a type of ANCA model[@yan2020] that constructs a network using the electrostatic interaction energy (Coulomb potential) and the van der Waals interaction energy (Lennard-Jones potential) for non-covalent contacts.
-Although many of these tools consider amino acid interactions from a geometric or chemical perspective, none of them take protein dynamics into account.
-To address this gap, we propose a thermal transport network that describes non-covalent contacts from a thermal energy transport perspective.
 
 **Highlight the competition of thermal energy transport through native contacts and that along the chain** 
 
@@ -77,7 +35,7 @@ For a more comprehensive
 
 Using this method, the contributions from backbone and contacts transfer can be easily identified and compared within the protein.
 
-\newpage
+\newpage -->
 
 ## Interaction type dependence on heat transfer through non-covalent contacts
 

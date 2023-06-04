@@ -1,7 +1,7 @@
 
 \newpage
 
-# Effects of Ligand Binding on the Dimeric Sensory Domain of *Bj*FixL: Computational Analysis of Vibrational Energy Transfer Pathways {#cha5}
+# Energy transport and its function in sensory domain of *Bj*FixL{#cha5}
 
 *Bradyrhizobium japonicum* lives symbiotically with leguminous plants in
 root nodules, where they fix nitrogen gas from the atmosphere into

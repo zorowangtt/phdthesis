@@ -1,7 +1,7 @@
-# Structural and Dynamic Characterization of a Highly Flexible Protein by AlphaFold-Multimer and MD Simulations Integrating DEER and SAXS Data {#cha6}
+# Structural and dynamic characterization of CP12 protein {#cha6}
 
 Structural analysis of intrinsically disordered regions (IDRs) within proteins is a long-standing challenge in structural biology due to their considerable flexibility and spatiotemporal heterogeneity.
-In this chapter, we report a new strategy for characterizing the conformational ensemble of IDRs and its application to the _Thalassosira pseudonana_ chloroplastic protein CP12 homodimer.
+In this chapter, we report a new strategy for characterizing the conformational ensemble of IDRs and its application to the _Thalassosira pseudonana_ chloroplastic protein (CP12) homodimer.
 The method consists of three stages: (1) Obtaining an initial guess structure based on the amino acid sequence using AlphaFold-Multimer; (2) Harmonic-restrained MD simulations to meet the experimental SAXS and EPR/DEER data; (3) Refinement of the conformational ensemble by using restrained-ensemble MD simulations based on the information from DEER and SAXS experiments.
 The simulated SAXS curve and inter-label distance distributions of our CP12 model were in good agreement with the experimental data, indicating that a combination of deep learning based algorithms like AlphaFold-Multimer, MD simulations, SAXS, and EPR/DEER experiments would provide a new possibility for structural characterization of IDRs and their complexes.
 

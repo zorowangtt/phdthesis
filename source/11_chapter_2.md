@@ -1,6 +1,6 @@
 \newpage
 
-# Site-selective heat current analysis of an α-helical protein (HP36) with the linear-homopolymer-like model {#cha3}
+# Site-selective heat current analysis with linear-homopolymer-like model {#cha3}
 
 <!-- Although thermal transport is among the essential biophysical properties of proteins, its relationship with protein structures, dynamics, and functions is still elusive.
 The structures of folded proteins are highly inhomogeneous, giving rise to anisotropic and non-uniform flow of thermal energy during conformational fluctuations.
@@ -9,42 +9,7 @@ As a result, the model reproduced the exact value of the protein thermal conduct
 Interestingly, the site-selective analysis of the local, residue-wise, thermal conductivity demonstrated its distinct residue-type dependence, i.e., its magnitude decreased in the order of charged, polar, and hydrophobic residues.
 In addition, the local density dependence of the residue-wise thermal transport property was also discussed. -->
 
-Thermodynamic and other environmental factors, such as temperature[@kashio2022;@thompson2019;@riedel2015;@kiyonaka2013;@weik2010;@johnson2007] as well as interactions between proteins and solvents,[@adams2021;@tanimoto2021;@devineau2017;@oroguchi2017;@continibali2014;@mcmahon2014] govern the structure, dynamics, and function of proteins.
-Although thermal transport is one of the fundamental biophysical characteristics of proteins, it is still unclear how heat flow interacts with the molecular mechanism of protein activity.
 
-Experimental studies[@mizutani2022;@yamashita2018;@botan2007;@deniz2021] have primarily concentrated on investigating the transmission of vibrational energy in peptides and proteins.
-These studies employ techniques such as time-resolved spectroscopy to observe how excess energy introduced into short peptides and proteins is distributed.
-On the other hand, computational and theoretical approaches[@leitner2010;@li2022;@thompson2014;@fujisaki2005] have also been utilized to study these processes.
-Computational techniques, including equilibrium- and non-equilibrium molecular dynamics (MD) simulations,[@kobus2011;@buchenberg2016;@continibali2017;@kumawat2017;@mino2014;@kurisaki2023] as well as approaches based on normal mode analysis,[@pandey2017] have been developed and employed to simulate the flow of vibrational energy in proteins.
-These methods have facilitated numerous studies aimed at identifying the determinants[@yamashita2018;@deniz2021;@mino2014] of vibrational energy transport and the role of vibrational energy transport in allosteric signal transduction. Theoretical methods offer valuable tools for investigating these issues at the atomic level of detail.
-
-One approach involves the utilization of a transport-coefficient-like quantity derived from the autocorrelation function of energy flow, which represents the amount of energy transferred per unit time.[@ishikura2006] This methodology has been employed to construct a network of amino acid residues that facilitates the propagation of intramolecular vibrational energy. Subsequently, protein allosteric signal transduction mechanisms were investigated[@ota2019;@reid2020;@poudel2023] through the use of equilibrium MD simulations.
-Non-equilibrium MD simulations were also employed to simulate the dissipation of excitation energy from an unnatural amino acid (acting as a built-in heater), allowing for the mapping of vibrational energy transport pathways originating from the heater.[@deniz2021]
-The master equation model, a theoretical tool, has been utilized to predict energy transport pathways in proteins.[@buchenberg2016;@reid2021;@valinoborau2020]
-These predictions were compared to results from all-atom non-equilibrium MD simulations.
-Additionally, scaling rules were employed in theoretical approaches to elucidate the role of protein structure and dynamics in vibrational energy transport.[@buchenberg2016;@reid2018]
-It is worth noting that vibrational transport occurs not only within the protein molecule but also across the protein-solvent interface and within the solvent.
-Theoretical analyses have been conducted to investigate these aspects[@agbo2014;@sagnella2001].
-
-Molecular dynamics simulation is a powerful tool for studying thermal transport in proteins as it allows for the _direct_ measurement of heat current with high spatiotemporal resolution.
-One advantage of this approach is that it enables the computation of protein thermal conductivity based on the time series of heat current at equilibrium state and these computed values can be experimentally verified.
-To facilitate such simulations, we have developed an open-source code called _CURrent Calculations for Proteins_ (CURP), which is available at [https://curp.jp](https://curp.jp).
-In our study, we applied CURP to investigate the thermal conductivity of an $\alpha$-helical protein, specifically villin headpiece (HP36).
-The computed thermal conductivity of HP36 showed good agreement with values reported in the literature for other globular proteins.
-Additionally, the Fourier transform of the autocorrelation function of the polypeptide backbone heat current accurately reproduced the characteristic peaks of amide bands, further validating our results.[@yamato2022]
-
-The structure of a folded protein exhibits significant heterogeneity, resulting in anisotropic and non-uniform thermal energy flow during conformational fluctuations.
-To gain insights into the site-specific thermal transport properties of proteins, the development of a theoretical method would be valuable.
-One potential concept is the notion of "residue-wise thermal conductivity", which allows for an analysis of thermal transport at the level of individual amino acid residues.
-However, several challenges arise when attempting to implement such an approach.
-Firstly, the small spatial scale occupied by each amino acid residue within the protein matrix introduces boundary effects that may significantly influence the residue-wise thermal conductivity.
-These effects cannot be neglected and must be considered in the analysis.
-Additionally, the local conformational fluctuations within a residue may not be independent of those occurring in the surrounding amino acid residues.
-This interdependence poses further complexities in accurately characterizing the site-specific thermal transport properties.
-To tackle these challenges, we have developed a theoretical model known as the _linear-homopolymer-like model_, which incorporates the autocorrelation function formalism with cross-correlation corrections.
-This model aims to address the intricacies associated with boundary effects and the interplay between conformational fluctuations of neighboring residues.
-We have applied this model to investigate the thermal transport properties of HP36, an $\alpha$-helical protein, providing valuable insights into the site-specific thermal conductivity within the protein.
-By employing this theoretical framework, we aim to enhance our understanding of how thermal energy is transmitted and distributed at the residue level within proteins, considering both local and global factors.
 
 <!-- In [@sec:method-cross-correlation], we summarize basic formulae for the thermal transport property of molecular systems, describe our linear-homopolymer-like model and short-range cross-correlation correction.
 In [@sec:results-and-discussion], we report the computational results of the site-selective heat current analysis.
