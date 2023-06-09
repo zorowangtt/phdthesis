@@ -1,3 +1,4 @@
+
 # Structural and dynamic characterization of CP12 protein {#cha6}
 
 Structural analysis of intrinsically disordered regions (IDRs) within proteins is a long-standing challenge in structural biology due to their considerable flexibility and spatiotemporal heterogeneity.
