@@ -246,7 +246,7 @@ Consequently, it is plausible that the vibrational energy distribution, especial
 Further investigation is needed to validate these hypotheses.
 Additionally, systematic studies on the influence of solvent models on the thermal transport properties of proteins and protein-solvent systems.
 
-## Summary {#sec:summary-cha3}
+<!-- ## Summary {#sec:summary-cha3}
 
 The thermal transport properties of $\alpha$-helical proteins, using HP36 as an example, were investigated using equilibrium molecular dynamics (MD) simulations and the linear response theory.
 
@@ -261,4 +261,4 @@ Remarkably, the model successfully reproduced the exact value of the protein's t
 
 Notably, the analysis revealed a distinct dependence of the residue-wise thermal conductivity on the type of amino acid residue.
 The thermal conductivity values decreased in the following order: charged residues, polar residues, and hydrophobic residues.
-This observation suggests that different residue types contribute differently to the overall heat transport within the protein.
+This observation suggests that different residue types contribute differently to the overall heat transport within the protein. -->

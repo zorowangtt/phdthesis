@@ -289,42 +289,4 @@ the coiled-coil linker may be mainly blocked at the bridge of G/H/I
 α-strands, together with the synergetic reorganization of the compact
 networks constructed by multiple highly conserved amino acid residues.
 
-## Summary 
-
-The effects of imidazole binding and dimerization on an oxygen sensor
-protein, *Bj*FixLH, were investigated by theoretical computations with
-the theory of energy flow and conductivity. Using the energy exchange
-network (EEN) model, the residue-residue and protein-protein
-interactions of dimeric FixL protein are described. A vibrational energy
-transfer pathway characterized in the active form of *Bj*FixLH protein,
-could be a possible signaling pathway. Upon imidazole bound with heme,
-the allosteric effect induced from heme core is propagated starting from
-the FG loop, through G/H/I α strands bridge and coiled-coil linker
-region, to the kinase domain. The salt bridge, constructed by four
-charged residues (ASP154 and ARG254) and the DxT motif, might be as a
-gate controlling the signaling from PAS-B domain to a residue cluster of
-coiled-coil linker region with a compact local interaction network. A
-local residue cluster with compact interaction network is identified to
-be the signal transmitter connecting the PAS-B domain and HK domain to
-stimulus autophosphorylation. The interactions across the dimer
-interface plays a role in dimerization stabilization and the ligand
-binding effect will destabilize the dimer interface giving rise to a
-more independent behavior than before. Although the structural change
-between two states is very small, through the interaction changes in
-native contacts between the active form (met-*Bj*FixLH dimer) and
-(met-FixLH-imd dimer), the significant changes in inter-residue
-interactions are characterized by the energy exchange network. The
-strengthened interactions between heme and Fα helix while the weakened
-interactions between heme-7 propionate -HIS214 and within G/H/I α
-antiparallel strands upon imidazole binding, indicates the signal
-regulation process is responsible by a synergetic effect of
-rearrangement of the compact interactions network constructed by
-multiple reserved residues, rather than by individual residue.
-
-The successful application of the energy exchange network model in the
-identification of functional residue network and protein-protein
-interactions shows the promising value in the area of solving the
-problem in biomolecules integrating with static structural information.
-This also highlighted the importance of dynamic behavior on biomolecular
-functions in uncovering the biomolecules functions.
 

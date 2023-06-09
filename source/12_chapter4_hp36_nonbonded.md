@@ -151,5 +151,3 @@ a more comprehensive model that is valid and applicable to a broader range of no
 
 Although these three features are playing important role on $\lambda_{\alpha,\beta}$ values, the relationship between each other is worth to be explored further.
 The linear correlation relationships of "$P_{HB}$-$\lambda_{\alpha,\beta}$" and "$1/ \langle \delta d_c^2 \rangle$-energy transfer rate" are only applied to the hydrogen bonded contacts.
-
-## Summary
