@@ -3,7 +3,7 @@
 
 ## Conclusions
 <!-- the aim of this study -->
-This dissertation aims to develop a new formulism to study the energy transport, heat transport, and signaling in protein system, based on the linear response theory using equilibrium MD simulations.
+This dissertation aims to develop a new formalism to study the energy transport, heat transport, and signaling in protein systems, based on the linear response theory using equilibrium MD simulations.
 
 <!-- the introduction -->
 Proteins are crucial macromolecules in living organisms, performing various essential functions.
