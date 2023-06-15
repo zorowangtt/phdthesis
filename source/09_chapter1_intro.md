@@ -173,7 +173,32 @@ To address this gap, we propose a thermal transport network that describes non-c
 
 ## Organization of the thesis 
 
-In this dissertation, we developed a theoretical framework for analyzing the local thermal transport properties based on the auto-correlation function formalism and applied it to two protein systems to study the heat, energy, and signaling transport in protein systems. In addition, due to the complexity of protein systems, advanced machine learning-based methods were utilized to illustrate the contributing factors of thermal transport in protein and the structural characterization of intrinsically disordered regions.
+In this dissertation, we developed a theoretical framework for analyzing the local thermal transport properties based on the auto-correlation function formalism and applied it to two protein systems to study the heat, energy, and signaling transport in protein systems.
+In addition, due to the complexity of protein systems, advanced machine learning-based methods were utilized to illustrate the contributing factors of thermal transport in protein and the structural characterization of intrinsically disordered regions.
 
-Chapter 1 presents a general introduction on this research.
-The 
+Chapter 1 provides an introduction to proteins, including an overview of current studies and methods related to vibrational energy transport in proteins and protein solutions.
+It then introduces the concepts of linear response theory and molecular dynamics simulation techniques.
+Then, it identifies the knowledge gap in understanding vibrational energy transport in proteins and protein solutions and emphasizes the significance of applying machine learning algorithms to address protein-related problems.
+
+Chapter 2 provides a detailed description of the materials and methods used to investigate thermal transport properties within proteins and a novel method for the structural characterization of intrinsically disordered protein complexes.
+It includes calculations of overall thermal conductivity of proteins, the formulism for site-selective heat current analysis on specific protein residues, and the procedures for conducting molecular dynamics simulations and a novel integrated approach that combines machine learning algorithms, MD simulation techniques, and SAXS and EPR/DEER experiments for the structural characterization of intrinsically disordered protein complexes.
+
+Chapter 3 presents the development of a theoretical framework that enables the analysis of local thermal transport properties using the autocorrelation function formalism.
+The framework includes the construction of a linear-homopolymer-like model, which is then applied to investigate the thermal transport properties of a small α-helical protein known as the villin headpiece subdomain (HP36).
+Equilibrium molecular dynamics simulations are employed to study the thermal behavior of HP36 within this framework.
+The chapter provides detailed insights into the local thermal transport phenomena occurring in HP36 and establishes a foundation for further research in this area.
+
+Chapter 4 focuses on the analysis of local thermal transport properties through non-bonded contacts in HP36 proteins.
+The inter-residue thermal conductivity is introduced as a measure of heat transfer between residues.
+The competition of different interaction types of heat transfer is disscussed.
+In addition, the machine learning approach of random forest regression is used to explore the non-linear relationship between thermal conductivity and static/dynamic properties of proteins.
+
+Chapter 5 investigates the role of energy transport in signaling mechanism of protein.
+Two forms of oxygen sensor proteins exhibit totally differnet activities, inactive and active forms, despite minimal structural differences.
+The signaling pathways upon ligand binding and allosteric effects are identified by the energy transport network.
+
+In Chapter 6, machine learning methods were integrated with molecular dynamics simulations and experimental results to characterize the conformational ensemble of a homodimer of _Thalassosira pseudonana_ chloroplastic protein (CP12).
+
+Finally, Chapter 7 provides a comprehensive summary of the conclusions drawn from this thesis.
+It highlights the key findings and insights gained from the study of protein thermal transport properties and the application of machine learning algorithms.
+Additionally, the chapter explores future research directions and suggests areas for further investigation.
