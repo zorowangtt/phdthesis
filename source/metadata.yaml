@@ -16,6 +16,7 @@ header-includes:
     - \usepackage{setspace}
     - \usepackage{color}
     - \linespread{1.5}
+    - \usepackage{indentfirst}
     - \setlength\parindent{24pt}
 
 link-citations: True

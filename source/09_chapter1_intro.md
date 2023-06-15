@@ -22,30 +22,37 @@ The distinguishing feature among them is the unique side chain attached to the c
 They are usually classified into three different groups based on the chemical nature of their side chains.
 Most proteins fold into three-dimensional structures, normally known as "native conformations", characterized by four levels of structure: (1) primary structure, which refers to the amino acid sequence; (2) secondary structure, including α-helices, β-sheets, and turns/loops, which are stabilized by hydrogen bonds; (3) tertiary structure, representing the overall three-dimensional structure of a protein; and (4) quaternary structure, formed by the arrangement of multiple proteins.
 
-## Vibrational thermal energy transfer in protein (To be continued)
+## Vibrational thermal energy transport in protein
+
+![Milestone studies on vibrational energy transport properties in proteins.](figures/introduction/milestone.jpeg){#fig:milestone}
+
 <!-- importance of vibrational thermal energy transfer in proteins -->
 
-Vibrational energy transfer in proteins plays a significant role in conformational changes, energy dissipation, protein folding and unfolding, bimolecular interactions, enzymatic reactions, and protein dynamics.
+Protein and protein based materials are considered as the nonmetallic solids.
+The thermophysical properties of some common protein materials have been measured and recorded in a series of data called _Thermophysical properties of matter_ collected by the TPRC Data Series.
+In this data series, numerous data of the thermal conductivity, specific heat, and thermal diffusivity about protein materials are recorded and reported in the volume 2, volume 5, and volume 10, respectively.
 
 <!-- current methods for investigating energy transfer in proteins -->
-
-Current methods of investigating thermal energy transport in proteins include experimental and computational approaches.
+Vibrational energy transfer in proteins plays a significant role in conformational changes, energy dissipation, protein folding and unfolding, bimolecular interactions, enzymatic reactions, and protein dynamics.
+The current methods of investigating thermal energy transport in proteins include experimental and computational approaches.
 From a macroscopic view, experimental methods involve measuring the thermal conductivity or diffusivity of protein samples using techniques such as laser flash analysis, 3ω method, or Raman spectroscopy.
-From a microscopic view, experimental methods for investigating the vibrational energy transport pathway in peptides and proteins have been implemented by time-resolved experiments techniques including time-resolved ultraviolet resonance Raman spectroscopy and UV-pump-IR-probe transients spectroscopy.[@mizutani2022;@yamashita2018;@botan2007;@deniz2021]
-These studies directly observed how excess energy introduced into short peptides and proteins is distributed.
+From a microscopic view, time-resolved experimentation approaches, such as time-resolved ultraviolet resonance Raman spectroscopy and UV-pump-IR-probe transients spectroscopy,
+have been used to investigate the vibrational energy transport mechanism in peptides and proteins.[@mizutani2022;@yamashita2018;@botan2007;@deniz2021]
+Using these methods, it has been possible to directly observe the redistribution of excess energy deposited into either natural group of protein, like heme, or unnatural amino acid site connected to short peptides and proteins.
+
+Milestone studies on vibrational energy transport properties in proteins is shown in @fig:milestone.
 In 1997, Mizutani Yasuhisa and his colleagues utilized time-resolved ultraviolet resonance Raman spectroscopy to directly observe the energy flow in hemeproteins, taking advantage of the efficient photothermal conversion properties of heme group.[@mizutani1997]
 The redistribution of excess energy can be probed by employing anti-Stokes ultraviolet resonance Raman spectroscopy on a tryptophan residue as a probe, enabling the mapping of energy flow with high spatial resolution.
 In 2007, they observed a double exponential decay in the cooling process of the heme group in myoglobin, with time constants of 1.9 $\pm$ 0.6 and 16 $\pm$ 9 picoseconds for vibrational population decay, and 3.0 $\pm$ 1.0 and 25 $\pm$ 14 picoseconds for temperature relaxation.
 Further investigations revealed that the primary pathway for energy transfer from the heme group to the protein is not mediated by the covalent bond between heme and the proximal
 or the protein backbone, but instead occurs through atomic contacts between the heme and specific residues.[@fujii2014;@kondoh2016;@mizuno2020;@mizutani2022]
-
 In 2007, Gerhard Stock and his coworkers investigated the energy transfer through a 3$_{10}$-helix in chloroform solvent, whose N-terminal is attached with a heater of $\alpha$-aminoisobutyric acid, with a combined experimental-theoretical approach: UV-pump-IR-probe transients spectra and nonequilibrium molecular dynamics (MD) simulations.
 Non-equilibrium MD simulations were also employed to simulate the dissipation of excitation energy from an unnatural amino acid (acting as a built-in heater), allowing for the mapping of vibrational energy transport pathways originating from the heater.
 It demonstrated that 70% of the energy absorbed by the helix quickly equilibrates within a timeframe of less than a picosecond to the solvent and subsequently spreads along the helix through a diffusive-like process.
 The nonequilibrium MD simulations mimic the laser excitation of the molecules by nonequilibrium phase-space initial condition for the solute and the solvent atoms.
-The fitted experimental and simulated thermal diffusivity along the peptide chain with 1D diffusion process were 10 $\AA^2ps^{-1}$ and 2 $\AA^2ps^{-1}$, respectively.[@botan2007]
+The fitted experimental and simulated thermal diffusivity along the peptide chain with 1D diffusion process were 10 $\AA$^2^ ps^-1^ and 2 $\AA$^2^ ps^-1^, respectively.[@botan2007]
 Subsequently, the nonequilibrium MD simulations techniques were employed to various proteins, such as villin headpiece subdomain (HP36)[@leitner2015;@buchenberg2016], photoswitchable PDZ domain (PDZ2S)[@buchenberg2017], heptahelical transmembrane proteins[@helmer2022a] and so on.[@deniz2021]
-Numerous results are yielded by their studies including scaling rules for vibrational energy transport in proteins through backbone and non-covalent native contacts, competition of vibrational energy transport between bonds and contacts, and the role of energy transport on allosteric mechanism in functional proteins.
+Numerous results are yielded by these studies including scaling rules for vibrational energy transport in proteins through backbone and non-covalent native contacts, competition of vibrational energy transport between bonds and contacts, and the role of energy transport on allosteric mechanism in functional proteins.
 Besides, John E. Straub and his coworkers has employed nonequilibrium classical MD simulations to study the spatially anisotropic “funneling” mechanism for the kinetic energy relaxation of excited heme group in solvated myoglobin by directly depositing excess kinetic energy on heme.
 They demonstrated that the kinetic energy decay of heme in native myoglobin and His93Gly mutant myoglobin were a single exponential with a time constant of 5.9 p and 8.8 ps, respectively, while the kinetic energy relaxation of heme in cytochrome c was a biphasic exponential decay process with relaxation time constant of 1.5 ps and 10.1 ps for the fast process and the slow process, respectively.[@sagnella2001;@bu2003;@bu2003a]
 
@@ -54,22 +61,32 @@ Except for nonequilibrium MD simulations mentioned above,[@kobus2011;@buchenberg
 
 <!-- These methods have facilitated numerous studies aimed at identifying the determinants[@yamashita2018;@deniz2021;@mino2014] of vibrational energy transport and the role of vibrational energy transport in allosteric signal transduction. Theoretical methods offer valuable tools for investigating these issues at the atomic level of detail. -->
 
-One approach involves the utilization of a transport-coefficient-like quantity derived from the autocorrelation function of energy flow, which represents the amount of energy transferred per unit time.[@ishikura2006] This methodology has been employed to construct a network of amino acid residues that facilitates the propagation of intramolecular vibrational energy. Subsequently, protein allosteric signal transduction mechanisms were investigated[@ota2019;@reid2020;@poudel2023] through the use of equilibrium MD simulations.
-
+One approach involves the utilization of a transport-coefficient-like quantity derived from the auto-correlation function of energy flow, which represents the amount of energy transferred per unit time.[@ishikura2006]
+This methodology has been employed to construct a network of amino acid residues that facilitates the propagation of intramolecular vibrational energy. 
+Subsequently, protein allosteric signal transduction mechanisms and energy transport patways were investigated[@ota2019;@reid2020;@poudel2023] through the energy exchange network model using equilibrium MD simulations.
 The master equation model, a theoretical tool, has been utilized to predict energy transport pathways in proteins.[@buchenberg2016;@reid2021;@valinoborau2020]
 These predictions were compared to results from all-atom non-equilibrium MD simulations.
 Additionally, scaling rules were employed in theoretical approaches to elucidate the role of protein structure and dynamics in vibrational energy transport.[@buchenberg2016;@reid2018]
 It is worth noting that vibrational transport occurs not only within the protein molecule but also across the protein-solvent interface and within the solvent.
 Theoretical analyses have been conducted to investigate these aspects[@agbo2014;@sagnella2001].
 
+## Linear response theory
+
+
+## Molecular dynamic simulations
+
 Molecular dynamics simulation is a powerful tool for studying thermal transport in proteins as it allows for the _direct_ measurement of heat current with high spatiotemporal resolution.
 One advantage of this approach is that it enables the computation of protein thermal conductivity based on the time series of heat current at equilibrium state and these computed values can be experimentally verified.
+
+## CURP (CURrent calculation for Proteins)
 To facilitate such simulations, we have developed an open-source code called _CURrent Calculations for Proteins_ (CURP), which is available at [https://curp.jp](https://curp.jp).
 In our study, we applied CURP to investigate the thermal conductivity of an $\alpha$-helical protein, specifically villin headpiece (HP36).
 The computed thermal conductivity of HP36 showed good agreement with values reported in the literature for other globular proteins.
 Additionally, the Fourier transform of the autocorrelation function of the polypeptide backbone heat current accurately reproduced the characteristic peaks of amide bands, further validating our results.[@yamato2022]
 
-## Anisotropic energy transport in proteins (To be continued)
+## Knowledge gap on the thermal transport properties inside the protein
+
+### Anisotropic and non-uniform flow of thermal energy
 <!-- cha3: the introduction of cross correlation  -->
 Thermodynamic and other environmental factors, such as temperature[@kashio2022;@thompson2019;@riedel2015;@kiyonaka2013;@weik2010;@johnson2007] as well as interactions between proteins and solvents,[@adams2021;@tanimoto2021;@devineau2017;@oroguchi2017;@continibali2014;@mcmahon2014] govern the structure, dynamics, and function of proteins.
 Although thermal transport is one of the fundamental biophysical characteristics of proteins, it is still unclear how heat flow interacts with the molecular mechanism of protein activity.
@@ -92,7 +109,7 @@ By employing this theoretical framework, we aim to enhance our understanding of 
     - thermal transport networks
     - -->
 
-## Debating on dominating way for energy transport
+### Debating on dominating way for energy transport
 <!-- efficiency of different types of interactions   -->
 proposed the debating of the dominating interaction on energy transfer in proteins.
 <!-- Reference: 
@@ -127,9 +144,24 @@ For polar type of residue pairs, they are attractive in nature.
 Charged residue pairs are attractive or repulsive depending on their electric charge types are the same or opposite.
 Nonpolar contacts are basically attractive because according to the classical Lennard-Jones potential plot their distance are far beyond 2 Å where the attractive interaction is the dominated interaction.
 
+
+### Factors affecting heat transfer through non-covalent contacts
+
+For structural property, David M. Leitner's group found that the correlations of energy transfer rate is linearly correlated with the mean-square distance for charged contacts between charged residue pairs in myoglobin.[@reid2018]
+It is reasonably understood because the interaction of charged groups obeys the Coulomb's law, where their force depends on their distance.
+For dynamics, they also discovered that the energy transfer rate has a good correlation with the variance in the length of the contact for polar and hydrophobic contacts.[@buchenberg2016;@reid2018;@leitner2019;@poudel2020;@reid2020;@leitner2020a;@poudel2022;@poudel2023]
+The hydrogen bonds have been found to facilitate the thermal transport in proteins and protein-based materials.
+For instance, the thermal conductivity of $\pi-$helices, which have a stronger hydrogen bond strength, is two folds and three-folds higher than that of $\alpha-$ and $3_{10}-$ helices, respectively.[@he2021]
+The hydrogen bonding has been found to be the main contributor to the increase in the thermal conductivity in spider silk protein, with thermal conductivity reported to be 1-2 order of magnitude higher than that of globular proteins,[@zhang2014] and be the dominant vibrational energy transfer pathway that can compete with transport along the backbone in a $\beta$-hairpin.[@deniz2021]
+The scaling rules for rates of vibrational energy transfer in proteins have been extensively studied in various proteins, including HP36[@buchenberg2016;@poudel2020], myoglobin[@reid2018], deoxy-HbI/oxy-HbI[@leitner2019;@reid2020;@leitner2020a], A2A adenosine receptor[@leitner2020a], and GPCR proteins[@poudel2022;@poudel2023], by David M. Leitner and his colleagues.
+However, it is important to note that these scaling rules have been validated and found to be applicable primarily for hydrogen bonding contacts, specifically those within a distance of less than 2.8 Å.
+Given the considerable number of hydrophobic residues involving van der Waals interactions inside the proteins and those contacts with distances larger than 2.8 Å, a scaling rule that is applicable to a broader range of contacts is needed.
+Due to the complexity of protein systems, the thermal energy transport through contacts should be affected by a number of both static and dynamical properties, including their structure, compositions, dynamics, and interaction types.
+Thus, the relationship between heat and energy transport efficiency through contacts and these protein properties is expected to be non-linear, rather than linear.
+
 <!-- **locate a gap in the research: Network model for non-covalent contacts/Comparison between thermal/energy and PCN** -->
 
-## Network model for non-covalent contacts
+### Network model for non-covalent contacts
 To gain a system-level understanding of biomolecule structures from a network perspective, network analysis has been employed based on 3D structures obtained from X-ray crystallography, NMR spectroscopy, and various types of electron microscopy to elucidate the relationship between protein structures and their functions.
 These networks are typically constructed using nodes (amino acid residues) and links/edges (contacts).
 There are several web-based tools available, such as RING3.0[@clementel2022], Protein Contact Atlas[@kayikci2018], NAPS[@chakrabarty2016], ANCA[@yan2020], and pyProGA[@sladek2021], that make these networks more accessible to users for various applications.
@@ -137,37 +169,11 @@ One notable approach is the AACEN (amino acid contact energy network), which is 
 Although many of these tools consider amino acid interactions from a geometric or chemical perspective, none of them take protein dynamics into account.
 To address this gap, we propose a thermal transport network that describes non-covalent contacts from a thermal energy transport perspective.
 
+### 
 
-<!-- ## Energy and heat transfer in solids
+## Organization of the thesis 
 
+In this dissertation, we developed a theoretical framework for analyzing the local thermal transport properties based on the auto-correlation function formalism and applied it to two protein systems to study the heat, energy, and signaling transport in protein systems. In addition, due to the complexity of protein systems, advanced machine learning-based methods were utilized to illustrate the contributing factors of thermal transport in protein and the structural characterization of intrinsically disordered regions.
 
-## Proteins
-(Introduce the protein material and their features.)
-
-
-## Vibrational energy transfer in Proteins -->
-
-<!-- ## Methods of investigating energy transfer in proteins
-### Equilibrium MD simulations 
-based on linear response theory,
-Direct derivation of energy transfer based on physical tuition (Yamato)
-Green-Kubo relation was used to calculate the thermal conductivity (Yamato)
-
-### Time-resolved spectroscopy techniques
-Direct observation of energy flow in peptide helices by real-time FTIR absorption spectrum (experiment, Stock)
-Direct observation of energy flow in heme proteins by time-resolved ultraviolet resonance Raman spectroscopy (Mizutani)
-
-### Non-equilibrium molecular simulations 
-on kinetic energy redistribution in heme proteins (John)
-artificial heater in helices and proteins (Stock)
-
-### Normal mode-based methods
-David.
-
-## Energy transduction mechanism
-covalent bonds, hydrogen bonds, non-bonded contacts
-
-
-## Signal transmit in protiens by locating and navigating energy transport networks  -->
-
-## Organization of the thesis (To be continued)
+Chapter 1 presents a general introduction on this research.
+The 
