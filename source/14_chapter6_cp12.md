@@ -1,10 +1,22 @@
 
 # Structural and dynamic characterization of CP12 protein {#cha6}
 
+
 Structural analysis of intrinsically disordered regions (IDRs) within proteins is a long-standing challenge in structural biology due to their considerable flexibility and spatiotemporal heterogeneity.
 In this chapter, we report a new strategy for characterizing the conformational ensemble of IDRs and its application to the _Thalassosira pseudonana_ chloroplastic protein (CP12) homodimer.
 The method consists of three stages: (1) Obtaining an initial guess structure based on the amino acid sequence using AlphaFold-Multimer; (2) Harmonic-restrained MD simulations to meet the experimental SAXS and EPR/DEER data; (3) Refinement of the conformational ensemble by using restrained-ensemble MD simulations based on the information from DEER and SAXS experiments.
 The simulated SAXS curve and inter-label distance distributions of our CP12 model were in good agreement with the experimental data, indicating that a combination of deep learning based algorithms like AlphaFold-Multimer, MD simulations, SAXS, and EPR/DEER experiments would provide a new possibility for structural characterization of IDRs and their complexes.
+
+## A new type of flexible CP12 protein: _Thalassiosira pseudonana_
+
+Intrinsically Disordered Regions (IDRs) are segments or regions within proteins that lack a stable three-dimensional structure.
+Unlike folded domains or regions with well-defined structures, IDRs exhibit high flexibility and intrinsic disorder under physiological conditions.
+These regions are characterized by a lack of stable secondary structures such as alpha helices or beta sheets.
+
+CP12 is a 12 kDa chloroplast protein found in various photosynthetic organisms.
+It consists of approximately 80 amino acid residues and plays a crucial role in the redox signaling pathway that controls the transition between light and dark metabolisms.
+Very recently, 
+
 
 ## AlphaFold2 Model
 The top five dimer models for WT, S46C, and S56C mutants are shown in @fig:af2-output, including mostly elongated forms (WT-1, 3–5) and over-folded triangular one (WT-2). The small angle X-ray scattering revealed that the CP12 dimer takes an elongated cylindrical form with kinks[@shao2021]. Accordingly, we selected a representative WT model from the five candidates (@fig:predicted-model), where one monomer is shown in cartoon representation with each residue being colored according to its per-residue confidence score, while the other is in surface representation. Overall, the helical regions were modeled with high confidence, except for the C-terminal helices and some parts of the second helices. On the other hand, the random coils, potentially disordered regions, were modeled with low confidence. The coexistence of both globular folded and potential disordered regions is consistent with the Kratky analysis of the SAXS experiment[@shao2021]. This AF2 model shows an antiparallel dimer with a coiled-coil composed of residues 46–82 (among them 45–75 with high prediction confidence), in line with the inference that the region containing residues 46–82 has a high propensity for coiled-coil arrangement3. For this model, the estimated percentages of the secondary structure elements using YASARA View22 were 79.1% helix, 2.5% turn, 18.4% random coil, and 0% β sheet; whereas the occurrence of 10% β-sheet was reported by the measurement of circular dichroism spectra[@shao2021]. Two highly conserved AWD_VEEL motifs and two cysteine residues are highlighted with sticks and spheres, respectively. Neither inter- nor intra-molecular disulfide bridge between two cysteine residues is found in the AF2 model, which is mutually corroborated with experiment results[@shao2021].

@@ -145,7 +145,7 @@ Charged residue pairs are attractive or repulsive depending on their electric ch
 Nonpolar contacts are basically attractive because according to the classical Lennard-Jones potential plot their distance are far beyond 2 Å where the attractive interaction is the dominated interaction.
 
 
-### Factors affecting heat transfer through non-covalent contacts
+### Factors affecting heat transfer through non-covalent contacts {#sec:factors}
 
 For structural property, David M. Leitner's group found that the correlations of energy transfer rate is linearly correlated with the mean-square distance for charged contacts between charged residue pairs in myoglobin.[@reid2018]
 It is reasonably understood because the interaction of charged groups obeys the Coulomb's law, where their force depends on their distance.
@@ -169,9 +169,25 @@ One notable approach is the AACEN (amino acid contact energy network), which is 
 Although many of these tools consider amino acid interactions from a geometric or chemical perspective, none of them take protein dynamics into account.
 To address this gap, we propose a thermal transport network that describes non-covalent contacts from a thermal energy transport perspective.
 
-### 
+## Machine learning methods
+Machine learning methods play a crucial role in protein science by enabling the analysis, prediction, and understanding of various aspects related to proteins, including structure, function, interactions, and dynamics.[@suh2021;@pakhrin2021;@morgunov2021;@greener2022]
+These methods leverage computational algorithms and statistical models to extract meaningful information from protein data and address complex challenges in the field.
 
-## Organization of the thesis 
+One of the key applications of machine learning in protein science is protein structure prediction.
+Predicting the three-dimensional structure of a protein from its amino acid sequence is a fundamental problem in biology.
+Machine learning algorithms, such as deep learning-based approaches, have shown remarkable success in predicting protein structures with high accuracy.[@tunyasuvunakool2021;@bryant2022;@evans2021]
+These methods utilize large training datasets, incorporating known protein structures, to learn patterns and relationships between sequences and structures, enabling the generation of accurate structure predictions for previously unknown proteins.
+
+
+
+On the other hand, machine learning methods play a significant role in regression tasks in protein science, where the goal is to predict continuous or quantitative properties of proteins based on various input features.
+As described in @sec:factors, the thermal transfer through non-bonded contacts are influenced by multiple factors related to various static and dynamical properties of proteins given the complexity of environment inside the proteins.
+To get a better understanding 
+
+
+
+
+## Organization of the thesis
 
 In this dissertation, we developed a theoretical framework for analyzing the local thermal transport properties based on the auto-correlation function formalism and applied it to two protein systems to study the heat, energy, and signaling transport in protein systems.
 In addition, due to the complexity of protein systems, advanced machine learning-based methods were utilized to illustrate the contributing factors of thermal transport in protein and the structural characterization of intrinsically disordered regions.
