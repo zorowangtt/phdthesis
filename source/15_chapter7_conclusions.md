@@ -21,18 +21,25 @@ Two new concepts, _inter-residue thermal conductivity_ and _inter-residue energy
 
 <!-- conclusions of chapter 3 and 4  -->
 
-In @sec:cha3 and @sec:cha4, the thermal transport properties of $\alpha$-helical proteins, using HP36 as an example, were investigated based on linear response theory using equilibrium molecular dynamics (MD) simulations.
-The calculated thermal conductivity ($\lambda$) of the entire protein was found to be 0.26 $\mathrm{\pm}$ 0.01 $\mathrm{W{/} (m{\cdot}K)}$ using the AMBER ff19SB protein force field and the rigid TIP3P water model.
+In the @sec:cha3 and @sec:cha4, the thermal transport properties of $\alpha$-helical proteins, using HP36 as an example, were investigated based on linear response theory using equilibrium molecular dynamics (MD) simulations.
+In the @sec:cha3, the calculated thermal conductivity ($\lambda$) of the entire protein was found to be 0.26 $\mathrm{\pm}$ 0.01 $\mathrm{W{/} (m{\cdot}K)}$ using the AMBER ff19SB protein force field and the rigid TIP3P water model.
 This value was in close agreement with the thermal conductivity obtained using the flexible TIP3P water model, suggesting that the choice of water model parameters does not significantly affect the inherent thermal transport properties of proteins.
 To explore the local heat transport properties within the protein's interior, the protein molecule was divided into 36 amino acid residues.
 A theoretical model known as the linear-homopolymer-like model was introduced for analysis.
 In this model, it was assumed that heat flow predominantly occurs along the polypeptide backbone and within each individual amino acid residue.
 Furthermore, it was assumed that the cross-correlation of partial heat currents between different regions is limited to short-range interactions.
 Remarkably, the model successfully reproduced the exact value of the protein's thermal conductivity, as derived from the total heat current, with an error of only 1%.
-
 Notably, the analysis revealed a distinct dependence of the residue-wise thermal conductivity on the type of amino acid residue.
 The thermal conductivity values decreased in the following order: charged residues, polar residues, and hydrophobic residues.
 This observation suggests that different residue types contribute differently to the overall heat transport within the protein.
+
+In the @sec:cha4, the thermal conductivity of peptide bonded residue pairs are found to be greater than those of non-bonded residue pairs.
+A strong correlation was observed between the thermal conductivity and energy conductivity of non-bonded residue pairs, despite they are representing different transport properties.
+Additionally, an empirical linear equation was derived to establish a relationship between them.
+In general, the $\lambda_{\alpha, \beta}$ values of non-bonded contacts in HP36 exhibited a decreasing trend in the following order: hydrogen bonds > π-stacking > electrostatic > hydrophobic.
+The hydrogen bond formation capacity druing MD simulations demonstrated a significant role for $\lambda_{\alpha, \beta}$ values of hydrogen bonding contacts.
+In order to elucidate the factors influencing thermal transport ability in non-covalent contacts within the complex protein environment, a non-linear regression model was constructed for a wide range of contacts.
+This model employed random forest regression analysis to investigate the relationship between the thermal conductivity values ($\lambda_{\alpha, \beta}$) and various static and dynamic variables.
 
 <!-- chapter 5, signaling pathway -->
 

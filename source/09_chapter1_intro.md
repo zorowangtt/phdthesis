@@ -24,7 +24,7 @@ Most proteins fold into three-dimensional structures, normally known as "native 
 
 ## Vibrational thermal energy transport in protein
 
-![Milestone studies on vibrational energy transport properties in proteins.](figures/introduction/milestone.jpeg){#fig:milestone}
+![Milestone studies on vibrational energy transport properties in proteins.](figures/introduction/milestone.jpg){#fig:milestone}
 
 <!-- importance of vibrational thermal energy transfer in proteins -->
 
@@ -71,20 +71,54 @@ It is worth noting that vibrational transport occurs not only within the protein
 Theoretical analyses have been conducted to investigate these aspects[@agbo2014;@sagnella2001].
 
 ## Linear response theory
-
+The process of transferring heat and energy with a temperature gradient is typically thought of as a non-equilibrium system.
+A key idea in thermophysics is the linear response theory, which offers a framework for comprehending the connection between perturbations that are applied to a system and its responses.[@kubo1957;@kubo1957a;@kubo1966;@gottwald2020]
+When the changes are small away from equilibrium, the equilibrium fluctuations dictate the non-equilibrium response.
+The system's response to a small perturbation is linearly related to the magnitude of the perturbation.
+The analysis of the dynamic characteristics and transport phenomena of molecules and materials can be performed by using linear response theory in the context of molecular dynamics simulations and statistical mechanics.
+It allows us to probe the system's response to external perturbations, such as temperature, by calculating quantities such as correlation functions and transport coefficients, which will be applied in this thesis.
 
 ## Molecular dynamic simulations
+Molecular dynamics (MD) simulations[@frenkel2002] are computational techniques that are widely used to study the behavior and dynamics of atoms and molecules over time.
+They provide detailed insights into the movement, interactions, and properties of systems at the atomic and molecular level.
+In this thesis, on the one hand, it is used to explore the heat, energy and signal transfer in proteins based on the linear response theory.
+The MD simulations are specially suitable for studies of thermal transport in proteins as it allows for the _direct_ measurement of heat current with high spatio-temporal resolution.
+On the other hand, it is used for structural characterize and refinement of highly flexible proteins integrated with the experimental small-angle X-ray scattering (SAXS) and electron paramagnetic resonance/double electron–electron resonance (EPR/DEER) data.[@lipfert2007;@boldon2015;@buhrke2020;@torricella2021]
 
-Molecular dynamics simulation is a powerful tool for studying thermal transport in proteins as it allows for the _direct_ measurement of heat current with high spatiotemporal resolution.
-One advantage of this approach is that it enables the computation of protein thermal conductivity based on the time series of heat current at equilibrium state and these computed values can be experimentally verified.
+In MD simulations, the laws of classical mechanics are used to numerically solve the equations of motion for a collection of atoms or molecules.
+By specifying the initial positions, velocities, and forces acting on the particles, the system's time evolution can be simulated.
+This allows us to observe and analyze various physical and chemical phenomena that occur on the atomic scale.
+To accurately capture the behavior of protein systems, MD simulations employ force fields that describe the interatomic interactions.
+In general, these force fields consist of potential energy functions that incorporate parameters representing bond lengths, angles, dihedral angles, and non-bonded interactions such as van der Waals forces and electrostatic interactions and sometimes additional terms to account for specific interactions like hydrogen bonding.
+Force fields are typically derived from experimental data and quantum mechanical calculations.
+They aim to strike a balance between accuracy and computational efficiency, allowing simulations of biologically relevant timescales and system sizes.
+Different force fields for different systems have been developed, each with its own set of assumptions, approximations, and parameterization strategies.
+Commonly used force fields in MD simulations of biomolecular systems include CHARMM[@mackerell1998], AMBER[@cornell1995], GROMOS[@oostenbrink2004], and OPLS-AA[@jorgensen1996].
+These force fields have been extensively tested and parameterized for a wide range of biomolecules, including proteins, nucleic acids, lipids, and carbohydrates.
+The associated molecular dynamics software packages and servers have also undergone substantial development based on these force-fields, including CHARMM ([http://www.charmm.org](http://www.charmm.org)),[@brooks1983] Amber ([http://amber.scripps.edu](http://amber.scripps.edu)),[@weiner1981] GROMACS ([http://www.gromacs.org](http://www.gromacs.org)),[@berendsen1995] NAMD ([http://www.ks.uiuc. edu/Research/namd](http://www.ks.uiuc.edu/Research/namd)),[@nelson1996] and GENESIS ([https://www.r-ccs.riken.jp/labs/cbrt](https://www.r-ccs.riken.jp/labs/cbrt))[@kobayashi2017].
 
 ## CURP (CURrent calculation for Proteins)
-To facilitate such simulations, we have developed an open-source code called _CURrent Calculations for Proteins_ (CURP), which is available at [https://curp.jp](https://curp.jp).
-In our study, we applied CURP to investigate the thermal conductivity of an $\alpha$-helical protein, specifically villin headpiece (HP36).
-The computed thermal conductivity of HP36 showed good agreement with values reported in the literature for other globular proteins.
-Additionally, the Fourier transform of the autocorrelation function of the polypeptide backbone heat current accurately reproduced the characteristic peaks of amide bands, further validating our results.[@yamato2022]
+CURP (CURrent calculation for Proteins, [https://curp.jp](https://curp.jp)) package is a computational tool designed by YAMATO group to calculate the energy/heat currents and atomic stress tensors in proteins.[@ishikura2012;@ishikura2015;@yamato2022]
+It operates by utilizing atomic coordinates and velocity trajectories obtained from molecular dynamics (MD) simulations.
+In this thesis, the CURP program is used to perform the energy flow, energy transport coefficient, heat current, thermal conductivity calculations.
+A workflow diagram of CURP calculations is shown in @fig:curp.
 
-## Knowledge gap on the thermal transport properties inside the protein
+![Workflow diagram of CURP program for energy/heat currents calculations, taken from [https://curp.jp](https://curp.jp)](figures/introduction/curp.png){#fig:curp}
+
+## Machine learning methods
+Machine learning methods play a crucial role in protein science by enabling the analysis, prediction, and understanding of various aspects related to proteins, including structure, function, interactions, and dynamics.[@suh2021;@pakhrin2021;@morgunov2021;@greener2022]
+These methods leverage computational algorithms and statistical models to extract meaningful information from protein data and address complex challenges in the field.
+
+One of the key applications of machine learning in protein science is protein structure prediction.
+Predicting the three-dimensional structure of a protein from its amino acid sequence is a fundamental problem in biology.
+Machine learning algorithms, such as deep learning-based approaches, have shown remarkable success in predicting protein structures with high accuracy.[@tunyasuvunakool2021;@bryant2022;@evans2021]
+These methods utilize large training datasets, incorporating known protein structures, to learn patterns and relationships between sequences and structures, enabling the generation of accurate structure predictions for previously unknown proteins.
+
+On the other hand, machine learning methods play a significant role in regression tasks in protein science, where the goal is to predict continuous or quantitative properties of proteins based on various input features.
+As described in @sec:factors, the thermal transfer through non-bonded contacts are influenced by multiple factors related to various static and dynamical properties of proteins given the complexity of environment inside the proteins.
+To get a better understanding 
+
+## Knowledge gap on the thermal transport properties
 
 ### Anisotropic and non-uniform flow of thermal energy
 <!-- cha3: the introduction of cross correlation  -->
@@ -111,7 +145,7 @@ By employing this theoretical framework, we aim to enhance our understanding of 
 
 ### Debating on dominating way for energy transport
 <!-- efficiency of different types of interactions   -->
-proposed the debating of the dominating interaction on energy transfer in proteins.
+<!-- proposed the debating of the dominating interaction on energy transfer in proteins. -->
 <!-- Reference: 
 - van der waals: Series of studies on heme proteins of Mizutani group's
 - backbone dominating in HP36: 
@@ -144,7 +178,6 @@ For polar type of residue pairs, they are attractive in nature.
 Charged residue pairs are attractive or repulsive depending on their electric charge types are the same or opposite.
 Nonpolar contacts are basically attractive because according to the classical Lennard-Jones potential plot their distance are far beyond 2 Å where the attractive interaction is the dominated interaction.
 
-
 ### Factors affecting heat transfer through non-covalent contacts {#sec:factors}
 
 For structural property, David M. Leitner's group found that the correlations of energy transfer rate is linearly correlated with the mean-square distance for charged contacts between charged residue pairs in myoglobin.[@reid2018]
@@ -161,29 +194,13 @@ Thus, the relationship between heat and energy transport efficiency through cont
 
 <!-- **locate a gap in the research: Network model for non-covalent contacts/Comparison between thermal/energy and PCN** -->
 
-### Network model for non-covalent contacts
+<!-- ### Network model for non-covalent contacts
 To gain a system-level understanding of biomolecule structures from a network perspective, network analysis has been employed based on 3D structures obtained from X-ray crystallography, NMR spectroscopy, and various types of electron microscopy to elucidate the relationship between protein structures and their functions.
 These networks are typically constructed using nodes (amino acid residues) and links/edges (contacts).
 There are several web-based tools available, such as RING3.0[@clementel2022], Protein Contact Atlas[@kayikci2018], NAPS[@chakrabarty2016], ANCA[@yan2020], and pyProGA[@sladek2021], that make these networks more accessible to users for various applications.
 One notable approach is the AACEN (amino acid contact energy network), which is a type of ANCA model[@yan2020] that constructs a network using the electrostatic interaction energy (Coulomb potential) and the van der Waals interaction energy (Lennard-Jones potential) for non-covalent contacts.
 Although many of these tools consider amino acid interactions from a geometric or chemical perspective, none of them take protein dynamics into account.
-To address this gap, we propose a thermal transport network that describes non-covalent contacts from a thermal energy transport perspective.
-
-## Machine learning methods
-Machine learning methods play a crucial role in protein science by enabling the analysis, prediction, and understanding of various aspects related to proteins, including structure, function, interactions, and dynamics.[@suh2021;@pakhrin2021;@morgunov2021;@greener2022]
-These methods leverage computational algorithms and statistical models to extract meaningful information from protein data and address complex challenges in the field.
-
-One of the key applications of machine learning in protein science is protein structure prediction.
-Predicting the three-dimensional structure of a protein from its amino acid sequence is a fundamental problem in biology.
-Machine learning algorithms, such as deep learning-based approaches, have shown remarkable success in predicting protein structures with high accuracy.[@tunyasuvunakool2021;@bryant2022;@evans2021]
-These methods utilize large training datasets, incorporating known protein structures, to learn patterns and relationships between sequences and structures, enabling the generation of accurate structure predictions for previously unknown proteins.
-
-
-
-On the other hand, machine learning methods play a significant role in regression tasks in protein science, where the goal is to predict continuous or quantitative properties of proteins based on various input features.
-As described in @sec:factors, the thermal transfer through non-bonded contacts are influenced by multiple factors related to various static and dynamical properties of proteins given the complexity of environment inside the proteins.
-To get a better understanding 
-
+To address this gap, we propose a thermal transport network that describes non-covalent contacts from a thermal energy transport perspective. -->
 
 
 
