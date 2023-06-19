@@ -105,7 +105,7 @@ It operates by utilizing atomic coordinates and velocity trajectories obtained f
 In this thesis, the CURP program is used to perform the energy flow, energy transport coefficient, heat current, thermal conductivity calculations.
 A workflow diagram of CURP calculations is shown in @fig:curp.
 
-![Workflow diagram of CURP program for energy/heat currents calculations, taken from [https://curp.jp](https://curp.jp)](figures/introduction/curp.png){#fig:curp}
+![Workflow diagram of CURP program for energy/heat currents calculations, taken from [https://curp.jp.](https://curp.jp)](figures/introduction/curp.png){#fig:curp}
 
 ## Machine learning methods
 Machine learning methods play a crucial role in protein science by enabling the analysis, prediction, and understanding of various aspects related to proteins, including structure, function, interactions, and dynamics.[@suh2021;@pakhrin2021;@morgunov2021;@greener2022]
@@ -235,7 +235,7 @@ In addition, the machine learning approach of random forest regression is used t
 Two forms of oxygen sensor proteins exhibit totally differnet activities, inactive and active forms, despite minimal structural differences.
 The signaling pathways upon ligand binding and allosteric effects are identified by the energy transport network.
 
-In @sec:cha6, machine learning methods were integrated with molecular dynamics simulations and experimental results to characterize the conformational ensemble of a homodimer of _Thalassosira pseudonana_ chloroplastic protein (CP12).
+In @sec:cha6, machine learning methods were integrated with molecular dynamics simulations and experimental results to characterize the conformational ensemble of a new type of _Thalassosira pseudonana_ chloroplastic protein (homodimeric CP12).
 
 Finally, @sec:cha7 provides a comprehensive summary of the conclusions drawn from this thesis.
 It highlights the key findings and insights gained from the study of protein thermal transport properties and the application of machine learning algorithms.
