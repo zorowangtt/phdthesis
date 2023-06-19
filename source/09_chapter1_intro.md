@@ -99,13 +99,13 @@ Commonly used force fields in MD simulations of biomolecular systems include CHA
 These force fields have been extensively tested and parameterized for a wide range of biomolecules, including proteins, nucleic acids, lipids, and carbohydrates.
 The associated molecular dynamics software packages and servers have also undergone substantial development based on these force-fields, including CHARMM ([http://www.charmm.org](http://www.charmm.org)),[@brooks1983] Amber ([http://amber.scripps.edu](http://amber.scripps.edu)),[@weiner1981] GROMACS ([http://www.gromacs.org](http://www.gromacs.org)),[@berendsen1995] NAMD ([http://www.ks.uiuc. edu/Research/namd](http://www.ks.uiuc.edu/Research/namd)),[@nelson1996] and GENESIS ([https://www.r-ccs.riken.jp/labs/cbrt](https://www.r-ccs.riken.jp/labs/cbrt))[@kobayashi2017].
 
-## Current calculation for Proteins
+## Current calculation for proteins
 CURP (CURrent calculation for Proteins, [https://curp.jp](https://curp.jp)) package is a computational tool designed by YAMATO group to calculate the energy/heat currents and atomic stress tensors in proteins.[@ishikura2012;@ishikura2015;@yamato2022]
 It operates by utilizing atomic coordinates and velocity trajectories obtained from molecular dynamics (MD) simulations.
 In this thesis, the CURP program is used to perform the energy flow, energy transport coefficient, heat current, thermal conductivity calculations.
 A workflow diagram of CURP calculations is shown in @fig:curp.
 
-![Workflow diagram of CURP program for energy/heat currents calculations, taken from [https://curp.jp.](https://curp.jp)](figures/introduction/curp.png){#fig:curp}
+![Workflow diagram of CURP program for energy/heat currents calculations, taken from [https://curp.jp](https://curp.jp).](figures/introduction/curp.png){#fig:curp}
 
 ## Machine learning methods
 Machine learning methods play a crucial role in protein science by enabling the analysis, prediction, and understanding of various aspects related to proteins, including structure, function, interactions, and dynamics.[@suh2021;@pakhrin2021;@morgunov2021;@greener2022]
