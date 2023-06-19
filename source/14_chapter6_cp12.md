@@ -1,7 +1,6 @@
 
 # Structural and dynamic characterization of CP12 protein {#cha6}
 
-
 Structural analysis of intrinsically disordered regions (IDRs) within proteins is a long-standing challenge in structural biology due to their considerable flexibility and spatiotemporal heterogeneity.
 In this chapter, we report a new strategy for characterizing the conformational ensemble of IDRs and its application to the _Thalassosira pseudonana_ chloroplastic protein (CP12) homodimer.
 The method consists of three stages: (1) Obtaining an initial guess structure based on the amino acid sequence using AlphaFold-Multimer; (2) Harmonic-restrained MD simulations to meet the experimental SAXS and EPR/DEER data; (3) Refinement of the conformational ensemble by using restrained-ensemble MD simulations based on the information from DEER and SAXS experiments.

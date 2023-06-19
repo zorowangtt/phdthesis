@@ -4,7 +4,7 @@
 
 ## Protein
 
-![Overall growth of protein structures released per year. Data was obtained from the RCSB Protein Data Bank (https://www.rcsb.org), which serves as a valuable repository for storing and sharing these protein structures.](figures/introduction/proteinnumber.jpeg){#fig:proteinnumber}
+![Overall growth of protein structures released per year. Data was obtained from the RCSB Protein Data Bank ([https://www.rcsb.org](https://www.rcsb.org)), which serves as a valuable repository for storing and sharing these protein structures.](figures/introduction/proteinnumber.jpeg){#fig:proteinnumber}
 
 Although proteins and protein-based materials,
 such as meat, egg, silk and leather, have had a place for millennia in society,
@@ -62,15 +62,16 @@ Except for nonequilibrium MD simulations mentioned above,[@kobus2011;@buchenberg
 <!-- These methods have facilitated numerous studies aimed at identifying the determinants[@yamashita2018;@deniz2021;@mino2014] of vibrational energy transport and the role of vibrational energy transport in allosteric signal transduction. Theoretical methods offer valuable tools for investigating these issues at the atomic level of detail. -->
 
 One approach involves the utilization of a transport-coefficient-like quantity derived from the auto-correlation function of energy flow, which represents the amount of energy transferred per unit time.[@ishikura2006]
-This methodology has been employed to construct a network of amino acid residues that facilitates the propagation of intramolecular vibrational energy. 
+This methodology has been employed to construct a network of amino acid residues that facilitates the propagation of intramolecular vibrational energy.
 Subsequently, protein allosteric signal transduction mechanisms and energy transport patways were investigated[@ota2019;@reid2020;@poudel2023] through the energy exchange network model using equilibrium MD simulations.
-The master equation model, a theoretical tool, has been utilized to predict energy transport pathways in proteins.[@buchenberg2016;@reid2021;@valinoborau2020]
+In addition, the master equation model has been utilized to predict energy transport pathways in proteins.[@buchenberg2016;@reid2021;@valinoborau2020]
 These predictions were compared to results from all-atom non-equilibrium MD simulations.
 Additionally, scaling rules were employed in theoretical approaches to elucidate the role of protein structure and dynamics in vibrational energy transport.[@buchenberg2016;@reid2018]
 It is worth noting that vibrational transport occurs not only within the protein molecule but also across the protein-solvent interface and within the solvent.
 Theoretical analyses have been conducted to investigate these aspects[@agbo2014;@sagnella2001].
 
 ## Linear response theory
+
 The process of transferring heat and energy with a temperature gradient is typically thought of as a non-equilibrium system.
 A key idea in thermophysics is the linear response theory, which offers a framework for comprehending the connection between perturbations that are applied to a system and its responses.[@kubo1957;@kubo1957a;@kubo1966;@gottwald2020]
 When the changes are small away from equilibrium, the equilibrium fluctuations dictate the non-equilibrium response.
@@ -79,11 +80,12 @@ The analysis of the dynamic characteristics and transport phenomena of molecules
 It allows us to probe the system's response to external perturbations, such as temperature, by calculating quantities such as correlation functions and transport coefficients, which will be applied in this thesis.
 
 ## Molecular dynamic simulations
+
 Molecular dynamics (MD) simulations[@frenkel2002] are computational techniques that are widely used to study the behavior and dynamics of atoms and molecules over time.
 They provide detailed insights into the movement, interactions, and properties of systems at the atomic and molecular level.
 In this thesis, on the one hand, it is used to explore the heat, energy and signal transfer in proteins based on the linear response theory.
 The MD simulations are specially suitable for studies of thermal transport in proteins as it allows for the _direct_ measurement of heat current with high spatio-temporal resolution.
-On the other hand, it is used for structural characterize and refinement of highly flexible proteins integrated with the experimental small-angle X-ray scattering (SAXS) and electron paramagnetic resonance/double electron–electron resonance (EPR/DEER) data.[@lipfert2007;@boldon2015;@buhrke2020;@torricella2021]
+On the other hand, it is used for structural characterize and refinement of highly flexible proteins integrated with the experimental small-angle X-ray scattering (SAXS) and electron paramagnetic resonance/double electron–electron resonance (EPR/DEER) data[@lipfert2007;@boldon2015;@buhrke2020;@torricella2021].
 
 In MD simulations, the laws of classical mechanics are used to numerically solve the equations of motion for a collection of atoms or molecules.
 By specifying the initial positions, velocities, and forces acting on the particles, the system's time evolution can be simulated.
@@ -97,7 +99,7 @@ Commonly used force fields in MD simulations of biomolecular systems include CHA
 These force fields have been extensively tested and parameterized for a wide range of biomolecules, including proteins, nucleic acids, lipids, and carbohydrates.
 The associated molecular dynamics software packages and servers have also undergone substantial development based on these force-fields, including CHARMM ([http://www.charmm.org](http://www.charmm.org)),[@brooks1983] Amber ([http://amber.scripps.edu](http://amber.scripps.edu)),[@weiner1981] GROMACS ([http://www.gromacs.org](http://www.gromacs.org)),[@berendsen1995] NAMD ([http://www.ks.uiuc. edu/Research/namd](http://www.ks.uiuc.edu/Research/namd)),[@nelson1996] and GENESIS ([https://www.r-ccs.riken.jp/labs/cbrt](https://www.r-ccs.riken.jp/labs/cbrt))[@kobayashi2017].
 
-## CURP (CURrent calculation for Proteins)
+## Current calculation for Proteins
 CURP (CURrent calculation for Proteins, [https://curp.jp](https://curp.jp)) package is a computational tool designed by YAMATO group to calculate the energy/heat currents and atomic stress tensors in proteins.[@ishikura2012;@ishikura2015;@yamato2022]
 It operates by utilizing atomic coordinates and velocity trajectories obtained from molecular dynamics (MD) simulations.
 In this thesis, the CURP program is used to perform the energy flow, energy transport coefficient, heat current, thermal conductivity calculations.
@@ -115,10 +117,17 @@ Machine learning algorithms, such as deep learning-based approaches, have shown 
 These methods utilize large training datasets, incorporating known protein structures, to learn patterns and relationships between sequences and structures, enabling the generation of accurate structure predictions for previously unknown proteins.
 
 On the other hand, machine learning methods play a significant role in regression tasks in protein science, where the goal is to predict continuous or quantitative properties of proteins based on various input features.
-As described in @sec:factors, the thermal transfer through non-bonded contacts are influenced by multiple factors related to various static and dynamical properties of proteins given the complexity of environment inside the proteins.
-To get a better understanding 
+Random forest regression methods can make accurate predictions by building multiple decision trees on randomly sampled subsets of the training data and then average the predictions of all the trees to obtain the final prediction.
+It can handle both numerical and categorical features,
+automatically handles missing values and outliers,
+and is resistant to overfitting.
+The estimate of feature importance can be useful for feature selection.
 
-## Knowledge gap on the thermal transport properties
+As described in @sec:factors, the thermal transfer through non-bonded contacts are influenced by multiple factors related to various static and dynamical properties of proteins given the complexity of environment inside the proteins.
+To get a better understanding on the thermal transfer through non-covalent contacts, a non-linear regression model between inter-residue thermal conductivity values and those static and dynamical properties of proteins is developed by using the machine learning based approach of random forest methods.
+The feature importance of 
+
+## Knowledge gap
 
 ### Anisotropic and non-uniform flow of thermal energy
 <!-- cha3: the introduction of cross correlation  -->
@@ -134,8 +143,8 @@ Additionally, the local conformational fluctuations within a residue may not be 
 This interdependence poses further complexities in accurately characterizing the site-specific thermal transport properties.
 To tackle these challenges, we have developed a theoretical model known as the _linear-homopolymer-like model_, which incorporates the autocorrelation function formalism with cross-correlation corrections.
 This model aims to address the intricacies associated with boundary effects and the interplay between conformational fluctuations of neighboring residues.
-We have applied this model to investigate the thermal transport properties of HP36, an $\alpha$-helical protein, providing valuable insights into the site-specific thermal conductivity within the protein.
 By employing this theoretical framework, we aim to enhance our understanding of how thermal energy is transmitted and distributed at the residue level within proteins, considering both local and global factors. 
+By applying this model, we aim to investigate the thermal transport properties in proteins, and provide valuable insights into the site-specific thermal conductivity within the protein.
 
 <!-- cha4: the introduction of heat-energy transfer
     - debating of efficiency of different types of interactions 
@@ -154,9 +163,7 @@ By employing this theoretical framework, we aim to enhance our understanding of 
 - classify the interactions  -->
 
 Proteins are complex biomolecules composed of amino acids that are connected by peptide bonds.
-These molecules exhibit a hierarchical organization, including primary (linear sequence of amino acids), secondary (local patterns such as $\alpha$ helices or $\beta$ strands), tertiary (overall folding of the protein), and quaternary (association of multiple protein subunits).
-
-<!-- classify  -->
+These molecules exhibit a hierarchical organization, including primary (linear sequence of amino acids), secondary (local patterns such as $\alpha$ helices or $\beta$ strands), tertiary (overall folding of the protein), and quaternary (association of multiple protein subunits) sturctures.
 Within this heterogeneous and intricate system, residues participate in various interactions, including bonded interactions and non-bonded interactions.
 Bonded interactions in proteins include covalent bonds (e.g. peptide bonds, disulfide bonds), ionic bonds (e.g. salt bridges between oppositely charged residues), and hydrogen bonds (e.g. interactions between backbone atoms or polar side chains).
 They are responsible for maintaining the primary structure and stabilizing the secondary and tertiary structures of proteins.
@@ -165,18 +172,18 @@ They are relatively weak and depend on the distance and orientation of the atoms
 They contribute to the tertiary and quaternary structures of proteins by optimizing the surface contact between residues and subunits.
 Other types of non-bonded interactions in proteins include electrostatic interactions (such as those between charged residues or between dipoles), hydrophobic interactions (such as those between non-polar residues that avoid contact with water), pi-pi stacking (such as those between aromatic residues), etc.
 They also play important roles in protein folding, stability, function, and interactions.
+
 Energy transfer in proteins is the process of transferring kinetic or potential energy from one part of the protein to another or from the protein to its environment.
 Different types of interactions can affect the rate and efficiency of energy transfer in proteins.
-For example, van der Waals interactions can facilitate energy transfer between residues that are close to each other, but they can also hinder energy transfer if they cause steric hindrance or reduce flexibility.
-Bonded interactions can also affect energy transfer by modulating the vibrational modes and electronic states of the residues.
 The covalent peptide bond as a linker for connecting basic building blocks of protein provides a good structure basis, while the non-covalent contacts in its tertiary structure after folding are considered to be the key of governing the normal physiology, and functioning in various protein activities including allostery.
+Bonded interactions can also affect energy transfer by modulating the vibrational modes of the residues and van der Waals interactions can facilitate energy transfer between residues that are close to each other, but they can also hinder energy transfer if they cause steric hindrance or reduce flexibility.
 
-For investigating the non-covalent contacts in protein, various methods and theories have been proposed and developed.
-
-<!-- **Polar, nonpolar, charged residue** -->
-For polar type of residue pairs, they are attractive in nature.
-Charged residue pairs are attractive or repulsive depending on their electric charge types are the same or opposite.
-Nonpolar contacts are basically attractive because according to the classical Lennard-Jones potential plot their distance are far beyond 2 Å where the attractive interaction is the dominated interaction.
+From a non-equilibrium view, the significance of different types of non-bonded contacts and the competition with backbone have been studied in several proteins.
+A computational study showed the dominating energy transfer efficiency of backbone with a much higher energy diffusion constant of 1.25 nm^2^ ps^-1^ in HP36 than through non-bonded contacts with much smaller diffusion constants (1.1 × 10^-4^ for polar contacts and 3.6 × 10^-7^ for nonpolar contacts).
+While in a joint experimental and computational study, the hydrogen bonds are found to be the dominant energy transfer pathway in $\beta$-hairpin fold.
+On the contrary, a series of experimental findings on heme proteins clearly demonstrated that the primary pathway for energy transfer from the heme group to the protein does not involve the covalent bond between heme and the protein (Trp residue).
+Instead, the predominant route involves atomic interactions between the heme group and the Trp residue.[@kondoh2016;@yamashita2018;@mizutani2022]
+To quantitatively access the competition of different pathways (backbone and non-bonded contacts) and different types of interactions, it would be helpful to develope a method capable of measuring the heat transfer ability between residue and residue.
 
 ### Factors affecting heat transfer through non-covalent contacts {#sec:factors}
 
@@ -202,36 +209,34 @@ One notable approach is the AACEN (amino acid contact energy network), which is 
 Although many of these tools consider amino acid interactions from a geometric or chemical perspective, none of them take protein dynamics into account.
 To address this gap, we propose a thermal transport network that describes non-covalent contacts from a thermal energy transport perspective. -->
 
-
-
 ## Organization of the thesis
 
 In this dissertation, we developed a theoretical framework for analyzing the local thermal transport properties based on the auto-correlation function formalism and applied it to two protein systems to study the heat, energy, and signaling transport in protein systems.
 In addition, due to the complexity of protein systems, advanced machine learning-based methods were utilized to illustrate the contributing factors of thermal transport in protein and the structural characterization of intrinsically disordered regions.
 
-Chapter 1 provides an introduction to proteins, including an overview of current studies and methods related to vibrational energy transport in proteins and protein solutions.
+@sec:cha1 provides an introduction to proteins, including an overview of current studies and methods related to vibrational energy transport in proteins and protein solutions.
 It then introduces the concepts of linear response theory and molecular dynamics simulation techniques.
 Then, it identifies the knowledge gap in understanding vibrational energy transport in proteins and protein solutions and emphasizes the significance of applying machine learning algorithms to address protein-related problems.
 
-Chapter 2 provides a detailed description of the materials and methods used to investigate thermal transport properties within proteins and a novel method for the structural characterization of intrinsically disordered protein complexes.
+@sec:cha2 provides a detailed description of the materials and methods used to investigate thermal transport properties within proteins and a novel method for the structural characterization of intrinsically disordered protein complexes.
 It includes calculations of overall thermal conductivity of proteins, the formulism for site-selective heat current analysis on specific protein residues, and the procedures for conducting molecular dynamics simulations and a novel integrated approach that combines machine learning algorithms, MD simulation techniques, and SAXS and EPR/DEER experiments for the structural characterization of intrinsically disordered protein complexes.
 
-Chapter 3 presents the development of a theoretical framework that enables the analysis of local thermal transport properties using the autocorrelation function formalism.
+@sec:cha3 presents the development of a theoretical framework that enables the analysis of local thermal transport properties using the autocorrelation function formalism.
 The framework includes the construction of a linear-homopolymer-like model, which is then applied to investigate the thermal transport properties of a small α-helical protein known as the villin headpiece subdomain (HP36).
 Equilibrium molecular dynamics simulations are employed to study the thermal behavior of HP36 within this framework.
 The chapter provides detailed insights into the local thermal transport phenomena occurring in HP36 and establishes a foundation for further research in this area.
 
-Chapter 4 focuses on the analysis of local thermal transport properties through non-bonded contacts in HP36 proteins.
+@sec:cha4 focuses on the analysis of local thermal transport properties through non-bonded contacts in HP36 proteins.
 The inter-residue thermal conductivity is introduced as a measure of heat transfer between residues.
 The competition of different interaction types of heat transfer is disscussed.
 In addition, the machine learning approach of random forest regression is used to explore the non-linear relationship between thermal conductivity and static/dynamic properties of proteins.
 
-Chapter 5 investigates the role of energy transport in signaling mechanism of protein.
+@sec:cha5 investigates the role of energy transport in signaling mechanism of protein.
 Two forms of oxygen sensor proteins exhibit totally differnet activities, inactive and active forms, despite minimal structural differences.
 The signaling pathways upon ligand binding and allosteric effects are identified by the energy transport network.
 
-In Chapter 6, machine learning methods were integrated with molecular dynamics simulations and experimental results to characterize the conformational ensemble of a homodimer of _Thalassosira pseudonana_ chloroplastic protein (CP12).
+In @sec:cha6, machine learning methods were integrated with molecular dynamics simulations and experimental results to characterize the conformational ensemble of a homodimer of _Thalassosira pseudonana_ chloroplastic protein (CP12).
 
-Finally, Chapter 7 provides a comprehensive summary of the conclusions drawn from this thesis.
+Finally, @sec:cha7 provides a comprehensive summary of the conclusions drawn from this thesis.
 It highlights the key findings and insights gained from the study of protein thermal transport properties and the application of machine learning algorithms.
 Additionally, the chapter explores future research directions and suggests areas for further investigation.
