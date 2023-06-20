@@ -2,7 +2,7 @@
 \newpage
 # Introduction {#cha1}
 
-## Protein
+## Proteins
 
 ![Overall growth of protein structures released per year. Data was obtained from the RCSB Protein Data Bank ([https://www.rcsb.org](https://www.rcsb.org)), which serves as a valuable repository for storing and sharing these protein structures.](figures/introduction/proteinnumber.jpeg){#fig:proteinnumber}
 
@@ -22,34 +22,34 @@ The distinguishing feature among them is the unique side chain attached to the c
 They are usually classified into three different groups based on the chemical nature of their side chains.
 Most proteins fold into three-dimensional structures, normally known as "native conformations", characterized by four levels of structure: (1) primary structure, which refers to the amino acid sequence; (2) secondary structure, including α-helices, β-sheets, and turns/loops, which are stabilized by hydrogen bonds; (3) tertiary structure, representing the overall three-dimensional structure of a protein; and (4) quaternary structure, formed by the arrangement of multiple proteins.
 
-## Vibrational thermal energy transport in protein
+## Vibrational thermal energy transport in proteins
 
 ![Milestone studies on vibrational energy transport properties in proteins.](figures/introduction/milestone.jpg){#fig:milestone}
 
 <!-- importance of vibrational thermal energy transfer in proteins -->
 
 Protein and protein based materials are considered as the nonmetallic solids.
-The thermophysical properties of some common protein materials have been measured and recorded in a series of data called _Thermophysical properties of matter_ collected by the TPRC Data Series.
+The thermophysical properties of some common protein materials have been measured and recorded in a series of data called _Thermophysical properties of matter_ collected by the TPRC Data Series in 1970s.
 In this data series, numerous data of the thermal conductivity, specific heat, and thermal diffusivity about protein materials are recorded and reported in the volume 2, volume 5, and volume 10, respectively.
 
 <!-- current methods for investigating energy transfer in proteins -->
 Vibrational energy transfer in proteins plays a significant role in conformational changes, energy dissipation, protein folding and unfolding, bimolecular interactions, enzymatic reactions, and protein dynamics.
-The current methods of investigating thermal energy transport in proteins include experimental and computational approaches.
-From a macroscopic view, experimental methods involve measuring the thermal conductivity or diffusivity of protein samples using techniques such as laser flash analysis, 3ω method, or Raman spectroscopy.
+The current methods of investigating vibrational thermal energy transport in proteins include experimental and computational approaches.
+Milestone studies on vibrational energy transport properties in proteins is shown in @fig:milestone.
+From a macroscopic view, experimental methods involve measuring the thermal conductivity or diffusivity of protein samples using techniques such as laser flash analysis, 3ω method, or Raman spectroscopy.[@toberer2012]
 From a microscopic view, time-resolved experimentation approaches, such as time-resolved ultraviolet resonance Raman spectroscopy and UV-pump-IR-probe transients spectroscopy,
 have been used to investigate the vibrational energy transport mechanism in peptides and proteins.[@mizutani2022;@yamashita2018;@botan2007;@deniz2021]
 Using these methods, it has been possible to directly observe the redistribution of excess energy deposited into either natural group of protein, like heme, or unnatural amino acid site connected to short peptides and proteins.
 
-Milestone studies on vibrational energy transport properties in proteins is shown in @fig:milestone.
-In 1997, Mizutani Yasuhisa and his colleagues utilized time-resolved ultraviolet resonance Raman spectroscopy to directly observe the energy flow in hemeproteins, taking advantage of the efficient photothermal conversion properties of heme group.[@mizutani1997]
+In 1997, Mizutani Yasuhisa and his colleagues utilized time-resolved ultraviolet resonance Raman spectroscopy to directly observe the energy flow in heme proteins, taking advantage of the efficient photothermal conversion properties of heme group.[@mizutani1997]
 The redistribution of excess energy can be probed by employing anti-Stokes ultraviolet resonance Raman spectroscopy on a tryptophan residue as a probe, enabling the mapping of energy flow with high spatial resolution.
-In 2007, they observed a double exponential decay in the cooling process of the heme group in myoglobin, with time constants of 1.9 $\pm$ 0.6 and 16 $\pm$ 9 picoseconds for vibrational population decay, and 3.0 $\pm$ 1.0 and 25 $\pm$ 14 picoseconds for temperature relaxation.
+In 2007, they observed a double exponential decay in the cooling process of the heme group in myoglobin, with time constants of 1.9 $\pm$ 0.6 and 16 $\pm$ 9 ps for vibrational population decay, and 3.0 $\pm$ 1.0 and 25 $\pm$ 14 ps for temperature relaxation.
 Further investigations revealed that the primary pathway for energy transfer from the heme group to the protein is not mediated by the covalent bond between heme and the proximal
 or the protein backbone, but instead occurs through atomic contacts between the heme and specific residues.[@fujii2014;@kondoh2016;@mizuno2020;@mizutani2022]
 In 2007, Gerhard Stock and his coworkers investigated the energy transfer through a 3$_{10}$-helix in chloroform solvent, whose N-terminal is attached with a heater of $\alpha$-aminoisobutyric acid, with a combined experimental-theoretical approach: UV-pump-IR-probe transients spectra and nonequilibrium molecular dynamics (MD) simulations.
 Non-equilibrium MD simulations were also employed to simulate the dissipation of excitation energy from an unnatural amino acid (acting as a built-in heater), allowing for the mapping of vibrational energy transport pathways originating from the heater.
 It demonstrated that 70% of the energy absorbed by the helix quickly equilibrates within a timeframe of less than a picosecond to the solvent and subsequently spreads along the helix through a diffusive-like process.
-The nonequilibrium MD simulations mimic the laser excitation of the molecules by nonequilibrium phase-space initial condition for the solute and the solvent atoms.
+The non-equilibrium MD simulations mimic the laser excitation of the molecules by nonequilibrium phase-space initial condition for the solute and the solvent atoms.
 The fitted experimental and simulated thermal diffusivity along the peptide chain with 1D diffusion process were 10 $\AA$^2^ ps^-1^ and 2 $\AA$^2^ ps^-1^, respectively.[@botan2007]
 Subsequently, the nonequilibrium MD simulations techniques were employed to various proteins, such as villin headpiece subdomain (HP36)[@leitner2015;@buchenberg2016], photoswitchable PDZ domain (PDZ2S)[@buchenberg2017], heptahelical transmembrane proteins[@helmer2022a] and so on.[@deniz2021]
 Numerous results are yielded by these studies including scaling rules for vibrational energy transport in proteins through backbone and non-covalent native contacts, competition of vibrational energy transport between bonds and contacts, and the role of energy transport on allosteric mechanism in functional proteins.
@@ -71,28 +71,65 @@ It is worth noting that vibrational transport occurs not only within the protein
 Theoretical analyses have been conducted to investigate these aspects[@agbo2014;@sagnella2001].
 
 ## Linear response theory
-
 The process of transferring heat and energy with a temperature gradient is typically thought of as a non-equilibrium system.
-A key idea in thermophysics is the linear response theory, which offers a framework for comprehending the connection between perturbations that are applied to a system and its responses.[@kubo1957;@kubo1957a;@kubo1966;@gottwald2020]
-When the changes are small away from equilibrium, the equilibrium fluctuations dictate the non-equilibrium response.
+However, by considering carriers as particles, the fluctuation-dissipation transport theory, pioneered by Green and Kubo,[@mcquarrie2000;@kubo1957;@kubo1957a;@kubo1966;@gottwald2020] provides general expressions for transport coefficients.
+These expressions are applicable at all times and densities and are derived from correlation or autocorrelation functions computed from an equilibrium system.
+The key idea is based on the linear response theory, which offers a framework for comprehending the connection between perturbations that are applied to a system and its responses.
+When the changes are small away from equilibrium, the equilibrium fluctuations can dictate the non-equilibrium response.
 The system's response to a small perturbation is linearly related to the magnitude of the perturbation.
 The analysis of the dynamic characteristics and transport phenomena of molecules and materials can be performed by using linear response theory in the context of molecular dynamics simulations and statistical mechanics.
-It allows us to probe the system's response to external perturbations, such as temperature, by calculating quantities such as correlation functions and transport coefficients, which will be applied in this thesis.
+A general expression of transport coefficient $\gamma$ can be represented in terms of integral of time correlation functions is shown in @eq:transport.
+
+$$
+\gamma = \bm{\int_0^\infty} \left \langle \bm{\dot{A}}(t) \cdot \bm{\dot{A}}(0) \right \rangle dt
+$$
+{#eq:transport}
+
 
 ## Molecular dynamic simulations
 
 Molecular dynamics (MD) simulations[@frenkel2002] are computational techniques that are widely used to study the behavior and dynamics of atoms and molecules over time.
 They provide detailed insights into the movement, interactions, and properties of systems at the atomic and molecular level.
 In this thesis, on the one hand, it is used to explore the heat, energy and signal transfer in proteins based on the linear response theory.
-The MD simulations are specially suitable for studies of thermal transport in proteins as it allows for the _direct_ measurement of heat current with high spatio-temporal resolution.
-On the other hand, it is used for structural characterize and refinement of highly flexible proteins integrated with the experimental small-angle X-ray scattering (SAXS) and electron paramagnetic resonance/double electron–electron resonance (EPR/DEER) data[@lipfert2007;@boldon2015;@buhrke2020;@torricella2021].
+The MD simulations are specially suitable for studies of such transport phenomena in proteins as it allows for the _direct_ measurement of energy/heat flows with high spatio-temporal resolution.
+On the other hand, it is used for structural characterization and refinement of highly flexible proteins integrating with the experimental small-angle X-ray scattering (SAXS) and electron paramagnetic resonance/double electron–electron resonance (EPR/DEER) data[@lipfert2007;@boldon2015;@buhrke2020;@torricella2021].
 
 In MD simulations, the laws of classical mechanics are used to numerically solve the equations of motion for a collection of atoms or molecules.
 By specifying the initial positions, velocities, and forces acting on the particles, the system's time evolution can be simulated.
 This allows us to observe and analyze various physical and chemical phenomena that occur on the atomic scale.
 To accurately capture the behavior of protein systems, MD simulations employ force fields that describe the interatomic interactions.
 In general, these force fields consist of potential energy functions that incorporate parameters representing bond lengths, angles, dihedral angles, and non-bonded interactions such as van der Waals forces and electrostatic interactions and sometimes additional terms to account for specific interactions like hydrogen bonding.
-Force fields are typically derived from experimental data and quantum mechanical calculations.
+The basic functional form of these force fields can be expressed by @eq:forecefield-total.
+They can be divided into three groups, bonded (@eq:forcefield-bonded) and nonbonded (@eq:forcefield-nonbonded).
+The total energy is,
+
+$$
+E_{total} = E_{\rm bonded} + E_{\rm nonbonded} 
+$$
+{#eq:forecefield-total}
+
+Then, the energy terms from bonded part can be expressed as,
+$$
+E_{\rm bonded} = \bm \sum_{\rm bonds} K_b ( b-b_0)^2 + \bm \sum_{\rm angles}K_{\theta}(\theta-\theta_0)^2 + \bm \sum_{\rm dihedrals}K_{\chi}[1+ \rm cos(n\chi-\sigma)]
+$$
+{#eq:forcefield-bonded}
+
+The energy terms from the non-bonded part can be expressed as,
+$$
+E_{\rm nonbonded} = \bm \sum_{\rm i<j}\left[\frac{A_{ij}}{R_{ij}^{12}} - \frac{B_{ij}}{R_{ij}^{6}} + \frac{q_iq_j}{4 \pi \varepsilon R_{ij}} \right]
+$$
+{#eq:forcefield-nonbonded}
+
+In @eq:forcefield-bonded, $K_b$, $K_{\theta}$ and $K_{\chi}$ are force constants for bonds, angles and dihedrals, respectively;
+$b$ and $b_0$ are force constant the bond length and the equilibrium bond length;
+$\theta$ and $\theta_0$ are the angle and the equilibrium angle, respectively;
+$\chi$ is the dihedral value, n is the periodicity, and σ is the phase.
+In @eq:forcefield-nonbonded, it contains two parts. The first term is also known as Lennard-Jones (LJ) equation, describing the attractive dispersion and repulsive Pauli exclusion interactions.
+The second term is Coulomb’s law and is used to describe the electrostatic interactions.
+$q_i$ and $q_j$ are the effective charges of atoms $i$ and $j$.
+$R_{ij}$ is the interatomic distance and $\varepsilon$ is the dielectric constant.
+
+Force fields parameters are typically derived from experimental data and quantum mechanical calculations.
 They aim to strike a balance between accuracy and computational efficiency, allowing simulations of biologically relevant timescales and system sizes.
 Different force fields for different systems have been developed, each with its own set of assumptions, approximations, and parameterization strategies.
 Commonly used force fields in MD simulations of biomolecular systems include CHARMM[@mackerell1998], AMBER[@cornell1995], GROMOS[@oostenbrink2004], and OPLS-AA[@jorgensen1996].
@@ -122,10 +159,8 @@ It can handle both numerical and categorical features,
 automatically handles missing values and outliers,
 and is resistant to overfitting.
 The estimate of feature importance can be useful for feature selection.
-
 As described in @sec:factors, the thermal transfer through non-bonded contacts are influenced by multiple factors related to various static and dynamical properties of proteins given the complexity of environment inside the proteins.
-To get a better understanding on the thermal transfer through non-covalent contacts, a non-linear regression model between inter-residue thermal conductivity values and those static and dynamical properties of proteins is developed by using the machine learning based approach of random forest methods.
-The feature importance of 
+To get a better understanding on the thermal transfer through non-covalent contacts, a non-linear regression model is developed between inter-residue thermal conductivity values and those static and dynamical properties of proteins by using the machine learning based approach of random forest methods.
 
 ## Knowledge gap
 

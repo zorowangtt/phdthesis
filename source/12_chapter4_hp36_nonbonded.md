@@ -119,17 +119,39 @@ To get an estimated linear regression model that can expresses their relationshi
 
 ## Important features on thermal transport through non-covalent contacts
 <!-- ## Random Forest Analysis -->
-Due to the complexity of protein systems, the thermal energy transport through contacts is affected by a number of properties, including their structure, compositions, dynamics, as well as interaction types suggested in the [@sec:interaction-type-dependence-on-heat-transfer-through-non-covalent-contacts] of this work.
-For structural property, David M. Leitner's group found that the correlations of energy transfer rate is linearly correlated with the mean-square distance for charged contacts between charged residue pairs in myoglobin.[@reid2018]
-It is reasonably understood because the interaction of charged groups obeys the Coulomb's law, where their force depends on their distance.
-For dynamics, they also discovered that the energy transfer rate has a good correlation with the variance in the length of the contact for polar and hydrophobic contacts.[@buchenberg2016;@reid2018;@leitner2019;@poudel2020;@reid2020;@leitner2020a;@poudel2022;@poudel2023]
-The hydrogen bonds have been found to facilitate the thermal transport in proteins and protein-based materials.
-For instance, the thermal conductivity of $\pi-$helices, which have a stronger hydrogen bond strength, is two folds and three-folds higher than that of $\alpha-$ and $3_{10}-$ helices, respectively.[@he2021]
-The hydrogen bonding has been found to be the main contributor to the increase in the thermal conductivity in spider silk protein, with thermal conductivity reported to be 1-2 order of magnitude higher than that of globular proteins,[@zhang2014] and be the dominant vibrational energy transfer pathway that can compete with transport along the backbone in a $\beta$-hairpin.[@deniz2021]
+
+![(a) Cross plot of $\lambda_{\alpha,\beta}$ and predicted $\lambda_{\alpha,\beta}$ of non-covalent contacts ($\langle d_c^2 \rangle$ < 8) using random forest regression model; (b) VIP score plot of variable importance of variables. $\langle d_c^2 \rangle$: contact (shortest) distance of residue $\alpha$ and $\beta$; $P_{HB}$: hydrogen bonds occurrence probability; $\langle \delta d_c^2 \rangle$: the variance in contacts distance; $V_{\alpha\beta}$: summation volume of contacts; RT$_\alpha$ (RT$_\beta$): residue type; IT: interaction type.](figures/non-bonded/random-forest_permutation_importance_.png){#fig:random-forest-L}
+
+![(a) Cross plot of $\lambda_{\alpha,\beta}$ and predicted $\lambda_{\alpha,\beta}$ of non-covalent contacts ($\langle d_c^2 \rangle$ < 4) using random forest regression model; (b) VIP score plot of variable importance of variables. $\langle d_c^2 \rangle$: contact (shortest) distance of residue $\alpha$ and $\beta$; $P_{HB}$: hydrogen bonds occurrence probability; $\langle \delta d_c^2 \rangle$: the variance in contacts distance; $V_{\alpha\beta}$: summation volume of contacts; RT$_\alpha$ (RT$_\beta$): residue type; IT: interaction type.](figures/non-bonded/random-forest_permutation_importance_smallerthan-0.0005_backup.png){#fig:random-forest-S}
+
+To get a better understanding of the contributions of these features to the thermal transport properties of contacts in protein,
+we applied random forest regression model to predict the log$\lambda_{\alpha,\beta}$ values with seven features as predictors.
+The comparison of calculated and predicted log$\lambda_{\alpha,\beta}$ togther with the feature importances are shown in @fig:random-forest (dataset S) and Figrue S3 (dataset L).
+The model of _dataset L_ resulted in $r^2$ values of 0.95 and 0.89 for traning set and testing set, and the corresponding RMSE were 0.24 and 0.4, respectively.
+Only the contact distance exhibited the considering contributions to the log$\lambda_{\alpha,\beta}$ among all the feature variables.
+The model of _dataset S_ resulted in $r^2$ values of 0.89 and 0.75 for traning set and testing set, and the corresponding RMSE were 0.10 and 0.18, respectively.
+The top three most important features decreased in an order of $1/ \langle d_c^2 \rangle$ >$1/ \langle \delta d_{c}^2 \rangle$ > $P_{HB}$.
+After the dataset getting smaller, we can see that the prediction performance (R^2^) slightly decresed for trainging datasets, but has a bigger decrease in prediction performance on testing set.
+The difference in feature importances between two datasets indicates that the contact distance plays a dominant role in determining the value of log$\lambda_{\alpha,\beta}$ for a wide range of contacts.
+On the other hand, for short-distance contacts ($\langle d_c\rangle$ < 4 $\AA$), both the average squared deviation ($\langle \delta d_c^2 \rangle$) and the hydrogen bonding probability ($P_{HB}$) become increasingly important.
+This observation aligns with the notion that the energy transport of hydrogen bonding contact is inversely proportional to the variance of the contact.
+The motion of these contacts can be modeled as a harmonic oscillator.[@buchenberg2016]
+Due to the limitation numbers of data points, a further smaller dataset ($\langle d_c\rangle$ < 2.8 $\AA$) resulted in model with very poor prediction performance.
+If we take a look at the heat current expression in @eq:eq1, we can find that two terms, i.e. (${\bm{r}_i}-{\bm{r}_j}$) and $\bm{F}_{ij}$, are closely associated with the contact distance.
+While as the contact distance decreases, there is an increase in the proportion of hydrogen bonding contacts.
+Consequently, the importance of both $\langle \delta d_c^2 \rangle$ and ($P{HB}$ becomes more pronounced.
+Moreover, a pairwise correlation analysis of all features and $\lambda_{\alpha,\beta}$ values was performed and their Pearson correlation coefficients were shown in @fig:rf-correlation-heatmap.
+
+![Correlation map. (a) Pairwise Pearson correlation coefficients, $r$; (b) $p$-values.](figures/non-bonded/rf-correlation-heatmap.png){#fig:rf-correlation-heatmap}
+
+We found that the correlation coefficient ($r$) values between $1/ \langle d_c^2 \rangle$, $P_{HB}$, and $1/ \langle \delta d_{c}^2 \rangle$ were all greater than 0.3 and the corresponding $**p$ values are all below 0.01, indicating a statistically significant relationship between each other.
+
+Although this study has examined the significance of feature variables that capture the static and dynamical properties of proteins in thermal transport through non-covalent contacts, it is important to note that the analysis was conducted on a limited number of pairs.
+Therefore, a more comprehensive model is required to ensure its validity and applicability to a broader range of non-covalent contacts in other proteins.
 
 Although the scaling rules of rates of vibrational energy transfer in proteins has been investigated in several proteins including HP36,[@buchenberg2016;@poudel2020] myoglobin[@reid2018], deoxy-HbI/oxy-HbI,[@leitner2019;@reid2020;@leitner2020a], $A_{2A}$ adenosine receptor[@leitner2020a], and GPCR proteins[@poudel2022;@poudel2023], by David M. Leitner and his coworkers as summarized above,
 these scaling rules are applicable and verified only for the short-range (< 2.8 Å) van der Waals interactions, hydrogen bonds, and charged contacts.
-Given the considerable number of hydrophobic contacts shown in [@fig:histogram_lambda] that their contact distances are larger than 2.8 Å (Figure S2), a scaling rule that is applicable to a broader range of contacts is needed.
+Given the considerable number of hydrophobic contacts shown in [@fig:histogram_lambda] that their contact distances are larger than 2.8 Å (), a scaling rule that is applicable to a broader range of contacts is needed.
 
 ![(a) Cross plot of $\lambda_{\alpha,\beta}$ and predicted $\lambda_{\alpha,\beta}$ using random forest regression model; (b) VIP score plot of variable importance of variables. $\langle d_c^2 \rangle$: contact (shortest) distance of residue $\alpha$ and $\beta$; $P_{HB}$: hydrogen bonds occurrence probability; $\langle \delta d_c^2 \rangle$: the variance in contacts distance; $V_{\alpha\beta}$: summation volume of contacts; RT$_\alpha$ (RT$_\beta$): residue type; IT: interaction type.](figures/non-bonded/random-forest.png){#fig:random-forest}
 
@@ -144,7 +166,7 @@ It is reasonable that two terms of heat current expression in @eq:eqd1, i.e. (${
 The role of $P_{HB}$, as the second most important feature, has been disscussed in @sec:role-of-hb.
 For the third most important feature, $1/\langle \delta d_c^2 \rangle$,
 a proportional correlation relationship between $1/ \langle \delta d_c^2 \rangle$ and energy transport rate was first introduced by David M. Leitner, et al. in HP36 protein,[@buchenberg2016;@reid2018] and was further applied in other proteins.[@leitner2019;@reid2020;@leitner2020a;@poudel2022;@poudel2023]
-A pairwise correlation analysis of all features and $\lambda_{\alpha,\beta}$ values was performed and their Pearson correlation coefficients were shown in Figure S3.
+A pairwise correlation analysis of all features and $\lambda_{\alpha,\beta}$ values was performed and their Pearson correlation coefficients were shown in @fig:rf-correlation-heatmap.
 Their correlation coefficient ($r$) values are all greater than 0.3 and the corresponding $**p$ values are all below 0.01, indicating a statistically significant relationship between each other.
 Although the important features on energy transport through non-covalent contacts are explored in this study, due to the limited number of pairs,
 a more comprehensive model that is valid and applicable to a broader range of non-covalent contacts are needed.

@@ -2,22 +2,9 @@
 \newpage
 
 # Site-selective heat current analysis with linear-homopolymer-like model {#cha3}
-
-<!-- Although thermal transport is among the essential biophysical properties of proteins, its relationship with protein structures, dynamics, and functions is still elusive.
-The structures of folded proteins are highly inhomogeneous, giving rise to anisotropic and non-uniform flow of thermal energy during conformational fluctuations.
-To illustrate such nature of proteins, we developed a theoretical framework for analyzing local thermal transport property based on the autocorrelation function formalism, constructed a linear-homopolymer-like model, and applied it to a small $\rm{\alpha}$-helical protein, villin headpiece subdomain (HP36), using equilibrium molecular dynamics simulations.
-As a result, the model reproduced the exact value of the protein thermal conductivity with an error of less than 1%.
-Interestingly, the site-selective analysis of the local, residue-wise, thermal conductivity demonstrated its distinct residue-type dependence, i.e., its magnitude decreased in the order of charged, polar, and hydrophobic residues.
-In addition, the local density dependence of the residue-wise thermal transport property was also discussed. -->
-
-
-
-<!-- In [@sec:method-cross-correlation], we summarize basic formulae for the thermal transport property of molecular systems, describe our linear-homopolymer-like model and short-range cross-correlation correction.
-In [@sec:results-and-discussion], we report the computational results of the site-selective heat current analysis.
-Finally, we present concluding remarks in [@sec:conclusion]. -->
-
 ## The overall thermal conductivity {#sec:overall-thermal-conductivity}
 
+![The thermal conductivity of the entire HP36 protein molecule. The autocorrelation function of the heat current was calculated and ensemble-averaged, resulting in a plot of the autocorrelation function as a function of time (depicted in blue). The inset focuses on the short-time region (0 - 0.2 ps) to provide a closer view of the behavior. The heat current autocorrelation function was integrated over time using the trapezoidal rule, yielding a quantity denoted as $\lambda$ (shown in orange), and a running mean of $\lambda$ was computed with a window size of 100 fs and is illustrated in red. The volume of HP36 was set to 4845.447 $\AA^3$.[@yamato2022]](figures/cross/hcacf-100ps.jpeg){#fig:hcacf-100ps}
 
 The overall thermal conductivity, denoted as $\lambda$, of the HP36 protein was determined using equation (eqc1) in this study. To calculate the total volume of HP36 and individual atom volumes, we utilized the VLDP (Voronoi Laguerre Delaunay Protein) method through a web server [@esque2013]. This method considers the atom type and performs tessellation, resulting in larger cell volumes for atoms with larger radii, thus providing a more realistic representation of atom packing within the protein interior. It is important to note that the protein molecule was solvated with water prior to volume calculations.
 
@@ -27,11 +14,9 @@ It is worth noting that the calculated value of $\lambda$ slightly differs from 
 The dependence of the water model on thermal conductivity will be discussed further in @sec:watermodel.
 For subsequent analyses, we set the upper limit of the time integration of the local heat current autocorrelation function to 60 ps.
 
-![The thermal conductivity of the entire HP36 protein molecule. The autocorrelation function of the heat current was calculated and ensemble-averaged, resulting in a plot of the autocorrelation function as a function of time (depicted in blue). The inset focuses on the short-time region (0 - 0.2 ps) to provide a closer view of the behavior. The heat current autocorrelation function was integrated over time using the trapezoidal rule, yielding a quantity denoted as $\lambda$ (shown in orange), and a running mean of $\lambda$ was computed with a window size of 100 fs and is illustrated in red. The volume of HP36 was set to 4845.447 $\AA^3$.[@yamato2022]](figures/cross/hcacf-100ps.jpeg){#fig:hcacf-100ps}
-
 ## Local thermal transport
 
-The contribution factors for intra-residue and inter-residue heat currents were presented in Figure [@fig:heat_before].
+The contribution factors for intra-residue and inter-residue heat currents were presented in [@fig:heat_before].
 In general, the intra-residue contribution factors were found to be higher than the inter-residue factors, except for certain pairs of terminal residues (Met1-Leu2, Leu35-Phe36 and Gly12-Met13).
 The average intra-residue contribution factor was 0.029, which was nearly twice as large as the average inter-residue contribution factor (0.016).
 This suggests that intra-residue thermal transport makes a dominant contribution to the overall heat current, which is consistent with the findings of the master equation analysis. [@buchenberg2016]
@@ -189,7 +174,7 @@ This distinction leads to a broader distribution of residue densities within the
 | charged      | 0.88 | 0.0008    | 4.3 $\times10^{-4}$  |
 | polar        | 0.95 | 0.0004    | 2.1 $\times10^{-4}$  |
 | hydrophobic  | 0.68 | 0.0019    | 9.4 $\times10^{-5}$  |
-: Pearson correlation coefficient (*r*), *p*-value and slope of linear relationship between $\tilde c$ and volume in Figure 8. 
+: Pearson correlation coefficient (*r*), *p*-value and slope of linear relationship between $\tilde c$ and volume in @fig:residue_type.
 Generally, a value of $|r|$ > 0.3 or, a *p*-value < 0.05 is often considered to be statistically significant, indicating that the the pair of variables are correlated. {#tbl:pearson}
 
 The regression analysis with cross-correlation correction, shown in @fig:density a, indicates that the thermal conductivity ($\lambda$) is proportional to the residue mass density, although the slope of the regression line is not steep, suggesting a weak density dependence.
