@@ -72,18 +72,18 @@ A scatter plot between the values of $\lambda_{\alpha,\beta}$ and their hydrogen
 The linear regression analysis revealed a Pearson correlation coefficient of $r$ = 0.51 (> 0.3) and a $**p$-value of 0.007 ($\ll$ 0.05), indicating a significant correlation between $\lambda_{\alpha,\beta}$ and hydrogen bonds capacity of residue pairs.
 
 In proteins constructed in an $\alpha$-helical manner, two types of hydrogen bonds can be distinguished.
-The first type, known as central hydrogen bonds, plays a key role in stabilizing the helical structure by forming hydrogen bond between the amino group (N-H) of one amino acid and the carbonyl oxygen (O) of a second amino acid, usually occurring between residues $\alpha$ to $\alpha$+4 in the helical regions.
-The second type of hydrogen bonds are formed by the sidechains of the involved amino acids, either between sidechain and sidechain or between sidechain and mainchain.
+The first type, known as central hydrogen bonds, plays a key role in stabilizing the helical structure by forming hydrogen bonds between the amino group (N-H) of one amino acid and the carbonyl oxygen (O) of a second amino acid, usually occurring between residues $\alpha$ to $\alpha$+4 in the helical regions.
+The second type of hydrogen bonds is formed by the sidechains of the involved amino acids, either between sidechain and sidechain or between sidechain and mainchain.
 Miño et al. showed that the heat diffusion along $\alpha$-helices containing both types of hydrogen bonds is twice faster than those containing only the first type of hydrogen bonds, highlighting the important role of the second type of hydrogen bonds in proteins.[@mino2014]
 To investigate the role of the first type of hydrogen bond in heat transport in HP36, we classified and plotted the $\lambda$ values of 32 residue pairs between residue i and i+4 (n=1, 2, ..., 32), as shown in [@fig:hb_all_ii4]b.
 In HP36, the crystal structure (PDB: 1VII) reveals the presence of three alpha-helices, H1 (residues 4-8), H2 (residues 15-18), and H3 (residues 23-32), which should give rise to eight residue pairs that form the first type of hydrogen bonds.
 However, there were some residue pairs that did not form the first type of hydrogen bonds in the crystal structure but were observed to form such bonds in MD simulations.
-These pairs were classified as non-helical residue pairs but forming hydrogen bonds.
+These pairs were classified as non-helical residue pairs but formed hydrogen bonds.
 In the previous studies[@mino2014], the heat diffusion along $\alpha$-helices containing both types of hydrogen bonds is twice faster than those containing only the first type of hydrogen bonds, highlighting the important role of the second type of hydrogen bonds in proteins.
 To investigate the role of the first type of hydrogen bond in heat transport in HP36, we classified and plotted the $\lambda$ values of 32 residue pairs between residue i and i+4 (n=1,2, ..., 32), as shown in [@fig:hb_all_ii4]b.
 In HP36, the crystal structure (PDB: 1VII) reveals the presence of three alpha-helices, H1 (residues 4-8), H2 (residues 15-18), and H3 (residues 23-32), which should give rise to eight residue pairs that form the first type of hydrogen bonds.
 However, there were some residue pairs that did not form the first type of hydrogen bonds in the crystal structure but were observed to form such bonds in MD simulations.
-These pairs were classified as non-helical residue pairs but forming hydrogen bonds.
+These pairs were classified as non-helical residue pairs but formed hydrogen bonds.
 Interestingly, the $\lambda$ of non-helical residue pairs that did not have the opportunity to form hydrogen bonds was significantly lower than that of helical residue pairs.
 
 <!-- ![$\lambda_{\alpha,\beta}$ values of contacts forming hydrogen bonds and their hydrogen bonds capacity ($c_{HB}$) during MD simulations](figures/non-bonded/hb-capacity-lambda-ii4.png){#fig:hb_ii4} -->
@@ -95,12 +95,12 @@ After the statistical analysis of the hydrogen bonds formation from MD trajector
 
 Their $\lambda_{\alpha,\alpha+4}$ values, interaction types, their $c_{HB}$ and contacts distances are listed in Table S3.
 The $\lambda_{\alpha,\beta}$ values for contacts with no hydrogen bonds are significantly lower, i.e. an order of magnitude lower, than those with hydrogen bonds.
-Two special residues pairs (2LEU-6ASP and 21LEU-25LYS) did not form hydrogen bonds but had relative higher $\lambda_{\alpha,\beta}$ values.
-This may be because of their interactions are stronger than those contacts with no hydrogen bonds, which are all hydrophobic residues with weak Van der Waals interactions.
+Two special residues pairs (2LEU-6ASP and 21LEU-25LYS) did not form hydrogen bonds but had relatively higher $\lambda_{\alpha,\beta}$ values.
+This may be because their interactions are stronger than those contacts with no hydrogen bonds, which are all hydrophobic residues with weak Van der Waals interactions.
 
 A smaller data set consisting of $\lambda_{\alpha,\alpha+4}$ and $c_{HB}$ with hydrogen bonds formed was used to fit a linear regression relationship, as shown in [@fig:hb_all_ii4]b.
 The Pearson correlation coefficient and $p$-value are 0.80 (> 0.3) and 0.001 ($\ll$ 0.05), respectively, indicating a stronger correlation relationship than for all hydrogen bond contacts.
-The contact distance is a factor that can affect the thermal transport through contacts.[@reid2018] For data set used in [@fig:hb_all_ii4]a, their distance varied at a relatively broad range (2 - 4 Å) compared to the smaller data set used in [@fig:hb_all_ii4]b, where the distances of all contacts were 2.1 $\pm$ 0.2 Å.
+The contact distance is a factor that can affect thermal transport through contacts.[@reid2018] For the data set used in [@fig:hb_all_ii4]a, their distance varied at a relatively broad range (2 - 4 Å) compared to the smaller data set used in [@fig:hb_all_ii4]b, where the distances of all contacts were 2.1 $\pm$ 0.2 Å.
 
 <!-- $\pi$ stacking: Phe7-Phe11, Phe11-Phe18, Phe7-Phe18.
 only Phe7-Phe11 has the largest $\lambda$, while Phe7-18 and Phe11-18 have a same $\lambda$ with no hydrogen bonds for them. -->
@@ -125,18 +125,18 @@ To get an estimated linear regression model that can expresses their relationshi
 ![(a) Cross plot of $\lambda_{\alpha,\beta}$ and predicted $\lambda_{\alpha,\beta}$ of non-covalent contacts ($\langle d_c^2 \rangle$ < 4) using random forest regression model; (b) VIP score plot of variable importance of variables. $\langle d_c^2 \rangle$: contact (shortest) distance of residue $\alpha$ and $\beta$; $P_{HB}$: hydrogen bonds occurrence probability; $\langle \delta d_c^2 \rangle$: the variance in contacts distance; $V_{\alpha\beta}$: summation volume of contacts; RT$_\alpha$ (RT$_\beta$): residue type; IT: interaction type.](figures/non-bonded/random-forest_permutation_importance_smallerthan-0.0005_backup.png){#fig:random-forest-S}
 
 To get a better understanding of the contributions of these features to the thermal transport properties of contacts in protein,
-we applied random forest regression model to predict the log$\lambda_{\alpha,\beta}$ values with seven features as predictors.
-The comparison of calculated and predicted log$\lambda_{\alpha,\beta}$ togther with the feature importances are shown in @fig:random-forest (dataset S) and Figrue S3 (dataset L).
-The model of _dataset L_ resulted in $r^2$ values of 0.95 and 0.89 for traning set and testing set, and the corresponding RMSE were 0.24 and 0.4, respectively.
+we applied the random forest regression model to predict the log$\lambda_{\alpha,\beta}$ values with seven features as predictors.
+The comparison of calculated and predicted log$\lambda_{\alpha,\beta}$ together with the feature importances are shown in @fig:random-forest (dataset S) and @fig:random-forest-L (dataset L).
+The model of _dataset L_ resulted in $r^2$ values of 0.95 and 0.89 for training set and testing set, and the corresponding RMSE were 0.24 and 0.4, respectively.
 Only the contact distance exhibited the considering contributions to the log$\lambda_{\alpha,\beta}$ among all the feature variables.
 The model of _dataset S_ resulted in $r^2$ values of 0.89 and 0.75 for traning set and testing set, and the corresponding RMSE were 0.10 and 0.18, respectively.
 The top three most important features decreased in an order of $1/ \langle d_c^2 \rangle$ >$1/ \langle \delta d_{c}^2 \rangle$ > $P_{HB}$.
-After the dataset getting smaller, we can see that the prediction performance (R^2^) slightly decresed for trainging datasets, but has a bigger decrease in prediction performance on testing set.
-The difference in feature importances between two datasets indicates that the contact distance plays a dominant role in determining the value of log$\lambda_{\alpha,\beta}$ for a wide range of contacts.
+After the dataset gets smaller, we can see that the prediction performance (R^2^) slightly decreased for training datasets, but has a bigger decrease in prediction performance on testing set.
+The difference in feature importances between the two datasets indicates that the contact distance plays a dominant role in determining the value of log$\lambda_{\alpha,\beta}$ for a wide range of contacts.
 On the other hand, for short-distance contacts ($\langle d_c\rangle$ < 4 $\AA$), both the average squared deviation ($\langle \delta d_c^2 \rangle$) and the hydrogen bonding probability ($P_{HB}$) become increasingly important.
 This observation aligns with the notion that the energy transport of hydrogen bonding contact is inversely proportional to the variance of the contact.
 The motion of these contacts can be modeled as a harmonic oscillator.[@buchenberg2016]
-Due to the limitation numbers of data points, a further smaller dataset ($\langle d_c\rangle$ < 2.8 $\AA$) resulted in model with very poor prediction performance.
+Due to the limited numbers of data points, a further smaller dataset ($\langle d_c\rangle$ < 2.8 $\AA$) resulted in a model with very poor prediction performance.
 If we take a look at the heat current expression in @eq:eq1, we can find that two terms, i.e. (${\bm{r}_i}-{\bm{r}_j}$) and $\bm{F}_{ij}$, are closely associated with the contact distance.
 While as the contact distance decreases, there is an increase in the proportion of hydrogen bonding contacts.
 Consequently, the importance of both $\langle \delta d_c^2 \rangle$ and ($P{HB}$ becomes more pronounced.
@@ -146,30 +146,11 @@ Moreover, a pairwise correlation analysis of all features and $\lambda_{\alpha,\
 
 We found that the correlation coefficient ($r$) values between $1/ \langle d_c^2 \rangle$, $P_{HB}$, and $1/ \langle \delta d_{c}^2 \rangle$ were all greater than 0.3 and the corresponding $**p$ values are all below 0.01, indicating a statistically significant relationship between each other.
 
-Although this study has examined the significance of feature variables that capture the static and dynamical properties of proteins in thermal transport through non-covalent contacts, it is important to note that the analysis was conducted on a limited number of pairs.
+Although this study has examined the significance of feature variables that capture the static and dynamic properties of proteins in thermal transport through non-covalent contacts, it is important to note that the analysis was conducted on a limited number of pairs.
 Therefore, a more comprehensive model is required to ensure its validity and applicability to a broader range of non-covalent contacts in other proteins.
 
-Although the scaling rules of rates of vibrational energy transfer in proteins has been investigated in several proteins including HP36,[@buchenberg2016;@poudel2020] myoglobin[@reid2018], deoxy-HbI/oxy-HbI,[@leitner2019;@reid2020;@leitner2020a], $A_{2A}$ adenosine receptor[@leitner2020a], and GPCR proteins[@poudel2022;@poudel2023], by David M. Leitner and his coworkers as summarized above,
-these scaling rules are applicable and verified only for the short-range (< 2.8 Å) van der Waals interactions, hydrogen bonds, and charged contacts.
-Given the considerable number of hydrophobic contacts shown in [@fig:histogram_lambda] that their contact distances are larger than 2.8 Å (), a scaling rule that is applicable to a broader range of contacts is needed.
+![Averaged the shortest distance distribution of non-covalent contacts. (a) all contacts; (b) contacts between residue $\alpha$ and $\alpha+4$.](figures/non-bonded/histogram-contacts-all-ii4.png){#fig:histogram-contacts-all}
 
-![(a) Cross plot of $\lambda_{\alpha,\beta}$ and predicted $\lambda_{\alpha,\beta}$ using random forest regression model; (b) VIP score plot of variable importance of variables. $\langle d_c^2 \rangle$: contact (shortest) distance of residue $\alpha$ and $\beta$; $P_{HB}$: hydrogen bonds occurrence probability; $\langle \delta d_c^2 \rangle$: the variance in contacts distance; $V_{\alpha\beta}$: summation volume of contacts; RT$_\alpha$ (RT$_\beta$): residue type; IT: interaction type.](figures/non-bonded/random-forest.png){#fig:random-forest}
-
-To get a better understanding of the contributions of these features to the thermal transport properties of contacts in protein,
-we applied random forest regression model to predict the $\lambda$ values of contacts with seven features as predictors: inverse of contact (shortest) distance ($\langle d_c \rangle$), $P_{HB}$, inverse of variance of the contact distance ($\langle \delta d_{c}^2 \rangle$), summation volume of contacts $V_{\alpha\beta}$, residue type (RT$_\alpha$ and RT$_\beta$), and interaction type (IT).
-The random 10-fold cross-validation of the model resulted in an $r^2$ value of 0.91, and the corresponding RMSE was $4.0 \times 10^{-4}$.
-We predicted $\lambda_{\alpha,\beta}$ values with these features by using the regression model and compared with the actual $\lambda_{\alpha,\beta}$ values in [@fig:random-forest]a.
-The model applied all data points resulted in an $r^2$ value of 0.94 and RMSE of $5.7 \times 10^{-4}$.
-According to the ranking of feature importance shown in [@fig:random-forest]b, the top three most important features decreased in an order of $1/ \langle d_c^2 \rangle$ > $P_{HB}$ > $1/ \langle \delta d_{c}^2 \rangle$ > 0.15.
-Interestingly, for non-covalent contacts containing both short-range (hydrogen bonded) contacts and van der Waals contacts, the most important feature is the averaged contact distance ($\langle 1/ d_c^2 \rangle$).
-It is reasonable that two terms of heat current expression in @eq:eqd1, i.e. (${\bm{r}_i}-{\bm{r}_j}$) and $\bm{F}_{ij}$, are highly related to the distance.
-The role of $P_{HB}$, as the second most important feature, has been disscussed in @sec:role-of-hb.
-For the third most important feature, $1/\langle \delta d_c^2 \rangle$,
-a proportional correlation relationship between $1/ \langle \delta d_c^2 \rangle$ and energy transport rate was first introduced by David M. Leitner, et al. in HP36 protein,[@buchenberg2016;@reid2018] and was further applied in other proteins.[@leitner2019;@reid2020;@leitner2020a;@poudel2022;@poudel2023]
-A pairwise correlation analysis of all features and $\lambda_{\alpha,\beta}$ values was performed and their Pearson correlation coefficients were shown in @fig:rf-correlation-heatmap.
-Their correlation coefficient ($r$) values are all greater than 0.3 and the corresponding $**p$ values are all below 0.01, indicating a statistically significant relationship between each other.
-Although the important features on energy transport through non-covalent contacts are explored in this study, due to the limited number of pairs,
-a more comprehensive model that is valid and applicable to a broader range of non-covalent contacts are needed.
-
-Although these three features are playing important role on $\lambda_{\alpha,\beta}$ values, the relationship between each other is worth to be explored further.
-The linear correlation relationships of "$P_{HB}$-$\lambda_{\alpha,\beta}$" and "$1/ \langle \delta d_c^2 \rangle$-energy transfer rate" are only applied to the hydrogen bonded contacts.
+<!-- Although the scaling rules of rates of vibrational energy transfer in proteins have been investigated in several proteins including HP36,[@buchenberg2016;@poudel2020] myoglobin[@reid2018], deoxy-HbI/oxy-HbI,[@leitner2019;@reid2020;@leitner2020a], $A_{2A}$ adenosine receptor[@leitner2020a], and GPCR proteins[@poudel2022;@poudel2023], by David M. Leitner and his coworkers as summarized above,
+these scaling rules are applicable and verified only for the short-range (<  2.8 Å) van der Waals interactions, hydrogen bonds, and charged contacts.
+Given the considerable number of hydrophobic contacts shown in [@fig:histogram_lambda] that their contact distances are larger than 2.8 Å (@fig:histogram-contacts-all a), a scaling rule that is applicable to a broader range of contacts is needed. -->

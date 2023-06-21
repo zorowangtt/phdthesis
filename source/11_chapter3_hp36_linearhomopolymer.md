@@ -37,13 +37,13 @@ The cross-correlation term was calculated according to the method described in @
 Interestingly, we observed a dependence of the cross-correlation effect on the secondary structure, with the α-helical regions showing less influence from cross-correlation.
 The reason for this observation is currently unclear and will be investigated further in future studies focusing on the secondary structure dependence of thermal transport in proteins.
 
-![Contribution factors with cross-correlation correction.See the caption to [@fig:heat_before]](figures/cross/heat-conductivity-after-corrected.jpeg){#fig:heat_after}
+![Contribution factors with cross-correlation correction. See the caption to [@fig:heat_before]](figures/cross/heat-conductivity-after-corrected.jpeg){#fig:heat_after}
 
 After incorporating the cross-correlation terms, all of the contribution factors decreased.
 The corrected contribution factors are shown in [@fig:heat_after], which exhibits similar patterns to [@fig:heat_before].
 The total intra-residue contribution was 0.75, approximately three times larger than the inter-residue contribution of 0.26.
 
-To validate the assumption of short-range cross-correlation, we also calculated the contribution factors for the second nearest cross-correlation between residue α and α+2 ($\xi_{\alpha, \alpha+2}$) using the same method described in @sec:method-cross-correlation.
+To validate the assumption of short-range cross-correlation, we also calculated the contributing factors for the second nearest cross-correlation between residue α and α+2 ($\xi_{\alpha, \alpha+2}$) using the same method described in @sec:method-cross-correlation.
 The total contribution factors due to the second nearest cross-correlation were 0.03, shown in @tbl:secondnearest, while that for the nearest cross-correlation was -0.62, shown in @tbl:nearest, indicating that the second nearest cross-correlation has a minimal impact on the overall heat current.
 
 | Residue($\alpha$)| Residue($\alpha+2$) | $\xi_{\alpha, \alpha+2}$ | $c^{\rm{cross}}(\alpha, \alpha+2)$ |
@@ -144,7 +144,7 @@ Additionally, the slope of the linear regression line depends on the residue typ
 The order of thermal conductivity decreases in the order of charged, polar, and hydrophobic residues.
 We define the residue-wise thermal conductivity, $\lambda_{\alpha}$, of residue α as $\tilde\Lambda_{\alpha,\alpha}/(3V_{\alpha}k_B T)$, which is consistent with the previous report that the thermal diffusion along an α-helix composed entirely of polar residues is faster than that of non-polar residues.[@mino2014]
 
-![A scatter plot depicting the relationship between the intra-residue contribution factors, $\tilde{c}$, with cross-correlation correction, and the volume of each residue.  The contribution factors for charged residues are represented by green dots, polar residues by orange dots, and hydrophobic residues by blue dots.](figures/cross/residue_type_dependence_volume_after_correction.jpeg){#fig:residue_type}
+![A scatter plot depicting the relationship between the intra-residue contribution factors, $\tilde{c}$, with cross-correlation correction, and the volume of each residue. The contributing factors for charged residues are represented by green dots, polar residues by orange dots, and hydrophobic residues by blue dots.](figures/cross/residue_type_dependence_volume_after_correction.jpeg){#fig:residue_type}
 
 ## Local density dependence{#sec:local-density-dependence}
 
@@ -156,7 +156,7 @@ The product of material density ($\rho$) and its specific heat capacity ($c_p$),
 This quantity represents the amount of thermal energy that can be stored per unit volume of the material for a given temperature change.
 A higher value of $\rho{c_p}$ indicates a greater capacity of the material to store thermal energy.
 In macroscopic homogeneous materials, it is generally observed that higher densities are associated with higher thermal conductivities.
-This relationship is evident in various materials, such as high density polyethylene having a higher thermal conductivity (0.44 $\mathrm{W{/} (m{\cdot}K)}$) compared to low density polyethylene (0.3 $\mathrm{W{/} (m{\cdot}K)}$).
+This relationship is evident in various materials, such as high-density polyethylene having a higher thermal conductivity (0.44 $\mathrm{W{/} (m{\cdot}K)}$) compared to low-density polyethylene (0.3 $\mathrm{W{/} (m{\cdot}K)}$).
 
 However, in the case of heterogeneous materials like protein molecules, the local density can vary significantly from one site to another.
 This is due to the differences in volume and packing of amino acid residues, resulting in a wider distribution of residue densities.
@@ -166,7 +166,7 @@ This wider range of residue densities is primarily due to the variation in the v
 The buried residues, which are surrounded by other residues, tend to have a higher density compared to the exposed residues, which have more solvent accessibility.
 This distinction leads to a broader distribution of residue densities within the protein molecule.[@harpaz1994;@baud1999]
 
-![Comparison of the residue volumes in this study with  those in water (blue) and the protein interior (green)[@harpaz1994]. The second row of the x-axis represents the amino acid names using one-letter format, with the residues buried into the protein interior highlighted in red. The third row indicates the residue types, with hydrophobic residues shown in blue, charged residues in green, and polar residues in orange.](figures/cross/volume_comparison.jpeg){#fig:volume_comparison}
+![Comparison of the residue volumes in this study with  those in water (blue) and the protein interior (green)[@harpaz1994]. The second row of the x-axis represents the amino acid names using the one-letter format, with the residues buried into the protein interior highlighted in red. The third row indicates the residue types, with hydrophobic residues shown in blue, charged residues in green, and polar residues in orange.](figures/cross/volume_comparison.jpeg){#fig:volume_comparison}
 
 | Residue type | *r*  | *p*-value | slope                |
 |:-------------|:-----|:----------|:---------------------|
@@ -179,7 +179,7 @@ Generally, a value of $|r|$ > 0.3 or, a *p*-value < 0.05 is often considered to 
 
 The regression analysis with cross-correlation correction, shown in @fig:density a, indicates that the thermal conductivity ($\lambda$) is proportional to the residue mass density, although the slope of the regression line is not steep, suggesting a weak density dependence.
 The data points exhibit a broad distribution, and statistically, the correlation between thermal conductivity and density is not significant, as indicated by a Pearson correlation coefficient of 0.3 and a p-value of 0.078.
-Pearson correlation analysis for all data in @fig:density a and subdata points classified by residue types in @fig:density b are listed in @tbl:pearson.
+Pearson correlation analysis for all data in @fig:density a and sub data points classified by residue types in @fig:density b are listed in @tbl:pearson.
 
 In @fig:density b, the linear regression lines for hydrophobic and polar residues have almost constant thermal conductivity values, while charged residues show a negative proportionality, although the reason for this observation is unclear.
 One possible explanation is that charged residues tend to have larger volumes compared to other residue types.[@harpaz1994]
