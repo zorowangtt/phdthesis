@@ -633,13 +633,11 @@ The reMD simulation[@roux2013] technique for the model with all-atom spin labels
 It should be noted that a significant difference between the spin pair distance in the reMD simulation's initial structure and the DEER data may result in incredibly quick atomic movements and unexpected simulation termination.
 Therefore, before each run of the reMD simulation, a screening on the beginning model based on the distance information between all spin pairs is required to avoid such a violation.
 
-Using harmonic restricted MD simulations from the model (@fig:scheme B) that was modified from the AF2 model (S56-2 of @fig:af2-output), we began the structural refinement.
+Using harmonic restricted MD simulations from the model (@fig:scheme B) that was modified from the AF2 model, we began the structural refinement.
 These two well-structured C-terminal helices were overfolded with the coiled-coil in the AF2 model (@fig:predicted-model), despite their high conformational flexibility that was revealed by DEER (C150 in @fig:scheme C), and could not be efficiently sampled by our preliminary calculations with conventional constant temperature, constant pressure MD simulations, even at a temperature higher than room temperature.
  simulations, even at a temperature higher than room temperature.
 Therefore,  two C-terminal helices were manually shifted away from the dimer's coiled-coil portion (@fig:scheme B).
 The ensuing simulations' computational specifics are described here.
-
-![Top 5 homodimer models for WT, S46C and S56C mutants are shown with each residue being colored according to its per-residue confidence score (pLDDT): Blue (high), cyan (high medium), yellow (low medium) and red (low).](figures/cp12/af2-output.jpg){#fig:af2-output width=100%}
 
 (1)	Based on the improved AF2 model, we ran harmonic restricted MD simulations using the Amber 20 package.[@case2020]
 The protein was modeled by the OPC model[@izadi2014] using the LEaP program of AmberTools20, and then immersed into a cubic periodic box full of water solvent molecules using the Amber ff19SB force field.[@tian2020]
