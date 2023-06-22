@@ -267,7 +267,7 @@ and the relative difference (rΔ*G*) of the *G*-values for residue pairs
 in native contact between met-FixLH (*G*~met~) and met-FixLH-imd
 (*G*~imd~), where Δ*G* = *G*~imd~ -- *G*~met~ and rΔ*G* = Δ*G* /
 *G*~met~. In @fig:difference A, we illustrated the reorganization of the network
-of vibrational energy transfer pathways (see also Table S4), where those
+of vibrational energy transfer pathways, where those
 with increased *G*, shown in red, are distinguished from those with
 decreased *G*, shown in blue. Ligand binding to the heme weakened
 (enhanced) the interaction between heme with HIS214 (HIS200, TYR203,

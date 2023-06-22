@@ -3,42 +3,19 @@
 
 # Heat and energy transfer through non-covalent contacts{#cha4}
 
-<!-- **importance of thermal and energy transport in proteins**
+## Thermal conductivity and energy conductivity
 
-Thermal energy transport is important for understanding how proteins function, interact, and respond to environmental changes.
+In previous studies, we explored the energy transport network in proteins by analyzing the _inter-residue energy conductivity_ ($G_{\alpha, \beta}$).[@ishikura2006;@leitner2010;@ishikura2015;@ota2019;@poudel2020]
+As a carrier of energy for heat, we are wondering whether there are any correlations between heat and energy transfer among different partial sites, i.e., different residues. Relating the inter-residue thermal conductivity and energy conductivity will be helpful to understand the property of heat and energy transfer in proteins.
 
-**Summary the current methods of investigating thermal energy transport process in proteins**
+![Plot of inter-residue thermal conductivity ($\lambda_{\alpha, \beta}$) and energy conductivity ($G_{\alpha, \beta}$). Residue pairs are classified by residue type of native contacts.](figures/non-bonded/lambda-energy.png){#fig:lambda_energy}
 
+From [@eq:eqd1;@eq:eqd4;@eq:eqd5;@eq:eqd7], we can see that the difference between thermal conductivity $\lambda_{\alpha, \beta}$ and energy conductivity ($G_{\alpha, \beta}$) is that for the latter its energy flow term ($\bm J_{ij}$) lacks of position vector, ($\bm r_i- \bm r_j$), which represents the distance information of the residues while MD simulations.
+To investigate this issue, we plotted the scatter dots $\lambda_{\alpha, \beta}$ and $G_{\alpha, \beta}$ in [@fig:lambda_energy] and performed the linear regression analysis.
+Interestingly, the Pearson correlation analysis showed a significant relationship statistically between $\lambda_{\alpha, \beta}$ and $G_{\alpha, \beta}$, with $r = 0.97, \, p << 0.05 \,(4.47 \times 10^{-168})$.
+To get an estimated linear regression model that can expresses their relationship, a fitted model is given here: $\log{\lambda_{\alpha, \beta}} = 0.73 \times \log{{G}_{\alpha, \beta}} - 0.30$ with $R^2 = 0.94$.
 
-However,
-
-**Summarize the debate of dominating interactions on energy transfer in protein**
-
-
-
-**What methods used in mapping native contacts based on only structure information: Protein Contact Network**
-
-**locate a gap in the research/describe the problem you will address/**
-present a prediction to be tested
-
-
-
-**Highlight the competition of thermal energy transport through native contacts and that along the chain** 
-
-**describe the present paper**
-
-In this work, we utilized the equilibrium molecular dynamics (EMD) simulations and linear response theory to investigate the inherent thermal transport properties through non-covalent contacts in HP36.
-We introduced the term _inter-residue thermal conductivity_ in Section [2](#methods) to quantify the capacity of transferring thermal energy across non-covalent contacts.
-In order to examine the influence of interaction types on inter-residue thermal conductivity, we categorized the contacts into different types based on residue-residue interactions types.
-As a special type of interaction, we quantitatively examined the role of hydrogen bonds in thermal energy transport through non-covalent contacts in proteins.
-Additionally, to explore the competition between thermal energy transport along the backbone and across non-covalent contacts, we compared the data obtained in this study with our previous studies.
-For a more comprehensive 
-
-Using this method, the contributions from backbone and contacts transfer can be easily identified and compared within the protein.
-
-\newpage -->
-
-## Interaction type dependence on heat transfer through non-covalent contacts
+## Interaction type dependence
 
 ![Histogram distribution of $\lambda_{\alpha,\beta}$ for different types of contacts in HP36 protein. The black and red lines represent the thermal conductivity of bulk water and HP36, respectively, for comparison. The $\lambda$ values of residue-wise and contacts between peptide bonded residue pairs are adopted from our previous study.[@wang2023]](figures/non-bonded/histogram-lambda-after.png){#fig:histogram_lambda}
 
@@ -64,12 +41,12 @@ This suggests that peptide bonds play a significant role in thermal transport wi
 
 ## Thermal energy transport through hydrogen bonds {#sec:role-of-hb}
 
-![$\lambda_{\alpha,\beta}$ values of contacts forming hydrogen bonds and their hydrogen bonds capacity ($c_{HB}$) during MD simulations. (a): all contacts forming hydrogen bonds; (b) contacts between residue $\alpha$ and $\alpha+4$.](figures/non-bonded/hb-capacity-lambda-all-ii4.png){#fig:hb_all_ii4}
+![$\lambda_{\alpha,\beta}$ values of contacts forming hydrogen bonds and their hydrogen bond occurrence probability (_P_~HB~) during MD simulations. (a): all contacts forming hydrogen bonds; (b) contacts between residue $\alpha$ and $\alpha+4$.](figures/non-bonded/hb-capacity-lambda-all-ii4.png){#fig:hb_all_ii4}
 
-As can be seen in [@fig:histogram_lambda] of [@sec:interaction-type-dependence-on-heat-transfer-through-non-covalent-contacts], the $\lambda_{\alpha, \beta}$ values of contacts through hydrogen bonds are generally greater than that of other non-covalent contacts.
+As can be seen in [@fig:histogram_lambda], the $\lambda_{\alpha, \beta}$ values of contacts through hydrogen bonds are generally greater than that of other non-covalent contacts.
 The hydrogen bonds are also found to facilitate the energy transport in proteins.[@mino2014;@deniz2021]
-A scatter plot between the values of $\lambda_{\alpha,\beta}$ and their hydrogen bonds capacity during the MD simulations was shown in [@fig:hb_all_ii4]a.
-The linear regression analysis revealed a Pearson correlation coefficient of $r$ = 0.51 (> 0.3) and a $**p$-value of 0.007 ($\ll$ 0.05), indicating a significant correlation between $\lambda_{\alpha,\beta}$ and hydrogen bonds capacity of residue pairs.
+A scatter plot between the values of $\lambda_{\alpha,\beta}$ and their hydrogen bond occurrence probability during the MD simulations was shown in [@fig:hb_all_ii4]a.
+The linear regression analysis revealed a Pearson correlation coefficient of $r$ = 0.51 (> 0.3) and a $**p$-value of 0.007 ($\ll$ 0.05), indicating a significant correlation between $\lambda_{\alpha,\beta}$ and hydrogen bond occurrence probability of residue pairs.
 
 In proteins constructed in an $\alpha$-helical manner, two types of hydrogen bonds can be distinguished.
 The first type, known as central hydrogen bonds, plays a key role in stabilizing the helical structure by forming hydrogen bonds between the amino group (N-H) of one amino acid and the carbonyl oxygen (O) of a second amino acid, usually occurring between residues $\alpha$ to $\alpha$+4 in the helical regions.
@@ -86,36 +63,84 @@ However, there were some residue pairs that did not form the first type of hydro
 These pairs were classified as non-helical residue pairs but formed hydrogen bonds.
 Interestingly, the $\lambda$ of non-helical residue pairs that did not have the opportunity to form hydrogen bonds was significantly lower than that of helical residue pairs.
 
-<!-- ![$\lambda_{\alpha,\beta}$ values of contacts forming hydrogen bonds and their hydrogen bonds capacity ($c_{HB}$) during MD simulations](figures/non-bonded/hb-capacity-lambda-ii4.png){#fig:hb_ii4} -->
-
 For a detailed analysis of the role of hydrogen bonds, we focus on the contacts of residue $\alpha$ and $\alpha$+4.
 In HP36, the crystal structure (PDB: 1VII) reveals the presence of three $\alpha$-helices, H1 (residues 4-8), H2 (residues 15-18), and H3 (residues 23-32), which should give rise to eight residue pairs that form the first type of hydrogen bonds.
-However, we observed some residue pairs that did not form the first type of hydrogen bonds in the crystal structure but were observed to form such bonds in MD simulations, and they were listed in Table S2.
+However, we observed some residue pairs that did not form the first type of hydrogen bonds in the crystal structure but were observed to form such bonds in MD simulations, and they were listed in  @tbl:c_hb.
 After the statistical analysis of the hydrogen bonds formation from MD trajectories, it was found that almost all hydrogen bonds of contacts between residue $\alpha$ and $\alpha$+4 were the first type, with one exception of the contact between 16SER and 20ASN, where they also formed hydrogen bonds between mainchain and sidechain.
 
-Their $\lambda_{\alpha,\alpha+4}$ values, interaction types, their $c_{HB}$ and contacts distances are listed in Table S3.
+| acceptor number | acceptor atom | donorH number | donorH atom | donor atom | _P_~HB~ | acceptor type | donor type |
+| :-------------- | :------------ | :------------ | :---------- | :--------- | :----------- | :------------ | :--------- |
+| 4               | O             | 8             | H           | N          | 0.37         | MC            | MC         |
+| 14              | O             | 18            | H           | N          | 0.58         | MC            | MC         |
+| 23              | O             | 27            | H           | N          | 0.55         | MC            | MC         |
+| 24              | O             | 28            | H           | N          | 0.48         | MC            | MC         |
+| 25              | O             | 29            | H           | N          | 0.54         | MC            | MC         |
+| 26              | O             | 30            | H           | N          | 0.48         | MC            | MC         |
+| 27              | O             | 31            | H           | N          | 0.59         | MC            | MC         |
+| 28              | O             | 32            | H           | N          | 0.61         | MC            | MC         |
+| 3               | O             | 7             | H           | N          | 0.60         | MC            | MC         |
+| 5               | O             | 9             | H           | N          | 0.21         | MC            | MC         |
+| 6               | O             | 10            | H           | N          | 0.47         | MC            | MC         |
+| 7               | O             | 11            | H           | N          | 0.67         | MC            | MC         |
+| 8               | O             | 12            | H           | N          | 0.13         | MC            | MC         |
+| 15              | O             | 19            | H           | N          | 0.53         | MC            | MC         |
+| 16              | O             | 20            | HD21        | ND2        | 0.18         | MC            | SC         |
+| 16              | O             | 20            | H           | N          | 0.07         | MC            | MC         |
+| 22              | O             | 26            | H           | N          | 0.33         | MC            | MC         |
+| 29              | O             | 33            | H           | N          | 0.37         | MC            | MC         |
+| 30              | O             | 34            | H           | N          | 0.05         | MC            | MC         |
+
+: Hydrogen bond formation capacity _P_~HB~ between residue $\alpha$ and $\alpha+4$. MC means mainchain and SC means sidechain. {#tbl:c_hb}
+
+Their $\lambda_{\alpha,\alpha+4}$ values, interaction types, their _P_~HB~ and contacts distances are listed in c_hb_ii4.
 The $\lambda_{\alpha,\beta}$ values for contacts with no hydrogen bonds are significantly lower, i.e. an order of magnitude lower, than those with hydrogen bonds.
 Two special residues pairs (2LEU-6ASP and 21LEU-25LYS) did not form hydrogen bonds but had relatively higher $\lambda_{\alpha,\beta}$ values.
 This may be because their interactions are stronger than those contacts with no hydrogen bonds, which are all hydrophobic residues with weak Van der Waals interactions.
 
-A smaller data set consisting of $\lambda_{\alpha,\alpha+4}$ and $c_{HB}$ with hydrogen bonds formed was used to fit a linear regression relationship, as shown in [@fig:hb_all_ii4]b.
+| Residue Number | Residue Name | Residue Number | Residue Name | _P_~HB~ | Interaction Type | $\lambda_{\alpha, \alpha+4}$ | Contacts Distance (\AA)|
+| :--------- | :------- | :--------- | :------- | :------- | :--------------- | :------------ |:------------ |
+| 2              | LEU          | 6              | ASP          | 0.00         | charged          | 3.29E-03                     |3.08 |
+| 21             | LEU          | 25             | LYS          | 0.00         | charged          | 2.23E-03                     |2.56|
+| 3              | SER          | 7              | PHE          | 0.60         | hydrogen bonds   | 3.72E-03                     |2.05|
+| 4              | ASP          | 8              | LYS          | 0.37         | hydrogen bonds   | 4.33E-03                     |2.19 |
+| 5              | GLU          | 9              | ALA          | 0.21         | hydrogen bonds   | 1.90E-03                     |2.32 |
+| 6              | ASP          | 10             | VAL          | 0.47         | hydrogen bonds   | 6.16E-03                     |2.10 |
+| 8              | LYS          | 12             | GLY          | 0.13         | hydrogen bonds   | 7.40E-03                     |2.34 |
+| 14             | THR          | 18             | PHE          | 0.58         | hydrogen bonds   | 2.10E-03                     |1.98 |
+| 15             | ARG          | 19             | ALA          | 0.53         | hydrogen bonds   | 3.52E-03                     |2.04 |
+| 16             | SER          | 20             | ASN          | 0.18         | hydrogen bonds   | 4.06E-03                     |2.64 |
+| 22             | PRO          | 26             | GLN          | 0.33         | hydrogen bonds   | 3.27E-03                     |2.11 |
+| 23             | LEU          | 27             | GLN          | 0.55         | hydrogen bonds   | 4.95E-03                     |1.99 |
+| 24             | TRP          | 28             | ASN          | 0.48         | hydrogen bonds   | 3.67E-03                     |2.03 |
+| 25             | LYS          | 29             | LEU          | 0.54         | hydrogen bonds   | 3.89E-03                     |2.00|
+| 26             | GLN          | 30             | LYS          | 0.48         | hydrogen bonds   | 4.32E-03                     |2.06 |
+| 27             | GLN          | 31             | LYS          | 0.59         | hydrogen bonds   | 4.74E-03                     |2.00 |
+| 28             | ASN          | 32             | GLU          | 0.61         | hydrogen bonds   | 4.83E-03                     |1.96 |
+| 29             | LEU          | 33             | LYS          | 0.37         | hydrogen bonds   | 2.70E-03                     |2.12 |
+| 30             | LYS          | 34             | GLY          | 0.05         | hydrogen bonds   | 2.23E-03                     |2.62 |
+| 1              | MET          | 5              | GLU          | 0.00         | hydrophobic      | 1.99E-04                     |8.33 |
+| 9              | ALA          | 13             | MET          | 0.00         | hydrophobic      | 4.29E-05                     |5.07 |
+| 10             | VAL          | 14             | THR          | 0.00         | hydrophobic      | 8.14E-07                     |7.83 |
+| 11             | PHE          | 15             | ARG          | 0.00         | hydrophobic      | 4.31E-05                     |6.08 |
+| 13             | MET          | 17             | ALA          | 0.00         | hydrophobic      | 2.42E-03                     |2.83 |
+| 17             | ALA          | 21             | LEU          | 0.00         | hydrophobic      | 5.66E-04                     |2.85 |
+| 18             | PHE          | 22             | PRO          | 0.00         | hydrophobic      | 1.65E-05                     |5.70 |
+| 19             | ALA          | 23             | LEU          | 0.00         | hydrophobic      | 1.95E-05                     |6.67 |
+| 31             | LYS          | 35             | LEU          | 0.00         | hydrophobic      | 2.02E-04                     |3.90 |
+| 32             | GLU          | 36             | PHE          | 0.00         | hydrophobic      | 3.46E-04                     |5.72 |
+| 7              | PHE          | 11             | PHE          | 0.67         | pi stacking      | 4.91E-03                     |1.92 |
+
+: $\lambda_{\alpha,\beta}$ values and hydrogen bond formation capacity _P_~HB~ between residue $\alpha$ and $\alpha+4$. {#tbl:c_hb_ii4}
+
+
+A smaller data set consisting of $\lambda_{\alpha,\alpha+4}$ and _P_~HB~ with hydrogen bonds formed was used to fit a linear regression relationship, as shown in [@fig:hb_all_ii4]b.
 The Pearson correlation coefficient and $p$-value are 0.80 (> 0.3) and 0.001 ($\ll$ 0.05), respectively, indicating a stronger correlation relationship than for all hydrogen bond contacts.
 The contact distance is a factor that can affect thermal transport through contacts.[@reid2018] For the data set used in [@fig:hb_all_ii4]a, their distance varied at a relatively broad range (2 - 4 Å) compared to the smaller data set used in [@fig:hb_all_ii4]b, where the distances of all contacts were 2.1 $\pm$ 0.2 Å.
 
 <!-- $\pi$ stacking: Phe7-Phe11, Phe11-Phe18, Phe7-Phe18.
 only Phe7-Phe11 has the largest $\lambda$, while Phe7-18 and Phe11-18 have a same $\lambda$ with no hydrogen bonds for them. -->
 
-## Thermal conductivity and energy conductivity
 
-In previous studies, we explored the energy transport network in proteins by analyzing the _inter-residue energy conductivity_ ($G_{\alpha, \beta}$).[@ishikura2006;@leitner2010;@ishikura2015;@ota2019;@poudel2020]
-As a carrier of energy for heat, we are wondering whether there are any correlations between heat and energy transfer among different partial sites, i.e., different residues. Relating the inter-residue thermal conductivity and energy conductivity will be helpful to understand the property of heat and energy transfer in proteins.
-
-![Plot of inter-residue thermal conductivity ($\lambda_{\alpha, \beta}$) and energy conductivity ($G_{\alpha, \beta}$). Residue pairs are classified by residue type of native contacts.](figures/non-bonded/lambda-energy.png){#fig:lambda_energy}
-
-From [@eq:eqd1;@eq:eqd4;@eq:eqd5; and @eq:eqd7], we can see that the difference between thermal conductivity $\lambda_{\alpha, \beta}$ and energy conductivity ($G_{\alpha, \beta}$) is that for the latter its energy flow term ($\bm J_{ij}$) lacks of position vector, ($\bm r_i- \bm r_j$), which represents the distance information of the residues while MD simulations.
-To investigate this issue, we plotted the scatter dots $\lambda_{\alpha, \beta}$ and $G_{\alpha, \beta}$ in [@fig:lambda_energy] and performed the linear regression analysis.
-Interestingly, the Pearson correlation analysis showed a significant relationship statistically between $\lambda_{\alpha, \beta}$ and $G_{\alpha, \beta}$, with $r = 0.97, \, p << 0.05 \,(4.47 \times 10^{-168})$.
-To get an estimated linear regression model that can expresses their relationship, a fitted model is given here: $\log{\lambda_{\alpha, \beta}} = 0.73 \times \log{{G}_{\alpha, \beta}} - 0.30$ with $R^2 = 0.94$.
 
 ## Important features on thermal transport through non-covalent contacts
 <!-- ## Random Forest Analysis -->
@@ -126,7 +151,7 @@ To get an estimated linear regression model that can expresses their relationshi
 
 To get a better understanding of the contributions of these features to the thermal transport properties of contacts in protein,
 we applied the random forest regression model to predict the log$\lambda_{\alpha,\beta}$ values with seven features as predictors.
-The comparison of calculated and predicted log$\lambda_{\alpha,\beta}$ together with the feature importances are shown in @fig:random-forest (dataset S) and @fig:random-forest-L (dataset L).
+The comparison of calculated and predicted log$\lambda_{\alpha,\beta}$ together with the feature importances are shown in @fig:random-forest-S (dataset S) and @fig:random-forest-L (dataset L).
 The model of _dataset L_ resulted in $r^2$ values of 0.95 and 0.89 for training set and testing set, and the corresponding RMSE were 0.24 and 0.4, respectively.
 Only the contact distance exhibited the considering contributions to the log$\lambda_{\alpha,\beta}$ among all the feature variables.
 The model of _dataset S_ resulted in $r^2$ values of 0.89 and 0.75 for traning set and testing set, and the corresponding RMSE were 0.10 and 0.18, respectively.
@@ -137,9 +162,9 @@ On the other hand, for short-distance contacts ($\langle d_c\rangle$ < 4 $\AA$),
 This observation aligns with the notion that the energy transport of hydrogen bonding contact is inversely proportional to the variance of the contact.
 The motion of these contacts can be modeled as a harmonic oscillator.[@buchenberg2016]
 Due to the limited numbers of data points, a further smaller dataset ($\langle d_c\rangle$ < 2.8 $\AA$) resulted in a model with very poor prediction performance.
-If we take a look at the heat current expression in @eq:eq1, we can find that two terms, i.e. (${\bm{r}_i}-{\bm{r}_j}$) and $\bm{F}_{ij}$, are closely associated with the contact distance.
+If we take a look at the heat current expression in @eq:eqc1, we can find that two terms, i.e. (${\bm{r}_i}-{\bm{r}_j}$) and $\bm{F}_{ij}$, are closely associated with the contact distance.
 While as the contact distance decreases, there is an increase in the proportion of hydrogen bonding contacts.
-Consequently, the importance of both $\langle \delta d_c^2 \rangle$ and ($P{HB}$ becomes more pronounced.
+Consequently, the importance of both $\langle \delta d_c^2 \rangle$ and ($P_{HB}$ becomes more pronounced.
 Moreover, a pairwise correlation analysis of all features and $\lambda_{\alpha,\beta}$ values was performed and their Pearson correlation coefficients were shown in @fig:rf-correlation-heatmap.
 
 ![Correlation map. (a) Pairwise Pearson correlation coefficients, $r$; (b) $p$-values.](figures/non-bonded/rf-correlation-heatmap.png){#fig:rf-correlation-heatmap}

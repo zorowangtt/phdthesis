@@ -415,7 +415,7 @@ The atomistic representation of the instantaneous  energy flow ($\bm{J}$) betwee
 $$
 \bm{J_{ij}} = \frac{1}{2} (\bm{v}_i \cdot {\bm{F}_{ij}} - {\bm{v}_j} \cdot \bm{F}_{ji}) = \frac{1}{2} {\bm{F}_{ij}} \cdot ({\bm{v}_i + \bm{v}_j})
 $$
-{#eq:eq5}
+{#eq:eqd5}
 <!-- prettier-ignore-end -->
 
 where $\bm{J_{ij}}$ is the inter-atom energy flow between atom i and atom j.
