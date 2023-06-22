@@ -604,45 +604,73 @@ $$
 where $V$ represents either $w_{\alpha,\beta}$, $\log{G}_{\alpha, \beta}$, or $\log{\lambda}_{\alpha, \beta}$. -->
 
 ## Computational modeling for a homodimer _Thalassosira pseudonana_ CP12
-Considering the spatiotemporal heterogeneity and high conformational flexibility of _Thalassosira pseudonana_ chloroplastic protein (CP12), we designed a three-stage modeling strategy.
-First, initial guess structures of the CP12 dimer were predicted by AlphaFold2.[@jumper2021;@evans2021]
-Then, the most likely structure of them was roughly refined by the harmonic restrained all-atom molecular dynamics (MD) simulations so as to meet the experimental (SAXS[@shao2021] and EPR/DEER) data.
-Finally, the structures thus obtained were further refined by restrained-ensemble molecular dynamics (reMD) simulations[@roux2013;@shen2015;@islam2013;@qi2020] so that the distance distributions of all spin pairs agree between reMD simulations and the experimental EPR/DEER data.
+
+We developed a three-stage modeling technique keeping in mind the considerable conformational flexibility and spatiotemporal heterogeneity of the _Thalassosira pseudonana_ chloroplastic protein (CP12).
+First, AlphaFold-Multimer first predicted the CP12 dimer's initial guess structures.[@jumper2021;@evans2021]
+Then, the harmonic restrained all-atom molecular dynamics (MD) simulations were used to roughly refine the most likely structure of them in order to align it with the experimental results (SAXS[@shao2021] and EPR/DEER).
+Finally, restrained-ensemble molecular dynamics (reMD) simulations[@roux2013;@shen2015;@islam2013;@qi2020] were used to further refine the structures generated in this manner, ensuring that the distance distributions of all spin pairs between the reMD simulations and the experimental EPR/DEER data are consistent.
 
 ![(A) Refinement scheme for the model obtained from AlphaFold2. (B) Starting model for the harmonic restrained MD simulations. C) Distances (blue) and distance distributions (black) between spin label pairs of the starting model for reMD simulation and DEER experiment data, respectively.](figures/cp12/scheme.jpg){#fig:scheme width=100%}
 
 ### FASTA sequence of CP12{#sec:sequence}
-The full-length amino acid sequence of CP12 including the 163 residues (blue) that were used as input for AlphaFold2 modeling:
-\newline MKIFLASLIGSCAAFAPAPFGKSPTALFGRVDTS\textcolor{blue}{AIEAALDASKKFGSTSSEARVLWDIVEEMDASDNSVASKAPI
+The 163 residues from CP12's complete amino acid sequence (shown in blue) that served as the input for AlphaFold2 modeling are as follows:
+
+MKIFLASLIGSCAAFAPAPFGKSPTALFGRVDTS\textcolor{blue}{AIEAALDASKKFGSTSSEARVLWDIVEEMDASDNSVASKAPI
 VDSEYEAKVKSLSQMLTKTKAELDQVKALADDLKGVKLASPSVGSSAPDDSVMKEALAAARAATEEFGQSSPQ
 ARLAWETVEEIAASPVDIRAPLDEECLIELIEGCEALEKFQAALGSR}
 
 ### AlphaFold2 prediction
-Structure prediction for the CP12 homodimer was performed using AlphaFold v2.1.1-Multimer (AF2) and the default databases[@jumper2021;@evans2021;@tunyasuvunakool2021]. The amino acid sequence of the wild-type (WT) was downloaded from NCBI[@shao2021]. A truncated FASTA sequence containing 163 residues (the blue part of the sequence in @sec:sequence) without His-tag was used in the AF2 input file for multiple sequence alignments (MSAs) lookup and structural template matching. For WT, S46C and S56C mutants, their homodimeric structure was predicted with the top five ranked models. For the model confidence, along with the prediction results, a measure called predicted local distance difference test score (pLDDT, on a scale from 0 - 100, where 100 represents the most confident) was used to estimate the per-residue confidence.
+Using AlphaFold v2.1.1-Multimer (AF2) and the default databases,[@jumper2021;@evans2021;@tunyasuvunakool2021], the structure of the CP12 homodimer was predicted.
+From NCBI[@shao2021], the wild-type (WT) amino acid sequence was retrieved .
+For multiple sequence alignments (MSAs) lookup and structural template matching, an incomplete FASTA sequence of 163 residues (the blue portion of the sequence in @sec:sequence) was used in the AF2 input file.
+The homodimeric structure of WT, S46C, and S56C mutants was predicted and the top five ranked models was outputed.
+A measure known as predicted local distance difference test score (pLDDT, on a scale from 0 to 100, where 100 denotes the most confident) was used to assess the per-residue confidence for the model confidence along with the prediction outcomes.
 
 ### Harmonic restrained molecular dynamics simulations
-To refine the starting model thus obtained, all-atom harmonic restrained MD simulations without spin labels followed by restrained-ensemble MD (reMD) simulations with spin labels were performed to obtain a realistic conformational ensemble that fit with both the experimental SAXS curve[@shao2021] and the spin-spin distance distributions derived from EPR/DEER experiments.
-The simulation process is summarized in a logic diagram, shown in @fig:scheme A.
-Due to the high flexibility of R1 spin labels with 5 dihedral angles, the reMD simulation[@roux2013] technique for the model with all-atom spin labels is suitable to exploit protein’s structure in their native environment based on multiple distance histograms information obtained from EPR/DEER spectroscopy.
-It should be noted that a large discrepancy in the spin pair distance in the initial structure of reMD simulation with DEER data may cause extraordinarily rapid atomic movements leading to unexpected termination during the simulation process.
-Thus, to avoid such violation, a screening on the starting model is needed based on the distance information between all spin pairs, before each run of reMD simulation.
+All-atom harmonic restrained MD simulations without spin labels were followed by restrained-ensemble MD (reMD) simulations with spin labels in order to refine the resulting starting model and create a conformational ensemble that is realistic and fits both the experimental SAXS curve[@shao2021] and the spin-spin distance distributions discovered by EPR/DEER experiments.
+A logic diagram for the simulation procedure is displayed in @fig:scheme A.
+The reMD simulation[@roux2013] technique for the model with all-atom spin labels is suitable to exploit protein's structure in their native environment based on multiple distance histograms information obtained from EPR/DEER spectroscopy due to the high flexibility of R1 spin labels with 5 dihedral angles.
+It should be noted that a significant difference between the spin pair distance in the reMD simulation's initial structure and the DEER data may result in incredibly quick atomic movements and unexpected simulation termination.
+Therefore, before each run of the reMD simulation, a screening on the beginning model based on the distance information between all spin pairs is required to avoid such a violation.
 
-We started the structural refinement using harmonic restrained MD simulations from a model (@fig:scheme B) that was modified from the AF2 model (S56-2 of @fig:af2-output).
-Despite their high conformational flexibility that was revealed by DEER (C150 in @fig:scheme C), these two well-structured C-terminal helices were overfolded with the coiled-coil in the AF2 model (@fig:predicted-model) and could not be efficiently sampled by our preliminary calculations with conventional constant temperature, constant pressure MD simulations, even at a temperature higher than room temperature.
-Therefore, we manually moved two C-terminal helices away from the coiled-coil part of the dimer (@fig:scheme B).
-The computational detail of the subsequent simulations is explained below.
+Using harmonic restricted MD simulations from the model (@fig:scheme B) that was modified from the AF2 model (S56-2 of @fig:af2-output), we began the structural refinement.
+These two well-structured C-terminal helices were overfolded with the coiled-coil in the AF2 model (@fig:predicted-model), despite their high conformational flexibility that was revealed by DEER (C150 in @fig:scheme C), and could not be efficiently sampled by our preliminary calculations with conventional constant temperature, constant pressure MD simulations, even at a temperature higher than room temperature.
+ simulations, even at a temperature higher than room temperature.
+Therefore,  two C-terminal helices were manually shifted away from the dimer's coiled-coil portion (@fig:scheme B).
+The ensuing simulations' computational specifics are described here.
 
 ![Top 5 homodimer models for WT, S46C and S56C mutants are shown with each residue being colored according to its per-residue confidence score (pLDDT): Blue (high), cyan (high medium), yellow (low medium) and red (low).](figures/cp12/af2-output.jpg){#fig:af2-output width=100%}
 
-(1)	We conducted harmonic restrained MD simulations with the Amber 20 package[@case2020] based on the modified AF2 model. The Amber ff19SB force field[@tian2020] was used for the protein, which was immersed into a cubic periodic box filled with water solvent molecules modeled by the OPC model[@izadi2014] with the LEaP program of AmberTools20. All charged residues were considered in their standard protonation state at pH = 7.0. We added 28 sodium ions to neutralize the simulation box and the total number of atoms became 178352. Nonbonded particle-particle interactions[@duan2001a] were considered with a distance cutoff of 9 Å and the long-range electrostatic interactions were treated with the particle mesh Ewald (PME) method[@salomon-ferrer2013].
-After minimization, heating, and equilibration of the simulation system, several rounds of MD simulations were conducted imposing harmonic restraints on the CA-CA distances across the dimer for respective spin-labeled residues S39, S46, S56, S83, and C150 with a spring force of 30 kcal/(mol·Å^2^). Each round ran for 100ps with a time step of 2 fs at _T_ = 300 K and _P_ = 0.978 atm. The trajectories and snapshots were saved every 1 ps. The initial/target distances for each CA atom pair were 73 Å/68 Å for S39, 57 Å/43 Å for S46, 26 Å/32 Å for S56, 51 Å/64 Å for S83, 12 Å/25 Å for C150, respectively. The target distances were quickly reached in the first 2 ps in each round (@fig:time-evolution).
+(1)	Based on the improved AF2 model, we ran harmonic restricted MD simulations using the Amber 20 package.[@case2020]
+The protein was modeled by the OPC model[@izadi2014] using the LEaP program of AmberTools20, and then immersed into a cubic periodic box full of water solvent molecules using the Amber ff19SB force field.[@tian2020]
+At pH = 7.0, all charged residues were taken into consideration in their typical protonation condition.
+To neutralize the simulation box, we added 28 sodium ions, and the total number of atoms is 178352.
+With a distance cutoff of 9 Å, nonbonded particle-particle interactions[@duan2001a] were taken into account, and the particle mesh Ewald (PME) method[@salomon-ferrer2013] was used to treat long-range electrostatic interactions.
+After the simulation system was minimized, heated, and adjusted, many rounds of MD simulations were run, with harmonic restrictions applied to the CA-CA lengths across the dimer for the corresponding spin-labeled residues S39, S46, S56, S83, and C150, and a spring force of 30 kcal/(mol·Å^2^).
+Each round was place at _T_ = 300 K and _P_ = 0.978 atm for 100ps with a time step of 2 fs.
+Every 1 ps, the trajectories and snapshots were stored.
+The initial/target distances for each pair of CA atoms were, respectively, 73/68 Å for S39, 57/43 Å for S46, 26/32 Å for S56, 51/64 Å for S83, and 12/25 Å for C150.
+In the first 2 ps of each cycle, the desired distances were readily attained (@fig:time-evolution).
 
 ![Time evolution of the CA-CA distances. We consider five residue pairs, S39-S39, S46-S46, S56-S56, S83-S83, and C150-C150 in the dimer. For each pair, the CA-CA distance are plotted as a function of time during harmonic restrained MD simulation using Amber.](figures/cp12/time-evolution.jpg){#fig:time-evolution width=100%}
 
-(2)	Using saved snapshots, we stripped the waters and used CRYSOL[@svergun1995] of ATSAS-3.0.4-2[@franke2017] to compare the simulated SAXS curve with the experiment[@shao2021].
-(3)	If the simulated SAXS curve was in good agreement with the experiment, then we added all-atom spin label CYR1[@jo2014] to residues S39, S46, S56, S83, and C150, respectively, using the reMD Prepper module of CHARMM-GUI[@qi2020], then measured the initial distance of each spin pairs.
+(2)	By removing the waters and using CRYSOL[@svergun1995] of ATSAS-3.0.4-2[@franke2017] to compare the simulated SAXS curve with the experiment[@shao2021], we were able to compare the two using snapshots.
+(3)	Using the reMD Prepper module of CHARMM-GUI[@qi2020], we assigned the all-atom spin label CYR1[@jo2014] to the residues S39, S46, S56, S83, and C150, respectively, if the simulated SAXS curve and the experiment were in good agreement.
+We then measured the initial distance of each spin pair.
 
 ### Restrained-ensemble MD simulations
-(4)	If all distances of spin pairs fell in the experimentally measured range, then we moved on to the reMD simulations by using a modified version of NAMD 2[@shen2015;@qi2020] with all-atom CHARMM36m protein force field[@huang2017]. We attached 25 copies of all-atom CYR1 spin labels to residues S39, S46, S56, S83 and C150, respectively, with reMD Prepper in a vacuum for saving the computational resources. During the whole reMD simulations, the N, Cα, C, and O atoms of each spin label were fixed to the corresponding atoms in the labeled residues (@fig:spin-label) using a force constant of 10 kcal/(mol·Å^2^). The force field of all-atom CYR1 spin label[@islam2015] is provided by CHARMM-GUI. Spatial overlap among the 25 copies of CYR1 spin labels was allowed by neglecting the interactions among them. Five independent all-atom reMD simulations were conducted at 303.15 K with different random number seeds using Langevin dynamics with a damping coefficient of 5 ps^-1^. Before each reMD production run, we performed minimization and equilibration, during which only sidechain atoms were relaxed, keeping the backbone atom positions with harmonic restraints of 2 kcal/(mol·Å^2^) imposed on them. For further structural refinement, we switched off the harmonic restraints imposed on the backbone atoms, and conducted production runs of reMD simulations for 2 ns with a time step of 0.5 fs. The long-range electrostatic interactions were treated with the particle mesh Ewald (PME) method[@petersen1995] and the nonbonded interactions were truncated at a 10 Å distance cutoff. The distance distributions of each spin label pair were restrained with a force constant of 100 kcal/(mol·Å^2^) toward the experimental distance distribution histograms with a bin width of 0.025 nm. The atomic coordinates of each reMD production run were saved every 1ps. Since each spin label has 25 copies, a total number of 625 distances for each spin label pair were obtained from a single snapshot of trajectories and a total of 1, 250, 000 data points were yielded for every spin label pair from one single reMD production run. Trajectory analysis and protein visualization were performed with VMD[@humphrey1996] and PyMOL[@llc2015], respectively.
+(4)	We then proceeded on to the reMD simulations using a modified version of NAMD 2[@shen2015;@qi2020] with an all-atom CHARMM36m protein force field[@huang2017] if all spin pair distances were within the experimentally reported range.
+In order to conserve computational resources, we applied 25 copies of all-atom CYR1 spin labels to the corresponding residues S39, S46, S56, S83, and C150 using reMD Prepper in a vacuum.
+The N, Cα, C, and O atoms of each spin label were locked to the corresponding atoms in the labeled residues (@fig:spin-label) throughout the entirety of the reMD simulations using a force constant of 10 kcal/(mol·Å^2^).
+The force field of all-atom CYR1 spin label[@islam2015] is obtained using CHARMM-GUI.
+By ignoring their interactions, the 25 copies of the CYR1 spin labels were permitted to overlap spatially.
+With five separate random number seeds, five independent all-atom reMD simulations were run at 303.15 K using Langevin dynamics and a damping coefficient of 5 ps^-1^.
+Prior to each reMD manufacturing run, we carried out minimization and equilibration, retaining the locations of the backbone atoms with harmonic restrictions of 2 kcal/(mol·Å^2^) imposed on them and only relaxing the sidechain atoms.
+In order to further improve the structure, we turned off the harmonic restrictions placed on the backbone atoms and ran production reMD simulations for 2 ns with a 0.5 fs time step.
+The particle mesh Ewald (PME) approach[@petersen1995] was used to handle the long-range electrostatic interactions, and the nonbonded interactions were trimmed at a distance cutoff of 10 Å.
+With a force constant of 100 kcal/(mol·Å^2^) and a bin width of 0.025 nm, the distance distributions of each spin label pair were constrained in relation to the experimental distance distribution histograms.
+Each reMD production run's atomic coordinates were saved every 1ps.
+Since there are 25 copies of each spin label, a total of 625 distances were calculated for each pair of spin labels from a single snapshot of their trajectories, and a total of 1, 250 000 data points were produced for each pair of spin labels from a single reMD production run.
+Using PyMOL[@llc2015] and VMD[@humphrey1996], respectively, trajectory analysis and protein visualization were carried out.
 
 ![The fixation between CYR1 spin label and its attached residues. The all-atom CYR1 spin label has a main chain like amino acid. The reMD simulation adds and fixes the spin label model by overlapping the main chain of spin label attached residue and the main chain of spin labels with a harmonic force constant of 10 kcal/(mol·Å^2^).](figures/cp12/spin-label.jpg){#fig:spin-label}
