@@ -52,7 +52,7 @@ It demonstrated that 70% of the energy absorbed by the helix quickly equilibrate
 The non-equilibrium MD simulations mimic the laser excitation of the molecules by the non-equilibrium phase-space initial condition for the solute and the solvent atoms.
 The fitted experimental and simulated thermal diffusivity values along the peptide chain with 1D diffusion process were 10 $\AA$^2^ ps^-1^ and 2 $\AA$^2^ ps^-1^, respectively.[@botan2007]
 Subsequently, the non-equilibrium MD simulations techniques were employed on various proteins, such as villin headpiece subdomain (HP36)[@leitner2015;@buchenberg2016], photoswitchable PDZ domain (PDZ2S)[@buchenberg2017], heptahelical transmembrane proteins[@helmer2022a] and so on.[@deniz2021]
-Numerous results are yielded by these studies including scaling rules for vibrational energy transport in proteins through the backbone and non-covalent native contacts, competition of vibrational energy transport between bonds and contacts, and the role of energy transport on allosteric mechanism in functional proteins.
+Numerous results are yielded by these studies including scaling rules for vibrational energy transport in proteins through the backbone and nonbonded native contacts, competition of vibrational energy transport between bonds and contacts, and the role of energy transport on allosteric mechanism in functional proteins.
 Besides, John E. Straub and his coworkers have employed non-equilibrium classical MD simulations to study the spatially anisotropic “funneling” mechanism for the kinetic energy relaxation of the excited heme group in solvated myoglobin by directly depositing excess kinetic energy on heme.
 They demonstrated that the kinetic energy decay of heme in native myoglobin and His93Gly mutant myoglobin were a single exponential with a time constant of 5.9 ps and 8.8 ps, respectively, while the kinetic energy relaxation of heme in cytochrome c was a biphasic exponential decay process with relaxation time constants of 1.5 ps and 10.1 ps for the fast process and the slow process, respectively.[@sagnella2001;@bu2003;@bu2003a]
 
@@ -157,7 +157,7 @@ automatically handles missing values and outliers,
 and is resistant to overfitting.
 The estimate of feature importance can be useful for feature selection.
 As described in @sec:factors, the thermal transfer through nonbonded contacts is influenced by multiple factors related to various static and dynamical properties of proteins given the complexity of the environment inside the proteins.
-To get a better understanding of the thermal transfer through non-covalent contacts, a non-linear regression model is developed between inter-residue thermal conductivity values and those static and dynamical properties of proteins by using the machine learning based approach of random forest methods.
+To get a better understanding of the thermal transfer through nonbonded contacts, a non-linear regression model is developed between inter-residue thermal conductivity values and those static and dynamical properties of proteins by using the machine learning based approach of random forest methods.
 
 ## Knowledge gap
 
@@ -207,7 +207,7 @@ They also play important roles in protein folding, stability, function, and inte
 
 Energy transfer in proteins is the process of transferring kinetic or potential energy from one part of the protein to another or from the protein to its environment.
 Different types of interactions can affect the rate and efficiency of energy transfer in proteins.
-The covalent peptide bond as a linker for connecting basic building blocks of protein provides a good structure basis, while the non-covalent contacts in its tertiary structure after folding are considered to be the key of governing the normal physiology, and functioning in various protein activities including allostery.
+The covalent peptide bond as a linker for connecting basic building blocks of protein provides a good structure basis, while the nonbonded contacts in its tertiary structure after folding are considered to be the key of governing the normal physiology, and functioning in various protein activities including allostery.
 Bonded interactions can also affect energy transfer by modulating the vibrational modes of the residues and van der Waals interactions can facilitate energy transfer between residues that are close to each other, but they can also hinder energy transfer if they cause steric hindrance or reduce flexibility.
 
 From a non-equilibrium view, the significance of different types of nonbonded contacts and the competition with the backbone have been studied in several proteins.
@@ -217,7 +217,7 @@ On the contrary, a series of experimental findings on the heme proteins clearly 
 Instead, the predominant route involves atomic interactions between the heme group and the Trp residue.[@kondoh2016;@yamashita2018;@mizutani2022]
 To quantitatively access the competition of different pathways (backbone and nonbonded contacts) and different types of interactions, it would be helpful to develop a method capable of measuring the heat transfer ability between residue and residue.
 
-### Factors affecting heat transfer through non-covalent contacts {#sec:factors}
+### Factors affecting heat transfer through nonbonded contacts {#sec:factors}
 
 For structural property, David M. Leitner's group found that the correlations of energy transfer rate are linearly correlated with the mean-square distance for charged contacts between charged residue pairs in myoglobin.[@reid2018]
 It is reasonably understood because the interaction of charged groups obeys the Coulomb's law, where their force depends on their distance.
@@ -233,15 +233,15 @@ Given the considerable number of hydrophobic residues involving van der Waals in
 Due to the complexity of protein systems, the thermal energy transport through contacts should be affected by a number of both static and dynamic properties, including their structure, compositions, dynamics, and interaction types.
 Thus, the relationship between heat and energy transport efficiency through contacts and these protein properties is expected to be non-linear, rather than linear.
 
-<!-- **locate a gap in the research: Network model for non-covalent contacts/Comparison between thermal/energy and PCN** -->
+<!-- **locate a gap in the research: Network model for nonbonded contacts/Comparison between thermal/energy and PCN** -->
 
-<!-- ### Network model for non-covalent contacts
+<!-- ### Network model for nonbonded contacts
 To gain a system-level understanding of biomolecule structures from a network perspective, network analysis has been employed based on 3D structures obtained from X-ray crystallography, NMR spectroscopy, and various types of electron microscopy to elucidate the relationship between protein structures and their functions.
 These networks are typically constructed using nodes (amino acid residues) and links/edges (contacts).
 There are several web-based tools available, such as RING3.0[@clementel2022], Protein Contact Atlas[@kayikci2018], NAPS[@chakrabarty2016], ANCA[@yan2020], and pyProGA[@sladek2021], that make these networks more accessible to users for various applications.
-One notable approach is the AACEN (amino acid contact energy network), which is a type of ANCA model[@yan2020] that constructs a network using the electrostatic interaction energy (Coulomb potential) and the van der Waals interaction energy (Lennard-Jones potential) for non-covalent contacts.
+One notable approach is the AACEN (amino acid contact energy network), which is a type of ANCA model[@yan2020] that constructs a network using the electrostatic interaction energy (Coulomb potential) and the van der Waals interaction energy (Lennard-Jones potential) for nonbonded contacts.
 Although many of these tools consider amino acid interactions from a geometric or chemical perspective, none of them take protein dynamics into account.
-To address this gap, we propose a thermal transport network that describes non-covalent contacts from a thermal energy transport perspective. -->
+To address this gap, we propose a thermal transport network that describes nonbonded contacts from a thermal energy transport perspective. -->
 
 ## Organization of the thesis
 

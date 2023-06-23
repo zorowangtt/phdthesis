@@ -38,7 +38,7 @@ A strong correlation was observed between the thermal conductivity and energy co
 Additionally, an empirical linear equation was derived to establish a relationship between them.
 In general, the $\lambda_{\alpha, \beta}$ values of non-bonded contacts in HP36 exhibited a decreasing trend in the following order: hydrogen bonds > π-stacking > electrostatic > hydrophobic.
 The hydrogen bond formation capacity druing MD simulations demonstrated a significant role for $\lambda_{\alpha, \beta}$ values of hydrogen bonding contacts.
-In order to elucidate the factors influencing thermal transport ability in non-covalent contacts within the complex protein environment, a non-linear regression model was constructed for a wide range of contacts.
+In order to elucidate the factors influencing thermal transport ability in nonbonded contacts within the complex protein environment, a non-linear regression model was constructed for a wide range of contacts.
 This model employed random forest regression analysis to investigate the relationship between the thermal conductivity values ($\lambda_{\alpha, \beta}$) and various static and dynamic variables.
 
 <!-- chapter 5, signaling pathway -->
