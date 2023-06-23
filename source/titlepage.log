@@ -1,15 +1,12 @@
 This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.4.19)  23 JUN 2023 11:19
 entering extended mode
  restricted \write18 enabled.
+ file:line:error style messages enabled.
  %&-line parsing enabled.
-**/Volumes/ExtremePro/王婷婷/名古屋大学/PHDdata/phdthesis/source/titlep
-age.tex
-
-(/Volumes/ExtremePro/王婷婷/名古屋大学/PHDdata/phdthesis/source/titlepa
-ge.tex
+**/Volumes/ExtremePro/王婷婷/名古屋大学/PHDdata/phdthesis/source/titlepage.tex
+(/Volumes/ExtremePro/王婷婷/名古屋大学/PHDdata/phdthesis/source/titlepage.tex
 LaTeX2e <2022-11-01> patch level 1
-L3 programming layer <2023-02-22>
-(/usr/local/texlive/2023/texmf-dist/tex/latex/base/article.cls
+L3 programming layer <2023-02-22> (/usr/local/texlive/2023/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2022/07/02 v1.4n Standard LaTeX document class
 (/usr/local/texlive/2023/texmf-dist/tex/latex/base/size12.clo
 File: size12.clo 2022/07/02 v1.4n Standard LaTeX file (size option)
@@ -25,55 +22,41 @@ File: size12.clo 2022/07/02 v1.4n Standard LaTeX file (size option)
 \abovecaptionskip=\skip48
 \belowcaptionskip=\skip49
 \bibindent=\dimen140
-)
-(/usr/local/texlive/2023/texmf-dist/tex/latex/graphics/graphicx.sty
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
-
-(/usr/local/texlive/2023/texmf-dist/tex/latex/graphics/keyval.sty
+ (/usr/local/texlive/2023/texmf-dist/tex/latex/graphics/keyval.sty
 Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
 \KV@toks@=\toks16
-)
-(/usr/local/texlive/2023/texmf-dist/tex/latex/graphics/graphics.sty
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/graphics/graphics.sty
 Package: graphics 2022/03/10 v1.4e Standard LaTeX Graphics (DPC,SPQR)
-
-(/usr/local/texlive/2023/texmf-dist/tex/latex/graphics/trig.sty
+ (/usr/local/texlive/2023/texmf-dist/tex/latex/graphics/trig.sty
 Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
-)
-(/usr/local/texlive/2023/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: pdftex.def on input line 107.
-
-(/usr/local/texlive/2023/texmf-dist/tex/latex/graphics-def/pdftex.def
+ (/usr/local/texlive/2023/texmf-dist/tex/latex/graphics-def/pdftex.def
 File: pdftex.def 2022/09/22 v1.2b Graphics/color driver for pdftex
 ))
 \Gin@req@height=\dimen141
 \Gin@req@width=\dimen142
-)
-(/usr/local/texlive/2023/texmf-dist/tex/latex/psnfss/times.sty
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/psnfss/times.sty
 Package: times 2020/03/25 PSNFSS-v9.3 (SPQR) 
-)
-(/usr/local/texlive/2023/texmf-dist/tex/latex/cjk/texinput/CJKutf8.sty
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/cjk/texinput/CJKutf8.sty
 Package: CJKutf8 2021/10/16 4.8.5
-
-(/usr/local/texlive/2023/texmf-dist/tex/generic/iftex/ifpdf.sty
+ (/usr/local/texlive/2023/texmf-dist/tex/generic/iftex/ifpdf.sty
 Package: ifpdf 2019/10/25 v3.4 ifpdf legacy package. Use iftex instead.
-
-(/usr/local/texlive/2023/texmf-dist/tex/generic/iftex/iftex.sty
+ (/usr/local/texlive/2023/texmf-dist/tex/generic/iftex/iftex.sty
 Package: iftex 2022/02/03 v1.0f TeX engine tests
-))
-(/usr/local/texlive/2023/texmf-dist/tex/latex/base/inputenc.sty
+)) (/usr/local/texlive/2023/texmf-dist/tex/latex/base/inputenc.sty
 Package: inputenc 2021/02/14 v1.3d Input encoding file
 \inpenc@prehook=\toks17
 \inpenc@posthook=\toks18
-)
-(/usr/local/texlive/2023/texmf-dist/tex/latex/cjk/texinput/CJK.sty
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/cjk/texinput/CJK.sty
 Package: CJK 2021/10/16 4.8.5
-
-(/usr/local/texlive/2023/texmf-dist/tex/latex/cjk/texinput/mule/MULEenc.sty
+ (/usr/local/texlive/2023/texmf-dist/tex/latex/cjk/texinput/mule/MULEenc.sty
 Package: MULEenc 2021/10/16 4.8.5
-)
-(/usr/local/texlive/2023/texmf-dist/tex/latex/cjk/texinput/CJK.enc
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/cjk/texinput/CJK.enc
 File: CJK.enc 2021/10/16 4.8.5
 Now handling font encoding C00 ...
 ... no UTF-8 mapping file for font encoding C00
@@ -141,21 +124,16 @@ Now handling font encoding C62 ...
 ... no UTF-8 mapping file for font encoding C62
 )
 \CJK@indent=\box51
-)
-(/usr/local/texlive/2023/texmf-dist/tex/latex/base/fontenc.sty
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/base/fontenc.sty
 Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
-LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 1
-12.
-
-(/usr/local/texlive/2023/texmf-dist/tex/latex/psnfss/ot1ptm.fd
+LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 112.
+ (/usr/local/texlive/2023/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
-)))
-(/usr/local/texlive/2023/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+))) (/usr/local/texlive/2023/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2023-01-16 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count193
 \l__pdf_internal_box=\box52
-)
-(./titlepage.aux)
+) (./titlepage.aux)
 \openout1 = `titlepage.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 9.
@@ -236,8 +214,7 @@ LaTeX Font Info:    Checking defaults for C41/song/m/n on input line 9.
 LaTeX Font Info:    ... okay on input line 9.
 LaTeX Font Info:    Checking defaults for C62/song/m/n on input line 9.
 LaTeX Font Info:    ... okay on input line 9.
-
-(/usr/local/texlive/2023/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+ (/usr/local/texlive/2023/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count194
 \scratchdimen=\dimen143
@@ -252,35 +229,39 @@ LaTeX Font Info:    ... okay on input line 9.
 \everyMPtoPDFconversion=\toks20
 ) (/usr/local/texlive/2023/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
-Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
-85.
-
-(/usr/local/texlive/2023/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
-File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
-e
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
+ (/usr/local/texlive/2023/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-<figures/titlepage//images.png, id=1, 115.70605pt x 27.6306pt>
-File: figures/titlepage//images.png Graphic file (type png)
-<use figures/titlepage//images.png>
-Package pdftex.def Info: figures/titlepage//images.png  used on input line 18.
-(pdftex.def)             Requested size: 272.99881pt x 65.20215pt.
 
-(/usr/local/texlive/2023/texmf-dist/tex/latex/cjk/texinput/UTF8/UTF8.bdg
+LaTeX Warning: File `images.png' not found on input line 18.
+
+
+/Volumes/ExtremePro/王婷婷/名古屋大学/PHDdata/phdthesis/source/titlepage.tex:18: Package pdftex.def Error: File `images.png' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.18 ...egraphics[width=0.7\linewidth]{images.png}
+                                                  \par
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 18.
+(/usr/local/texlive/2023/texmf-dist/tex/latex/psnfss/ot1pcr.fd
+File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/cjk/texinput/UTF8/UTF8.bdg
 File: UTF8.bdg 2021/10/16 4.8.5
-)
-(/usr/local/texlive/2023/texmf-dist/tex/latex/cjk/texinput/UTF8/UTF8.enc
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/cjk/texinput/UTF8/UTF8.enc
 File: UTF8.enc 2021/10/16 4.8.5
-)
-(/usr/local/texlive/2023/texmf-dist/tex/latex/cjk/texinput/UTF8/UTF8.chr
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/cjk/texinput/UTF8/UTF8.chr
 File: UTF8.chr 2021/10/16 4.8.5
 )
-LaTeX Font Info:    Trying to load font information for C70+min on input line 2
-4.
-
-(/usr/local/texlive/2023/texmf-dist/tex/latex/cjk/contrib/wadalab/c70min.fd
+LaTeX Font Info:    Trying to load font information for C70+min on input line 24.
+ (/usr/local/texlive/2023/texmf-dist/tex/latex/cjk/contrib/wadalab/c70min.fd
 File: c70min.fd 2021/10/16 4.8.5
-)
-(/usr/local/texlive/2023/texmf-dist/tex/latex/cjk/contrib/wadalab/c70min.fdx
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/cjk/contrib/wadalab/c70min.fdx
 File: c70min.fdx 2021/10/16 4.8.5
 )
 
@@ -295,9 +276,10 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 45.
 [1
 
-{/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/loc
-al/texlive/2023/texmf-dist/fonts/enc/dvips/base/8r.enc} <./figures/titlepage//i
-mages.png>] [2
+]
+Overfull \vbox (207.4837pt too high) has occurred while \output is active []
+
+ [2{/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/base/8r.enc}] [3
 
 ] (./titlepage.aux)
 
@@ -305,31 +287,18 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 3175 strings out of 476025
- 46468 string characters out of 5790017
+ 3253 strings out of 476025
+ 47808 string characters out of 5790017
  1852388 words of memory out of 5000000
- 23510 multiletter control sequences out of 15000+600000
- 533409 words of font info for 99 fonts, out of 8000000 for 9000
+ 23569 multiletter control sequences out of 15000+600000
+ 535002 words of font info for 102 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 57i,6n,62p,277b,1106s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2023/texmf-dist/fonts/type1/wadalab/dmj/dmjhira.pfb></usr
-/local/texlive/2023/texmf-dist/fonts/type1/wadalab/dmj/dmjkata.pfb></usr/local/
-texlive/2023/texmf-dist/fonts/type1/wadalab/dmj/dmjkb.pfb></usr/local/texlive/2
-023/texmf-dist/fonts/type1/wadalab/dmj/dmjke.pfb></usr/local/texlive/2023/texmf
--dist/fonts/type1/wadalab/dmj/dmjkf.pfb></usr/local/texlive/2023/texmf-dist/fon
-ts/type1/wadalab/dmj/dmjkg.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/
-wadalab/dmj/dmjkh.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/wadalab/d
-mj/dmjki.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/wadalab/dmj/dmjkj.
-pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/wadalab/dmj/dmjkk.pfb></usr
-/local/texlive/2023/texmf-dist/fonts/type1/wadalab/dmj/dmjkl.pfb></usr/local/te
-xlive/2023/texmf-dist/fonts/type1/wadalab/dmj/dmjsy.pfb></usr/local/texlive/202
-3/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2023/texmf-di
-st/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/t
-ype1/urw/times/utmri8a.pfb>
-Output written on titlepage.pdf (2 pages, 347520 bytes).
+ 57i,5n,62p,277b,1106s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2023/texmf-dist/fonts/type1/wadalab/dmj/dmjhira.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/wadalab/dmj/dmjkata.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/wadalab/dmj/dmjkb.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/wadalab/dmj/dmjke.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/wadalab/dmj/dmjkf.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/wadalab/dmj/dmjkg.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/wadalab/dmj/dmjkh.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/wadalab/dmj/dmjki.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/wadalab/dmj/dmjkj.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/wadalab/dmj/dmjkk.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/wadalab/dmj/dmjkl.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/wadalab/dmj/dmjsy.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on titlepage.pdf (3 pages, 92602 bytes).
 PDF statistics:
- 103 PDF objects out of 1000 (max. 8388607)
- 53 compressed objects within 1 object stream
+ 108 PDF objects out of 1000 (max. 8388607)
+ 57 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 58 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 53 words of extra memory for PDF output out of 10000 (max. 10000000)
 

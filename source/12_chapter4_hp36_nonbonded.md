@@ -30,7 +30,7 @@ Overall, the histogram demonstrates that different types of nonbonded contacts h
 
 ## Peptide bonds? or nonbonded contacts?
 
-![The $\lambda$ values of contacts between peptide bonded residue pairs](figures/non-bonded/line-intra-inter-lambda.png){#fig:inter_lambda}
+![The $\lambda$ values of contacts between peptide bonded residue pairs.](figures/non-bonded/line-intra-inter-lambda.png){#fig:inter_lambda width=70%}
 
 In light of the ongoing debate on thermal energy transport through peptide bonds and contacts [@deniz2021;@mizutani2022;@buchenberg2016], we also plotted and compared the residue-wise $\lambda$ and $\lambda_{\alpha, \beta}$ values of peptide-bonded contacts in [@fig:histogram_lambda].
 The residue-wise $\lambda$ values are ranging from about 0.08 to 0.3 W m^-1^ K^-1^, while $\lambda_{\alpha, \beta}$ values of peptide-bonded contacts are ranging from about 0.01 to 0.08 W m^-1^ K^-1^.
@@ -100,36 +100,36 @@ This may be because their interactions are stronger than those contacts with no 
 
 | Residue Number | Residue Name | Residue Number | Residue Name | _P_~HB~ | Interaction Type | $\lambda_{\alpha, \alpha+4}$ | Contacts Distance (\AA)|
 | :--------- | :------- | :--------- | :------- | :------- | :--------------- | :------------ |:------------ |
-| 2              | LEU          | 6              | ASP          | 0.00         | charged          | 3.29E-03                     |3.08 |
-| 21             | LEU          | 25             | LYS          | 0.00         | charged          | 2.23E-03                     |2.56|
-| 3              | SER          | 7              | PHE          | 0.60         | hydrogen bonds   | 3.72E-03                     |2.05|
-| 4              | ASP          | 8              | LYS          | 0.37         | hydrogen bonds   | 4.33E-03                     |2.19 |
-| 5              | GLU          | 9              | ALA          | 0.21         | hydrogen bonds   | 1.90E-03                     |2.32 |
-| 6              | ASP          | 10             | VAL          | 0.47         | hydrogen bonds   | 6.16E-03                     |2.10 |
-| 8              | LYS          | 12             | GLY          | 0.13         | hydrogen bonds   | 7.40E-03                     |2.34 |
-| 14             | THR          | 18             | PHE          | 0.58         | hydrogen bonds   | 2.10E-03                     |1.98 |
-| 15             | ARG          | 19             | ALA          | 0.53         | hydrogen bonds   | 3.52E-03                     |2.04 |
-| 16             | SER          | 20             | ASN          | 0.18         | hydrogen bonds   | 4.06E-03                     |2.64 |
-| 22             | PRO          | 26             | GLN          | 0.33         | hydrogen bonds   | 3.27E-03                     |2.11 |
-| 23             | LEU          | 27             | GLN          | 0.55         | hydrogen bonds   | 4.95E-03                     |1.99 |
-| 24             | TRP          | 28             | ASN          | 0.48         | hydrogen bonds   | 3.67E-03                     |2.03 |
-| 25             | LYS          | 29             | LEU          | 0.54         | hydrogen bonds   | 3.89E-03                     |2.00|
-| 26             | GLN          | 30             | LYS          | 0.48         | hydrogen bonds   | 4.32E-03                     |2.06 |
-| 27             | GLN          | 31             | LYS          | 0.59         | hydrogen bonds   | 4.74E-03                     |2.00 |
-| 28             | ASN          | 32             | GLU          | 0.61         | hydrogen bonds   | 4.83E-03                     |1.96 |
-| 29             | LEU          | 33             | LYS          | 0.37         | hydrogen bonds   | 2.70E-03                     |2.12 |
-| 30             | LYS          | 34             | GLY          | 0.05         | hydrogen bonds   | 2.23E-03                     |2.62 |
-| 1              | MET          | 5              | GLU          | 0.00         | hydrophobic      | 1.99E-04                     |8.33 |
-| 9              | ALA          | 13             | MET          | 0.00         | hydrophobic      | 4.29E-05                     |5.07 |
-| 10             | VAL          | 14             | THR          | 0.00         | hydrophobic      | 8.14E-07                     |7.83 |
-| 11             | PHE          | 15             | ARG          | 0.00         | hydrophobic      | 4.31E-05                     |6.08 |
-| 13             | MET          | 17             | ALA          | 0.00         | hydrophobic      | 2.42E-03                     |2.83 |
-| 17             | ALA          | 21             | LEU          | 0.00         | hydrophobic      | 5.66E-04                     |2.85 |
-| 18             | PHE          | 22             | PRO          | 0.00         | hydrophobic      | 1.65E-05                     |5.70 |
-| 19             | ALA          | 23             | LEU          | 0.00         | hydrophobic      | 1.95E-05                     |6.67 |
-| 31             | LYS          | 35             | LEU          | 0.00         | hydrophobic      | 2.02E-04                     |3.90 |
-| 32             | GLU          | 36             | PHE          | 0.00         | hydrophobic      | 3.46E-04                     |5.72 |
-| 7              | PHE          | 11             | PHE          | 0.67         | pi stacking      | 4.91E-03                     |1.92 |
+| 2              | LEU          | 6              | ASP          | 0.00         | charged          | 3.29$\times 10^{-3}$                     |3.08 |
+| 21             | LEU          | 25             | LYS          | 0.00         | charged          | 2.23$\times 10^{-3}$                     |2.56|
+| 3              | SER          | 7              | PHE          | 0.60         | hydrogen bonds   | 3.72$\times 10^{-3}$                     |2.05|
+| 4              | ASP          | 8              | LYS          | 0.37         | hydrogen bonds   | 4.33$\times 10^{-3}$                     |2.19 |
+| 5              | GLU          | 9              | ALA          | 0.21         | hydrogen bonds   | 1.90$\times 10^{-3}$                     |2.32 |
+| 6              | ASP          | 10             | VAL          | 0.47         | hydrogen bonds   | 6.16$\times 10^{-3}$                     |2.10 |
+| 8              | LYS          | 12             | GLY          | 0.13         | hydrogen bonds   | 7.40$\times 10^{-3}$                     |2.34 |
+| 14             | THR          | 18             | PHE          | 0.58         | hydrogen bonds   | 2.10$\times 10^{-3}$                     |1.98 |
+| 15             | ARG          | 19             | ALA          | 0.53         | hydrogen bonds   | 3.52$\times 10^{-3}$                     |2.04 |
+| 16             | SER          | 20             | ASN          | 0.18         | hydrogen bonds   | 4.06$\times 10^{-3}$                     |2.64 |
+| 22             | PRO          | 26             | GLN          | 0.33         | hydrogen bonds   | 3.27$\times 10^{-3}$                     |2.11 |
+| 23             | LEU          | 27             | GLN          | 0.55         | hydrogen bonds   | 4.95$\times 10^{-3}$                     |1.99 |
+| 24             | TRP          | 28             | ASN          | 0.48         | hydrogen bonds   | 3.67$\times 10^{-3}$                     |2.03 |
+| 25             | LYS          | 29             | LEU          | 0.54         | hydrogen bonds   | 3.89$\times 10^{-3}$                     |2.00|
+| 26             | GLN          | 30             | LYS          | 0.48         | hydrogen bonds   | 4.32$\times 10^{-3}$                     |2.06 |
+| 27             | GLN          | 31             | LYS          | 0.59         | hydrogen bonds   | 4.74$\times 10^{-3}$                     |2.00 |
+| 28             | ASN          | 32             | GLU          | 0.61         | hydrogen bonds   | 4.83$\times 10^{-3}$                     |1.96 |
+| 29             | LEU          | 33             | LYS          | 0.37         | hydrogen bonds   | 2.70$\times 10^{-3}$                     |2.12 |
+| 30             | LYS          | 34             | GLY          | 0.05         | hydrogen bonds   | 2.23$\times 10^{-3}$                     |2.62 |
+| 1              | MET          | 5              | GLU          | 0.00         | hydrophobic      | 1.99$\times 10^{-4}$                     |8.33 |
+| 9              | ALA          | 13             | MET          | 0.00         | hydrophobic      | 4.29$\times 10^{-5}$                     |5.07 |
+| 10             | VAL          | 14             | THR          | 0.00         | hydrophobic      | 8.14$\times 10^{-7}$                     |7.83 |
+| 11             | PHE          | 15             | ARG          | 0.00         | hydrophobic      | 4.31$\times 10^{-5}$                     |6.08 |
+| 13             | MET          | 17             | ALA          | 0.00         | hydrophobic      | 2.42$\times 10^{-3}$                     |2.83 |
+| 17             | ALA          | 21             | LEU          | 0.00         | hydrophobic      | 5.66$\times 10^{-4}$                     |2.85 |
+| 18             | PHE          | 22             | PRO          | 0.00         | hydrophobic      | 1.65$\times 10^{-5}$                     |5.70 |
+| 19             | ALA          | 23             | LEU          | 0.00         | hydrophobic      | 1.95$\times 10^{-5}$                     |6.67 |
+| 31             | LYS          | 35             | LEU          | 0.00         | hydrophobic      | 2.02$\times 10^{-4}$                     |3.90 |
+| 32             | GLU          | 36             | PHE          | 0.00         | hydrophobic      | 3.46$\times 10^{-4}$                     |5.72 |
+| 7              | PHE          | 11             | PHE          | 0.67         | pi stacking      | 4.91$\times 10^{-3}$                     |1.92 |
 
 : $\lambda_{\alpha,\beta}$ values and hydrogen bond formation capacity _P_~HB~ between residue $\alpha$ and $\alpha+4$. {#tbl:c_hb_ii4}
 

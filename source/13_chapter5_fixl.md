@@ -225,10 +225,10 @@ between them. Only heme-ARG220 interaction is common between met-FixLH
 and met-FixLH-imd. The heme-protein interactions are almost completely
 localized in the Fα helix and the FG loop.
 
+![Molecular dynamic simulations of met-BjFixLH without force restraints on N-terminal of A’α helix. (A) The crystal structure model of MD simulations. (B) The time evolution of distance between carbon atom of residue ILE128s.](figures/fixl/force-restraint.jpg){#fig:force-restraint width=70%}
+
 Strong interactions across the dimer interface are mainly found in two
 regions: (3) N terminus and (4) C terminus.
-
-![Molecular dynamic simulations of met-BjFixLH without force restraints on N-terminal of A’α helix. (A) The crystal structure model of MD simulations. (B) The time evolution of distance between carbon atom of residue ILE128s.](figures/fixl/force-restraint.jpg){#fig:force-restraint width=100%}
 
 **Region (3),** highlighted with stick models (@fig:interactions A(3) and B(3)),
 includes charged residue pairs with ARG139, ARG141, and ARG146, for

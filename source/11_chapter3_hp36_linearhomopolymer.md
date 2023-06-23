@@ -4,12 +4,11 @@
 # Site-selective heat current analysis with linear-homopolymer-like model {#cha3}
 ## The overall thermal conductivity {#sec:overall-thermal-conductivity}
 
-![The thermal conductivity of the entire HP36 protein molecule. The autocorrelation function of the heat current was calculated and ensemble-averaged, resulting in a plot of the autocorrelation function as a function of time (depicted in blue). The inset focuses on the short-time region (0 - 0.2 ps) to provide a closer view of the behavior. The heat current autocorrelation function was integrated over time using the trapezoidal rule, yielding a quantity denoted as $\lambda$ (shown in orange), and a running mean of $\lambda$ was computed with a window size of 100 fs and is illustrated in red. The volume of HP36 was set to 4845.447 $\AA^3$.[@yamato2022]](figures/cross/hcacf-100ps.jpeg){#fig:hcacf-100ps}
+![The thermal conductivity of the entire HP36 protein molecule. The autocorrelation function of the heat current was calculated and ensemble-averaged, resulting in a plot of the autocorrelation function as a function of time (depicted in blue). The inset focuses on the short-time region (0 - 0.2 ps) to provide a closer view of the behavior. The heat current autocorrelation function was integrated over time using the trapezoidal rule, yielding a quantity denoted as $\lambda$ (shown in orange), and a running mean of $\lambda$ was computed with a window size of 100 fs and is illustrated in red. The volume of HP36 was set to 4845.447 $\AA^3$.[@yamato2022]](figures/cross/hcacf-100ps.jpeg){#fig:hcacf-100ps width=70%}
 
 The overall thermal conductivity, denoted as $\lambda$, of the HP36 protein was determined using equation (eqc1) in this study. To calculate the total volume of HP36 and individual atom volumes, we utilized the VLDP (Voronoi Laguerre Delaunay Protein) method through a web server [@esque2013]. This method considers the atom type and performs tessellation, resulting in larger cell volumes for atoms with larger radii, thus providing a more realistic representation of atom packing within the protein interior. It is important to note that the protein molecule was solvated with water prior to volume calculations.
 
 The calculated volumes obtained from the VLDP method are referred to as protein, residue, and atom volumes throughout this paper, unless otherwise stated. After obtaining the ensemble-averaged heat current autocorrelation function, we performed time integration using the trapezoidal rule, as depicted in Figure [hcacf-100ps]. The value of $\lambda$ converged at approximately $t$ = 60 ps, resulting in a thermal conductivity of 0.26 $\mathrm{\pm}$ 0.01 $\mathrm{W{/}(m{\cdot}K)}$.
-
 It is worth noting that the calculated value of $\lambda$ slightly differs from the previous calculation,[@yamato2022] primarily due to the utilization of a "flexible" TIP3P water model in the previous study.
 The dependence of the water model on thermal conductivity will be discussed further in @sec:watermodel.
 For subsequent analyses, we set the upper limit of the time integration of the local heat current autocorrelation function to 60 ps.
@@ -22,7 +21,7 @@ The average intra-residue contribution factor was 0.029, which was nearly twice 
 This suggests that intra-residue thermal transport makes a dominant contribution to the overall heat current, which is consistent with the findings of the master equation analysis. [@buchenberg2016]
 On the other hand, different with these two dominate pathways of thermal tranfer in proteins, the contributions from sidechain-sidechain heat currents across non-bonded native contacts were relatively small.[@yamato2022]
 
-![The contribution factors without cross-correlation corrections were calculated and plotted for both intra-residue ($c(\alpha, \alpha)$, shown in red) and inter-residue ($c(\alpha, \alpha+1)$, shown in green) interactions, as described in equations (eqc11) and (eqc12), respectively. The data points, such as $c(1,2)$, represent the contribution factor between residue numbers $\alpha = 1$ and $\alpha = 2$. The horizontal axis displays the residue number, $\alpha$, along with the corresponding residue names represented in the one-letter code. The grey-shaded regions correspond to the $\alpha$-helical regions.](figures/cross/heat-conductivity-before-corrected.jpeg){#fig:heat_before}
+![The contribution factors without cross-correlation corrections were calculated and plotted for both intra-residue ($c(\alpha, \alpha)$, shown in red) and inter-residue ($c(\alpha, \alpha+1)$, shown in green) interactions, as described in equations (eqc11) and (eqc12), respectively. The data points, such as $c(1,2)$, represent the contribution factor between residue numbers $\alpha = 1$ and $\alpha = 2$. The horizontal axis displays the residue number, $\alpha$, along with the corresponding residue names represented in the one-letter code. The grey-shaded regions correspond to the $\alpha$-helical regions.](figures/cross/heat-conductivity-before-corrected.jpeg){#fig:heat_before width=70%}
 
 The sum of the intra-residue contribution factors, $\sum_{\alpha=1}^{36}{c(\alpha,\alpha)}$, was 1.06, and the sum of the inter-residue contribution factors, $\sum_{\alpha=1}^{35}{c(\alpha,\alpha+1)}$, was 0.57.
 The deviation of 1.06 + 0.57 = 1.63 from 1 suggests the presence of non-negligible cross-correlation effects among different partial heat currents.
@@ -30,21 +29,24 @@ In @sec:cross-correlation, we will delve into a more detailed analysis of these 
 
 ## Cross-correlation correction {#sec:cross-correlation}
 
-![The cross-correlation contribution factor between nearest neighbor residues, $c^{\rm{cross}}(\alpha,\alpha+1)$, defined as $\xi_{\alpha,\alpha+1} / \Lambda$, was plotted as a function of the residue number. Each data point represents the value of $c^{\rm{cross}}(\alpha,\alpha+1)$ between residue $\alpha$ and $\alpha+1$. For example, the data point $c^{\rm{cross}}(1,2)$ corresponds to the cross-correlation between residues 1 and 2.](figures/cross/cross-correlation-term.jpeg){#fig:cross}
+![The cross-correlation contribution factor between nearest neighbor residues, $c^{\rm{cross}}(\alpha,\alpha+1)$, defined as $\xi_{\alpha,\alpha+1} / \Lambda$, was plotted as a function of the residue number. Each data point represents the value of $c^{\rm{cross}}(\alpha,\alpha+1)$ between residue $\alpha$ and $\alpha+1$. For example, the data point $c^{\rm{cross}}(1,2)$ corresponds to the cross-correlation between residues 1 and 2.](figures/cross/cross-correlation-term.jpeg){#fig:cross width=70%}
+
+![Contribution factors with cross-correlation correction. See the caption to [@fig:heat_before]](figures/cross/heat-conductivity-after-corrected.jpeg){#fig:heat_after width=70%}
 
 In this study, we made the assumption that the cross-correlation effect is limited to adjacent residues along the polypeptide sequence.
 The cross-correlation term was calculated according to the method described in @sec:method-cross-correlation, and the results are presented in @fig:cross.
 Interestingly, we observed a dependence of the cross-correlation effect on the secondary structure, with the α-helical regions showing less influence from cross-correlation.
 The reason for this observation is currently unclear and will be investigated further in future studies focusing on the secondary structure dependence of thermal transport in proteins.
 
-![Contribution factors with cross-correlation correction. See the caption to [@fig:heat_before]](figures/cross/heat-conductivity-after-corrected.jpeg){#fig:heat_after}
-
 After incorporating the cross-correlation terms, all of the contribution factors decreased.
 The corrected contribution factors are shown in [@fig:heat_after], which exhibits similar patterns to [@fig:heat_before].
 The total intra-residue contribution was 0.75, approximately three times larger than the inter-residue contribution of 0.26.
-
 To validate the assumption of short-range cross-correlation, we also calculated the contributing factors for the second nearest cross-correlation between residue α and α+2 ($\xi_{\alpha, \alpha+2}$) using the same method described in @sec:method-cross-correlation.
 The total contribution factors due to the second nearest cross-correlation were 0.03, shown in @tbl:secondnearest, while that for the nearest cross-correlation was -0.62, shown in @tbl:nearest, indicating that the second nearest cross-correlation has a minimal impact on the overall heat current.
+
+To assess the validity of the linear-homopolymer-like model, we compared the time-integrated autocorrelation functions (ACF) between $\Lambda$ and $\tilde \Lambda$.
+The former is derived from the exact heat current of the entire molecule, while the latter is based on the linear-homopolymer-like model.
+The calculation results showed that $\tilde \Lambda$ overestimated $\Lambda$ by only 0.9%, indicating that the linear-homopolymer-like model successfully represents the thermal transport property of the entire molecule.
 
 | Residue($\alpha$)| Residue($\alpha+2$) | $\xi_{\alpha, \alpha+2}$ | $c^{\rm{cross}}(\alpha, \alpha+2)$ |
 | :--------------- | :------------------- | :----------------------- | :--------------------- |
@@ -87,50 +89,47 @@ The total contribution factors due to the second nearest cross-correlation were 
 
 | Residue ($\alpha$)       | $\bm\tilde\Lambda_{\alpha, \alpha}$ | $\bm\tilde\Lambda_{\alpha, \alpha+1}$ |
 | :----------------------- | :--------------------------------- | :---------------------------------- |
-| 1                        | 2.96E-01                           | 1.27E-01                            |
-| 2                        | 9.00E-02                           | 5.81E-02                            |
-| 3                        | 1.03E-01                           | 6.34E-02                            |
-| 4                        | 2.03E-01                           | 9.76E-02                            |
-| 5                        | 2.15E-01                           | 9.27E-02                            |
-| 6                        | 2.00E-01                           | 7.05E-02                            |
-| 7                        | 2.03E-01                           | 5.94E-02                            |
-| 8                        | 3.66E-01                           | 4.24E-02                            |
-| 9                        | 1.16E-01                           | 1.01E-01                            |
-| 10                       | 1.28E-01                           | 5.16E-02                            |
-| 11                       | 2.22E-01                           | 4.46E-02                            |
-| 12                       | 5.24E-02                           | 1.16E-01                            |
-| 13                       | 1.04E-01                           | 5.71E-02                            |
-| 14                       | 1.41E-01                           | 7.19E-02                            |
-| 15                       | 4.17E-01                           | 7.80E-02                            |
-| 16                       | 1.65E-01                           | 1.31E-01                            |
-| 17                       | 9.99E-02                           | 6.63E-02                            |
-| 18                       | 1.67E-01                           | 5.29E-02                            |
-| 19                       | 8.66E-02                           | 7.07E-02                            |
-| 20                       | 2.00E-01                           | 9.87E-02                            |
-| 21                       | 1.33E-01                           | 2.73E-02                            |
-| 22                       | 1.01E-01                           | 6.27E-02                            |
-| 23                       | 1.57E-01                           | 3.26E-02                            |
-| 24                       | 3.70E-01                           | 5.49E-02                            |
-| 25                       | 3.70E-01                           | 7.62E-02                            |
-| 26                       | 2.80E-01                           | 7.27E-02                            |
-| 27                       | 2.47E-01                           | 7.45E-02                            |
-| 28                       | 2.06E-01                           | 6.62E-02                            |
-| 29                       | 1.76E-01                           | 7.15E-02                            |
-| 30                       | 3.72E-01                           | 7.73E-02                            |
-| 31                       | 4.22E-01                           | 7.41E-02                            |
-| 32                       | 2.36E-01                           | 6.30E-02                            |
-| 33                       | 3.23E-01                           | 7.02E-02                            |
-| 34                       | 5.11E-02                           | 4.60E-02                            |
-| 35                       | 1.99E-01                           | 1.09E-01                            |
-| 36                       | 1.29E-01                           |                                     |
+| 1                        | 2.96$\times 10^{-1}$               | 1.27$\times 10^{-1}$                 |
+| 2                        | 9.00$\times 10^{-2}$               | 5.81$\times 10^{-2}$                 |
+| 3                        | 1.03$\times 10^{-1}$               | 6.34$\times 10^{-2}$                 |
+| 4                        | 2.03$\times 10^{-1}$               | 9.76$\times 10^{-2}$                 |
+| 5                        | 2.15$\times 10^{-1}$               | 9.27$\times 10^{-2}$                 |
+| 6                        | 2.00$\times 10^{-1}$               | 7.05$\times 10^{-2}$                 |
+| 7                        | 2.03$\times 10^{-1}$               | 5.94$\times 10^{-2}$                 |
+| 8                        | 3.66$\times 10^{-1}$               | 4.24$\times 10^{-2}$                 |
+| 9                        | 1.16$\times 10^{-1}$               | 1.01$\times 10^{-1}$                 |
+| 10                       | 1.28$\times 10^{-1}$               | 5.16$\times 10^{-2}$                 |
+| 11                       | 2.22$\times 10^{-1}$               | 4.46$\times 10^{-2}$                 |
+| 12                       | 5.24$\times 10^{-2}$               | 1.16$\times 10^{-1}$                 |
+| 13                       | 1.04$\times 10^{-1}$               | 5.71$\times 10^{-2}$                 |
+| 14                       | 1.41$\times 10^{-1}$               | 7.19$\times 10^{-2}$                 |
+| 15                       | 4.17$\times 10^{-1}$               | 7.80$\times 10^{-2}$                 |
+| 16                       | 1.65$\times 10^{-1}$               | 1.31$\times 10^{-1}$                 |
+| 17                       | 9.99$\times 10^{-2}$               | 6.63$\times 10^{-2}$                 |
+| 18                       | 1.67$\times 10^{-1}$               | 5.29$\times 10^{-2}$                 |
+| 19                       | 8.66$\times 10^{-2}$               | 7.07$\times 10^{-2}$                 |
+| 20                       | 2.00$\times 10^{-1}$               | 9.87$\times 10^{-2}$                 |
+| 21                       | 1.33$\times 10^{-1}$               | 2.73$\times 10^{-2}$                 |
+| 22                       | 1.01$\times 10^{-1}$               | 6.27$\times 10^{-2}$                 |
+| 23                       | 1.57$\times 10^{-1}$               | 3.26$\times 10^{-2}$                 |
+| 24                       | 3.70$\times 10^{-1}$               | 5.49$\times 10^{-2}$                 |
+| 25                       | 3.70$\times 10^{-1}$               | 7.62$\times 10^{-2}$                 |
+| 26                       | 2.80$\times 10^{-1}$               | 7.27$\times 10^{-2}$                 |
+| 27                       | 2.47$\times 10^{-1}$               | 7.45$\times 10^{-2}$                 |
+| 28                       | 2.06$\times 10^{-1}$               | 6.62$\times 10^{-2}$                 |
+| 29                       | 1.76$\times 10^{-1}$               | 7.15$\times 10^{-2}$                 |
+| 30                       | 3.72$\times 10^{-1}$               | 7.73$\times 10^{-2}$                 |
+| 31                       | 4.22$\times 10^{-1}$               | 7.41$\times 10^{-2}$                 |
+| 32                       | 2.36$\times 10^{-1}$               | 6.30$\times 10^{-2}$                 |
+| 33                       | 3.23$\times 10^{-1}$               | 7.02$\times 10^{-2}$                 |
+| 34                       | 5.11$\times 10^{-2}$               | 4.60$\times 10^{-2}$                 |
+| 35                       | 1.99$\times 10^{-1}$               | 1.09$\times 10^{-1}$                 |
+| 36                       | 1.29$\times 10^{-1}$               |                                     |
 | ------------------------ | ------------------------------     | ------------------------------      |
 | total                    | 7.35                               | 2.53                                |
 
 : Local thermal trasnport property after the cross-correlation correction. $\bm\tilde\Lambda_{\alpha, \alpha}$ ($\bm\alpha$=1, 2, ..., 36) and $\bm\tilde\Lambda_{\alpha, \alpha+1}$  ($\bm\alpha$=1, 2, ..., 35) are shown in unit of $\rm{(\AA \cdot kcal)^2/fs}$ (@eq:eqc8), while the value of $\Lambda$ was 9.79 in the same unit (@eq:eqc9). {#tbl:nearest}
 
-To assess the validity of the linear-homopolymer-like model, we compared the time-integrated autocorrelation functions (ACF) between $\Lambda$ and $\tilde \Lambda$.
-The former is derived from the exact heat current of the entire molecule, while the latter is based on the linear-homopolymer-like model.
-The calculation results showed that $\tilde \Lambda$ overestimated $\Lambda$ by only 0.9%, indicating that the linear-homopolymer-like model successfully represents the thermal transport property of the entire molecule.
 
 ## Residue-type dependence{#sec:residue-type-dependence}
 

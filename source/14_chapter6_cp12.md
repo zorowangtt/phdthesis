@@ -70,7 +70,7 @@ The experimental distance distribution of the S46R1 spin pair displays two peaks
 The ESI-MS experiment[@shao2021] reported partial dissociation of the dimer.
 Based on the aforementioned observations, it can be inferred that the coiled-coil region of the dimer in an actual solution environment may exhibit greater flexibility compared to the simulations.
 
-![The radius of gyration (Rg) distribution of 20, 000 sampled structures from reMD simulations.](figures/cp12/rg-distribution.jpg){#fig:rg-distribution width=70%}
+![The radius of gyration (Rg) distribution of 20, 000 sampled structures from reMD simulations.](figures/cp12/rg-distribution.jpg){#fig:rg-distribution width=40%}
 
 To conduct a thorough assessment of the reMD sampling structures, a total of 20,000 structures were obtained as an ensemble structure pool by extracting 4,000 structures from each parallel run of reMD.
 A GAJOR analysis was conducted to obtain the distribution of radius of gyration (Rg) for a set of 20,000 sampled structures.

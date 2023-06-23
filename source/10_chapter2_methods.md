@@ -657,6 +657,9 @@ In the first 2 ps of each cycle, the desired distances were readily attained (@f
 We then measured the initial distance of each spin pair.
 
 ### Restrained-ensemble MD simulations
+
+![The fixation between CYR1 spin label and its attached residues. The all-atom CYR1 spin label has a main chain like amino acid. The reMD simulation adds and fixes the spin label model by overlapping the main chain of spin label attached residue and the main chain of spin labels with a harmonic force constant of 10 kcal/(mol·Å^2^).](figures/cp12/spin-label.jpg){#fig:spin-label width=60%}
+
 (4)	We then proceeded on to the reMD simulations using a modified version of NAMD 2[@shen2015;@qi2020] with an all-atom CHARMM36m protein force field[@huang2017] if all spin pair distances were within the experimentally reported range.
 In order to conserve computational resources, we applied 25 copies of all-atom CYR1 spin labels to the corresponding residues S39, S46, S56, S83, and C150 using reMD Prepper in a vacuum.
 The N, Cα, C, and O atoms of each spin label were locked to the corresponding atoms in the labeled residues (@fig:spin-label) throughout the entirety of the reMD simulations using a force constant of 10 kcal/(mol·Å^2^).
@@ -671,4 +674,3 @@ Each reMD production run's atomic coordinates were saved every 1ps.
 Since there are 25 copies of each spin label, a total of 625 distances were calculated for each pair of spin labels from a single snapshot of their trajectories, and a total of 1, 250 000 data points were produced for each pair of spin labels from a single reMD production run.
 Using PyMOL[@llc2015] and VMD[@humphrey1996], respectively, trajectory analysis and protein visualization were carried out.
 
-![The fixation between CYR1 spin label and its attached residues. The all-atom CYR1 spin label has a main chain like amino acid. The reMD simulation adds and fixes the spin label model by overlapping the main chain of spin label attached residue and the main chain of spin labels with a harmonic force constant of 10 kcal/(mol·Å^2^).](figures/cp12/spin-label.jpg){#fig:spin-label}
