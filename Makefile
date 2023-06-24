@@ -33,6 +33,7 @@ contents:
 	$(INPUTDIR)/*.md \
 	--to=latex \
 	--citeproc \
+	# --template=$(INPUTDIR)/template.tex \
 	--bibliography=$(UTILSDIR)/bibliography-hp36.bib \
 	--bibliography=$(UTILSDIR)/bibliography-fixl.bib \
 	--bibliography=$(UTILSDIR)/bibliography-cp12.bib \
