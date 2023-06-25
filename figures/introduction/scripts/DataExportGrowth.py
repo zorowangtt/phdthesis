@@ -24,7 +24,7 @@ with PaperMatplotlibStylesheet():
 
     plt.xlabel("Year")
     plt.ylabel("Number")
-    plt.title("Overall Growth of Protein Structures Released Per Year")
+    plt.title("Overall Growth of Released Structures Per Year")
     # plt.xticks(r, data['year'], rotation=90, ha='center')
     plt.xticks(rotation=90)
     plt.tight_layout()

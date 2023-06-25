@@ -10,7 +10,7 @@ INPUTDIR=$(BASEDIR)/source
 OUTPUTDIR=$(BASEDIR)/output
 UTILSDIR=$(BASEDIR)/utils
 
-all: dir titlepage acknow contents word 
+all: dir titlepage acknow contents 
 
 word: $(PAPER_DOCX)
 
@@ -33,7 +33,6 @@ contents:
 	$(INPUTDIR)/*.md \
 	--to=latex \
 	--citeproc \
-	# --template=$(INPUTDIR)/template.tex \
 	--bibliography=$(UTILSDIR)/bibliography-hp36.bib \
 	--bibliography=$(UTILSDIR)/bibliography-fixl.bib \
 	--bibliography=$(UTILSDIR)/bibliography-cp12.bib \
