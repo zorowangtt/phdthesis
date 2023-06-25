@@ -187,7 +187,7 @@ Within this heterogeneous and intricate system, residues participate in various 
 Bonded interactions such as peptide and disulfied bonds in proteins keep the molecular toplogy, i.e., the pattern of connectivity of atoms, while nonbonded interactions such as ionic bonds (e.g. salt bridges between oppositely charged residues), and hydrogen bonds (e.g. interactions between backbone atoms or polar side chains) are responsible for maintaining and stabilizing the secondary, tertiary and quaternary structures of proteins.
 Van der Waals interactions in proteins are a type of weak nonbonded interaction that occur between atoms that are close to each other but not covalently bonded.
 They mainly contribute to the stabilization of tertiary and quaternary structures of proteins by optimizing the surface contact between residues and subunits.
-Other types of nonbonded interactions in proteins include electrostatic interactions (such as those between charged residues or between dipoles), \pi-\pi stacking (such as those between aromatic residues), etc, also play important roles in protein folding, stability, function, and interactions.
+Other types of nonbonded interactions in proteins include electrostatic interactions (such as those between charged residues or between dipoles), $\pi$-$\pi$ stacking (such as those between aromatic residues), etc, also play important roles in protein folding, stability, function, and interactions.
 
 During thermal fluctuation and vibrational energy ralaxation of proteins, transfer of kinetic or potential energy occurs from one part of the protein to another or between protein and the surrounding environment.
 Different types of interactions can affect the rate and efficiency of energy transfer in proteins.
