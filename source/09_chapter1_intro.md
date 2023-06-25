@@ -109,7 +109,7 @@ In @eq:forcefield, $K_b$, $K_{\theta}$ and $K_{\chi}$ are force constants for bo
 $b$ and $b_0$ are force constant the bond length and the equilibrium bond length;
 $\theta$ and $\theta_0$ are the angle and the equilibrium angle, respectively;
 $\chi$ is the dihedral value, _n_ is the periodicity, and σ is the phase.
-$E_{\rm bonded}$ contains two parts.
+$E_{\rm nonbonded}$ contains two parts.
 The first term is also known as Lennard-Jones (LJ) potential, describing the attractive dispersion and repulsive interactions.
 The second term corresponds to Coulomb’s law and is used to describe the electrostatic interactions.
 $q_i$ and $q_j$ are the charges of atoms $i$ and $j$.
