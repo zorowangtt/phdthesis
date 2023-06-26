@@ -14,7 +14,7 @@ where $\lambda$ is the thermal conductivity, $V$ is the volume, $k_B$ is the Bol
 
 Autocorrelation is a measure of how well a dynamic system's signature aligns with a time-shifted version of itself,
 representing the cross-correlation of a signal with its own shifted counterpart.
-In the case of thermal conductivity, the duration of auto-correlation is related to the material's ability to transfer heat and energy.
+In the case of thermal conductivity, the duration of autocorrelation is related to the material's ability to transfer heat and energy.
 Materials with high thermal conductivity exhibit long-lasting correlation, indicating slow dissipation of fluctuations from equilibrium.
 In contrast, materials with low thermal conductivity display short-lived correlation.
 One important point is that the Green-Kubo approach allows for the calculation of transport properties from an equilibrium system, providing valuable insights even in non-equilibrium scenarios.
@@ -185,12 +185,12 @@ $$
 
 To explain why we need to do cross-correlation on the linear-homopolymer-like model, we use a simple molecule containing two residues to make it clear.
 Now, let's consider a hypothetical dipeptide composed of residues A and B.
-The thermal conductivity, denoted as $\lambda$, of the molecule can be determined by calculating the heat current ($\bm h$) auto-correlation function, $\langle\bm h(0) \cdot \bm h(t)\rangle$.
+The thermal conductivity, denoted as $\lambda$, of the molecule can be determined by calculating the heat current ($\bm h$) autocorrelation function, $\langle\bm h(0) \cdot \bm h(t)\rangle$.
 Based on [@eq:eqc6], $\bm h$ can be expressed as the sum of three components: $\bm h_{\rm A}$, $\bm h_{\rm B}$, and $\bm h_{\rm AB}$.
 The first two components represent the heat currents occurring within residues A and B, respectively, while the third component, $\bm h_{\rm AB}$, corresponds to the heat current between residues A and B.
 
 Considering the non-uniform heat flow in the dipeptide, we need to calculate the local thermal conductivities, denoted as $\lambda_A$, $\lambda_{\rm B}$, and $\lambda_{\rm AB}$, independently for each of the three parts.
-This can be achieved by calculating the heat current auto-correlation functions $\langle\bm h_{\rm A}(0) \cdot \bm h_{\rm A}(t)\rangle$, $\langle\bm h_{\rm B}(0) \cdot \bm h_{\rm B}(t)\rangle$, and $\langle\bm h_{\rm AB}(0) \cdot \bm h_{\rm AB}(t)\rangle$.
+This can be achieved by calculating the heat current autocorrelation functions $\langle\bm h_{\rm A}(0) \cdot \bm h_{\rm A}(t)\rangle$, $\langle\bm h_{\rm B}(0) \cdot \bm h_{\rm B}(t)\rangle$, and $\langle\bm h_{\rm AB}(0) \cdot \bm h_{\rm AB}(t)\rangle$.
 In an ideal case where $\bm h_{\rm A}$, $\bm h_{\rm B}$, and $\bm h_{\rm AB}$ fluctuate independently, we can neglect the cross-correlation terms between them. Thus, we have $\langle\bm h(0) \cdot \bm h(t)\rangle = \langle\bm h_{\rm A}(0) \cdot \bm h_{\rm A}(t)\rangle + \langle\bm h_{\rm B}(0) \cdot \bm h_{\rm B}(t)\rangle + \langle\bm h_{\rm AB}(0) \cdot \bm h_{\rm AB}(t)\rangle$.
 Finally, we can obtain the value of $\lambda$ by combining the calculated values of $\lambda_{\rm A}$, $\lambda_{\rm B}$, and $\lambda_{\rm AB}$.
 
@@ -200,7 +200,7 @@ As a result, the value of $\lambda$ cannot be accurately reconstructed using onl
 In this analysis, it is essential to consider the influence of these cross-correlations in order to obtain effective local thermal conductivities that accurately characterize the non-uniform thermal transport property of proteins.
 Thus, by incorporating the cross-correlations, we aim to derive local thermal conductivities that are consistent with the overall thermal conductivity of the entire molecule.
 
-The analysis of the local thermal transport property using @eq:eqc8 faces a problem: when dividing the overall heat current into the summation of partial heat currents (@eq:eqc7), @eq:eqc9 includes both auto-correlation and cross-correlation terms, while the cross-correlation terms, $\langle\bm{h}{\alpha, \beta}(0) \cdot \bm{h}{\alpha', \beta'}(t)\rangle$ with $(\alpha, \beta) \ne (\alpha', \beta')$, are missing in equation (8).
+The analysis of the local thermal transport property using @eq:eqc8 faces a problem: when dividing the overall heat current into the summation of partial heat currents (@eq:eqc7), @eq:eqc9 includes both autocorrelation and cross-correlation terms, while the cross-correlation terms, $\langle\bm{h}{\alpha, \beta}(0) \cdot \bm{h}{\alpha', \beta'}(t)\rangle$ with $(\alpha, \beta) \ne (\alpha', \beta')$, are missing in equation (8).
 As a result, we anticipate that the summation of all contribution factors, $\sum_{\alpha=1}^{N} c_{\alpha, \alpha} + \sum_{\alpha=1}^{N-1} c_{\alpha, \alpha+1}$, does not equal unity. If this summation is greater (or less) than 1, it implies that the average intensity of the local thermal transport is overestimated (or underestimated) compared to its actual value.
 
 ![Short-range cross-correlation approximation. Cross-correlations are considered only for nearby pairs (dashed line).](figures/cross/cross-correlation.jpeg){#fig:cross-correlation width=70%}
@@ -365,7 +365,7 @@ $$
 $$
 {#eq:eqc19}
 
-All of the heat currents and their auto-correlation function calculations were performed using our CURP program, version 1.3[@yamato2022] based on 50 trajectories of constant volume and energy (_NVE_) molecular dynamics simulations.
+All of the heat currents and their autocorrelation function calculations were performed using our CURP program, version 1.3[@yamato2022] based on 50 trajectories of constant volume and energy (_NVE_) molecular dynamics simulations.
 
 <!-- ## Proteins
 The proteins used in @sec:cha2 and @sec:cha3 was the villin headpiece subdomain (PDB code: HP36) and used in @sec:cha4 was the *Bj*FixL -->
@@ -393,7 +393,7 @@ $$
 {#eq:eqd2}
 <!-- prettier-ignore-end -->
 
-The inter-residue heat conductivity between residue $\alpha$ and $\beta$, denoted by $\Lambda_{\alpha,\beta}$, can be expressed by the time-integral of their heat current auto-correlation function as:
+The inter-residue heat conductivity between residue $\alpha$ and $\beta$, denoted by $\Lambda_{\alpha,\beta}$, can be expressed by the time-integral of their heat current autocorrelation function as:
 $$
 \Lambda_{\alpha, \beta} = \bm{\int} \langle \bm{h}_{\alpha, \beta}(t) \cdot \bm{h}_{\alpha, \beta}(0) \rangle dt
 $$
@@ -443,7 +443,7 @@ $$
 $$
 {#eq:eqd8}
 
-In this study, the integration time of the auto-correlation function for both heat current and energy flux was set as 60 ps.
+In this study, the integration time of the autocorrelation function for both heat current and energy flux was set as 60 ps.
 All calculations of $\lambda_{\alpha, \beta}$ and $G_{\alpha, \beta}$ between each pair of residues in native contact using the _CURrent calculations in Proteins_ (CURP) program of version 1.3 developed by our lab.[@yamato2022]
 
 ## Parameterization of the Fe^3+^ metal cofactor{#sec:parameterization}
@@ -605,7 +605,7 @@ where $V$ represents either $w_{\alpha,\beta}$, $\log{G}_{\alpha, \beta}$, or $\
 
 ## Computational modeling for a homodimer _Thalassosira pseudonana_ CP12
 
-We developed a three-stage modeling technique keeping in mind the considerable conformational flexibility and spatiotemporal heterogeneity of the _Thalassosira pseudonana_ chloroplastic protein (CP12).
+We developed a three-stage modeling technique keeping in mind the considerable conformational flexibility and spatiotemporal heterogeneity of the _Thalassosira pseudonana_ chloroplast protein (CP12).
 First, AlphaFold-Multimer first predicted the CP12 dimer's initial guess structures.[@jumper2021;@evans2021]
 Then, the harmonic restrained all-atom molecular dynamics (MD) simulations were used to roughly refine the most likely structure of them in order to align it with the experimental results (SAXS[@shao2021] and EPR/DEER).
 Finally, restrained-ensemble molecular dynamics (reMD) simulations[@roux2013;@shen2015;@islam2013;@qi2020] were used to further refine the structures generated in this manner, ensuring that the distance distributions of all spin pairs between the reMD simulations and the experimental EPR/DEER data are consistent.

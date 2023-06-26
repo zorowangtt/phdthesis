@@ -6,7 +6,7 @@ Unlike folded domains or regions with well-defined structures, IDRs exhibit high
 These regions are characterized by a lack of stable secondary structures such as alpha helices or beta sheets.
 Structural analysis of IDRs within proteins is a long-standing challenge in structural biology due to their considerable flexibility and spatiotemporal heterogeneity.
 
-In this chapter, we present a novel method for defining the conformational ensemble of IDRs and describe how it was applied to the homodimer of the chloroplastic protein (CP12) from _Thalassosira pseudonana_.
+In this chapter, we present a novel method for defining the conformational ensemble of IDRs and describe how it was applied to the homodimer of the chloroplast protein (CP12) from _Thalassosira pseudonana_.
 The process is divided into three steps: (1) AlphaFold-Multimer is used to obtain an initial structure guess based on the amino acid sequence; (2) harmonic-restrained MD simulations to match experimental SAXS and EPR/DEER data; and (3) refine the conformational ensemble using restrained-ensemble MD simulations based on DEER and SAXS data.
 
 ## AlphaFold2 Model

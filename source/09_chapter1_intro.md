@@ -56,9 +56,9 @@ Besides, John E. Straub and his coworkers have employed non-equilibrium classica
 They demonstrated that the kinetic energy decay of heme in native myoglobin and His93Gly mutant myoglobin were a single exponential with a time constant of 5.9 ps and 8.8 ps, respectively, while the kinetic energy relaxation of heme in cytochrome _c_ was a biphasic exponential decay process with relaxation time constants of 1.5 ps and 10.1 ps for fast and slow processes, respectively.[@sagnella2001;@bu2003;@bu2003a]
 
 <!-- computational methods for investigating the energy transfer in proteins. -->
-In addition to the nonequilibrium MD simulations mentioned above,[@kobus2011;@buchenberg2016;@continibali2017;@kumawat2017;@mino2014;@kurisaki2023] other computational and theoretical approaches[@leitner2010;@li2022;@thompson2014;@fujisaki2005;@pandey2017], including equilibrium MD simulations, normal mode analysis, i.e. the master equation model, and anharmonic network models, have also been employed to simulate the flow of vibrational energy in proteins.
+In addition to the non-equilibrium MD simulations mentioned above,[@kobus2011;@buchenberg2016;@continibali2017;@kumawat2017;@mino2014;@kurisaki2023] other computational and theoretical approaches[@leitner2010;@li2022;@thompson2014;@fujisaki2005;@pandey2017], including equilibrium MD simulations, normal mode analysis, i.e. the master equation model, and anharmonic network models, have also been employed to simulate the flow of vibrational energy in proteins.
 
-One approach involves the utilization of a transport-coefficient-like quantity derived from the auto-correlation function of energy flow, which providing a measure of the amount of energy transferred per unit of time.[@ishikura2006]
+One approach involves the utilization of a transport-coefficient-like quantity derived from the autocorrelation function of energy flow, which providing a measure of the amount of energy transferred per unit of time.[@ishikura2006]
 This methodology has been employed to construct a network of amino acid residues that mediates the propagation of intramolecular vibrational energy.
 This model (energy exchange network model) was employed to investigate the allosteric signal transduction mechanisms and energy transport pathways using equilibrium MD simulations.[@ota2019;@reid2020;@poudel2023]
 Another approach, the master equation model, has been used to predict energy transport pathways in proteins.[@buchenberg2016;@reid2021;@valinoborau2020]
@@ -72,7 +72,7 @@ The process of transferring heat and energy with a temperature gradient is typic
 However, by considering carriers as particles, the fluctuation-dissipation transport theory, pioneered by Green and Kubo,[@mcquarrie2000;@kubo1957;@kubo1957a;@kubo1966;@gottwald2020] provides general expressions for transport coefficients.
 These expressions are applicable at all times and densities and are derived from correlation or autocorrelation functions computed from an equilibrium system.
 The key idea is based on the linear response theory, which offers a framework for illustrating the relationships between perturbations that are applied to a system and their responses.
-As long as the state of the syetm stays close enough to the equilibrium, the equilibrium fluctuations can dictate the non-equilibrium response.
+As long as the state of the system stays close enough to the equilibrium, the equilibrium fluctuations can dictate the non-equilibrium response.
 The system's response to a small perturbation is linearly related to the magnitude of the perturbation.
 The analysis of the dynamic characteristics and transport phenomena of molecules and materials can be performed by using linear response theory in the context of molecular dynamics simulations and statistical mechanics.
 A general expression of transport coefficient $\gamma$ can be represented in terms of the integral of time correlation functions as shown in @eq:transport.[@zwanzig1965;@kaviany2008]
@@ -165,36 +165,22 @@ This interdependence poses further complexities in accurately characterizing the
 To overcome these problems, we have developed a theoretical model, _linear-homopolymer-like model_, which incorporates the influence of cross correlations effectively into the site-selective heat current analysis based on the autocorrelation function formalism.
 With this model, we aim to enhance our understanding of how thermal energy is transmitted and distributed at the residue level within protein interior.
 
-<!-- cha4: the introduction of heat-energy transfer
-    - debating of efficiency of different types of interactions 
-    - scaling rules for a wider range of residue pairs
-    - thermal transport networks
-    - -->
-
 ### Determinates of protein energy transport
-<!-- efficiency of different types of interactions   -->
-<!-- proposed the debating of the dominating interaction on energy transfer in proteins. -->
-<!-- Reference: 
-- van der waals: Series of studies on heme proteins of Mizutani group's
-- backbone dominating in HP36: 
-- hydrogen bond $\beta$-strand case study in _Nature Commu._ 2021.
-
-- classify the interactions  -->
 
 Proteins are complex biomolecules composed of amino acids that are connected by peptide bonds.
 These molecules exhibit a hierarchical organization, including primary (linear sequence of amino acids), secondary (local patterns such as $\alpha$ helices or $\beta$ strands), tertiary (overall folding of the protein), and quaternary (association of multiple protein subunits) structures.
 Within this heterogeneous and intricate system, residues participate in various interactions, including bonded interactions and nonbonded interactions.
-Bonded interactions such as peptide and disulfied bonds in proteins keep the molecular toplogy, i.e., the pattern of connectivity of atoms, while nonbonded interactions such as ionic bonds (e.g. salt bridges between oppositely charged residues), and hydrogen bonds (e.g. interactions between backbone atoms or polar side chains) are responsible for maintaining and stabilizing the secondary, tertiary and quaternary structures of proteins.
+Bonded interactions such as peptide and disulfide bonds in proteins keep the molecular topology, i.e., the pattern of connectivity of atoms, while nonbonded interactions such as ionic bonds (e.g. salt bridges between oppositely charged residues), and hydrogen bonds (e.g. interactions between backbone atoms or polar side chains) are responsible for maintaining and stabilizing the secondary, tertiary and quaternary structures of proteins.
 Van der Waals interactions in proteins are a type of weak nonbonded interaction that occur between atoms that are close to each other but not covalently bonded.
 They mainly contribute to the stabilization of tertiary and quaternary structures of proteins by optimizing the surface contact between residues and subunits.
 Other types of nonbonded interactions in proteins include electrostatic interactions (such as those between charged residues or between dipoles), $\pi$-$\pi$ stacking (such as those between aromatic residues), etc, also play important roles in protein folding, stability, function, and interactions.
 
-During thermal fluctuation and vibrational energy ralaxation of proteins, transfer of kinetic or potential energy occurs from one part of the protein to another or between protein and the surrounding environment.
+During thermal fluctuation and vibrational energy relaxation of proteins, transfer of kinetic or potential energy occurs from one part of the protein to another or between protein and the surrounding environment.
 Different types of interactions can affect the rate and efficiency of energy transfer in proteins.
 For example, the peptide bond not only keeps the primary structure intact, but also provides major pathways for energy transfer.
-Nonbonded native contacts, found in the folded protein, stablize the tertiray strcuture and play important roles in protein functions.
-For instance, we expect taht a protein molecule, as a biomolecular machine,should experience recognization of native contacts especially at the regulation site and the active site, in response to external stimulus, such as ligand bidning at light illumination.
-Accordingly, we also expect possibile alteration of energy transfer pathways induced by the stimulus.
+Nonbonded native contacts, found in the folded protein, stabilize the tertiary structure and play important roles in protein functions.
+For instance, we expect that a protein molecule, as a biomolecular machine, should experience recognition of native contacts especially at the regulation site and the active site, in response to external stimulus, such as ligand binding at light illumination.
+Accordingly, we also expect possible alteration of energy transfer pathways induced by the stimulus.
 
 Using non-equilibrium MD simulations, the significance of different types of nonbonded contacts and the competition with the backbone have been studied in several proteins.
 A computational study showed the dominating energy transfer efficiency of the backbone with a much higher energy diffusion constant of 1.25 nm^2^ ps^\textminus1^ in HP36 than through nonbonded contacts with much smaller diffusion constants (1.1 × 10^-4^ for polar contacts and 3.6 × 10^-7^ for nonpolar contacts).[@buchenberg2016]
@@ -214,24 +200,14 @@ It has been reported that the thermal conductivity of spider silk protein is 1-2
 Furthermore, hydrogen bonding has been shown to facilitate dominant vibrational energy transfer pathways in $\beta$-hairpin structures, competing with energy transport along the backbone.[@deniz2021]
 The scaling rules for rates of vibrational energy transfer in proteins have been extensively studied in various proteins, including HP36[@buchenberg2016;@poudel2020], myoglobin[@reid2018], deoxy-HbI/oxy-HbI[@leitner2019;@reid2020;@leitner2020a], A2A adenosine receptor[@leitner2020a], and GPCR proteins[@poudel2022;@poudel2023], by David M. Leitner and his colleagues.
 These scaling rules have been validated and found to work particularly well for hydrogen bonding contacts, especially those within a distance of less than 2.8 Å.
-However, given the importance of van der Waals interactions, especially in the hydrophobic core of water soluble proteins, it would be helpful to consider a different approach as well.
+However, given the importance of van der Waals interactions, especially in the hydrophobic core of water-soluble proteins, it would be helpful to consider a different approach as well.
 Due to the complexity of protein systems, the thermal energy transport through contacts should be affected by a number of both static and dynamic properties, including their structure, compositions, dynamics, and interaction types.
 Thus, the relationship between heat and energy transport efficiency through contacts and these protein properties is expected to be non-linear, rather than linear.
 
-<!-- **locate a gap in the research: Network model for nonbonded contacts/Comparison between thermal/energy and PCN** -->
-
-<!-- ### Network model for nonbonded contacts
-To gain a system-level understanding of biomolecule structures from a network perspective, network analysis has been employed based on 3D structures obtained from X-ray crystallography, NMR spectroscopy, and various types of electron microscopy to elucidate the relationship between protein structures and their functions.
-These networks are typically constructed using nodes (amino acid residues) and links/edges (contacts).
-There are several web-based tools available, such as RING3.0[@clementel2022], Protein Contact Atlas[@kayikci2018], NAPS[@chakrabarty2016], ANCA[@yan2020], and pyProGA[@sladek2021], that make these networks more accessible to users for various applications.
-One notable approach is the AACEN (amino acid contact energy network), which is a type of ANCA model[@yan2020] that constructs a network using the electrostatic interaction energy (Coulomb potential) and the van der Waals interaction energy (Lennard-Jones potential) for nonbonded contacts.
-Although many of these tools consider amino acid interactions from a geometric or chemical perspective, none of them take protein dynamics into account.
-To address this gap, we propose a thermal transport network that describes nonbonded contacts from a thermal energy transport perspective. -->
-
 ## Organization of the thesis
 
-In this dissertation, we developed a theoretical framework for analyzing the local thermal transport properties based on the auto-correlation function formalism and applied it to two protein systems to study the heat, energy, and signaling flow.
-In addition, due to the complexity of protein systems, advanced machine learning-based methods were utilized to idnetify the contributing factors of thermal transport in protein and the structural characterization of intrinsically disordered regions.
+In this dissertation, we developed a theoretical framework for analyzing the local thermal transport properties based on the autocorrelation function formalism and applied it to two protein systems to study the heat, energy, and signaling flow.
+In addition, due to the complexity of protein systems, advanced machine learning-based methods were utilized to identify the contributing factors of thermal transport in protein and the structural characterization of intrinsically disordered regions.
 
 @sec:cha1 provides an introduction, including an overview of current studies and methods related to vibrational energy transport in proteins and protein solutions.
 It, then, introduces the concepts of linear response theory and molecular dynamics simulation techniques.
@@ -254,7 +230,7 @@ In addition, the machine learning approach of random forest regression was used 
 Two forms of oxygen sensor proteins exhibit totally different activities, inactive and active forms, despite minimal structural differences.
 The signaling pathways upon ligand binding and allosteric effects were identified by using the energy transport network model.
 
-In @sec:cha6, machine learning methods were integrated with molecular dynamics simulations and experimental results to characterize the conformational ensemble of a new type of chloroplastic protein (CP12) with intrinsically disordered regions.
+In @sec:cha6, machine learning methods were integrated with molecular dynamics simulations and experimental results to characterize the conformational ensemble of a new type of chloroplast protein (CP12) with intrinsically disordered regions.
 
 Finally, @sec:cha7 provides a comprehensive summary of the conclusions drawn from this thesis.
 It highlights the key findings and insights gained from the study of protein thermal transport properties and the application of machine learning algorithms.
