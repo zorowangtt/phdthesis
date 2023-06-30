@@ -444,9 +444,9 @@ All calculations of $\lambda_{\alpha, \beta}$ and $G_{\alpha, \beta}$ between ea
 
 ## Parameterization of the Fe^3+^ metal cofactor{#sec:parameterization}
 
-![Molecules used to obtain the tuned force field parameters for met-FixLH dimer system. (a) Molecule used in Gaussian optimization calculations to obtain the Fe^3+^ metal associated bond and angle parameters. (b) Molecule used used in Gaussian RESP partial charge calculations to obtain the partial charges for the metal site.](figures/fixl/met-fixl-force-field.jpg){#fig:met-fixl-force-field}
+![Molecules used to obtain the tuned force field parameters for met-FixLH dimer system. (a) Molecule used in Gaussian optimization calculations to obtain the Fe^3+^ metal associated bond and angle parameters. (b) Molecule used used in Gaussian RESP partial charge calculations to obtain the partial charges for the metal site.](figures/fixl/met-fixl-force-field.jpg){#fig:met-fixl-force-field width=70%}
 
-![Molecules used to obtain the tuned force field parameters for met-FixLH-imd dimer system. (a) The molecule used in Gaussian optimization calculations to obtain the Fe^3+^ metal associated bond and angle parameters. (b) The molecule used in Gaussian RESP partial charge calculations to obtain the partial charges for the metal site.](figures/fixl/met-fixl-imd-force-field.jpg){#fig:met-fixl-imd-force-field width=100%}
+![Molecules used to obtain the tuned force field parameters for met-FixLH-imd dimer system. (a) The molecule used in Gaussian optimization calculations to obtain the Fe^3+^ metal associated bond and angle parameters. (b) The molecule used in Gaussian RESP partial charge calculations to obtain the partial charges for the metal site.](figures/fixl/met-fixl-imd-force-field.jpg){#fig:met-fixl-imd-force-field width=70%}
 
 To investigate the interplay between allosteric signal transduction and the thermal energy transfer in the oxygen sensor domain of _Bj_FixL proteins.
 We conducted the MD simulation.
@@ -548,40 +548,42 @@ A total of 269 residue pairs in HP36 were selected using the _pickup-respairs_ m
 ### Classification
 
 The nonbonded contacts among residues are categorized into five types based on the geometric structure of HP36 and MD simulation trajectories: hydrogen bond contacts, $\pi$ stacking contacts between aromatic side chains, electrostatic contacts for both residues that are charged or polar, and hydrophobic contacts for either of them being hydrophobic residue.
-Hydrogen bond contacts are identified from MD simulation trajectories by the _cpptraj_ module of AmberTools 19, with a geometric criterion, i.e., the distance between atom $i$ and atom $j$ from a pair of shorter than 3.0 Å and the angle $i$-H...$j$ or $j$-H...$i$ within 145-180$^\circ$. Here, $i(j)\in$ residue A (B), and $i(j)$ is either O or N atom in protein.
+Hydrogen bond contacts are identified from MD simulation trajectories by the _cpptraj_ module of AmberTools 19, with a geometric criterion, i.e., the distance between atom $i$ and atom $j$ from a pair of shorter than 3.0 Å and the angle X-H...Y or Y-H...X within 145-180$^\circ$. Here, X(Y) $\in$ residue A (B), and X(Y) is either O or N atom in protein.
 On the other hand, $\pi$ stacking contacts are identified using the RING3.0 server ([https://ring.biocomputingup.it](https://ring.biocomputingup.it)) based on the NMR structure of HP36.
 
 ## Hydrogen bond occurrence probability
-The hydrogen bonds are found to facilitate the thermal transport in helices-constructed material.[@mino2014;@he2021] 
-To quantitatively characterize the strength of hydrogen bonds, we assessed their integrity during the simulation process by calculating the lifetime of detected hydrogen bond and term it into hydrogen bond occurrence probability (_P_~HB~).
+The hydrogen bonds are found to facilitate the thermal transport in materials made of α-helices.[@mino2014;@he2021]
+To quantitatively evaluate the average strength of hydrogen bonds during thermal fluctuations, we assessed their integrity during the simulation process by calculating the lifetime of detected hydrogen bond with the quantity, hydrogen bond occurrence probability (_P_~HB~), as defined below.
 The _cpptraj_ module in AMBER was utilized to probe hydrogen bonds between residues and their lifetime in the simulation.
-The hydrogen bonds definition and screening criterion is same as that in @sec:definitions.
-The hydrogen bonds occurrence probability can be calculated by the following formula:
+The definition of hydrogen bonds and screening criterion are the same as those in @sec:definitions.
+The hydrogen-bonding-occurrence probability between a pair of residues during a certain period of time can be calculated by the following formula:
 
 $$
 P_{\rm HB} = \frac {\sum_{i=1}^{N} n_i}{N}
 $$
 {#eq:eqd9}
 
-where _P_~HB~ is the probability of hydrogen bond occurrence probability between residue $\alpha$ and residue $\beta$ during a certain simulation time with $N$ snapshots, $n_i$ is the number of hydrogen bonds formed between residue A and B.
+where $n_i$ is the number of hydrogen bonds formed between the pair, and _N_ is the number of snapshots in the MD trajectory.
 
 ## Random forest regression
-The random forest regression model was applied to predict the $\lambda_{\alpha,\beta}$ by using sklearn's _RandomForestRegressor_ function in Python.
-The $\lambda_{\alpha,\beta}$ values were considered as the target variable and seven protein static
-and dynamical properties were considered as explanatory variables: inverse of contact (shortest) distance ($\langle d_c \rangle$), $P_{HB}$, the inverse of variance in the contact distance ($\langle \delta d_{c}^2 \rangle$), the summation volume of contacts $V_{\alpha\beta}$, residue type (RT$_\alpha$ and RT$_\beta$), and interaction type (IT).
+The random forest regression model was applied to predict the values of inter-residue thermal conductivity, $\lambda_{\alpha,\beta}$, for residue pairs (α, β), by using sklearn's _RandomForestRegressor_ function in Python.
+The $\lambda_{\alpha,\beta}$ values were considered as the target variable and seven properties, each of which represents either static or dynamical feature of a protein, were considered as explanatory variables: inverse of contact (shortest) distance ($\langle d_c \rangle$), $P_{HB}$, the inverse of variance in the contact distance ($\langle \delta d_{c}^2 \rangle$), the summation of the volumes of contact residue pair ($V_{\alpha\beta}$), residue type (RT$_\alpha$ and RT$_\beta$), and interaction type (IT).
 The whole dataset was split into two groups for model fitting and evaluation: training set (80%) and testing set (20%).
 The mean absolute error (MAE) loss was calculated for the split quality measurement.
 The bootstrapping method was used to randomly sample the subsets of the training dataset to build the model.
 The random forest regression model (estimator) performance is affected by the choice of its hyperparameters, such as the number of decision trees and the maximum number of splits for each decision tree.
 To improve the accuracy of predictions and avoid underfit or overfit problems, the _RandomizedSearchCV_ function in the scikit-learn library was used to tune the hyperparameters and to obtain the best estimator.
 R^2^ and root-mean-squared error (RMSE) for the training data set and for the testing data set were calculated to evaluate the model performance.
-Due to the explanatory variables containing categorical data, for example, _interaction type_ and _residue type_,
-we applied the _LabelEncoder_ function of Python to give a unique integer to each categorical explanatory variable for regression.
+Because the explanatory variables were considered contain categorical data, such as, _interaction type_ and _residue type_,
+we applied the _LabelEncoder_ function of Python to give a unique integer to each categorical explanatory variable for regression analysis.
 The feature importance for all explanatory variables was evaluated using permutation feature importance rather than impurity-based feature importance to avoid misleading for high cardinality features.
 
-Although we screened residue pairs with a distance threshold of 6 $\AA$ by a built-in tool of using CURP program, a strict screening standard of 4 $\AA$ was used to construct a smaller data set for regression model building.
-The motivation of a smaller group of contacts is that "4 $\AA$" as a lower limit for negligible interactions screening standard corresponds to the average value of the peptide bond length the nonbonded contacts in graph theory protein contact network[@dipaola2013].
-Thus, in this section, we built two random forest models for two datasets: one is that $\langle d_c \rangle$ values are lower than 6 $\AA$, called _dataset L_, and the other is that $\langle d_c \rangle$ values are lower than 4 $\AA$, called _dataset S_.
+For constructing random forest models, we used two types of datasets with $\langle d_c \rangle$ 6 Å (_dataset L_) and that within $\langle d_c \rangle$ < 4 Å (_dataset S_).
+The distance criterion of 6 Å  is used as a default value by the CURP program so taht the selected residue pairs contain not only stongly interacting ones, buy also the loosely interact to each other.
+Alternatively, the distance criterion of 4 Å is often used to extract weakly interacting residue pairs in constructing the network graph of nonbonded native contacts.[@dipaola2013]
+<!-- Although we screened residue pairs with a distance threshold of 6 Å by a built-in tool of using CURP program, a strict screening standard of 4 Å was used to construct a smaller data set for regression model building.
+The motivation of a smaller group of contacts is that "4 Å" as a lower limit for negligible interactions screening standard corresponds to the average value of the peptide bond length the nonbonded contacts in graph theory protein contact network[@dipaola2013].
+Thus, in this section, we built two random forest models for two datasets: one is that $\langle d_c \rangle$ values are lower than 6 Å, called _dataset L_, and the other is that $\langle d_c \rangle$ values are lower than 4 Å, called _dataset S_. -->
 
 <!-- ## Network models
 
@@ -605,64 +607,71 @@ $$
 where $V$ represents either $w_{\alpha,\beta}$, $\log{G}_{\alpha, \beta}$, or $\log{\lambda}_{\alpha, \beta}$. -->
 
 ## Computational modeling for a homodimer _Thalassosira pseudonana_ CP12
-
-We developed a three-stage modeling technique keeping in mind the considerable conformational flexibility and spatiotemporal heterogeneity of the _Thalassosira pseudonana_ chloroplast protein (CP12).
-First, AlphaFold-Multimer first predicted the CP12 dimer's initial guess structures.[@jumper2021;@evans2021]
-Then, the harmonic restrained all-atom molecular dynamics (MD) simulations were used to roughly refine the most likely structure of them in order to align it with the experimental results (SAXS[@shao2021] and EPR/DEER).
-Finally, restrained-ensemble molecular dynamics (reMD) simulations[@roux2013;@shen2015;@islam2013;@qi2020] were used to further refine the structures generated in this manner, ensuring that the distance distributions of all spin pairs between the reMD simulations and the experimental EPR/DEER data are consistent.
+Although structure modleing of a foog folden, globular protein with its well-defined native conformation, has become practical by using deep-learning algorithms based techniques.
+There still remians various obstacles, however, to characterize the conformational ensemble of the intrinsically disordered protein (IDP) or the protein with highly flexible disordered regions (IDRs).
+To address this issue, we developed a three-stage modeling technique and applied it to _Thalassosira pseudonana_ chloroplast protein (CP12) with IDRs.
+First, AlphaFold-Multimer was used to obtain the CP12 dimer's initial guess structures.[@jumper2021;@evans2021]
+Then, the harmonic restrained all-atom molecular dynamics (MD) simulations were used to roughly refine those structures so that they became consistent with the experimental results (SAXS[@shao2021] and EPR/DEER).
+Finally, restrained-ensemble molecular dynamics (reMD) simulations[@roux2013;@shen2015;@islam2013;@qi2020] were employed to further refine those structures, ensuring that the distance distributions of all the spin pairs introduced in the reMD simulation became consistent with those of the experimental EPR/DEER data are consistent.
 
 ![(A) Refinement scheme for the model obtained from AlphaFold2. (B) Starting model for the harmonic restrained MD simulations. C) Distances (blue) and distance distributions (black) between spin label pairs of the starting model for reMD simulation and DEER experiment data, respectively.](figures/cp12/scheme.jpg){#fig:scheme width=100%}
 
 ### FASTA sequence of CP12{#sec:sequence}
-The 163 residues from CP12's complete amino acid sequence (shown in blue) that served as the input for AlphaFold2 modeling are as follows:
+From CP12's complete amino acid sequence, we used the segment of 163 residues (shown in blue) served as the input for AlphaFold2 modeling as follows:
 
 MKIFLASLIGSCAAFAPAPFGKSPTALFGRVDTS\textcolor{blue}{AIEAALDASKKFGSTSSEARVLWDIVEEMDASDNSVASKAPI
 VDSEYEAKVKSLSQMLTKTKAELDQVKALADDLKGVKLASPSVGSSAPDDSVMKEALAAARAATEEFGQSSPQ
 ARLAWETVEEIAASPVDIRAPLDEECLIELIEGCEALEKFQAALGSR}
 
+In addition, to consider the influence of mutants in the EPR/DEER experiment, two mutant sequences are considered to predict the CP12's dimer.
+Their sequences are as follows:
+S46: 
+
+S56:
+
 ### AlphaFold2 prediction
 Using AlphaFold v2.1.1-Multimer (AF2) and the default databases,[@jumper2021;@evans2021;@tunyasuvunakool2021], the structure of the CP12 homodimer was predicted.
 From NCBI[@shao2021], the wild-type (WT) amino acid sequence was retrieved .
 For multiple sequence alignments (MSAs) lookup and structural template matching, an incomplete FASTA sequence of 163 residues (the blue portion of the sequence in @sec:sequence) was used in the AF2 input file.
-The homodimeric structure of WT, S46C, and S56C mutants was predicted and the top five ranked models was outputed.
-A measure known as predicted local distance difference test score (pLDDT, on a scale from 0 to 100, where 100 denotes the most confident) was used to assess the per-residue confidence for the model confidence along with the prediction outcomes.
+Each of the homodimeric structure of WT, S46C, and S56C mutants was predicted and the top five ranked models was generated for each.
+To evaluate the reliability of the predictions residuewise, 
+For model evaluation, the predicted local distance difference test score (pLDDT, on a scale from 0 to 100, where 100 denotes the most confident) was used to assess the per-residue confidence for the model.
 
 ### Harmonic restrained molecular dynamics simulations
-All-atom harmonic restrained MD simulations without spin labels were followed by restrained-ensemble MD (reMD) simulations with spin labels in order to refine the resulting starting model and create a conformational ensemble that is realistic and fits both the experimental SAXS curve[@shao2021] and the spin-spin distance distributions discovered by EPR/DEER experiments.
+
+In the AF2 model (@fig:scheme B), we observed two well-structured C-terminal helices were overfolded with the coiled-coil region in the AF2 model (@fig:predicted-model), despite their high flexibility by the EPR/DEER experiment (C150 in @fig:scheme C).
+Therefore, these two C-terminal helices were manually shifted away from the dimer's coiled-coil portion (@fig:scheme B).
+
+All-atom harmonic restrained MD simulations without spin labels were followed by restrained-ensemble MD (reMD) simulations with spin labels introduced in order to refine the model and generate a conformational ensemble that is realistic and fits both the experimental SAXS curve[@shao2021] and the spin-spin distance distributions obtained by EPR/DEER experiments.
 A logic diagram for the simulation procedure is displayed in @fig:scheme A.
 The reMD simulation[@roux2013] technique for the model with all-atom spin labels is suitable to exploit protein's structure in their native environment based on multiple distance histograms information obtained from EPR/DEER spectroscopy due to the high flexibility of R1 spin labels with 5 dihedral angles.
-It should be noted that a significant difference between the spin pair distance in the reMD simulation's initial structure and the DEER data may result in incredibly quick atomic movements and unexpected simulation termination.
-Therefore, before each run of the reMD simulation, a screening on the beginning model based on the distance information between all spin pairs is required to avoid such a violation.
+A care must be taken for constructing an initial model for reMD simulations: a spin pair distance that is unlikely in the distance distribution obtained by the EPR/DEER experiment could result in an unexpectedly large disturbance on the simulation system, leading to unsuccessful conformational sampling.
+Therefore, before each run of the reMD simulation, a screening on the initial model based on the distance information between all the spin pairs was required to avoid such a violation.
 
-Using harmonic restricted MD simulations from the model (@fig:scheme B) that was modified from the AF2 model, we began the structural refinement.
-These two well-structured C-terminal helices were overfolded with the coiled-coil in the AF2 model (@fig:predicted-model), despite their high conformational flexibility that was revealed by DEER (C150 in @fig:scheme C), and could not be efficiently sampled by our preliminary calculations with conventional constant temperature, constant pressure MD simulations, even at a temperature higher than room temperature.
- simulations, even at a temperature higher than room temperature.
-Therefore,  two C-terminal helices were manually shifted away from the dimer's coiled-coil portion (@fig:scheme B).
-The ensuing simulations' computational specifics are described here.
+The calculation process is detailed below:
 
-(1)	Based on the improved AF2 model, we ran harmonic restricted MD simulations using the Amber 20 package.[@case2020]
-The protein was modeled by the OPC model[@izadi2014] using the LEaP program of AmberTools20, and then immersed into a cubic periodic box full of water solvent molecules using the Amber ff19SB force field.[@tian2020]
-At pH = 7.0, all charged residues were taken into consideration in their typical protonation condition.
-To neutralize the simulation box, we added 28 sodium ions, and the total number of atoms is 178352.
+(1)	Based on the modified AF2 model, we conducted harmonic restricted MD simulations using the Amber 20 package.[@case2020]
+The Amber ff19SB force field[@tian2020] was used for the protein, which was immersed into a cubic periodic box filled with water solvent molecules modeled by the OPC model[@izadi2014] with the LEaP program of AmberTools20.
+At pH = 7.0, all charged residues were taken into consideration in their standard protonation condition.
+To neutralize the simulation box, we added 28 sodium ions, and the total number of atoms become 178352.
 With a distance cutoff of 9 Å, nonbonded particle-particle interactions[@duan2001a] were taken into account, and the particle mesh Ewald (PME) method[@salomon-ferrer2013] was used to treat long-range electrostatic interactions.
-After the simulation system was minimized, heated, and adjusted, many rounds of MD simulations were run, with harmonic restrictions applied to the CA-CA lengths across the dimer for the corresponding spin-labeled residues S39, S46, S56, S83, and C150, and a spring force of 30 kcal/(mol·Å^2^).
-Each round was place at _T_ = 300 K and _P_ = 0.978 atm for 100ps with a time step of 2 fs.
-Every 1 ps, the trajectories and snapshots were stored.
+After the simulation system was minimized, heated, 10 rounds of MD simulations were conducted, with harmonic restriant of a spring force of 30 kcal/(mol·Å^2^) applied to the CA-CA lengths across the dimer for the corresponding spin-labeled residues S39, S46, S56, S83, and C150.
+Each round, MD simulations was performed for 100ps with a time step of 2 fs at _T_ = 300 K and _P_ = 0.978 atm.
+Every 1 ps, the atomic corrdinates were stored.
 The initial/target distances for each pair of CA atoms were, respectively, 73/68 Å for S39, 57/43 Å for S46, 26/32 Å for S56, 51/64 Å for S83, and 12/25 Å for C150.
-In the first 2 ps of each cycle, the desired distances were readily attained (@fig:time-evolution).
+In the first 2 ps of each cycle, the traget distances were readily achieved (@fig:time-evolution).
 
 ![Time evolution of the CA-CA distances. We consider five residue pairs, S39-S39, S46-S46, S56-S56, S83-S83, and C150-C150 in the dimer. For each pair, the CA-CA distance are plotted as a function of time during harmonic restrained MD simulation using Amber.](figures/cp12/time-evolution.jpg){#fig:time-evolution width=100%}
 
-(2)	By removing the waters and using CRYSOL[@svergun1995] of ATSAS-3.0.4-2[@franke2017] to compare the simulated SAXS curve with the experiment[@shao2021], we were able to compare the two using snapshots.
-(3)	Using the reMD Prepper module of CHARMM-GUI[@qi2020], we assigned the all-atom spin label CYR1[@jo2014] to the residues S39, S46, S56, S83, and C150, respectively, if the simulated SAXS curve and the experiment were in good agreement.
-We then measured the initial distance of each spin pair.
+After removing the waters from the simulation model, we used CRYSOL[@svergun1995] of ATSAS-3.0.4-2[@franke2017] to simulate SAXS curve and compared it with the experiment[@shao2021].
+(2)	Using the reMD Prepper module of CHARMM-GUI[@qi2020], we attached the all-atom spin label CYR1[@jo2014] to the residues S39, S46, S56, S83, and C150, respectively. If the simulated SAXS curve and the experimentally obtained curve were in good agreement, we then measured the initial distance of each spin pair.
 
 ### Restrained-ensemble MD simulations
 
 ![The fixation between CYR1 spin label and its attached residues. The all-atom CYR1 spin label has a main chain like amino acid. The reMD simulation adds and fixes the spin label model by overlapping the main chain of spin label attached residue and the main chain of spin labels with a harmonic force constant of 10 kcal/(mol·Å^2^).](figures/cp12/spin-label.jpg){#fig:spin-label width=60%}
 
-(4)	We then proceeded on to the reMD simulations using a modified version of NAMD 2[@shen2015;@qi2020] with an all-atom CHARMM36m protein force field[@huang2017] if all spin pair distances were within the experimentally reported range.
-In order to conserve computational resources, we applied 25 copies of all-atom CYR1 spin labels to the corresponding residues S39, S46, S56, S83, and C150 using reMD Prepper in a vacuum.
+(4)	We then performed the reMD simulations using a modified version of NAMD 2[@shen2015;@qi2020] with an all-atom CHARMM36m protein force field[@huang2017], if all the spin pair distances were within the experimentally reported range.
+In order to save computational resources, we attached 25 copies of all-atom CYR1 spin labels to the corresponding residues S39, S46, S56, S83, and C150 using reMD Prepper in a vacuum.
 The N, Cα, C, and O atoms of each spin label were locked to the corresponding atoms in the labeled residues (@fig:spin-label) throughout the entirety of the reMD simulations using a force constant of 10 kcal/(mol·Å^2^).
 The force field of all-atom CYR1 spin label[@islam2015] is obtained using CHARMM-GUI.
 By ignoring their interactions, the 25 copies of the CYR1 spin labels were permitted to overlap spatially.

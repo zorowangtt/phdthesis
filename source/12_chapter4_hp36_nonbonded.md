@@ -159,10 +159,10 @@ The model of _dataset S_ resulted in $r^2$ values of 0.89 and 0.75 for traning s
 The top three most important features decreased in an order of $1/ \langle d_c^2 \rangle$ >$1/ \langle \delta d_{c}^2 \rangle$ > $P_{HB}$.
 After the dataset gets smaller, we can see that the prediction performance (R^2^) slightly decreased for training datasets, but has a bigger decrease in prediction performance on testing set.
 The difference in feature importances between the two datasets indicates that the contact distance plays a dominant role in determining the value of log$\lambda_{\alpha,\beta}$ for a wide range of contacts.
-On the other hand, for short-distance contacts ($\langle d_c\rangle$ < 4 $\AA$), both the average squared deviation ($\langle \delta d_c^2 \rangle$) and the hydrogen bonding probability ($P_{HB}$) become increasingly important.
+On the other hand, for short-distance contacts ($\langle d_c\rangle$ < 4 Å), both the average squared deviation ($\langle \delta d_c^2 \rangle$) and the hydrogen bonding probability ($P_{HB}$) become increasingly important.
 This observation aligns with the notion that the energy transport of hydrogen bonding contact is inversely proportional to the variance of the contact.
 The motion of these contacts can be modeled as a harmonic oscillator.[@buchenberg2016]
-Due to the limited numbers of data points, a further smaller dataset ($\langle d_c\rangle$ < 2.8 $\AA$) resulted in a model with very poor prediction performance.
+Due to the limited numbers of data points, a further smaller dataset ($\langle d_c\rangle$ < 2.8 Å) resulted in a model with very poor prediction performance.
 If we take a look at the heat current expression in @eq:eqc1, we can find that two terms, i.e. (${\bm{r}_i}-{\bm{r}_j}$) and $\bm{F}_{ij}$, are closely associated with the contact distance.
 While as the contact distance decreases, there is an increase in the proportion of hydrogen bonding contacts.
 Consequently, the importance of both $\langle \delta d_c^2 \rangle$ and ($P_{HB}$ becomes more pronounced.
