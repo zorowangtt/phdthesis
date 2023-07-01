@@ -663,24 +663,24 @@ In the first 2 ps of each cycle, the traget distances were readily achieved (@fi
 
 ![Time evolution of the CA-CA distances. We consider five residue pairs, S39-S39, S46-S46, S56-S56, S83-S83, and C150-C150 in the dimer. For each pair, the CA-CA distance are plotted as a function of time during harmonic restrained MD simulation using Amber.](figures/cp12/time-evolution.jpg){#fig:time-evolution width=100%}
 
+(2)	Using the reMD Prepper module of CHARMM-GUI[@qi2020], we attached the all-atom spin label CYR1[@jo2014] to the residues S39, S46, S56, S83, and C150, respectively.
 After removing the waters from the simulation model, we used CRYSOL[@svergun1995] of ATSAS-3.0.4-2[@franke2017] to simulate SAXS curve and compared it with the experiment[@shao2021].
-(2)	Using the reMD Prepper module of CHARMM-GUI[@qi2020], we attached the all-atom spin label CYR1[@jo2014] to the residues S39, S46, S56, S83, and C150, respectively. If the simulated SAXS curve and the experimentally obtained curve were in good agreement, we then measured the initial distance of each spin pair.
+If the simulated SAXS curve and the experimentally obtained curve were in good agreement, we then measured the initial distance of each spin pair.
 
 ### Restrained-ensemble MD simulations
 
 ![The fixation between CYR1 spin label and its attached residues. The all-atom CYR1 spin label has a main chain like amino acid. The reMD simulation adds and fixes the spin label model by overlapping the main chain of spin label attached residue and the main chain of spin labels with a harmonic force constant of 10 kcal/(mol·Å^2^).](figures/cp12/spin-label.jpg){#fig:spin-label width=60%}
 
-(4)	We then performed the reMD simulations using a modified version of NAMD 2[@shen2015;@qi2020] with an all-atom CHARMM36m protein force field[@huang2017], if all the spin pair distances were within the experimentally reported range.
-In order to save computational resources, we attached 25 copies of all-atom CYR1 spin labels to the corresponding residues S39, S46, S56, S83, and C150 using reMD Prepper in a vacuum.
-The N, Cα, C, and O atoms of each spin label were locked to the corresponding atoms in the labeled residues (@fig:spin-label) throughout the entirety of the reMD simulations using a force constant of 10 kcal/(mol·Å^2^).
-The force field of all-atom CYR1 spin label[@islam2015] is obtained using CHARMM-GUI.
-By ignoring their interactions, the 25 copies of the CYR1 spin labels were permitted to overlap spatially.
-With five separate random number seeds, five independent all-atom reMD simulations were run at 303.15 K using Langevin dynamics and a damping coefficient of 5 ps^-1^.
-Prior to each reMD manufacturing run, we carried out minimization and equilibration, retaining the locations of the backbone atoms with harmonic restrictions of 2 kcal/(mol·Å^2^) imposed on them and only relaxing the sidechain atoms.
-In order to further improve the structure, we turned off the harmonic restrictions placed on the backbone atoms and ran production reMD simulations for 2 ns with a 0.5 fs time step.
-The particle mesh Ewald (PME) approach[@petersen1995] was used to handle the long-range electrostatic interactions, and the nonbonded interactions were trimmed at a distance cutoff of 10 Å.
-With a force constant of 100 kcal/(mol·Å^2^) and a bin width of 0.025 nm, the distance distributions of each spin label pair were constrained in relation to the experimental distance distribution histograms.
-Each reMD production run's atomic coordinates were saved every 1ps.
-Since there are 25 copies of each spin label, a total of 625 distances were calculated for each pair of spin labels from a single snapshot of their trajectories, and a total of 1, 250 000 data points were produced for each pair of spin labels from a single reMD production run.
+(3)	We then performed the reMD simulations using a modified version of NAMD 2[@shen2015;@qi2020] with an all-atom CHARMM36m protein force field[@huang2017], if all the spin pair distances were within the experimentally reported range.
+In order to save computational resources, we attached 25 copies of all-atom CYR1 spin labels with the same inital coordinates to the corresponding residues S39, S46, S56, S83, and C150 using reMD Prepper in a vacuum.
+The N, Cα, C, and O atoms of each spin label were fixed to the corresponding atom positions in the labeled residues (@fig:spin-label) throughout the entire reMD simulations using a force constant of 10 kcal/(mol·Å^2^).
+The force field of all-atom CYR1 spin label[@islam2015] was obtained using CHARMM-GUI.
+We allowed the spatial overlap between these 25 copies by igonring their mutual interactions.
+Five independent all-atom reMD simulations, each with five different random number seeds were conducted at 303.15 K using Langevin dynamics and a damping coefficient of 5 ps^-1^.
+Prior to each reMD production run, we carried out minimization and equilibration, kepping the positions of the backbone atoms with harmonic restraints of 2 kcal/(mol·Å^2^) imposed on them, while no restraints were imposed on the sidechain atoms.
+For further improvement of the models, we turned off the harmonic restrictions imposed on the backbone atoms and continued the reMD simulations for 2 ns with a 0.5-fs time step.
+The particle mesh Ewald (PME) method[@petersen1995] was used to evaluate the long-range electrostatic interactions, and the nonbonded interactions were truncated at a distance cutoff of 10 Å.
+During the reMD simulations a force constant of 100 kcal/(mol·Å^2^) and a bin width of 0.025 nm, the conformational ensemble of the system was generated in such a wasy that the distance distributions of each spin label pair were restrained to those of the experimental distance distribution histograms.
+In each reMD production run, the atomic coordinates were saved every 1 ps.
+Since we have 25 copies of each spin label, a total of 625 distances were calculated for each pair of spin labels from a single snapshot of their trajectories, and a total of 1, 250 000 data points were generated for each pair of spin labels from a single reMD production run.
 Using PyMOL[@llc2015] and VMD[@humphrey1996], respectively, trajectory analysis and protein visualization were carried out.
-
