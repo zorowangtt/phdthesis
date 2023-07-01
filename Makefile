@@ -28,7 +28,6 @@ acknow:
 
 contents: 
 	pandoc \
-	-s \
 	--filter pandoc-crossref \
 	$(INPUTDIR)/metadata.yaml \
 	$(INPUTDIR)/*.md \
