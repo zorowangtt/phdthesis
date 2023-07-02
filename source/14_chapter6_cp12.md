@@ -68,6 +68,7 @@ Accordingly, the ESI-MS experiment[@shao2021], partial dissociation is likely to
 To conduct a thorough assessment of the reMD sampling, a total of 20,000 structures were obtained as an ensemble structure pool with 4,000 structures extracted from each reMD trajectory.
 A GAJOR analysis was conducted to obtain the distribution of radius of gyration (Rg) for the 20,000 structures.
 The resulting distribution is shown in @fig:rg-distribution.
+GAJOE is a genetic algorithm-based program in ATSAS package used for selecting a set of models that accurately represent experimental small-angle X-ray scattering (SAXS) data.[@tria2015]
 The Rg distribution exhibits two major peaks at approximately 38.1 and 38.9 Å.
 These values are in closer agreement with the experimental data (38.2 ± 0.4 Å) than the initial model obtained by using AF2 (35.7 Å).
 We may conclude that MD simulations are effective in the modeling of proteins with IDRs.
