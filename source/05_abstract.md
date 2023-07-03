@@ -1,4 +1,4 @@
-\newpage
+<!-- \newpage
 # ABSTRACT {-}
 Proteins, molecular machines in the cell, play crucial roles in a broad range of biological processes. In particular, thermal energy transport is among the essential biophysical properties of proteins; however, its relationship with protein structures, dynamics, and functions is still elusive.
 
@@ -10,4 +10,4 @@ Second, the doctoral candidate examined the roles of non-bonded interactions in 
 
 As an application, the doctoral candidate examined the allosteric signaling mechanism of the oxygen sensory domain of FixL protein by computing its vibrational energy transport network, which mediates heat dissipation. As another application, she developed a hybrid approach of deep learning, MD simulation, SAXS, and EPR/DEER to characterize the ensemble of a chloroplast protein, CP12, which contains intrinsically disordered regions (IDRs).
 
-In summary, the doctoral candidate established a computational method of site-selective heat current analysis of proteins. Furthermore, she examined a possible interplay between allosteric signal transduction and thermal energy transport. By using machine learning techniques, she characterized complex biophysical properties of proteins such as non-uniform thermal energy transport or conformational ensemble of highly flexible proteins including IDRs.
+In summary, the doctoral candidate established a computational method of site-selective heat current analysis of proteins. Furthermore, she examined a possible interplay between allosteric signal transduction and thermal energy transport. By using machine learning techniques, she characterized complex biophysical properties of proteins such as non-uniform thermal energy transport or conformational ensemble of highly flexible proteins including IDRs. -->

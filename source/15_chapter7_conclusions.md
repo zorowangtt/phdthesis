@@ -68,3 +68,15 @@ The method consists of three stages: (1) Obtaining an initial guess structure ba
 The simulated SAXS curve and inter-label distance distributions of our CP12 model were in good agreement with the experimental data, indicating that a combination of deep learning based algorithms like AlphaFold-Multimer, MD simulations, SAXS, and EPR/DEER experiments would provide a new possibility for structural characterization of IDRs and their complexes.
 
 ## Future Directions
+
+Inspired by the results in this study, two possible directions are worthy to be investigated further in the future.
+
+1. The secondary structure dependence of thermal transport in proteins.
+
+In proteins, hydrogen bonds participate in stabilizing local structures to form different types of secondary structures.
+The hydrogen bonds between the main-chain NH and C'=O groups of residue α and α+4 result in α-helix, while the hydrogen bonds between the main-chain NH and C'=O groups of different regions of the polypeptide chain result in β-sheet, either parallel or antiparallel types.
+It is unknown how the different types of secondary structures will affect the thermal transport in proteins.
+
+2. The effect of solvent model on the thermal transport properties in protein.
+In this study, the thermal conductivity values of HP36 with a typical rigid TIP3P water model exhibited a decrease number, compared to the value using the same flexible TIP3P water model.
+It raises the interest of will the change of water solvent flexibility will change vibration frequency at the water-protein interface, accordingly to influence the thermal transport properties of protein itself?

@@ -5,16 +5,16 @@
 
 ## Thermal conductivity and energy conductivity
 
-![Plot of inter-residue thermal conductivity ($\lambda_{\alpha, \beta}$) and energy conductivity ($G_{\alpha, \beta}$). Residue pairs are classified by residue type of native contacts.](figures/non-bonded/lambda-energy.png){#fig:lambda_energy width=50%}
+![Correlation of $\Lambda_{\alpha, \beta}$ and $G_{\alpha, \beta}$.](figures/non-bonded/heat-energy.png){#fig:lambda_energy width=50%}
 
-In previous studies, we explored the energy transport network in proteins by analyzing the _inter-residue energy conductivity_ ($G_{\alpha, \beta}$).[@ishikura2006;@leitner2010;@ishikura2015;@ota2019;@poudel2020]
+In the previous studies, we explored the energy transport network in proteins based on the time-integrated ACF of the _inter-residue energy flow_ ($G_{\alpha, \beta}$).[@ishikura2006;@leitner2010;@ishikura2015;@ota2019;@poudel2020]
 As a carrier of energy for heat, we are wondering whether there are any correlations between heat and energy transfer among different partial sites, i.e., different residues. Relating the inter-residue thermal conductivity and energy conductivity will be helpful to understand the property of heat and energy transfer in proteins.
 
-From [@eq:eqd1;@eq:eqd4;@eq:eqd5;@eq:eqd7], we can see that the difference between thermal conductivity $\lambda_{\alpha, \beta}$ and energy conductivity ($G_{\alpha, \beta}$) is that for the latter its energy flow term ($\bm J_{ij}$) lacks of position vector, ($\bm r_i- \bm r_j$), which represents the distance information of the residues while MD simulations.
-To investigate this issue, we plotted the scatter dots $\lambda_{\alpha, \beta}$ and $G_{\alpha, \beta}$ in [@fig:lambda_energy] and performed the linear regression analysis.
-Interestingly, the Pearson correlation analysis showed a significant relationship statistically between $\lambda_{\alpha, \beta}$ and $G_{\alpha, \beta}$, with $r = 0.97, \, p << 0.05 \,(4.47 \times 10^{-168})$.
-To get an estimated linear regression model that can expresses their relationship, a fitted model is given here: $\log{\lambda_{\alpha, \beta}} = 0.73 \times \log{{G}_{\alpha, \beta}} - 0.30$ with $R^2 = 0.94$.
-The high similarity between $\lambda_{\alpha, \beta}$ and $G_{\alpha, \beta}$ indicates that the 
+From [@eq:eqd1;@eq:eqd4;@eq:eqd5;@eq:eqd7], we can see that the difference between thermal conductivity $\Lambda_{\alpha, \beta}$ and energy conductivity ($G_{\alpha, \beta}$) is that for the latter its energy flow term ($J_{ij}$) lacks of position vector, ($\bm r_i- \bm r_j$), which represents the distance information of the residues while MD simulations.
+To investigate this issue, we plotted the scatter dots $\Lambda_{\alpha, \beta}$ and $G_{\alpha, \beta}$ in [@fig:lambda_energy] and performed the linear regression analysis.
+Interestingly, the Pearson correlation analysis showed a statistically significant correlation between $\Lambda_{\alpha, \beta}$ and $G_{\alpha, \beta}$, with $r = 0.97, \, p \ll 0.05 \,(8.0 \times 10^{-173})$.
+To get an estimated linear regression model that can expresses their relationship, a fitted model is given here: $\log{\Lambda_{\alpha, \beta}} = 0.74 \times \log{{G}_{\alpha, \beta}} + 0.06$ with *R*^2^ = 0.95.
+The high similarity between $\Lambda_{\alpha, \beta}$ and $G_{\alpha, \beta}$ indicates that the behavior of the energy flow and heat current can be mutually represented by each other.
 
 ## Interaction type dependence
 
@@ -22,10 +22,10 @@ The high similarity between $\lambda_{\alpha, \beta}$ and $G_{\alpha, \beta}$ in
 
 [@fig:histogram_lambda] shows a histogram plot of the calculated $\lambda_{\alpha, \beta}$ through nonbonded contacts, residue-wise $\lambda$ and $\lambda_{\alpha, \beta}$ values of contacts between peptide-bonded residues.
 The x-axis represents the values of $\lambda$, while the y-axis shows the frequency of occurrence of each value.
-The histogram reveals that the hydrogen bond contacts have the greatest values of $\lambda_{\alpha, \beta}$ among all nonbonded contacts, with a peak at around $2.5 \times 10^{-2}$ W m^-1^ K^-1^.
-This is followed by electrostatic contacts with $\lambda_{\alpha, \beta}$ values ranging from $10^{-5}$ to $10^{-3}$ W m^-1^ K^-1^. However, their distribution appears to be broader and less sharply peaked compared to hydrogen bond contacts.
+The histogram reveals that the hydrogen bond contacts have the greatest values of $\lambda_{\alpha, \beta}$ among all nonbonded contacts, with a peak at around 2.5 $\times$ 10^–2^ W m^–1^ K^–1^.
+This is followed by electrostatic contacts with $\lambda_{\alpha, \beta}$ values ranging from $10^{-5}$ to $10^{-3}$ W m^–1^ K^–1^. However, their distribution appears to be broader and less sharply peaked compared to hydrogen bond contacts.
 In the hydrophobic core of HP36, there are three $\pi$ stacking contacts: Phe7-Phe11 ($\lambda_{7,11}=4.9 \times 10^{-3}$), Phe7-Phe18 ($\lambda_{7,11}= 1.5 \times 10^{-3}$), and Phe11-Phe18 ($\lambda_{11,18}= 1.5 \times 10^{-3}$), with $\lambda_{\alpha, \beta}$ values that comparable with hydrogen bond contacts. 
-Hydrophobic contacts, which have the most number of pairs and broad distributions ranging from $10^{-7}$ to $10^{-2}$ W m^-1^ K^-1^, have much lower $\lambda_{\alpha, \beta}$ values, with peaks at around $5.9 \times 10^{-4}$ W m^-1^ K^-1^.
+Hydrophobic contacts, which have the most number of pairs and broad distributions ranging from $10^{-7}$ to $10^{-2}$ W m^–1^ K^–1^, have much lower $\lambda_{\alpha, \beta}$ values, with peaks at around $5.9 \times 10^{-4}$ W m^–1^ K^–1^.
 Overall, the histogram demonstrates that different types of nonbonded contacts have significantly different contributions to thermal transport in the protein, with hydrogen bonds playing the most important role in this HP36 protein.
 
 ## Peptide bonds? or nonbonded contacts?
@@ -33,9 +33,9 @@ Overall, the histogram demonstrates that different types of nonbonded contacts h
 ![The $\lambda$ values of contacts between peptide bonded residue pairs.](figures/non-bonded/line-intra-inter-lambda.png){#fig:inter_lambda width=70%}
 
 In light of the ongoing debate on thermal energy transport through peptide bonds and contacts [@deniz2021;@mizutani2022;@buchenberg2016], we also plotted and compared the residue-wise $\lambda$ and $\lambda_{\alpha, \beta}$ values of peptide-bonded contacts in [@fig:histogram_lambda].
-The residue-wise $\lambda$ values are ranging from about 0.08 to 0.3 W m^-1^ K^-1^, while $\lambda_{\alpha, \beta}$ values of peptide-bonded contacts are ranging from about 0.01 to 0.08 W m^-1^ K^-1^.
+The residue-wise $\lambda$ values are ranging from about 0.08 to 0.3 W m^–1^ K^–1^, while $\lambda_{\alpha, \beta}$ values of peptide-bonded contacts are ranging from about 0.01 to 0.08 W m^–1^ K^–1^.
 Our results showed that both residue-wise $\lambda$ and the majority of $\lambda_{\alpha, \beta}$ values of peptide-bonded contacts were larger than those of nonbonded contacts.
-However, we observed three exceptions $\lambda_{3, 6}=2.4 \times 10^{-2}$, $\lambda_{4, 15}=1.3 \times 10^{-2}$, and $\lambda_{5, 8}=2.1 \times 10^{-2}$, where their $\lambda$ values exceed $10^{-2}$ W m^-1^ K^-1^ that the thermal transport through those contacts is able to compete with that along the peptide chain.
+However, we observed three exceptions $\lambda_{3, 6}=2.4 \times 10^{-2}$, $\lambda_{4, 15}=1.3 \times 10^{-2}$, and $\lambda_{5, 8}=2.1 \times 10^{-2}$, where their $\lambda$ values exceed $10^{-2}$ W m^–1^ K^–1^ that the thermal transport through those contacts is able to compete with that along the peptide chain.
 The relatively faster thermal transport through contacts of Ser3-Asp6 and Asp4-Arg15 have also been identified with a relatively higher local energy diffusivity in studies by non-equilibrium MD simulations and master equation model.[@buchenberg2016]
 These contacts are referred to as "shortcuts", as they provide an efficient energy transport pathway despite being distant along the protein sequence.
 This suggests that peptide bonds play a significant role in thermal transport within proteins in HP36, highlighting the importance of considering both peptide bonds and nonbonded contacts in studies of thermal transport in proteins.

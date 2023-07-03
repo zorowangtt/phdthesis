@@ -3,7 +3,7 @@
 # Theory, Materials and Methods {#cha2}
 
 ## Thermal conductivity {#thermalcondivity}
-According to the Green–Kubo relations, the steady-state transport coefficient can be obtained by dividing the space–time integral of the flux–flux equilibrium correlation function by k~B~T. A very detailed derivation process can be found in APPENDIX B: _Derivation of Green–Kubo Relation_ of book _Heat transfer physics_ by Massoud Kaviany.[@kaviany2008] Like other transport processes, e.g. viscosity, the thermal conductivity of the material can be derived from Green–Kubo relation and expressed in terms of the time autocorrelation function (ACF) of the heat current vector, $\bm{h}$, based on equilibrium fluctuation,
+According to the Green–Kubo relations, the steady-state transport coefficient can be obtained by dividing the space–time integral of the flux–flux equilibrium correlation function by *k~B~T*. A very detailed derivation process can be found in APPENDIX B: _Derivation of Green–Kubo Relation_ of book _Heat transfer physics_ by Massoud Kaviany.[@kaviany2008] Like other transport processes, e.g. viscosity, the thermal conductivity of the material can be derived from Green–Kubo relation and expressed in terms of the time autocorrelation function (ACF) of the heat current vector, $\bm{h}$, based on equilibrium fluctuation,
 
 $$
 \lambda = \frac {1} {3Vk_BT^2} \bm{\int_0^\infty} \left \langle \bm{h}(t) \cdot \bm{h}(0) \right \rangle dt,
@@ -163,8 +163,8 @@ These quantities are defined as the time-integrated autocorrelation functions (A
 
 $$
 \begin{aligned}
-\Lambda_{\alpha, \alpha} = \bm{\int} \langle \bm{h}_{\alpha,\alpha}(t) \cdot \bm{h}_{\alpha,\alpha}(0) \rangle dt \\
-\Lambda_{\alpha, \alpha+1} = \bm{\int} \langle \bm{h}_{\alpha, \alpha+1}(t) \cdot \bm{h}_{\alpha, \alpha+1}(0) \rangle dt
+&\Lambda_{\alpha, \alpha} = \bm{\int} \langle \bm{h}_{\alpha,\alpha}(t) \cdot \bm{h}_{\alpha,\alpha}(0) \rangle dt \\
+&\Lambda_{\alpha, \alpha+1} = \bm{\int} \langle \bm{h}_{\alpha, \alpha+1}(t) \cdot \bm{h}_{\alpha, \alpha+1}(0) \rangle dt
 \end{aligned}
 $$
 {#eq:eqc8}
@@ -362,7 +362,7 @@ $$
 $$
 {#eq:eqc19}
 
-All of the heat currents and their autocorrelation function calculations were performed using our CURP program, version 1.3[@yamato2022] based on 50 trajectories of _NVE_ molecular dynamics simulations, each of which started from the last step of different sampling trajectory in isotherma-isobaric _NPT_ ensemble at _T_ =300 K and _P_ = 1 atm.
+All of the heat currents and their autocorrelation function calculations were performed using our CURP program, version 1.3[@yamato2022] based on 50 trajectories of _NVE_ molecular dynamics simulations, each of which started from the last step of different sampling trajectory in isotherma-isobaric _NPT_ ensemble at _T_ = 300 K and _P_ = 1 atm.
 
 ## Inter-residue heat current analysis
 
@@ -371,7 +371,7 @@ it would be helpful to analyse the thermal energy transfer through such native c
 We first derive atomistic expression of heat current for a molecular system based on linear response theory, and the derivation process is detailed in @sec:interatomicheatcurrent.
 The inter-atomic heat current between atoms $i$ and $j$ in a molecule, denoted as $\bm{h_{ij}}$, can be expressed as:
 $$
-{\bm{h_{ij}}} = ({\bm{r}_i}-{\bm{r}_j}) \{ \frac{1}{2} \bm{F}_{ij} \cdot ({\bm{v}_i} + {\bm{v}_j} )\}
+{\bm{h_{ij}}} = ({\bm{r}_i}-{\bm{r}_j}) \left\{ \frac{1}{2} \bm{F}_{ij} \cdot ({\bm{v}_i} + {\bm{v}_j} ) \right\}
 $$
 {#eq:eqd1}
 <!-- prettier-ignore-end -->
@@ -448,7 +448,7 @@ All calculations of $\lambda_{\alpha, \beta}$ and $G_{\alpha, \beta}$ between ea
 
 ![Molecules used to obtain the tuned force field parameters for met-FixLH-imd dimer system. (a) The molecule used in Gaussian optimization calculations to obtain the Fe^3+^ metal associated bond and angle parameters. (b) The molecule used in Gaussian RESP partial charge calculations to obtain the partial charges for the metal site.](figures/fixl/met-fixl-imd-force-field.jpg){#fig:met-fixl-imd-force-field width=70%}
 
-To investigate the interplay between allosteric signal transduction and the thermal energy transfer in the oxygen sensor domain of _Bj_FixL proteins.
+To investigate the interplay between allosteric signal transduction and the thermal energy transfer in the oxygen sensor domain of *Bj*FixL proteins.
 We conducted the MD simulation.
 The force-field parameters of the non-standard part of dimeric FixLHs were
 generated using MCPB.py module[@li2016;@li2017] of AmberTools 15.
@@ -461,16 +461,16 @@ acetyl groups (ACE) to mimic the protein backbone. Optimization and
 force constant calculations for the small model and the Merz-Kollman
 RESP charge calculations for the large model were performed using
 Gaussian 16 package with the B3LYP/6-31G(d) level of
-theory[@goerigk2011;@sousa2007a] and the ultrafine grid. Fe^3+^ with spin state S=5/2 and
-S=1/2[@edler2014] were used in Gaussian calculations for met-FixLH and
+theory[@goerigk2011;@sousa2007a] and the ultrafine grid. Fe^3+^ with spin state S= 5/2 and
+S= 1/2[@edler2014] were used in Gaussian calculations for met-FixLH and
 met-FixLH-imd protein, respectively (@tbl:quantumcalculation).
   
-|               | Spin=2              | Spin=4        | Spin=6         |
+|               | Spin = 2              | Spin = 4        | Spin = 6         |
 | :------------ | :------------------- | :------------ | :--------------- |
 | Met-Heme      | -3402.1853060                  | -3402.1959457 | \textcolor{red}{-3402.1976629} |
 | Imdazole-Heme | \textcolor{red}{-3627.8693349} |               | -3627.8189808                  |
 
-: Quantum calculation results of met-FixLH and met-FixLH-IMD. Hart Fork Energy (unit: a.u.) comparison among different spin states of met-FiLH and met-FixLH-IMD. {#tbl:quantumcalculation}
+: Quantum calculation results of met-FixLH and met-FixLH-imd. Hartree-Fork Energy (unit: a.u.) comparison among different spin states of met-FiLH and met-FixLH-imd. {#tbl:quantumcalculation}
 
 ## Equilibrium molecular dynamics simulations
 
@@ -510,15 +510,15 @@ Each solvated system contains about \~ 60, 000 atoms.
 The Amber ff14SB force field[@maier2015] was used to model the standard residues of the proteins except for H200.
 Quantum calculations were performed to tune the force field to model the heme, ligands, and H200 and calculation details were described in @sec:parameterization.
 The long-range electrostatic interactions were treated with the particle mesh Ewald method[@essmann1995] and nonbonded particle-particle interactions[@duan2001] were considered using a 9.0 Å cutoff. The time step for all MD simulations was set as 2.0 fs and SHAKE was used to constrain hydrogens for production run MD simulations.
-To prevent the dissociation of A'α helices, a harmonic restraint with a spring constant of 10 kcal/mol·Å^2^ was applied to the bond between two CA atoms of residue I128 of chain A and chain B.
+To prevent the dissociation of A'α helices, a harmonic restraint with a spring constant of 10 kcal/(mol·Å^2^) was applied to the bond between two CA atoms of residue I128 of chain A and chain B.
 
 ### Minimization
 
 The periodic boundary condition was applied to all simulation systems.
 Nonbonded particle-particle interactions[@cornell1995] were taken into account using a distance cutoff of 9 Å, and long-range electrostatic interactions were handled using the particle mesh Ewald (PME) method [@sagui2004].
 
-The energy minimization of simulation systems contains three steps, (1) fixing all the heavy atoms and only relaxing hydrogen atoms, (2) optimizing the side-chain atoms with positional restraints of 99.9 (kcal/mol)/Å^2^ on the backbone atoms (N, Cα, C, O), (3) the positions of the main chain atoms were optimized with positional restraints of 2.0 (kcal/mol)/Å^2^. After that, a Maxwell-Boltzmann distribution of initial atomic velocities was generated at 0.1 K and each system was heated from 0.1 to 300 K for 50 ps by performing constant temperature, constant volume (_NVT_) MD simulations with the relaxation time of 0.1 ps and a positional restraint of 2.0 (kcal/mol)/Å^2^ on the backbone atoms.
-With the same positional restraints, a 50-ps _NVT_ MD simulation was performed at _T_ = 300 K, followed by a 200 ps Langevin MD simulation at _T_ = 300 K with a collision frequency of 2.0 ps^-1^ with positional restraints switched-off.
+The energy minimization of simulation systems contains three steps, (1) fixing all the heavy atoms and only relaxing hydrogen atoms, (2) optimizing the side-chain atoms with positional restraints of 99.9 kcal/(mol Å^2^) on the backbone atoms (N, Cα, C, O), (3) the positions of the main chain atoms were optimized with positional restraints of 2.0 kcal/(mol Å^2^). After that, a Maxwell-Boltzmann distribution of initial atomic velocities was generated at 0.1 K and each system was heated from 0.1 to 300 K for 50 ps by performing constant temperature, constant volume (_NVT_) MD simulations with the relaxation time of 0.1 ps and a positional restraint of 2.0 kcal/(mol Å^2^) on the backbone atoms.
+With the same positional restraints, a 50-ps _NVT_ MD simulation was performed at _T_ = 300 K, followed by a 200 ps Langevin MD simulation at _T_ = 300 K with a collision frequency of 2.0 ps^–1^ with positional restraints switched-off.
 
 ### Equilibration
 We started five (twenty) independent MD simulations from the minimum-energy conformation of HP36 (each of the *Bj*FixL) system, with different Maxwell-Boltzmann velocity distributions at _T_ = 0.1 K, while keeping positional restraints imposed on the mainchain atoms.
@@ -573,7 +573,7 @@ The mean absolute error (MAE) loss was calculated for the split quality measurem
 The bootstrapping method was used to randomly sample the subsets of the training dataset to build the model.
 The random forest regression model (estimator) performance is affected by the choice of its hyperparameters, such as the number of decision trees and the maximum number of splits for each decision tree.
 To improve the accuracy of predictions and avoid underfit or overfit problems, the _RandomizedSearchCV_ function in the scikit-learn library was used to tune the hyperparameters and to obtain the best estimator.
-R^2^ and root-mean-squared error (RMSE) for the training data set and for the testing data set were calculated to evaluate the model performance.
+*R*^2^ and root-mean-squared error (RMSE) for the training data set and for the testing data set were calculated to evaluate the model performance.
 Because the explanatory variables were considered contain categorical data, such as, _interaction type_ and _residue type_,
 we applied the _LabelEncoder_ function of Python to give a unique integer to each categorical explanatory variable for regression analysis.
 The feature importance for all explanatory variables was evaluated using permutation feature importance rather than impurity-based feature importance to avoid misleading for high cardinality features.
@@ -617,17 +617,22 @@ Finally, restrained-ensemble molecular dynamics (reMD) simulations[@roux2013;@sh
 ![(A) Refinement scheme for the model obtained from AlphaFold2. (B) Starting model for the harmonic restrained MD simulations. C) Distances (blue) and distance distributions (black) between spin label pairs of the starting model for reMD simulation and DEER experiment data, respectively.](figures/cp12/scheme.jpg){#fig:scheme width=100%}
 
 ### FASTA sequence of CP12{#sec:sequence}
-From CP12's complete amino acid sequence, we used the segment of 163 residues (shown in blue) served as the input for AlphaFold2 modeling as follows:
+From wild type of CP12's complete amino acid sequence, we used the segment of 163 residues (shown in blue) served as the input (WT) for AlphaFold2 modeling as follows:
 
-MKIFLASLIGSCAAFAPAPFGKSPTALFGRVDTS\textcolor{blue}{AIEAALDASKKFGSTSSEARVLWDIVEEMDASDNSVASKAPI
-VDSEYEAKVKSLSQMLTKTKAELDQVKALADDLKGVKLASPSVGSSAPDDSVMKEALAAARAATEEFGQSSPQ
-ARLAWETVEEIAASPVDIRAPLDEECLIELIEGCEALEKFQAALGSR}
+MKIFLASLIGSCAAFAPAPFGKSPTALFGRVDTS\textcolor{blue}{AAIEAALDASKKFGSTSSEARVLWDIVEEMDASDNSVAS
+KAPIVDSEYEAKVKSLSQMLTKTKAELDQVKALADDLKGVKLASPSVGSSAPDDSVMKEALAAARAATEEFGQ
+SSPQARLAWETVEEIAASPVDIRAPLDEECLIELIEGCEALEKFQAALGSR} (WT)
 
 In addition, to consider the influence of mutants in the EPR/DEER experiment, two mutant sequences are considered to predict the CP12's dimer.
 Their sequences are as follows:
-S46: 
 
-S56:
+AAIEAALDASKKFGSTSSEARVLWDIVEEMDASDNSVASKAPIVDCEYEAKVKSLSQMLTKTKAELDQVK
+ALADDLKGVKLASPSVGSSAPDDSVMKEALAAARAATEEFGQSSPQARLAWETVEEIAASPVDIRAPLDEE
+SLIELIEGSEALEKFQAALGSR (S46)
+
+AAIEAALDASKKFGSTSSEARVLWDIVEEMDASDNSVASKAPIVDSEYEAKVKSLCQMLTKTKAELDQVK
+ALADDLKGVKLASPSVGSSAPDDSVMKEALAAARAATEEFGQSSPQARLAWETVEEIAASPVDIRAPLDEE
+SLIELIEGSEALEKFQAALGSR (S56)
 
 ### AlphaFold2 prediction
 Using AlphaFold v2.1.1-Multimer (AF2) and the default databases,[@jumper2021;@evans2021;@tunyasuvunakool2021], the structure of the CP12 homodimer was predicted.
@@ -676,7 +681,7 @@ In order to save computational resources, we attached 25 copies of all-atom CYR1
 The N, Cα, C, and O atoms of each spin label were fixed to the corresponding atom positions in the labeled residues (@fig:spin-label) throughout the entire reMD simulations using a force constant of 10 kcal/(mol·Å^2^).
 The force field of all-atom CYR1 spin label[@islam2015] was obtained using CHARMM-GUI.
 We allowed the spatial overlap between these 25 copies by igonring their mutual interactions.
-Five independent all-atom reMD simulations, each with five different random number seeds were conducted at 303.15 K using Langevin dynamics and a damping coefficient of 5 ps^-1^.
+Five independent all-atom reMD simulations, each with five different random number seeds were conducted at 303.15 K using Langevin dynamics and a damping coefficient of 5 ps^–1^.
 Prior to each reMD production run, we carried out minimization and equilibration, kepping the positions of the backbone atoms with harmonic restraints of 2 kcal/(mol·Å^2^) imposed on them, while no restraints were imposed on the sidechain atoms.
 For further improvement of the models, we turned off the harmonic restrictions imposed on the backbone atoms and continued the reMD simulations for 2 ns with a 0.5-fs time step.
 The particle mesh Ewald (PME) method[@petersen1995] was used to evaluate the long-range electrostatic interactions, and the nonbonded interactions were truncated at a distance cutoff of 10 Å.

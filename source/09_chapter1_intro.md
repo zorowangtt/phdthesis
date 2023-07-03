@@ -49,7 +49,7 @@ In 2007, Gerhard Stock and his coworkers investigated the energy transfer throug
 Non-equilibrium MD simulations were also employed to simulate the dissipation of excitation energy from an unnatural amino acid (acting as a built-in heater), allowing the mapping of vibrational energy transport pathways originating from the heater.
 It demonstrated that 70% of the energy absorbed by the helix quickly equilibrates within a timeframe of less than a picosecond to the solvent and subsequently spreads along the helix through a diffusive-like process.
 The non-equilibrium MD simulations mimic the laser excitation of the molecules by the non-equilibrium phase-space initial condition for the solute and the solvent atoms.
-The fitted experimental and simulated thermal diffusivity values along the peptide chain with 1D diffusion process were 10 Å^2^ ps^\textminus1^ and 2 Å^2^ ps^\textminus1^, respectively.[@botan2007]
+The fitted experimental and simulated thermal diffusivity values along the peptide chain with 1D diffusion process were 10 Å^2^ ps^–1^ and 2 Å^2^ ps^–1^, respectively.[@botan2007]
 Subsequently, the non-equilibrium MD simulations techniques were employed on various proteins, such as villin headpiece subdomain (HP36)[@leitner2015;@buchenberg2016], photoswitchable PDZ domain (PDZ2S)[@buchenberg2017], heptahelical transmembrane proteins[@helmer2022a] and so on.[@deniz2021]
 Numerous results are yielded by these studies including scaling rules for vibrational energy transport in proteins through the backbone and nonbonded native contacts, competition of vibrational energy transport between bonds and contacts, and the role of energy transport on the allosteric mechanism in functional proteins.
 Besides, John E. Straub and his coworkers have employed non-equilibrium classical MD simulations to study the spatially anisotropic “funneling” mechanism for the kinetic energy relaxation of the excited heme group in solvated myoglobin by directly depositing excess kinetic energy on heme.
@@ -183,7 +183,7 @@ For instance, we expect that a protein molecule, as a biomolecular machine, shou
 Accordingly, we also expect possible alteration of energy transfer pathways induced by the stimulus.
 
 Using non-equilibrium MD simulations, the significance of different types of nonbonded contacts and the competition with the backbone have been studied in several proteins.
-A computational study showed the dominating energy transfer efficiency of the backbone with a much higher energy diffusion constant of 1.25 nm^2^ ps^\textminus1^ in HP36 than through nonbonded contacts with much smaller diffusion constants (1.1 × 10^-4^ for polar contacts and 3.6 × 10^-7^ for nonpolar contacts).[@buchenberg2016]
+A computational study showed the dominating energy transfer efficiency of the backbone with a much higher energy diffusion constant of 1.25 nm^2^ ps^–1^ in HP36 than through nonbonded contacts with much smaller diffusion constants (1.1 × 10^–4^ for polar contacts and 3.6 × 10^–7^ for nonpolar contacts).[@buchenberg2016]
 In a joint experimental and computational study, the hydrogen bonds are found to be the dominant energy transfer pathway in $\beta$-hairpin fold.[@deniz2021]
 On the contrary, a series of experimental findings on the heme proteins clearly demonstrated that the primary pathway for energy transfer from the heme group to the protein does not involve the covalent bond between the heme and the protein (Trp residue).
 Instead, the predominant route involves atomic interactions between the heme group and the Trp residue.[@kondoh2016;@yamashita2018;@mizutani2022]
@@ -194,9 +194,9 @@ To quantitatively access the competition of different pathways (backbone and non
 For structural property, David M. Leitner's group found that the correlations of energy transfer rate are linearly correlated with the mean-square distance for charged contacts between charged residue pairs in myoglobin.[@reid2018]
 For dynamics, they also discovered that the energy transfer rate has a good correlation with the variance in the length of the contact for polar and hydrophobic contacts.[@buchenberg2016;@reid2018;@leitner2019;@poudel2020;@reid2020;@leitner2020a;@poudel2022;@poudel2023]
 The hydrogen bonds have been found to facilitate the thermal transport in proteins and protein-based materials.
-For instance, the thermal conductivity of $\pi-$helices, which have a stronger hydrogen bond strength, is two folds and three folds higher than that of $\alpha-$ and $3_{10}-$ helices, respectively.[@he2021]
+For instance, the thermal conductivity of $\pi$-helices, which have a stronger hydrogen bond strength, is two folds and three folds higher than that of $\alpha$- and $3_{10}$- helices, respectively.[@he2021]
 Hydrogen bonding has been identified as the main contributor to the increase in the thermal conductivity of spider silk protein.[@zhang2014]
-It has been reported that the thermal conductivity of spider silk protein is 1-2 orders of magnitude higher than that of globular proteins.
+It has been reported that the thermal conductivity of spider silk protein is 1 - 2 orders of magnitude higher than that of globular proteins.
 Furthermore, hydrogen bonding has been shown to facilitate dominant vibrational energy transfer pathways in $\beta$-hairpin structures, competing with energy transport along the backbone.[@deniz2021]
 The scaling rules for rates of vibrational energy transfer in proteins have been extensively studied in various proteins, including HP36[@buchenberg2016;@poudel2020], myoglobin[@reid2018], deoxy-HbI/oxy-HbI[@leitner2019;@reid2020;@leitner2020a], A2A adenosine receptor[@leitner2020a], and GPCR proteins[@poudel2022;@poudel2023], by David M. Leitner and his colleagues.
 These scaling rules have been validated and found to work particularly well for hydrogen bonding contacts, especially those within a distance of less than 2.8 Å.
