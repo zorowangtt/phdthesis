@@ -3,42 +3,40 @@
 
 # Heat and energy transfer through nonbonded contacts{#cha4}
 
-## Thermal conductivity and energy conductivity
+## Energy transfer and heat transfer
 
 ![Correlation of $\Lambda_{\alpha, \beta}$ and $G_{\alpha, \beta}$.](figures/non-bonded/heat-energy.png){#fig:lambda_energy width=50%}
 
 In the previous studies, we explored the energy transport network in proteins based on the time-integrated ACF of the _inter-residue energy flow_ ($G_{\alpha, \beta}$).[@ishikura2006;@leitner2010;@ishikura2015;@ota2019;@poudel2020]
-As a carrier of energy for heat, we are wondering whether there are any correlations between heat and energy transfer among different partial sites, i.e., different residues. Relating the inter-residue thermal conductivity and energy conductivity will be helpful to understand the property of heat and energy transfer in proteins.
-
-From [@eq:eqd1;@eq:eqd4;@eq:eqd5;@eq:eqd7], we can see that the difference between thermal conductivity $\Lambda_{\alpha, \beta}$ and energy conductivity ($G_{\alpha, \beta}$) is that for the latter its energy flow term ($J_{ij}$) lacks of position vector, ($\bm r_i- \bm r_j$), which represents the distance information of the residues while MD simulations.
-To investigate this issue, we plotted the scatter dots $\Lambda_{\alpha, \beta}$ and $G_{\alpha, \beta}$ in [@fig:lambda_energy] and performed the linear regression analysis.
-Interestingly, the Pearson correlation analysis showed a statistically significant correlation between $\Lambda_{\alpha, \beta}$ and $G_{\alpha, \beta}$, with $r = 0.97, \, p \ll 0.05 \,(8.0 \times 10^{-173})$.
-To get an estimated linear regression model that can expresses their relationship, a fitted model is given here: $\log{\Lambda_{\alpha, \beta}} = 0.74 \times \log{{G}_{\alpha, \beta}} + 0.06$ with *R*^2^ = 0.95.
-The high similarity between $\Lambda_{\alpha, \beta}$ and $G_{\alpha, \beta}$ indicates that the behavior of the energy flow and heat current can be mutually represented by each other.
+Considering the similarity between the interatomic current of energy (@eq:eqd5) and heat (@eq:eqd8), we are allowed to take a similar approach.
+To compare the time-integrated ACF of inter-residue current of heat with that of energy, we showed a scatter plot between $\Lambda_{\alpha, \beta}$ and $G_{\alpha, \beta}$ in [@fig:lambda_energy] and carried out a linear regression analysis.
+As expected, the Pearson correlation analysis showed a statistically significant correlation between $\Lambda_{\alpha, \beta}$ and $G_{\alpha, \beta}$, with *r* = 0.97, ***p* $\ll$ 0.01 (8.0 $\times$ 10^–173^).
+The estimated linear regression model is as follows: $\log{\Lambda_{\alpha, \beta}} = 0.74 \times \log{{G}_{\alpha, \beta}} + 0.06$ with *R*^2^ = 0.95.
+The high similarity between $\Lambda_{\alpha, \beta}$ and $G_{\alpha, \beta}$ implies that the network patterns of energy transport and heat transport should also be similar to each other.
 
 ## Interaction type dependence
 
-![Histogram distribution of $\lambda_{\alpha,\beta}$ for different types of contacts in HP36 protein. The black and red lines represent the thermal conductivity of bulk water and HP36, respectively, for comparison. The $\lambda$ values of residue-wise and contacts between peptide bonded residue pairs are adopted from our previous study.[@wang2023]](figures/non-bonded/histogram-lambda-after.png){#fig:histogram_lambda}
+![Frequency histogram of local thermal conductivity in HP36. It shows the occurrence of $\lambda_{\alpha,\beta}$ for different types of residue pairs ($\alpha,\beta$) in nonbonded native contacts, together with the residue-wise thermal conductivity and those between adjacent residue pairs along the chain. For comparison, the value of the thermal conductivity of the entire HP36 molecule is indicated by the red dashed line, as well as that of bulk water by the black dashed line.[@wang2023]](figures/non-bonded/histogram-lambda-after.png){#fig:histogram_lambda}
 
-[@fig:histogram_lambda] shows a histogram plot of the calculated $\lambda_{\alpha, \beta}$ through nonbonded contacts, residue-wise $\lambda$ and $\lambda_{\alpha, \beta}$ values of contacts between peptide-bonded residues.
-The x-axis represents the values of $\lambda$, while the y-axis shows the frequency of occurrence of each value.
-The histogram reveals that the hydrogen bond contacts have the greatest values of $\lambda_{\alpha, \beta}$ among all nonbonded contacts, with a peak at around 2.5 $\times$ 10^–2^ W m^–1^ K^–1^.
-This is followed by electrostatic contacts with $\lambda_{\alpha, \beta}$ values ranging from $10^{-5}$ to $10^{-3}$ W m^–1^ K^–1^. However, their distribution appears to be broader and less sharply peaked compared to hydrogen bond contacts.
-In the hydrophobic core of HP36, there are three $\pi$ stacking contacts: Phe7-Phe11 ($\lambda_{7,11}=4.9 \times 10^{-3}$), Phe7-Phe18 ($\lambda_{7,11}= 1.5 \times 10^{-3}$), and Phe11-Phe18 ($\lambda_{11,18}= 1.5 \times 10^{-3}$), with $\lambda_{\alpha, \beta}$ values that comparable with hydrogen bond contacts. 
-Hydrophobic contacts, which have the most number of pairs and broad distributions ranging from $10^{-7}$ to $10^{-2}$ W m^–1^ K^–1^, have much lower $\lambda_{\alpha, \beta}$ values, with peaks at around $5.9 \times 10^{-4}$ W m^–1^ K^–1^.
-Overall, the histogram demonstrates that different types of nonbonded contacts have significantly different contributions to thermal transport in the protein, with hydrogen bonds playing the most important role in this HP36 protein.
+[@fig:histogram_lambda] shows the frequency histogram of the calculated local thermal conductivities in HP36.
+The histogram reveals that the hydrogen-bond contacts have the greatest values of $\lambda_{\alpha, \beta}$ among all the nonbonded native contacts, with a peak at around 2.5 $\times$ 10^–2^ W m^–1^ K^–1^, followed by the electrostatic contacts with $\lambda_{\alpha, \beta}$ values ranging from $10^{-5}$ to $10^{-3}$ W m^–1^ K^–1^ with having broader and less sharply peaked distributions than that of the hydrogen-bond contacts.
+In the hydrophobic core of HP36, there are three $\pi$ stacking contacts: Phe7-Phe11 ($\lambda_{7,11}=4.9 \times 10^{-3}$), Phe7-Phe18 ($\lambda_{7,11}= 1.5 \times 10^{-3}$), and Phe11-Phe18 ($\lambda_{11,18}= 1.5 \times 10^{-3}$), with $\lambda_{\alpha, \beta}$ values comparable with hydrogen-bond contacts.
+Hydrophobic contacts, constitute the majority of the nonbonded native contacts with a broad distribution ranging from $10^{-7}$ to $10^{-2}$ W m^–1^ K^–1^.
+Their $\lambda_{\alpha, \beta}$ values are relatively smaller, with peaks at around $5.9 \times 10^{-4}$ W m^–1^ K^–1^.
+In summary, the frequency histogram of the calculated local thermal conductivities for nonbonded native contacts exhibits a strikingly broad distribution, where different types of nonbonded contacts have significantly different contributions to thermal transport in the protein, with hydrogen bonds playing the dominant role.
 
 ## Peptide bonds? or nonbonded contacts?
 
-![The $\lambda$ values of contacts between peptide bonded residue pairs.](figures/non-bonded/line-intra-inter-lambda.png){#fig:inter_lambda width=70%}
+![Inter-residue thermal conductivity between adjacent residue pairs along the chain.](figures/non-bonded/line-intra-inter-lambda.png){#fig:inter_lambda width=70%}
 
-In light of the ongoing debate on thermal energy transport through peptide bonds and contacts [@deniz2021;@mizutani2022;@buchenberg2016], we also plotted and compared the residue-wise $\lambda$ and $\lambda_{\alpha, \beta}$ values of peptide-bonded contacts in [@fig:histogram_lambda].
-The residue-wise $\lambda$ values are ranging from about 0.08 to 0.3 W m^–1^ K^–1^, while $\lambda_{\alpha, \beta}$ values of peptide-bonded contacts are ranging from about 0.01 to 0.08 W m^–1^ K^–1^.
-Our results showed that both residue-wise $\lambda$ and the majority of $\lambda_{\alpha, \beta}$ values of peptide-bonded contacts were larger than those of nonbonded contacts.
-However, we observed three exceptions $\lambda_{3, 6}=2.4 \times 10^{-2}$, $\lambda_{4, 15}=1.3 \times 10^{-2}$, and $\lambda_{5, 8}=2.1 \times 10^{-2}$, where their $\lambda$ values exceed $10^{-2}$ W m^–1^ K^–1^ that the thermal transport through those contacts is able to compete with that along the peptide chain.
-The relatively faster thermal transport through contacts of Ser3-Asp6 and Asp4-Arg15 have also been identified with a relatively higher local energy diffusivity in studies by non-equilibrium MD simulations and master equation model.[@buchenberg2016]
-These contacts are referred to as "shortcuts", as they provide an efficient energy transport pathway despite being distant along the protein sequence.
-This suggests that peptide bonds play a significant role in thermal transport within proteins in HP36, highlighting the importance of considering both peptide bonds and nonbonded contacts in studies of thermal transport in proteins.
+There is an ongoing debate ?? the dominant pathway of thermal energy transport in proteins.[@deniz2021;@mizutani2022;@buchenberg2016]
+To address the issue, we carried out site-selective heat current analysis([@fig:histogram_lambda]).
+As a result, the distribution of local thermal transport coefficients demonstrated substantial heterogeneity in protein thermal transport at microscopic scale:
+The residue-wise $\lambda$ values are ranging from about 0.08 to 0.3 W m^–1^ K^–1^,
+while the inter-residue thermal conductivity between adjacent residue pairs along the chain ranges from about 0.01 to 0.08 W m^–1^ K^–1^, indicating that the importance of the polypeptide chain as a major pathway of thermal transport in protein.
+It should be noted that, however, that there are three exceptions $\lambda_{3, 6}=2.4 \times 10^{-2}$, $\lambda_{4, 15}=1.3 \times 10^{-2}$, and $\lambda_{5, 8}=2.1 \times 10^{-2}$, where their $\lambda$ values exceed $10^{-2}$ W m^–1^ K^–1^ being comparable to the local thermal transport coefficient for the pathways along the polypeptide chain.
+It is worthy mentioning that the residue pairs, Ser3-Asp6 and Asp4-Arg15, have also been identified as having a relatively larger local energy diffusivities in the theoretical study by non-equilibrium MD simulations and master equation model,[@buchenberg2016]
+indicating their possible roles to as "shortcuts" on the thermal transport network of the protein.
 
 ## Thermal energy transport through hydrogen bonds {#sec:role-of-hb}
 
@@ -143,31 +141,29 @@ The contact distance is a factor that can affect thermal transport through conta
 <!-- $\pi$ stacking: Phe7-Phe11, Phe11-Phe18, Phe7-Phe18.
 only Phe7-Phe11 has the largest $\lambda$, while Phe7-18 and Phe11-18 have a same $\lambda$ with no hydrogen bonds for them. -->
 
-## Important features on thermal transport through nonbonded contacts
+## Important features in thermal transport through nonbonded contacts
 <!-- ## Random Forest Analysis -->
 
-![(a) Cross plot of $\lambda_{\alpha,\beta}$ and predicted $\lambda_{\alpha,\beta}$ of nonbonded contacts ($\langle d_c^2 \rangle$ < 8) using random forest regression model; (b) VIP score plot of variable importance of variables. $\langle d_c^2 \rangle$: contact (shortest) distance of residue $\alpha$ and $\beta$; $P_{HB}$: hydrogen bonds occurrence probability; $\langle \delta d_c^2 \rangle$: the variance in contacts distance; $V_{\alpha\beta}$: summation volume of contacts; RT$_\alpha$ (RT$_\beta$): residue type; IT: interaction type.](figures/non-bonded/random-forest_permutation_importance_.png){#fig:random-forest-L}
+![(a) Cross plot of $\lambda_{\alpha,\beta}$ and predicted $\lambda_{\alpha,\beta}$ of nonbonded contacts ($\langle d_c^ \rangle$ < 8) using random forest regression model; (b) VIP score plot of variable importance of variables. $\langle d_c^2 \rangle$: contact (shortest) distance of residue $\alpha$ and $\beta$; P~HB~: hydrogen bonds occurrence probability; $\langle \delta d_c^2 \rangle$: the variance in contacts distance; $V_{\alpha\beta}$: summation of the volumes of residue pair in contacts; RT$_\alpha$ (RT$_\beta$): residue type; IT: interaction type.](figures/non-bonded/random-forest_permutation_importance_.png){#fig:random-forest-L}
 
-![(a) Cross plot of $\lambda_{\alpha,\beta}$ and predicted $\lambda_{\alpha,\beta}$ of nonbonded contacts ($\langle d_c^2 \rangle$ < 4) using random forest regression model; (b) VIP score plot of variable importance of variables. $\langle d_c^2 \rangle$: contact (shortest) distance of residue $\alpha$ and $\beta$; $P_{HB}$: hydrogen bonds occurrence probability; $\langle \delta d_c^2 \rangle$: the variance in contacts distance; $V_{\alpha\beta}$: summation volume of contacts; RT$_\alpha$ (RT$_\beta$): residue type; IT: interaction type.](figures/non-bonded/random-forest_permutation_importance_smallerthan-0.0005_backup.png){#fig:random-forest-S}
+![(a) Cross plot of $\lambda_{\alpha,\beta}$ between those obtained from the MD simulations and those predicted using random forest model for nonbonded native contacts ($\langle d_c^ \rangle$ < 4) using random forest regression model; (b) VIP score plot of variable importance. $\langle d_c^2 \rangle$: contact (minimum interactomic) distance between residue $\alpha$ and $\beta$; P~HB~: hydrogen bonds occurrence probability; $\langle \delta d_c^2 \rangle$: the variance of contact distance; $V_{\alpha\beta}$: summation volume of contacts; RT$_\alpha$ (RT$_\beta$): residue type; IT: interaction type.](figures/non-bonded/random-forest_permutation_importance_smallerthan-0.0005_backup.png){#fig:random-forest-S}
 
-To get a better understanding of the contributions of these features to the thermal transport properties of contacts in protein,
-we applied the random forest regression model to predict the log$\lambda_{\alpha,\beta}$ values with seven features as predictors.
+To get a better understanding of the role of these features in the thermal transport in protein,
+we applied the random forest regression model to predict the log$\lambda_{\alpha,\beta}$ values using seven features as predictors.
 The comparison of calculated and predicted log$\lambda_{\alpha,\beta}$ together with the feature importances are shown in @fig:random-forest-S (dataset S) and @fig:random-forest-L (dataset L).
-The model of _dataset L_ resulted in $r^2$ values of 0.95 and 0.89 for training set and testing set, and the corresponding RMSE were 0.24 and 0.4, respectively.
-Only the contact distance exhibited the considering contributions to the log$\lambda_{\alpha,\beta}$ among all the feature variables.
-The model of _dataset S_ resulted in $r^2$ values of 0.89 and 0.75 for traning set and testing set, and the corresponding RMSE were 0.10 and 0.18, respectively.
-The top three most important features decreased in an order of $1/ \langle d_c^2 \rangle$ >$1/ \langle \delta d_{c}^2 \rangle$ > $P_{HB}$.
-After the dataset gets smaller, we can see that the prediction performance (R^2^) slightly decreased for training datasets, but has a bigger decrease in prediction performance on testing set.
+The model of _dataset L_ resulted in $r^2$-values of 0.95 and 0.89 for training set and testing set, and the corresponding RMSE were 0.24 and 0.4, respectively.
+Only the contact distance made the considerable contributions to the log$\lambda_{\alpha,\beta}$ among all the feature variables.
+The model of _dataset S_ resulted in $r^2$-values of 0.89 and 0.75 for traning set and testing set, and the corresponding RMSE were 0.10 and 0.18, respectively.
+The top three most important features decreased in the order of $1/ \langle d_c^2 \rangle$ >$1/ \langle \delta d_{c}^2 \rangle$ > P~HB~.
+After decreasing the dataset size, we recognized a slight decrease in the prediction performance (R^2^) for the training datasets, whereas a bigger decrease for testing set.
 The difference in feature importances between the two datasets indicates that the contact distance plays a dominant role in determining the value of log$\lambda_{\alpha,\beta}$ for a wide range of contacts.
-On the other hand, for short-distance contacts ($\langle d_c\rangle$ < 4 Å), both the average squared deviation ($\langle \delta d_c^2 \rangle$) and the hydrogen bonding probability ($P_{HB}$) become increasingly important.
-This observation aligns with the notion that the energy transport of hydrogen bonding contact is inversely proportional to the variance of the contact.
-The motion of these contacts can be modeled as a harmonic oscillator.[@buchenberg2016]
-Due to the limited numbers of data points, a further smaller dataset ($\langle d_c\rangle$ < 2.8 Å) resulted in a model with very poor prediction performance.
-If we take a look at the heat current expression in @eq:eqc1, we can find that two terms, i.e. (${\bm{r}_i}-{\bm{r}_j}$) and $\bm{F}_{ij}$, are closely associated with the contact distance.
-While as the contact distance decreases, there is an increase in the proportion of hydrogen bonding contacts.
-Consequently, the importance of both $\langle \delta d_c^2 \rangle$ and ($P_{HB}$ becomes more pronounced.
+On the other hand, for short-distance contacts ($\langle d_c\rangle$ < 4 Å), both the average squared deviation ($\langle \delta d_c^2 \rangle$) and the hydrogen bonding probability (P~HB~) become increasingly important, in consistent with the scaling rule with the harmonic oscillator model for the hydrogen bonding contacts.[@buchenberg2016]
+As a test, we used a much smaller dataset ($\langle d_c\rangle$ < 2.8 Å) for the analysis, leading to a very poor prediction performance due to the limitation of the data points.
+<!-- If we take a look at the heat current expression in @eq:eqc1, we can find that two terms, i.e. (${\bm{r}_i}-{\bm{r}_j}$) and $\bm{F}_{ij}$, are closely associated with the contact distance. -->
+For the smaller threshold for the contact distance, the proportion of hydrogen bonding contacts increase. 
+Consequently, the importance of both $\langle \delta d_c^2 \rangle$ and P~HB~ becomes more pronounced.
 Moreover, a pairwise correlation analysis of all features and $\lambda_{\alpha,\beta}$ values was performed and their Pearson correlation coefficients were shown in @fig:rf-correlation-heatmap.
-We found that the correlation coefficient ($r$) values between $1/ \langle d_c^2 \rangle$, $P_{HB}$, and $1/ \langle \delta d_{c}^2 \rangle$ were all greater than 0.3 and the corresponding $**p$ values are all below 0.01, indicating a statistically significant relationship between each other.
+We found that the correlation coefficient ($r$) values between $1/ \langle d_c^2 \rangle$, P~HB~, and $1/ \langle \delta d_{c}^2 \rangle$ were all greater than 0.3 and the corresponding **_p_ values are all below 0.01, indicating a statistically significant correlation between them.
 
 ![Correlation map. (a) Pairwise Pearson correlation coefficients, $r$; (b) $p$-values.](figures/non-bonded/rf-correlation-heatmap.png){#fig:rf-correlation-heatmap}
 
