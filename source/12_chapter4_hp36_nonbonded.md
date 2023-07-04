@@ -29,8 +29,8 @@ In summary, the frequency histogram of the calculated local thermal conductiviti
 
 ![Inter-residue thermal conductivity between adjacent residue pairs along the chain.](figures/non-bonded/line-intra-inter-lambda.png){#fig:inter_lambda width=70%}
 
-There is an ongoing debate ?? the dominant pathway of thermal energy transport in proteins.[@deniz2021;@mizutani2022;@buchenberg2016]
-To address the issue, we carried out site-selective heat current analysis([@fig:histogram_lambda]).
+There is an ongoing debate on the dominant pathway of thermal energy transport in proteins.[@deniz2021;@mizutani2022;@buchenberg2016]
+To address the issue, we carried out site-selective heat current analysis ([@fig:histogram_lambda]).
 As a result, the distribution of local thermal transport coefficients demonstrated substantial heterogeneity in protein thermal transport at microscopic scale:
 The residue-wise $\lambda$ values are ranging from about 0.08 to 0.3 W m^–1^ K^–1^,
 while the inter-residue thermal conductivity between adjacent residue pairs along the chain ranges from about 0.01 to 0.08 W m^–1^ K^–1^, indicating that the importance of the polypeptide chain as a major pathway of thermal transport in protein.
@@ -45,7 +45,7 @@ indicating their possible roles to as "shortcuts" on the thermal transport netwo
 As can be seen in [@fig:histogram_lambda], the $\lambda_{\alpha, \beta}$ values of contacts through hydrogen bonds are generally greater than that of other nonbonded contacts.
 The hydrogen bonds are also found to facilitate the energy transport in proteins.[@mino2014;@deniz2021]
 A scatter plot between the values of $\lambda_{\alpha,\beta}$ and their hydrogen bond occurrence probability during the MD simulations was shown in [@fig:hb_all_ii4]a.
-The linear regression analysis revealed a Pearson correlation coefficient of $r$ = 0.51 (> 0.3) and a $**p$-value of 0.007 ($\ll$ 0.05), indicating a significant correlation between $\lambda_{\alpha,\beta}$ and hydrogen bond occurrence probability of residue pairs.
+The linear regression analysis revealed a Pearson correlation coefficient of $r$ = 0.51 (> 0.3) and a **_p_-value of 0.007 ($\ll$ 0.05), indicating a significant correlation between $\lambda_{\alpha,\beta}$ and hydrogen bond occurrence probability of residue pairs.
 
 In proteins constructed in an $\alpha$-helical manner, two types of hydrogen bonds can be distinguished.
 The first type, known as central hydrogen bonds, plays a key role in stabilizing the helical structure by forming hydrogen bonds between the amino group (N-H) of one amino acid and the carbonyl oxygen (O) of a second amino acid, usually occurring between residues $\alpha$ to $\alpha$+4 in the helical regions.
@@ -135,7 +135,7 @@ This may be because their interactions are stronger than those contacts with no 
 
 
 A smaller data set consisting of $\lambda_{\alpha,\alpha+4}$ and _P_~HB~ with hydrogen bonds formed was used to fit a linear regression relationship, as shown in [@fig:hb_all_ii4]b.
-The Pearson correlation coefficient and $p$-value are 0.80 (> 0.3) and 0.001 ($\ll$ 0.05), respectively, indicating a stronger correlation relationship than for all hydrogen bond contacts.
+The Pearson correlation coefficient and **_p_-value are 0.80 (> 0.3) and 0.001 ($\ll$ 0.05), respectively, indicating a stronger correlation relationship than for all hydrogen bond contacts.
 The contact distance is a factor that can affect thermal transport through contacts.[@reid2018] For the data set used in [@fig:hb_all_ii4]a, their distance varied at a relatively broad range (2 - 4 Å) compared to the smaller data set used in [@fig:hb_all_ii4]b, where the distances of all contacts were 2.1 $\pm$ 0.2 Å (@fig:histogram-contacts-all).
 
 <!-- $\pi$ stacking: Phe7-Phe11, Phe11-Phe18, Phe7-Phe18.
@@ -165,9 +165,7 @@ Consequently, the importance of both $\langle \delta d_c^2 \rangle$ and P~HB~ be
 Moreover, a pairwise correlation analysis of all features and $\lambda_{\alpha,\beta}$ values was performed and their Pearson correlation coefficients were shown in @fig:rf-correlation-heatmap.
 We found that the correlation coefficient ($r$) values between $1/ \langle d_c^2 \rangle$, P~HB~, and $1/ \langle \delta d_{c}^2 \rangle$ were all greater than 0.3 and the corresponding **_p_ values are all below 0.01, indicating a statistically significant correlation between them.
 
-![Correlation map. (a) Pairwise Pearson correlation coefficients, $r$; (b) $p$-values.](figures/non-bonded/rf-correlation-heatmap.png){#fig:rf-correlation-heatmap}
-
-
+![Correlation map. (a) Pairwise Pearson correlation coefficients, $r$; (b) _p_-values.](figures/non-bonded/rf-correlation-heatmap.png){#fig:rf-correlation-heatmap}
 
 Although this study has examined the significance of feature variables that capture the static and dynamic properties of proteins in thermal transport through nonbonded contacts, it is important to note that the analysis was conducted on a limited number of pairs.
 Therefore, a more comprehensive model is required to ensure its validity and applicability to a broader range of nonbonded contacts in other proteins.
