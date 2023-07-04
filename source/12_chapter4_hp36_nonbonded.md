@@ -68,26 +68,26 @@ However, we observed some residue pairs that did not form the first type of hydr
 After the statistical analysis of the hydrogen bonds formation from MD trajectories, it was found that almost all hydrogen bonds of contacts between residue $\alpha$ and $\alpha$+4 were the first type, with one exception of the contact between 16SER and 20ASN, where they also formed hydrogen bonds between mainchain and sidechain.
 
 | acceptor number | acceptor atom | donorH number | donorH atom | donor atom | _P_~HB~ | acceptor type | donor type |
-| :-------------- | :------------ | :------------ | :---------- | :--------- | :----------- | :------------ | :--------- |
-| 4               | O             | 8             | H           | N          | 0.37         | MC            | MC         |
-| 14              | O             | 18            | H           | N          | 0.58         | MC            | MC         |
-| 23              | O             | 27            | H           | N          | 0.55         | MC            | MC         |
-| 24              | O             | 28            | H           | N          | 0.48         | MC            | MC         |
-| 25              | O             | 29            | H           | N          | 0.54         | MC            | MC         |
-| 26              | O             | 30            | H           | N          | 0.48         | MC            | MC         |
-| 27              | O             | 31            | H           | N          | 0.59         | MC            | MC         |
-| 28              | O             | 32            | H           | N          | 0.61         | MC            | MC         |
-| 3               | O             | 7             | H           | N          | 0.60         | MC            | MC         |
-| 5               | O             | 9             | H           | N          | 0.21         | MC            | MC         |
-| 6               | O             | 10            | H           | N          | 0.47         | MC            | MC         |
-| 7               | O             | 11            | H           | N          | 0.67         | MC            | MC         |
-| 8               | O             | 12            | H           | N          | 0.13         | MC            | MC         |
-| 15              | O             | 19            | H           | N          | 0.53         | MC            | MC         |
-| 16              | O             | 20            | HD21        | ND2        | 0.18         | MC            | SC         |
-| 16              | O             | 20            | H           | N          | 0.07         | MC            | MC         |
-| 22              | O             | 26            | H           | N          | 0.33         | MC            | MC         |
-| 29              | O             | 33            | H           | N          | 0.37         | MC            | MC         |
-| 30              | O             | 34            | H           | N          | 0.05         | MC            | MC         |
+| :-------------- | :------------ | :------------ | :---------- | :--------- | :------ | :------------ | :--------- |
+| 3               | O             | 7             | H           | N          | 0.6     | MC            | MC         |
+| 4               | O             | 8             | H           | N          | 0.37    | MC            | MC         |
+| 5               | O             | 9             | H           | N          | 0.21    | MC            | MC         |
+| \textcolor{red}{6}               | O             | 10            | H           | N          | 0.47    | MC            | MC         |
+| 7               | O             | 11            | H           | N          | 0.67    | MC            | MC         |
+| \textcolor{red}{8}               | O             | 12            | H           | N          | 0.13    | MC            | MC         |
+| \textcolor{red}{14}              | O             | 18            | H           | N          | 0.58    | MC            | MC         |
+| 15              | O             | 19            | H           | N          | 0.53    | MC            | MC         |
+| \textcolor{red}{16}              | O             | 20            | HD21        | ND2        | 0.18    | MC            | SC         |
+| \textcolor{red}{16}              | O             | 20            | H           | N          | 0.07    | MC            | MC         |
+| 22              | O             | 26            | H           | N          | 0.33    | MC            | MC         |
+| 23              | O             | 27            | H           | N          | 0.55    | MC            | MC         |
+| 24              | O             | 28            | H           | N          | 0.48    | MC            | MC         |
+| 25              | O             | 29            | H           | N          | 0.54    | MC            | MC         |
+| 26              | O             | 30            | H           | N          | 0.48    | MC            | MC         |
+| 27              | O             | 31            | H           | N          | 0.59    | MC            | MC         |
+| 28              | O             | 32            | H           | N          | 0.61    | MC            | MC         |
+| 29              | O             | 33            | H           | N          | 0.37    | MC            | MC         |
+| \textcolor{red}{30}              | O             | 34            | H           | N          | 0.05    | MC            | MC         |
 
 : Hydrogen bond formation capacity _P_~HB~ between residue $\alpha$ and $\alpha+4$. MC means mainchain and SC means sidechain. {#tbl:c_hb}
 
@@ -96,38 +96,38 @@ The $\lambda_{\alpha,\beta}$ values for contacts with no hydrogen bonds are sign
 Two special residues pairs (2LEU-6ASP and 21LEU-25LYS) did not form hydrogen bonds but had relatively higher $\lambda_{\alpha,\beta}$ values.
 This may be because their interactions are stronger than those contacts with no hydrogen bonds, which are all hydrophobic residues with weak Van der Waals interactions.
 
-| Residue Number | Residue Name | Residue Number | Residue Name | _P_~HB~ | Interaction Type | $\lambda_{\alpha, \alpha+4}$ | Contacts Distance (\AA)|
-| :--------- | :------- | :--------- | :------- | :------- | :--------------- | :------------ |:------------ |
-| 2              | LEU          | 6              | ASP          | 0.00         | charged          | 3.29$\times 10^{-3}$                     |3.08 |
-| 21             | LEU          | 25             | LYS          | 0.00         | charged          | 2.23$\times 10^{-3}$                     |2.56|
-| 3              | SER          | 7              | PHE          | 0.60         | hydrogen bonds   | 3.72$\times 10^{-3}$                     |2.05|
-| 4              | ASP          | 8              | LYS          | 0.37         | hydrogen bonds   | 4.33$\times 10^{-3}$                     |2.19 |
-| 5              | GLU          | 9              | ALA          | 0.21         | hydrogen bonds   | 1.90$\times 10^{-3}$                     |2.32 |
-| 6              | ASP          | 10             | VAL          | 0.47         | hydrogen bonds   | 6.16$\times 10^{-3}$                     |2.10 |
-| 8              | LYS          | 12             | GLY          | 0.13         | hydrogen bonds   | 7.40$\times 10^{-3}$                     |2.34 |
-| 14             | THR          | 18             | PHE          | 0.58         | hydrogen bonds   | 2.10$\times 10^{-3}$                     |1.98 |
-| 15             | ARG          | 19             | ALA          | 0.53         | hydrogen bonds   | 3.52$\times 10^{-3}$                     |2.04 |
-| 16             | SER          | 20             | ASN          | 0.18         | hydrogen bonds   | 4.06$\times 10^{-3}$                     |2.64 |
-| 22             | PRO          | 26             | GLN          | 0.33         | hydrogen bonds   | 3.27$\times 10^{-3}$                     |2.11 |
-| 23             | LEU          | 27             | GLN          | 0.55         | hydrogen bonds   | 4.95$\times 10^{-3}$                     |1.99 |
-| 24             | TRP          | 28             | ASN          | 0.48         | hydrogen bonds   | 3.67$\times 10^{-3}$                     |2.03 |
-| 25             | LYS          | 29             | LEU          | 0.54         | hydrogen bonds   | 3.89$\times 10^{-3}$                     |2.00|
-| 26             | GLN          | 30             | LYS          | 0.48         | hydrogen bonds   | 4.32$\times 10^{-3}$                     |2.06 |
-| 27             | GLN          | 31             | LYS          | 0.59         | hydrogen bonds   | 4.74$\times 10^{-3}$                     |2.00 |
-| 28             | ASN          | 32             | GLU          | 0.61         | hydrogen bonds   | 4.83$\times 10^{-3}$                     |1.96 |
-| 29             | LEU          | 33             | LYS          | 0.37         | hydrogen bonds   | 2.70$\times 10^{-3}$                     |2.12 |
-| 30             | LYS          | 34             | GLY          | 0.05         | hydrogen bonds   | 2.23$\times 10^{-3}$                     |2.62 |
-| 1              | MET          | 5              | GLU          | 0.00         | hydrophobic      | 1.99$\times 10^{-4}$                     |8.33 |
-| 9              | ALA          | 13             | MET          | 0.00         | hydrophobic      | 4.29$\times 10^{-5}$                     |5.07 |
-| 10             | VAL          | 14             | THR          | 0.00         | hydrophobic      | 8.14$\times 10^{-7}$                     |7.83 |
-| 11             | PHE          | 15             | ARG          | 0.00         | hydrophobic      | 4.31$\times 10^{-5}$                     |6.08 |
-| 13             | MET          | 17             | ALA          | 0.00         | hydrophobic      | 2.42$\times 10^{-3}$                     |2.83 |
-| 17             | ALA          | 21             | LEU          | 0.00         | hydrophobic      | 5.66$\times 10^{-4}$                     |2.85 |
-| 18             | PHE          | 22             | PRO          | 0.00         | hydrophobic      | 1.65$\times 10^{-5}$                     |5.70 |
-| 19             | ALA          | 23             | LEU          | 0.00         | hydrophobic      | 1.95$\times 10^{-5}$                     |6.67 |
-| 31             | LYS          | 35             | LEU          | 0.00         | hydrophobic      | 2.02$\times 10^{-4}$                     |3.90 |
-| 32             | GLU          | 36             | PHE          | 0.00         | hydrophobic      | 3.46$\times 10^{-4}$                     |5.72 |
-| 7              | PHE          | 11             | PHE          | 0.67         | pi stacking      | 4.91$\times 10^{-3}$                     |1.92 |
+| Residue Number | Residue Name | Residue Number | Residue Name | _P_~HB~ | Interaction Type | $\lambda_{\alpha, \alpha+4}$ | Contacts Distance (\AA) |
+| :------------- | :----------- | :------------- | :----------- | :------ | :--------------- | :--------------------------- | :---------------------- |
+| 1              | MET          | 5              | GLU          | 0       | hydrophobic      | 1.99$\times 10^{-4}$         | 8.33                    |
+| 2              | LEU          | 6              | ASP          | 0       | charged          | 3.29$\times 10^{-3}$         | 3.08                    |
+| 3              | SER          | 7              | PHE          | 0.6     | hydrogen bonds   | 3.72$\times 10^{-3}$         | 2.05                    |
+| 4              | ASP          | 8              | LYS          | 0.37    | hydrogen bonds   | 4.33$\times 10^{-3}$         | 2.19                    |
+| 5              | GLU          | 9              | ALA          | 0.21    | hydrogen bonds   | 1.90$\times 10^{-3}$         | 2.32                    |
+| 6              | ASP          | 10             | VAL          | 0.47    | hydrogen bonds   | 6.16$\times 10^{-3}$         | 2.10                    |
+| 7              | PHE          | 11             | PHE          | 0.67    | pi stacking      | 4.91$\times 10^{-3}$         | 1.92                    |
+| 8              | LYS          | 12             | GLY          | 0.13    | hydrogen bonds   | 7.40$\times 10^{-3}$         | 2.34                    |
+| 9              | ALA          | 13             | MET          | 0       | hydrophobic      | 4.29$\times 10^{-5}$         | 5.07                    |
+| 10             | VAL          | 14             | THR          | 0       | hydrophobic      | 8.14$\times 10^{-7}$         | 7.83                    |
+| 11             | PHE          | 15             | ARG          | 0       | hydrophobic      | 4.31$\times 10^{-5}$         | 6.08                    |
+| 13             | MET          | 17             | ALA          | 0       | hydrophobic      | 2.42$\times 10^{-3}$         | 2.83                    |
+| 14             | THR          | 18             | PHE          | 0.58    | hydrogen bonds   | 2.10$\times 10^{-3}$         | 1.98                    |
+| 15             | ARG          | 19             | ALA          | 0.53    | hydrogen bonds   | 3.52$\times 10^{-3}$         | 2.04                    |
+| 16             | SER          | 20             | ASN          | 0.18    | hydrogen bonds   | 4.06$\times 10^{-3}$         | 2.64                    |
+| 17             | ALA          | 21             | LEU          | 0       | hydrophobic      | 5.66$\times 10^{-4}$         | 2.85                    |
+| 18             | PHE          | 22             | PRO          | 0       | hydrophobic      | 1.65$\times 10^{-5}$         | 5.70                    |
+| 19             | ALA          | 23             | LEU          | 0       | hydrophobic      | 1.95$\times 10^{-5}$         | 6.67                    |
+| 21             | LEU          | 25             | LYS          | 0       | charged          | 2.23$\times 10^{-3}$         | 2.56                    |
+| 22             | PRO          | 26             | GLN          | 0.33    | hydrogen bonds   | 3.27$\times 10^{-3}$         | 2.11                    |
+| 23             | LEU          | 27             | GLN          | 0.55    | hydrogen bonds   | 4.95$\times 10^{-3}$         | 1.99                    |
+| 24             | TRP          | 28             | ASN          | 0.48    | hydrogen bonds   | 3.67$\times 10^{-3}$         | 2.03                    |
+| 25             | LYS          | 29             | LEU          | 0.54    | hydrogen bonds   | 3.89$\times 10^{-3}$         | 2.00                    |
+| 26             | GLN          | 30             | LYS          | 0.48    | hydrogen bonds   | 4.32$\times 10^{-3}$         | 2.06                    |
+| 27             | GLN          | 31             | LYS          | 0.59    | hydrogen bonds   | 4.74$\times 10^{-3}$         | 2.00                    |
+| 28             | ASN          | 32             | GLU          | 0.61    | hydrogen bonds   | 4.83$\times 10^{-3}$         | 1.96                    |
+| 29             | LEU          | 33             | LYS          | 0.37    | hydrogen bonds   | 2.70$\times 10^{-3}$         | 2.12                    |
+| 30             | LYS          | 34             | GLY          | 0.05    | hydrogen bonds   | 2.23$\times 10^{-3}$         | 2.62                    |
+| 31             | LYS          | 35             | LEU          | 0       | hydrophobic      | 2.02$\times 10^{-4}$         | 3.9                     |
+| 32             | GLU          | 36             | PHE          | 0       | hydrophobic      | 3.46$\times 10^{-4}$         | 5.72                    |
 
 : $\lambda_{\alpha,\beta}$ values and hydrogen bond formation capacity _P_~HB~ between residue $\alpha$ and $\alpha+4$. {#tbl:c_hb_ii4}
 
