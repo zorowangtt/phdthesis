@@ -1,7 +1,7 @@
 \newpage
 # Contributions {.unnumbered}
 
-## Published Articles{-}
+## Published articles{-}
 
 - Tingting Wang, Takahisa Yamato, Wataru Sugiura. Site-selective Heat Current Analysis of α-Helical Protein with Linear-homopolymer-like Model. (2023) J. Chem. Phys. 158, 214105. 
   <!-- https://doi.org/10.1063/5.0149362 -->
@@ -9,7 +9,7 @@
 - Yamato, T., Wang, T., Sugiura, W., Laprévote, O., Katagiri, T. Computational Study on the Thermal Conductivity of a Protein. (2022) J. Phys. Chem. B. 126, 3029–3036. 
 <!-- - https://doi.org/10.1021/acs.jpcb.2c00958 -->
 
-## Conference Talks {-}
+## Conference talks {-}
 
 - Tingting WANG, Takahisa YAMATO, Wataru Sugiura. Local Thermal Transport in a α-helical Protein. The Physical Society of Japan 2023 Spring Meeting. March 22, 2023.
   

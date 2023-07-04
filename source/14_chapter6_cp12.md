@@ -8,7 +8,7 @@ Structural analysis of IDRs within proteins is a long-standing challenge in stru
 In this chapter, we present a novel method for characterizing the conformational ensemble of IDRs and illustrate how it was applied to the homodimer of the chloroplast protein (CP12) derived from _Thalassosira pseudonana_.
 The computational process is divided into three steps: (1) AlphaFold-Multimer is used to obtain an initial structure guess based on the amino acid sequence; (2) we use harmonic-restrained MD simulations to obtain model that fit to the experimental SAXS and EPR/DEER data; and (3) refine the conformational ensemble using restrained-ensemble MD simulations based on the DEER and SAXS data.
 
-## AlphaFold2 Model
+## AlphaFold2 model
 
 ![Top 5 homodimer models for WT, S46C and S56C mutants are shown with each residue being colored according to its per-residue confidence score (pLDDT): Blue (high), cyan (high medium), yellow (low medium) and red (low).](figures/cp12/af2-output.jpg){#fig:af2-output width=100%}
 
@@ -37,7 +37,7 @@ According to the SAXS measurement[@shao2021], the AF2 model's radius of gyration
 The MTSL-MTSL distance distribution was analyzed using the AF2 model for various CP12 variants, as shown in Figure D of the Amber MD analysis.
 The prediction model and the DEER experiment did not show any overlap for the distance distribution of S39R1 and C150R1 spin pairs, indicating a limited applicability of AF2 to such proteins with IDRs.
 
-## Molecular Dynamic Simulations
+## Molecular dynamic simulations
 
 ![(A) Comparison of SAXS curves between AlphaFold2 model and experiment; (B) Comparison of SAXS curves between initial structure of restrained-ensemble molecular dynamics (reMD) simulation and experimental data; In both (A) and (B), an insert figure shows the SAXS curve at low q region (0 – 0.1 Å^–1^) and gives the Rg for both experiment and predicted model. (C) Initial structure of CP12 with 25 copies of R1 spin labels for the production run of reMD simulations; (D) Comparison of experimental and calculated distance distribution between the spin labels on 5 the residue pairs. The SAXS discrepancy between simulated and experimental data, $\chi$^2^, for both (A) and (B), are marked in blue text.](figures/cp12/amberMD.jpg){#fig:ambermd width=100%}
 

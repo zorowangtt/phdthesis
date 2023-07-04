@@ -123,7 +123,7 @@ mobility of energy flow was quantified for each contact. We used our
 original computer program, CURP (CURrent calculation for
 Proteins, [https://curp.jp](https://curp.jp)),[@ishikura2012;@leitner2009;@yamato2022] for the second and third stages. Finally, our results are discussed in the context of experimental studies in the literatures.
 
-## Effects of Ligand Binding and Dimerization
+## Effects of ligand binding and dimerization
 
 ![Heatmap of *G* of (1) met-FixLH dimer protein and (2) met-FixLH-imd dimer protein. The unit of measure on the color bar on the right is kcal^2^/(mol^2^ fs). Residue numbers and secondary structure names are labeled on the axes. Secondary structures α-helixes (green) and β-sheets (orange) are distinguished by different colors.](figures/fixl/heatmap.jpg){#fig:heatmap width=100%}
 
@@ -135,7 +135,7 @@ native contacts whose nearest interatomic distances are less than 6 Å
 quantitatively evaluate the similarity of properties between the monomers,
 we conducted linear regression analysis and examined the correlation of
 *G*-values between the corresponding residue pairs in chain A and B
-(@fig:linear-regression). As a result, the correlation coefficients are 0.9998 (R^2^ = 0.997) and 0.9823 (R^2^ = 0.984) for met-FixLH and met-FixLH-imd,
+(@fig:linear-regression). As a result, the correlation coefficients are 0.9998 (*R*^2^ = 0.997) and 0.9823 (*R*^2^ = 0.984) for met-FixLH and met-FixLH-imd,
 respectively.
 This observation indicates that chain A and B of met-FixLH-imd behave slightly more independently than met-FixLH, in line
 with the ligand-induced asymmetry found in the other histidine sensor kinase family.[@neiditch2006]
@@ -143,7 +143,7 @@ In the previous study, we investigated the effect of ligand binding on the resid
 based on the MD simulation.[@ota2019] Regarding ligand
 binding to FixL, it should be noted there is no cooperativity observed
 between the monomers.[@reid2020] The correlation coefficient of *G*-values
-between the chain A of met-FixLH (this study) and the deoxy FixLH[@ota2019] is 0.984 (R^2^ = 0.994), which is slightly smaller than that for the
+between the chain A of met-FixLH (this study) and the deoxy FixLH[@ota2019] is 0.984 (*R*^2^ = 0.994), which is slightly smaller than that for the
 met-FixLH dimer, indicating that the interactions across the dimer
 interface enhance the synchronization between the monomers, although the
 essential feature of the sensory domain is determined by the monomeric

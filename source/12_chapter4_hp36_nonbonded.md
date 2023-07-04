@@ -40,45 +40,35 @@ indicating their possible roles to as "shortcuts" on the thermal transport netwo
 
 ## Thermal energy transport through hydrogen bonds {#sec:role-of-hb}
 
-![$\lambda_{\alpha,\beta}$ values of contacts forming hydrogen bonds and their hydrogen bond occurrence probability (_P_~HB~) during MD simulations. (a): all contacts forming hydrogen bonds; (b) contacts between residue $\alpha$ and $\alpha+4$.](figures/non-bonded/hb-capacity-lambda-all-ii4.png){#fig:hb_all_ii4}
+![Correlation between the inter-residue thermal conductivity through hydrogen bonding and their hydrogen bond occurrence probability (_P_~HB~) during MD simulations. (a): all residue pairs in contact with hydrogen bonds; (b) residue pairs (i, i+4) with $\alpha$-helical hydrogen bonding.](figures/non-bonded/hb-capacity-lambda-all-ii4.png){#fig:hb_all_ii4}
 
-As can be seen in [@fig:histogram_lambda], the $\lambda_{\alpha, \beta}$ values of contacts through hydrogen bonds are generally greater than that of other nonbonded contacts.
-The hydrogen bonds are also found to facilitate the energy transport in proteins.[@mino2014;@deniz2021]
-A scatter plot between the values of $\lambda_{\alpha,\beta}$ and their hydrogen bond occurrence probability during the MD simulations was shown in [@fig:hb_all_ii4]a.
-The linear regression analysis revealed a Pearson correlation coefficient of $r$ = 0.51 (> 0.3) and a **_p_-value of 0.007 ($\ll$ 0.05), indicating a significant correlation between $\lambda_{\alpha,\beta}$ and hydrogen bond occurrence probability of residue pairs.
+The values of inter-residue thermal conductivity for residue pairs in contacts with hydrogen bonds are generally greater than those of the other types of nonbonded contacts (@fig:histogram_lambda), in line with the previous studies in the literature.[@mino2014;@deniz2021]
+The linear regression analysis wit a scatter plot between the values of inter-residue thermal conductivity ($\lambda_{\alpha,\beta}$) between hydrogen bonded residue pairs and their hydrogen bond occurrence probability (_P_~HB~) during the MD simulations ([@fig:hb_all_ii4]a) yielded a Pearson correlation coefficient of $r$ = 0.51 (> 0.3) and a **_p_-value of 0.007 ($\ll$ 0.05), indicating a positive correlation between them.
 
-In proteins constructed in an $\alpha$-helical manner, two types of hydrogen bonds can be distinguished.
-The first type, known as central hydrogen bonds, plays a key role in stabilizing the helical structure by forming hydrogen bonds between the amino group (N-H) of one amino acid and the carbonyl oxygen (O) of a second amino acid, usually occurring between residues $\alpha$ to $\alpha$+4 in the helical regions.
-The second type of hydrogen bonds is formed by the sidechains of the involved amino acids, either between sidechain and sidechain or between sidechain and mainchain.
-Miño et al. showed that the heat diffusion along $\alpha$-helices containing both types of hydrogen bonds is twice faster than those containing only the first type of hydrogen bonds, highlighting the important role of the second type of hydrogen bonds in proteins.[@mino2014]
-To investigate the role of the first type of hydrogen bond in heat transport in HP36, we classified and plotted the $\lambda$ values of 32 residue pairs between residue i and i+4 (n=1, 2, ..., 32), as shown in [@fig:hb_all_ii4]b.
-In HP36, the crystal structure (PDB: 1VII) reveals the presence of three alpha-helices, H1 (residues 4-8), H2 (residues 15-18), and H3 (residues 23-32), which should give rise to eight residue pairs that form the first type of hydrogen bonds.
-However, there were some residue pairs that did not form the first type of hydrogen bonds in the crystal structure but were observed to form such bonds in MD simulations.
-These pairs were classified as non-helical residue pairs but formed hydrogen bonds.
-In the previous studies[@mino2014], the heat diffusion along $\alpha$-helices containing both types of hydrogen bonds is twice faster than those containing only the first type of hydrogen bonds, highlighting the important role of the second type of hydrogen bonds in proteins.
-To investigate the role of the first type of hydrogen bond in heat transport in HP36, we classified and plotted the $\lambda$ values of 32 residue pairs between residue i and i+4 (n=1,2, ..., 32), as shown in [@fig:hb_all_ii4]b.
-In HP36, the crystal structure (PDB: 1VII) reveals the presence of three alpha-helices, H1 (residues 4-8), H2 (residues 15-18), and H3 (residues 23-32), which should give rise to eight residue pairs that form the first type of hydrogen bonds.
-However, there were some residue pairs that did not form the first type of hydrogen bonds in the crystal structure but were observed to form such bonds in MD simulations.
-These pairs were classified as non-helical residue pairs but formed hydrogen bonds.
-Interestingly, the $\lambda$ of non-helical residue pairs that did not have the opportunity to form hydrogen bonds was significantly lower than that of helical residue pairs.
+In an $\alpha$-helical protein, two types of hydrogen bonds are recognized:
+The first type, known as central hydrogen bonds stabilize t he helical structure with hydrogen bonds between the carbonyl oxygen (O) of residue i and the amino group (N-H) of residue i+4.
+The second type occurs either as a sidechain-sidechain or sidechain-mainchain hydrogen bond.
+Miño et al. reported that the heat diffusion along the $\alpha$-helical polypeptide chain containing both types of hydrogen bonds is two times faster than those containing only the first type of hydrogen bonds, highlighting the important role of the second type of hydrogen bonds in proteins.[@mino2014]
+To investigate the role of the first type of hydrogen bond in the heat transport in HP36, we selected the values of inter-residue thermal conductivity for 32 residue pairs between residue i and i+4 (n=1, 2, ..., 32).
+[@fig:hb_all_ii4]b.
+The NMR structure of HP36 (PDB: 1VII) contains three alpha-helices, H1 (residues 4-8), H2 (residues 15-18), and H3 (residues 23-32).
+We also observed transient formation of hydrogen bonds between (i, i+4) residue pairs during MD simulations, in addition to those found in the NMR structure.
+Thereby, 19 members of these hydrogen bonds are shown in @tbl:c_hb, among which 13 of the $\alpha$-helical hydrogen bonds were selected for the linear regression analysis ([@fig:hb_all_ii4]b).
+In the previous study,[@mino2014] the heat diffusion along the $\alpha$-helical chain with both types of hydrogen bonds is twice faster than those with only the first type of hydrogen bonds, indicating the important role of the second type of hydrogen bonds in proteins.
+To investigate the role of the first type of hydrogen bond in heat transport in HP36, we found that almost all hydrogen bonds between pairs of residue (i, i+4) were of the first type with only one exception between the mainchain of 16SER and the sidechain of 20SAN.
 
-For a detailed analysis of the role of hydrogen bonds, we focus on the contacts of residue $\alpha$ and $\alpha$+4.
-In HP36, the crystal structure (PDB: 1VII) reveals the presence of three $\alpha$-helices, H1 (residues 4-8), H2 (residues 15-18), and H3 (residues 23-32), which should give rise to eight residue pairs that form the first type of hydrogen bonds.
-However, we observed some residue pairs that did not form the first type of hydrogen bonds in the crystal structure but were observed to form such bonds in MD simulations, and they were listed in  @tbl:c_hb.
-After the statistical analysis of the hydrogen bonds formation from MD trajectories, it was found that almost all hydrogen bonds of contacts between residue $\alpha$ and $\alpha$+4 were the first type, with one exception of the contact between 16SER and 20ASN, where they also formed hydrogen bonds between mainchain and sidechain.
-
-| acceptor number | acceptor atom | donorH number | donorH atom | donor atom | _P_~HB~ | acceptor type | donor type |
+| acceptor residue number | acceptor atom | donorH residue number | donorH atom | donor atom | _P_~HB~ | acceptor type | donor type |
 | :-------------- | :------------ | :------------ | :---------- | :--------- | :------ | :------------ | :--------- |
 | 3               | O             | 7             | H           | N          | 0.6     | MC            | MC         |
 | 4               | O             | 8             | H           | N          | 0.37    | MC            | MC         |
 | 5               | O             | 9             | H           | N          | 0.21    | MC            | MC         |
-| \textcolor{red}{6}               | O             | 10            | H           | N          | 0.47    | MC            | MC         |
+| 6               | O             | 10            | H           | N          | 0.47    | MC            | MC         |
 | 7               | O             | 11            | H           | N          | 0.67    | MC            | MC         |
-| \textcolor{red}{8}               | O             | 12            | H           | N          | 0.13    | MC            | MC         |
-| \textcolor{red}{14}              | O             | 18            | H           | N          | 0.58    | MC            | MC         |
+| 8               | O             | 12            | H           | N          | 0.13    | MC            | MC         |
+| 14              | O             | 18            | H           | N          | 0.58    | MC            | MC         |
 | 15              | O             | 19            | H           | N          | 0.53    | MC            | MC         |
-| \textcolor{red}{16}              | O             | 20            | HD21        | ND2        | 0.18    | MC            | SC         |
-| \textcolor{red}{16}              | O             | 20            | H           | N          | 0.07    | MC            | MC         |
+| 16              | O             | 20            | HD21        | ND2        | 0.18    | MC            | SC         |
+| 16              | O             | 20            | H           | N          | 0.07    | MC            | MC         |
 | 22              | O             | 26            | H           | N          | 0.33    | MC            | MC         |
 | 23              | O             | 27            | H           | N          | 0.55    | MC            | MC         |
 | 24              | O             | 28            | H           | N          | 0.48    | MC            | MC         |
@@ -87,13 +77,13 @@ After the statistical analysis of the hydrogen bonds formation from MD trajector
 | 27              | O             | 31            | H           | N          | 0.59    | MC            | MC         |
 | 28              | O             | 32            | H           | N          | 0.61    | MC            | MC         |
 | 29              | O             | 33            | H           | N          | 0.37    | MC            | MC         |
-| \textcolor{red}{30}              | O             | 34            | H           | N          | 0.05    | MC            | MC         |
+| 30              | O             | 34            | H           | N          | 0.05    | MC            | MC         |
 
-: Hydrogen bond formation capacity _P_~HB~ between residue $\alpha$ and $\alpha+4$. MC means mainchain and SC means sidechain. {#tbl:c_hb}
+: Hydrogen bond formation capacity _P_~HB~ between residue i and i+4. MC : mainchain, SC: sidechain. {#tbl:c_hb}
 
-Their $\lambda_{\alpha,\alpha+4}$ values, interaction types, their _P_~HB~ and contacts distances are listed in @tbl:c_hb_ii4.
-The $\lambda_{\alpha,\beta}$ values for contacts with no hydrogen bonds are significantly lower, i.e. an order of magnitude lower, than those with hydrogen bonds.
-Two special residues pairs (2LEU-6ASP and 21LEU-25LYS) did not form hydrogen bonds but had relatively higher $\lambda_{\alpha,\beta}$ values.
+We conducted further analysis of the properties of the interaction between residue pairs (i, i+4) (@tbl:c_hb_ii4).
+The values of inter-residue thermal conductivity for the pairs with no hydrogen bond are significantly smaller than those with hydrogen bonds.
+Two special residues pairs (2LEU-6ASP and 21LEU-25LYS) did not form hydrogen bonds but had relatively larger values.
 This may be because their interactions are stronger than those contacts with no hydrogen bonds, which are all hydrophobic residues with weak Van der Waals interactions.
 
 | Residue Number | Residue Name | Residue Number | Residue Name | _P_~HB~ | Interaction Type | $\lambda_{\alpha, \alpha+4}$ | Contacts Distance (\AA) |
@@ -129,24 +119,21 @@ This may be because their interactions are stronger than those contacts with no 
 | 31             | LYS          | 35             | LEU          | 0       | hydrophobic      | 2.02$\times 10^{-4}$         | 3.9                     |
 | 32             | GLU          | 36             | PHE          | 0       | hydrophobic      | 3.46$\times 10^{-4}$         | 5.72                    |
 
-: $\lambda_{\alpha,\beta}$ values and hydrogen bond formation capacity _P_~HB~ between residue $\alpha$ and $\alpha+4$. {#tbl:c_hb_ii4}
+: Inter-residue thermal conductivity and hydrogen bond formation capacity _P_~HB~ between residue pair i and i+4$. Also the contact distance (shortest interatomic distance between the residue pair) is shown for each pair. {#tbl:c_hb_ii4}
 
-![Averaged the shortest distance distribution of nonbonded contacts. (a) all contacts; (b) contacts between residue $\alpha$ and $\alpha+4$.](figures/non-bonded/histogram-contacts-all-ii4.png){#fig:histogram-contacts-all}
+![Distribution of average contact distance, the shortest interatomic distance between residue pairs in nonbonded native contacts. (a) all residue pairs in nonbonded native contacts; (b) residue pairs (i, i+4) in contact with $\alpha$-helical hydrogen bonds.](figures/non-bonded/histogram-contacts-all-ii4.png){#fig:histogram-contacts-all}
 
-
-A smaller data set consisting of $\lambda_{\alpha,\alpha+4}$ and _P_~HB~ with hydrogen bonds formed was used to fit a linear regression relationship, as shown in [@fig:hb_all_ii4]b.
-The Pearson correlation coefficient and **_p_-value are 0.80 (> 0.3) and 0.001 ($\ll$ 0.05), respectively, indicating a stronger correlation relationship than for all hydrogen bond contacts.
-The contact distance is a factor that can affect thermal transport through contacts.[@reid2018] For the data set used in [@fig:hb_all_ii4]a, their distance varied at a relatively broad range (2 - 4 Å) compared to the smaller data set used in [@fig:hb_all_ii4]b, where the distances of all contacts were 2.1 $\pm$ 0.2 Å (@fig:histogram-contacts-all).
-
-<!-- $\pi$ stacking: Phe7-Phe11, Phe11-Phe18, Phe7-Phe18.
-only Phe7-Phe11 has the largest $\lambda$, while Phe7-18 and Phe11-18 have a same $\lambda$ with no hydrogen bonds for them. -->
+A smaller data set consisting of the inter-residue thermal conductivity and _P_~HB~ for residue pairs with $\alpha$-helical hydrogen bonds was used to fit a linear regression relationship, as shown in [@fig:hb_all_ii4]b.
+The Pearson correlation coefficient and **_p_-value are 0.80 (> 0.3) and 0.001 ($\ll$ 0.05), respectively, indicating a stronger correlation than that for the all hydrogen bonded residue pairs.
+The contact distance is supported to be a factor that can affect thermal transport properties.[@reid2018] 
+It is worth mentioning that the contact distance exhibits a broad distribution (2 - 4 Å) for the dataset used in [@fig:hb_all_ii4]a, whereas the range of those for the smaller dataset used in [@fig:hb_all_ii4]b is limited within 2.1 $\pm$ 0.2 Å ([@fig:histogram-contacts-all]b).
 
 ## Important features in thermal transport through nonbonded contacts
 <!-- ## Random Forest Analysis -->
 
-![(a) Cross plot of $\lambda_{\alpha,\beta}$ and predicted $\lambda_{\alpha,\beta}$ of nonbonded contacts ($\langle d_c^ \rangle$ < 8) using random forest regression model; (b) VIP score plot of variable importance of variables. $\langle d_c^2 \rangle$: contact (shortest) distance of residue $\alpha$ and $\beta$; P~HB~: hydrogen bonds occurrence probability; $\langle \delta d_c^2 \rangle$: the variance in contacts distance; $V_{\alpha\beta}$: summation of the volumes of residue pair in contacts; RT$_\alpha$ (RT$_\beta$): residue type; IT: interaction type.](figures/non-bonded/random-forest_permutation_importance_.png){#fig:random-forest-L}
+![(a) Cross plot of $\lambda_{\alpha,\beta}$ and predicted $\lambda_{\alpha,\beta}$ of nonbonded contacts ($\langle d_c \rangle$ < 8) using random forest regression model; (b) VIP score plot of variable importance of variables. $\langle d_c^2 \rangle$: contact (shortest) distance of residue $\alpha$ and $\beta$; P~HB~: hydrogen bonds occurrence probability; $\langle \delta d_c^2 \rangle$: the variance in contacts distance; $V_{\alpha\beta}$: summation of the volumes of residue pair in contacts; RT$_\alpha$ (RT$_\beta$): residue type; IT: interaction type.](figures/non-bonded/random-forest_permutation_importance_.png){#fig:random-forest-L}
 
-![(a) Cross plot of $\lambda_{\alpha,\beta}$ between those obtained from the MD simulations and those predicted using random forest model for nonbonded native contacts ($\langle d_c^ \rangle$ < 4) using random forest regression model; (b) VIP score plot of variable importance. $\langle d_c^2 \rangle$: contact (minimum interactomic) distance between residue $\alpha$ and $\beta$; P~HB~: hydrogen bonds occurrence probability; $\langle \delta d_c^2 \rangle$: the variance of contact distance; $V_{\alpha\beta}$: summation volume of contacts; RT$_\alpha$ (RT$_\beta$): residue type; IT: interaction type.](figures/non-bonded/random-forest_permutation_importance_smallerthan-0.0005_backup.png){#fig:random-forest-S}
+![(a) Cross plot of $\lambda_{\alpha,\beta}$ between those obtained from the MD simulations and those predicted using random forest model for nonbonded native contacts ($\langle d_c \rangle$ < 4) using random forest regression model; (b) VIP score plot of variable importance. $\langle d_c^2 \rangle$: contact (minimum interactomic) distance between residue $\alpha$ and $\beta$; P~HB~: hydrogen bonds occurrence probability; $\langle \delta d_c^2 \rangle$: the variance of contact distance; $V_{\alpha\beta}$: summation volume of contacts; RT$_\alpha$ (RT$_\beta$): residue type; IT: interaction type.](figures/non-bonded/random-forest_permutation_importance_smallerthan-0.0005_backup.png){#fig:random-forest-S}
 
 To get a better understanding of the role of these features in the thermal transport in protein,
 we applied the random forest regression model to predict the log$\lambda_{\alpha,\beta}$ values using seven features as predictors.
@@ -155,7 +142,7 @@ The model of _dataset L_ resulted in $r^2$-values of 0.95 and 0.89 for training 
 Only the contact distance made the considerable contributions to the log$\lambda_{\alpha,\beta}$ among all the feature variables.
 The model of _dataset S_ resulted in $r^2$-values of 0.89 and 0.75 for traning set and testing set, and the corresponding RMSE were 0.10 and 0.18, respectively.
 The top three most important features decreased in the order of $1/ \langle d_c^2 \rangle$ >$1/ \langle \delta d_{c}^2 \rangle$ > P~HB~.
-After decreasing the dataset size, we recognized a slight decrease in the prediction performance (R^2^) for the training datasets, whereas a bigger decrease for testing set.
+After decreasing the dataset size, we recognized a slight decrease in the prediction performance (*R*^2^) for the training datasets, whereas a bigger decrease for testing set.
 The difference in feature importances between the two datasets indicates that the contact distance plays a dominant role in determining the value of log$\lambda_{\alpha,\beta}$ for a wide range of contacts.
 On the other hand, for short-distance contacts ($\langle d_c\rangle$ < 4 Å), both the average squared deviation ($\langle \delta d_c^2 \rangle$) and the hydrogen bonding probability (P~HB~) become increasingly important, in consistent with the scaling rule with the harmonic oscillator model for the hydrogen bonding contacts.[@buchenberg2016]
 As a test, we used a much smaller dataset ($\langle d_c\rangle$ < 2.8 Å) for the analysis, leading to a very poor prediction performance due to the limitation of the data points.
