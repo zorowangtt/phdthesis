@@ -43,10 +43,10 @@ indicating their possible roles to as "shortcuts" on the thermal transport netwo
 ![Correlation between the inter-residue thermal conductivity through hydrogen bonding and their hydrogen bond occurrence probability (_P_~HB~) during MD simulations. (a): all residue pairs in contact with hydrogen bonds; (b) residue pairs (i, i+4) with $\alpha$-helical hydrogen bonding.](figures/non-bonded/hb-capacity-lambda-all-ii4.png){#fig:hb_all_ii4}
 
 The values of inter-residue thermal conductivity for residue pairs in contacts with hydrogen bonds are generally greater than those of the other types of nonbonded contacts (@fig:histogram_lambda), in line with the previous studies in the literature.[@mino2014;@deniz2021]
-The linear regression analysis wit a scatter plot between the values of inter-residue thermal conductivity ($\lambda_{\alpha,\beta}$) between hydrogen bonded residue pairs and their hydrogen bond occurrence probability (_P_~HB~) during the MD simulations ([@fig:hb_all_ii4]a) yielded a Pearson correlation coefficient of $r$ = 0.51 (> 0.3) and a **_p_-value of 0.007 ($\ll$ 0.05), indicating a positive correlation between them.
+The linear regression analysis with a scatter plot between the values of inter-residue thermal conductivity ($\lambda_{\alpha,\beta}$) between hydrogen bonded residue pairs and their hydrogen bond occurrence probability (_P_~HB~) during the MD simulations ([@fig:hb_all_ii4]a) yielded a Pearson correlation coefficient of $r$ = 0.51 (> 0.3) and a **_p_-value of 0.007 ($\ll$ 0.05), indicating a positive correlation between them.
 
 In an $\alpha$-helical protein, two types of hydrogen bonds are recognized:
-The first type, known as central hydrogen bonds stabilize t he helical structure with hydrogen bonds between the carbonyl oxygen (O) of residue i and the amino group (N-H) of residue i+4.
+The first type, known as central hydrogen bonds stabilize the helical structure with hydrogen bonds between the carbonyl oxygen (O) of residue i and the amino group (N-H) of residue i+4.
 The second type occurs either as a sidechain-sidechain or sidechain-mainchain hydrogen bond.
 Miño et al. reported that the heat diffusion along the $\alpha$-helical polypeptide chain containing both types of hydrogen bonds is two times faster than those containing only the first type of hydrogen bonds, highlighting the important role of the second type of hydrogen bonds in proteins.[@mino2014]
 To investigate the role of the first type of hydrogen bond in the heat transport in HP36, we selected the values of inter-residue thermal conductivity for 32 residue pairs between residue i and i+4 (n=1, 2, ..., 32).
@@ -57,29 +57,23 @@ Thereby, 19 members of these hydrogen bonds are shown in @tbl:c_hb, among which 
 In the previous study,[@mino2014] the heat diffusion along the $\alpha$-helical chain with both types of hydrogen bonds is twice faster than those with only the first type of hydrogen bonds, indicating the important role of the second type of hydrogen bonds in proteins.
 To investigate the role of the first type of hydrogen bond in heat transport in HP36, we found that almost all hydrogen bonds between pairs of residue (i, i+4) were of the first type with only one exception between the mainchain of 16SER and the sidechain of 20SAN.
 
-| acceptor residue number | acceptor atom | donorH residue number | donorH atom | donor atom | _P_~HB~ | acceptor type | donor type |
-| :-------------- | :------------ | :------------ | :---------- | :--------- | :------ | :------------ | :--------- |
-| 3               | O             | 7             | H           | N          | 0.6     | MC            | MC         |
-| 4               | O             | 8             | H           | N          | 0.37    | MC            | MC         |
-| 5               | O             | 9             | H           | N          | 0.21    | MC            | MC         |
-| 6               | O             | 10            | H           | N          | 0.47    | MC            | MC         |
-| 7               | O             | 11            | H           | N          | 0.67    | MC            | MC         |
-| 8               | O             | 12            | H           | N          | 0.13    | MC            | MC         |
-| 14              | O             | 18            | H           | N          | 0.58    | MC            | MC         |
-| 15              | O             | 19            | H           | N          | 0.53    | MC            | MC         |
-| 16              | O             | 20            | HD21        | ND2        | 0.18    | MC            | SC         |
-| 16              | O             | 20            | H           | N          | 0.07    | MC            | MC         |
-| 22              | O             | 26            | H           | N          | 0.33    | MC            | MC         |
-| 23              | O             | 27            | H           | N          | 0.55    | MC            | MC         |
-| 24              | O             | 28            | H           | N          | 0.48    | MC            | MC         |
-| 25              | O             | 29            | H           | N          | 0.54    | MC            | MC         |
-| 26              | O             | 30            | H           | N          | 0.48    | MC            | MC         |
-| 27              | O             | 31            | H           | N          | 0.59    | MC            | MC         |
-| 28              | O             | 32            | H           | N          | 0.61    | MC            | MC         |
-| 29              | O             | 33            | H           | N          | 0.37    | MC            | MC         |
-| 30              | O             | 34            | H           | N          | 0.05    | MC            | MC         |
+| acceptor residue number | acceptor atom | donorH residue number | donorH atom | donor atom | _P_~HB~ | acceptor type | donor type | averaged distance |
+| :---------------------- | :------------ | :-------------------- | :---------- | :--------- | :------ | :------------ | :--------- | :---------------- |
+| 3SER                    | O             | 7PHE                  | H           | N          | 0.60    | MC            | MC         | 2.05              |
+| 4ASP                    | O             | 8LYS                  | H           | N          | 0.37    | MC            | MC         | 2.19              |
+| 5GLU                    | O             | 9ALA                  | H           | N          | 0.21    | MC            | MC         | 2.32              |
+| 7PHE                    | O             | 11PHE                 | H           | N          | 0.67    | MC            | MC         | 1.92              |
+| 15ARG                   | O             | 19ALA                 | H           | N          | 0.53    | MC            | MC         | 2.04              |
+| 22PRO                   | O             | 26GLN                 | H           | N          | 0.33    | MC            | MC         | 2.11              |
+| 23LEU                   | O             | 27GLN                 | H           | N          | 0.55    | MC            | MC         | 1.99              |
+| 24TRP                   | O             | 28ASN                 | H           | N          | 0.48    | MC            | MC         | 2.03              |
+| 25LYS                   | O             | 29LEU                 | H           | N          | 0.54    | MC            | MC         | 2.00              |
+| 26GLN                   | O             | 30LYS                 | H           | N          | 0.48    | MC            | MC         | 2.06              |
+| 27GLN                   | O             | 31LYS                 | H           | N          | 0.59    | MC            | MC         | 2.00              |
+| 28ASN                   | O             | 32GLU                 | H           | N          | 0.61    | MC            | MC         | 1.96              |
+| 29LEU                   | O             | 33LYS                 | H           | N          | 0.37    | MC            | MC         | 2.12              |
 
-: Hydrogen bond formation capacity _P_~HB~ between residue i and i+4. MC : mainchain, SC: sidechain. {#tbl:c_hb}
+: Hydrogen bond occurrence probability (_P_~HB~) and averaged shortest distance ($\langle d_c \rangle$) between residue i and i+4. MC : mainchain, SC: sidechain. {#tbl:c_hb}
 
 We conducted further analysis of the properties of the interaction between residue pairs (i, i+4) (@tbl:c_hb_ii4).
 The values of inter-residue thermal conductivity for the pairs with no hydrogen bond are significantly smaller than those with hydrogen bonds.
@@ -141,10 +135,10 @@ The comparison of calculated and predicted log$\lambda_{\alpha,\beta}$ together 
 The model of _dataset L_ resulted in $r^2$-values of 0.95 and 0.89 for training set and testing set, and the corresponding RMSE were 0.24 and 0.4, respectively.
 Only the contact distance made the considerable contributions to the log$\lambda_{\alpha,\beta}$ among all the feature variables.
 The model of _dataset S_ resulted in $r^2$-values of 0.89 and 0.75 for traning set and testing set, and the corresponding RMSE were 0.10 and 0.18, respectively.
-The top three most important features decreased in the order of $1/ \langle d_c^2 \rangle$ >$1/ \langle \delta d_{c}^2 \rangle$ > P~HB~.
+The top three most important features decreased in the order of $1/ \langle d_c^2 \rangle$ >$1/ \langle \delta d_{c}^2 \rangle$ > *P*~HB~.
 After decreasing the dataset size, we recognized a slight decrease in the prediction performance (*R*^2^) for the training datasets, whereas a bigger decrease for testing set.
 The difference in feature importances between the two datasets indicates that the contact distance plays a dominant role in determining the value of log$\lambda_{\alpha,\beta}$ for a wide range of contacts.
-On the other hand, for short-distance contacts ($\langle d_c\rangle$ < 4 Å), both the average squared deviation ($\langle \delta d_c^2 \rangle$) and the hydrogen bonding probability (P~HB~) become increasingly important, in consistent with the scaling rule with the harmonic oscillator model for the hydrogen bonding contacts.[@buchenberg2016]
+On the other hand, for short-distance contacts ($\langle d_c\rangle$ < 4 Å), both the average squared deviation ($\langle \delta d_c^2 \rangle$) and the hydrogen bonding occurrence probability (*P*~HB~) become increasingly important, in consistent with the scaling rule with the harmonic oscillator model for the hydrogen bonding contacts.[@buchenberg2016]
 As a test, we used a much smaller dataset ($\langle d_c\rangle$ < 2.8 Å) for the analysis, leading to a very poor prediction performance due to the limitation of the data points.
 <!-- If we take a look at the heat current expression in @eq:eqc1, we can find that two terms, i.e. (${\bm{r}_i}-{\bm{r}_j}$) and $\bm{F}_{ij}$, are closely associated with the contact distance. -->
 For the smaller threshold for the contact distance, the proportion of hydrogen bonding contacts increase. 

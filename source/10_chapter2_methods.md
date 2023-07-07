@@ -542,13 +542,13 @@ The atomic coordinates and velocities of _NVE_ MD simulations were saved every 1
 
 To describe the intramolecular interaction networks in proteins, the protein contact networks (PCNs) [@dipaola2013;@dipaola2015;@dipaola2022] have been introduced, aiming to unravel the relationship between protein structure and function.
 In PCNs, two residues whose alpha-carbon atoms (CA) are within 4-8 Å of each other are considered to have contacts and interactions.
-In this study, we defined nonbonded contacts based on a geometric criterion where residue pairs with the nearest atom distance of 7 Å or less were considered to have a significant role in heat and energy transport, as the thermal transport becomes negligible for pairs separated farther than this threshold.
-A total of 269 residue pairs in HP36 were selected using the _pickup-respairs_ module of CURP 1.3.
+In this study, we defined nonbonded contacts based on a geometric criterion where residue pairs with the nearest atom distance of 6 Å or less at least in each _NVE_ MD simulation trajectory were considered to have a significant role in heat and energy transport, as the thermal transport becomes negligible for pairs separated farther than this threshold.
+A total of 319 residue pairs in HP36 were selected using the _pickup-respairs_ module of CURP 1.3.
 
 ### Classification
 
 The nonbonded contacts among residues are categorized into five types based on the geometric structure of HP36 and MD simulation trajectories: hydrogen bond contacts, $\pi$ stacking contacts between aromatic side chains, electrostatic contacts for both residues that are charged or polar, and hydrophobic contacts for either of them being hydrophobic residue.
-Hydrogen bond contacts are identified from MD simulation trajectories by the _cpptraj_ module of AmberTools 19, with a geometric criterion, i.e., the distance between atom $i$ and atom $j$ from a pair of shorter than 3.0 Å and the angle X-H...Y or Y-H...X within 145-180$^\circ$. Here, X(Y) $\in$ residue A (B), and X(Y) is either O or N atom in protein.
+Hydrogen bond contacts are identified from MD simulation trajectories by the _cpptraj_ module of AmberTools 19, with a geometric criterion, i.e., the distance between atom X and atom Y from a pair of shorter than 3.0 Å and the angle X-H...Y or Y-H...X within 145-180$^\circ$. Here, X(Y) $\in$ residue A (B), and X(Y) is either O or N atom in protein.
 On the other hand, $\pi$ stacking contacts are identified using the RING3.0 server ([https://ring.biocomputingup.it](https://ring.biocomputingup.it)) based on the NMR structure of HP36.
 
 ## Hydrogen bond occurrence probability
