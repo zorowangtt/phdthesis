@@ -234,7 +234,7 @@ network of vibrational energy transfer pathways with ASP255, THR257, GLU258, GLN
 
 ## Reorganization of vibrational energy transfer pathways upon ligand binding
 
-![Reorganization of the network of vibrational energy transfer pathways. Strengthened (Weakened) paths upon ligand binding with rΔ*G* > (<) 0.5 are indicated by dotted lines in red (blue). The residue name and residue number colored in purple and black represent the residues from chain A and chain B, respectively.](figures/fixl/difference.jpg){#fig:difference width=100%}
+![Reorganization of the network of vibrational energy transfer pathways. Strengthened (Weakened) paths upon ligand binding with rΔ*G* > (<) 0.5 are indicated by dotted lines in red (blue). The residue name and residue number (colored in purple and black) represent the residues from chain A and chain B, respectively.](figures/fixl/difference.jpg){#fig:difference width=100%}
 
 Superposition of the x-ray crystallographic structures of met-FixLH and
 met-FixLH-imd (@fig:difference B) shows a movement of the FG loop, with an
