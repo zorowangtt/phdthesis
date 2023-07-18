@@ -18,6 +18,10 @@ header-includes:
     - \linespread{1.5}
     - \usepackage{indentfirst}
     - \setlength\parindent{24pt}
+    - \usepackage{fancyhdr}
+    - \pagestyle{fancy}
+    # - \fancyhf{}
+    - \fancyfoot[C]{\thepage}
 
 link-citations: True
 urlcolor: blue
