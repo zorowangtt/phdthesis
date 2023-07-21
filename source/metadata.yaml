@@ -19,7 +19,10 @@ header-includes:
     - \usepackage{indentfirst}
     - \setlength\parindent{24pt}
     - \usepackage{fancyhdr}
-    # - \pagestyle{fancy}
+    - \pagestyle{fancy}
+    - \fancyhead{}
+    - \fancyhead[RO]{\rightmark}
+    - \fancyhead[LE]{\leftmark}
     # - \fancyhf{}
     - \fancyfoot[C]{\thepage}
 
