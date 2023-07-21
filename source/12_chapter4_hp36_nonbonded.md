@@ -113,7 +113,7 @@ This may be because their interactions are stronger than those contacts with no 
 | 31             | LYS          | 35             | LEU          | 0       | hydrophobic      | 2.02$\times 10^{-4}$         | 3.9                     |
 | 32             | GLU          | 36             | PHE          | 0       | hydrophobic      | 3.46$\times 10^{-4}$         | 5.72                    |
 
-: Inter-residue thermal conductivity and hydrogen bond formation capacity _P_~HB~ between residue pair i and i+4$. Also the contact distance (shortest interatomic distance between the residue pair) is shown for each pair. {#tbl:c_hb_ii4}
+: Inter-residue thermal conductivity and hydrogen bond formation capacity _P_~HB~ between residue pair i and i+4. Also the contact distance (shortest interatomic distance between the residue pair) is shown for each pair. {#tbl:c_hb_ii4}
 
 ![Distribution of average contact distance, the shortest interatomic distance between residue pairs in nonbonded native contacts. (a) all residue pairs in nonbonded native contacts; (b) residue pairs (i, i+4) in contact with $\alpha$-helical hydrogen bonds.](figures/non-bonded/histogram-contacts-all-ii4.png){#fig:histogram-contacts-all}
 

@@ -19,7 +19,7 @@ header-includes:
     - \usepackage{indentfirst}
     - \setlength\parindent{24pt}
     - \usepackage{fancyhdr}
-    - \pagestyle{fancy}
+    # - \pagestyle{fancy}
     # - \fancyhf{}
     - \fancyfoot[C]{\thepage}
 

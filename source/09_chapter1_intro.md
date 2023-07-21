@@ -82,7 +82,7 @@ $$
 $$
 {#eq:transport}
 
-## Molecular dynamic simulations
+## Molecular dynamics simulations
 
 Molecular dynamics (MD) simulations[@frenkel2002] are computational techniques that are widely used to study the behavior and dynamics molecules at the atomic level.
 Furthermore, it can be used to explore the heat, energy and signal flow in proteins based on the linear response theory.
