@@ -237,3 +237,11 @@ Also, we assumed that the cross-correlation of partial heat currents between dif
 As a result, the model reproduced the exact value of the protein thermal conductivity, derived from the total heat current, within the accuracy of 1% error.
 
 Interestingly, residuewise thermal conductivity demonstrated distinct residue-type dependence: their values decreased in the order of charged, polar, and hydrophobic residues.
+
+$$
+G_{strong} > \bar{G} + 2\sigma
+$$
+
+$$
+\sigma = \sqrt{\frac{\sum (G_i - \bar{G})^2}{N}}
+$$
