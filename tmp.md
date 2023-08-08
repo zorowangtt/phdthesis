@@ -245,3 +245,7 @@ $$
 $$
 \sigma = \sqrt{\frac{\sum (G_i - \bar{G})^2}{N}}
 $$
+
+$$
+
+$$
