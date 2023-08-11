@@ -177,7 +177,7 @@ $$
 The contribution of the partial heat current, $\bm{h}_{\alpha,\beta}$, to the overall thermal transport property of the molecule can be expressed using a contribution factor, denoted as $c$,
 
 $$
-c(\alpha,\beta) \equiv \Lambda_{\alpha, \beta} / \Lambda
+c_{\alpha,\beta} \equiv \Lambda_{\alpha, \beta} / \Lambda
 $$
 {#eq:eqc10}
 
@@ -199,7 +199,7 @@ As a result, the value of $\lambda$ cannot be accurately reconstructed using onl
 In this analysis, it is essential to consider the influence of these cross-correlations in order to obtain effective local thermal conductivities that accurately characterize the non-uniform thermal transport property of proteins.
 Thus, by incorporating the cross-correlations, we aim to derive the mathematical expression of the local thermal conductivities that are consistent with the overall thermal conductivity of the entire molecule.
 
-The analysis of the local thermal transport property using @eq:eqc8 leads to a problem: when dividing the overall heat current into the summation of partial heat currents (@eq:eqc7), @eq:eqc9 includes both autocorrelation and cross-correlation terms, while the cross-correlation terms, $\langle\bm{h}{\alpha, \beta}(0) \cdot \bm{h}{\alpha', \beta'}(t)\rangle$ with $(\alpha, \beta) \ne (\alpha', \beta')$, are missing in equation (8).
+The analysis of the local thermal transport property using @eq:eqc8 leads to a problem: when dividing the overall heat current into the summation of partial heat currents (@eq:eqc7), @eq:eqc9 includes both autocorrelation and cross-correlation terms, while the cross-correlation terms, $\langle\bm{h}{\alpha, \beta}(0) \cdot \bm{h}{\alpha', \beta'}(t)\rangle$ with $(\alpha, \beta) \ne (\alpha', \beta')$, are missing in @eq:eqc8.
 As a result, we anticipate that the summation of all contribution factors, $\sum_{\alpha=1}^{N} c_{\alpha, \alpha} + \sum_{\alpha=1}^{N-1} c_{\alpha, \alpha+1}$, does not equal unity. If this summation is greater (or less) than 1, it implies that the average intensity of the local thermal transport is overestimated (or underestimated) compared to its actual value.
 
 ![Short-range cross-correlation approximation. Cross-correlations are considered only for nearby pairs (dashed line).](figures/cross/cross-correlation.jpeg){#fig:cross-correlation width=70%}
@@ -362,7 +362,7 @@ $$
 $$
 {#eq:eqc19}
 
-All of the heat currents and their autocorrelation function calculations were performed using our CURP program, version 1.3[@yamato2022] based on 50 trajectories of _NVE_ molecular dynamics simulations, each of which started from the last step of different sampling trajectory in isotherma-isobaric _NPT_ ensemble at _T_ = 300 K and _P_ = 1 atm.
+All of the heat currents and their autocorrelation function calculations were performed using our CURP program, version 1.3[@yamato2022] based on 50 trajectories of _NVE_ molecular dynamics simulations, each of which started from the last step of different sampling trajectory in isothermal-isobaric _NPT_ ensemble at _T_ = 300 K and _P_ = 1 atm.
 
 ## Inter-residue heat current analysis
 
@@ -414,7 +414,7 @@ $$
 {#eq:eqd5}
 <!-- prettier-ignore-end -->
 
-where $J_{ij}$ is the inter-atom energy flow between atom i and atom j.
+where $J_{ij}$ is the inter-atom energy flow between atom $i$ and atom $j$.
 
 Then, the energy flow between residue $\alpha$ and $\beta$ can be expressed as:
 

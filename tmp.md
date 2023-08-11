@@ -11,6 +11,7 @@ Amber ff19SB force field was used for protein molecule.
 For efficient long-range electrostatic calculations, the particle mesh Ewald (PME) method was used under periodic boundary condition.
 
 
+
 ## COMPUTATIONAL METHODS
 
 ![Computational procedure.](figures/fixl/method.jpg){#fig:method width=100%}
@@ -249,3 +250,18 @@ $$
 $$
 
 $$
+
+unit in hartree
+|               | Spin = 2                       | Spin = 4      | Spin = 6                       |
+| :------------ | :----------------------------- | :------------ | :----------------------------- |
+| Met-Heme      | -3402.1853060                  | -3402.1959457 | \textcolor{red}{-3402.1976629} |
+| Imdazole-Heme | \textcolor{red}{-3627.8693349} |               | -3627.8189808                  |
+
+unit in kcal/mol
+
+|               | Spin = 2                    | Spin = 4   | Spin = 6                    |
+| :------------ | :-------------------------- | :--------- | :-------------------------- |
+| Met-Heme      | -2134904.0                  | -2134910.6 | \textcolor{red}{-2134911.7} |
+| Imdazole-Heme | \textcolor{red}{-2276522.9} |            | -2276491.3         |
+
+
