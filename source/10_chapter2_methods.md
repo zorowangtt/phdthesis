@@ -29,13 +29,13 @@ $$
 $$
 {#eq:eqc2}
 
-where $E_i$, $\bm{r}_i$ are per atom energy and the position vector of atom $i$, and $N$ is the total number of atoms.
+, where $E_i$, $\bm{r}_i$ are per atom energy and the position vector of atom $i$, and $N$ is the total number of atoms.
 
 The on the right-hand side of [@eq:eqc2] can be divided into two terms: the convective term and the virial term.
 In the context of this equation, it is commonly recognized that the convective term plays a significant role in gaseous systems, but its contribution is minimal in solids.
 On the other hand, the virial term is predominant in solids and biomolecular materials, such as proteins [@babaei2012].
 
-The total energy ($E$) of a protein system, shown in @eq:eqc3, 
+The total energy ($E$) of a protein system, shown in @eq:eqc3,
 in classical molecular mechanics is calculated by summing the kinetic energy contributions from each atom,
 which is determined by its mass ($m_i$) and momentum ($\bm{p}_i$),
 and the potential energy term ($V(\bm{r}_1, \bm{r}_2, ..., , \bm{r}_N)$) that depends on the positions of all atoms ($\bm{r}_1, \bm{r}_2, ..., , \bm{r}_N$).
@@ -108,7 +108,7 @@ $$
 $$
 {#eq:eqc4}
 
-where $\bm{F}_{ij}$ is the force acting on atom $i$ due to atom $j$. 
+, where $\bm{F}_{ij}$ is the force acting on atom $i$ due to atom $j$. 
 
 Thus, we obtained atomistic expression for the heat current as
 
@@ -287,7 +287,7 @@ $$
 $$
 {#eq:eqc18}
 
-where $\bm{I}$ is the $N \times N$ identity matrix.
+, where $\bm{I}$ is the $N \times N$ identity matrix.
 
 The values of $u, v, w$ were derived as follows.
 First, the total weight of $\xi_{\alpha, \alpha+1}$ in @eq:eqc13 should be one, as shown in @fig:allocation. Therefore, we have the following equation:
@@ -362,12 +362,12 @@ $$
 $$
 {#eq:eqc19}
 
-All of the heat currents and their autocorrelation function calculations were performed using our CURP program, version 1.3[@yamato2022] based on 50 trajectories of _NVE_ molecular dynamics simulations, each of which started from the last step of different sampling trajectory in isothermal-isobaric _NPT_ ensemble at _T_ = 300 K and _P_ = 1 atm.
+All of the heat currents and their autocorrelation function calculations were performed using by our CURP program, version 1.3[@yamato2022] based on 50 trajectories of _NVE_ molecular dynamics simulations, each of which started from the last step of different sampling trajectory in isothermal-isobaric _NPT_ ensemble at _T_ = 300 K and _P_ = 0.987 atm.
 
 ## Inter-residue heat current analysis
 
 Considering the molecular functional importance of nonbonded native contacts in a folded protein,
-it would be helpful to analyse the thermal energy transfer through such native contacts.
+it would be helpful to analyze the thermal energy transfer through such native contacts.
 We first derive atomistic expression of heat current for a molecular system based on linear response theory, and the derivation process is detailed in @sec:interatomicheatcurrent.
 The inter-atomic heat current between atoms $i$ and $j$ in a molecule, denoted as $\bm{h_{ij}}$, can be expressed as:
 $$
@@ -414,7 +414,7 @@ $$
 {#eq:eqd5}
 <!-- prettier-ignore-end -->
 
-where $J_{ij}$ is the inter-atom energy flow between atom $i$ and atom $j$.
+, where $J_{ij}$ is the inter-atom energy flow between atom $i$ and atom $j$.
 
 Then, the energy flow between residue $\alpha$ and $\beta$ can be expressed as:
 
@@ -470,7 +470,7 @@ met-FixLH-imd protein, respectively (@tbl:quantumcalculation).
 | Met-Heme      | -3402.1853060                  | -3402.1959457 | \textcolor{red}{-3402.1976629} |
 | Imdazole-Heme | \textcolor{red}{-3627.8693349} |               | -3627.8189808                  |
 
-: Quantum calculation results of met-FixLH and met-FixLH-imd. Hartree-Fork Energy (unit: a.u.) comparison among different spin states of met-FiLH and met-FixLH-imd. {#tbl:quantumcalculation}
+: Quantum calculation results of met-FixLH and met-FixLH-imd. Hartree-Fork Energy (unit: a.u.) comparison among different spin states of met-FixLH and met-FixLH-imd. {#tbl:quantumcalculation}
 
 ## Equilibrium molecular dynamics simulations
 
@@ -578,7 +578,7 @@ Because the explanatory variables were considered contain categorical data, such
 we applied the _LabelEncoder_ function of Python to give a unique integer to each categorical explanatory variable for regression analysis.
 The feature importance for all explanatory variables was evaluated using permutation feature importance rather than impurity-based feature importance to avoid misleading for high cardinality features.
 
-For constructing random forest models, we used two types of datasets with $\langle d_c \rangle$ 6 Å (_dataset L_) and that within $\langle d_c \rangle$ < 4 Å (_dataset S_).
+For constructing random forest models, we used two types of datasets with $\langle d_c \rangle$ < 6 Å (_dataset L_) and that within $\langle d_c \rangle$ < 4 Å (_dataset S_).
 The distance criterion of 6 Å  is used as a default value by the CURP program so taht the selected residue pairs contain not only stongly interacting ones, buy also the loosely interact to each other.
 Alternatively, the distance criterion of 4 Å is often used to extract weakly interacting residue pairs in constructing the network graph of nonbonded native contacts.[@dipaola2013]
 <!-- Although we screened residue pairs with a distance threshold of 6 Å by a built-in tool of using CURP program, a strict screening standard of 4 Å was used to construct a smaller data set for regression model building.
@@ -607,8 +607,8 @@ $$
 where $V$ represents either $w_{\alpha,\beta}$, $\log{G}_{\alpha, \beta}$, or $\log{\lambda}_{\alpha, \beta}$. -->
 
 ## Computational modeling for a homodimer _Thalassosira pseudonana_ CP12
-Although structure modleing of a foog folden, globular protein with its well-defined native conformation, has become practical by using deep-learning algorithms based techniques.
-There still remians various obstacles, however, to characterize the conformational ensemble of the intrinsically disordered protein (IDP) or the protein with highly flexible disordered regions (IDRs).
+Although structure modeling of globular protein with its well-defined native conformation has become practical by using deep-learning algorithms based techniques,
+there still remains various obstacles to characterize the conformational ensemble of the intrinsically disordered protein (IDP) or the protein with highly flexible disordered regions (IDRs).
 To address this issue, we developed a three-stage modeling technique and applied it to _Thalassosira pseudonana_ chloroplast protein (CP12) with IDRs.
 First, AlphaFold-Multimer was used to obtain the CP12 dimer's initial guess structures.[@jumper2021;@evans2021]
 Then, the harmonic restrained all-atom molecular dynamics (MD) simulations were used to roughly refine those structures so that they became consistent with the experimental results (SAXS[@shao2021] and EPR/DEER).
@@ -617,30 +617,30 @@ Finally, restrained-ensemble molecular dynamics (reMD) simulations[@roux2013;@sh
 ![(A) Refinement scheme for the model obtained from AlphaFold2. (B) Starting model for the harmonic restrained MD simulations. C) Distances (blue) and distance distributions (black) between spin label pairs of the starting model for reMD simulation and DEER experiment data, respectively.](figures/cp12/scheme.jpg){#fig:scheme width=100%}
 
 ### FASTA sequence of CP12{#sec:sequence}
-From wild type of CP12's complete amino acid sequence, we used the segment of 163 residues (shown in blue) served as the input (WT) for AlphaFold2 modeling as follows:
+From the complete amino acid sequence of wild type of CP12, we used the segment of 163 residues (shown in blue) served as the input (WT) for AlphaFold2 modeling as follows:
 
 MKIFLASLIGSCAAFAPAPFGKSPTALFGRVDTS\textcolor{blue}{AAIEAALDASKKFGSTSSEARVLWDIVEEMDASDNSVAS
-KAPIVDSEYEAKVKSLSQMLTKTKAELDQVKALADDLKGVKLASPSVGSSAPDDSVMKEALAAARAATEEFGQ
+KAPIVD\text{red}{S}EYEAKVKSL\text{red}{S}QMLTKTKAELDQVKALADDLKGVKLASPSVGSSAPDDSVMKEALAAARAATEEFGQ
 SSPQARLAWETVEEIAASPVDIRAPLDEECLIELIEGCEALEKFQAALGSR} (WT)
 
 In addition, to consider the influence of mutants in the EPR/DEER experiment, two mutant sequences are considered to predict the CP12's dimer.
 Their sequences are as follows:
 
-AAIEAALDASKKFGSTSSEARVLWDIVEEMDASDNSVASKAPIVDCEYEAKVKSLSQMLTKTKAELDQVK
+AAIEAALDASKKFGSTSSEARVLWDIVEEMDASDNSVASKAPIVD\text{red}{C}EYEAKVKSLSQMLTKTKAELDQVK
 ALADDLKGVKLASPSVGSSAPDDSVMKEALAAARAATEEFGQSSPQARLAWETVEEIAASPVDIRAPLDEE
-SLIELIEGSEALEKFQAALGSR (S46)
+SLIELIEGSEALEKFQAALGSR (S46C)
 
-AAIEAALDASKKFGSTSSEARVLWDIVEEMDASDNSVASKAPIVDSEYEAKVKSLCQMLTKTKAELDQVK
+AAIEAALDASKKFGSTSSEARVLWDIVEEMDASDNSVASKAPIVDSEYEAKVKSL\text{red}{C}QMLTKTKAELDQVK
 ALADDLKGVKLASPSVGSSAPDDSVMKEALAAARAATEEFGQSSPQARLAWETVEEIAASPVDIRAPLDEE
-SLIELIEGSEALEKFQAALGSR (S56)
+SLIELIEGSEALEKFQAALGSR (S56C)
 
 ### AlphaFold2 prediction
 Using AlphaFold v2.1.1-Multimer (AF2) and the default databases,[@jumper2021;@evans2021;@tunyasuvunakool2021], the structure of the CP12 homodimer was predicted.
 From NCBI[@shao2021], the wild-type (WT) amino acid sequence was retrieved .
 For multiple sequence alignments (MSAs) lookup and structural template matching, an incomplete FASTA sequence of 163 residues (the blue portion of the sequence in @sec:sequence) was used in the AF2 input file.
 Each of the homodimeric structure of WT, S46C, and S56C mutants was predicted and the top five ranked models was generated for each.
-To evaluate the reliability of the predictions residuewise, 
-For model evaluation, the predicted local distance difference test score (pLDDT, on a scale from 0 to 100, where 100 denotes the most confident) was used to assess the per-residue confidence for the model.
+To evaluate the reliability of the predictions residuewise,
+the predicted local distance difference test score (pLDDT, on a scale from 0 to 100, where 100 denotes the most confident) was used to assess the per-residue confidence for the model.
 
 ### Harmonic restrained molecular dynamics simulations
 
@@ -660,9 +660,9 @@ The Amber ff19SB force field[@tian2020] was used for the protein, which was imme
 At pH = 7.0, all charged residues were taken into consideration in their standard protonation condition.
 To neutralize the simulation box, we added 28 sodium ions, and the total number of atoms become 178352.
 With a distance cutoff of 9 Å, nonbonded particle-particle interactions[@duan2001a] were taken into account, and the particle mesh Ewald (PME) method[@salomon-ferrer2013] was used to treat long-range electrostatic interactions.
-After the simulation system was minimized, heated, 10 rounds of MD simulations were conducted, with harmonic restriant of a spring force of 30 kcal/(mol·Å^2^) applied to the CA-CA lengths across the dimer for the corresponding spin-labeled residues S39, S46, S56, S83, and C150.
+After the simulation system was minimized, heated, 10 rounds of MD simulations were conducted, with harmonic restraint of a spring force of 30 kcal/(mol·Å^2^) applied to the CA-CA lengths across the dimer for the corresponding spin-labeled residues S39, S46, S56, S83, and C150.
 Each round, MD simulations was performed for 100ps with a time step of 2 fs at _T_ = 300 K and _P_ = 0.978 atm.
-Every 1 ps, the atomic corrdinates were stored.
+Every 1 ps, the atomic coordinates were stored.
 The initial/target distances for each pair of CA atoms were, respectively, 73/68 Å for S39, 57/43 Å for S46, 26/32 Å for S56, 51/64 Å for S83, and 12/25 Å for C150.
 In the first 2 ps of each cycle, the traget distances were readily achieved (@fig:time-evolution).
 
@@ -685,7 +685,7 @@ Five independent all-atom reMD simulations, each with five different random numb
 Prior to each reMD production run, we carried out minimization and equilibration, kepping the positions of the backbone atoms with harmonic restraints of 2 kcal/(mol·Å^2^) imposed on them, while no restraints were imposed on the sidechain atoms.
 For further improvement of the models, we turned off the harmonic restrictions imposed on the backbone atoms and continued the reMD simulations for 2 ns with a 0.5-fs time step.
 The particle mesh Ewald (PME) method[@petersen1995] was used to evaluate the long-range electrostatic interactions, and the nonbonded interactions were truncated at a distance cutoff of 10 Å.
-During the reMD simulations a force constant of 100 kcal/(mol·Å^2^) and a bin width of 0.025 nm, the conformational ensemble of the system was generated in such a wasy that the distance distributions of each spin label pair were restrained to those of the experimental distance distribution histograms.
+During the reMD simulations a force constant of 100 kcal/(mol·Å^2^) and a bin width of 0.025 nm, the conformational ensemble of the system was generated in such a way that the distance distributions of each spin label pair were restrained to those of the experimental distance distribution histograms.
 In each reMD production run, the atomic coordinates were saved every 1 ps.
 Since we have 25 copies of each spin label, a total of 625 distances were calculated for each pair of spin labels from a single snapshot of their trajectories, and a total of 1, 250 000 data points were generated for each pair of spin labels from a single reMD production run.
-Using PyMOL[@llc2015] and VMD[@humphrey1996], respectively, trajectory analysis and protein visualization were carried out.
+Trajectory analysis and protein visualization were carried out using PyMOL[@llc2015] and VMD[@humphrey1996], respectively,
