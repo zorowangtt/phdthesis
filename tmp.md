@@ -248,7 +248,7 @@ $$
 $$
 
 $$
-
+\bm h = \bm h_{A} + \bm h_{B} + \bm h_{AB}
 $$
 
 unit in hartree
