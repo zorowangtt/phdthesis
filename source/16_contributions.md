@@ -5,8 +5,8 @@
 <!-- \renewcommand{\chapter}{Contributions} -->
 <!-- \renewcommand{\sectionmark}[1]{\markright{\thesection~- ~#1}} -->
 <!-- \renewcommand{\fancyhead[L]{Contributions}} -->
-\fancyhead[RO]{Contributions}
-\fancyhead[LE]{Contributions}
+\fancyhead[RO]{CONTRIBUTIONS}
+\fancyhead[LE]{CONTRIBUTIONS}
 
 ## Published articles{-}
 
