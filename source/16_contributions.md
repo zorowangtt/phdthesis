@@ -1,12 +1,20 @@
 \newpage
+
 # Contributions {.unnumbered}
+
+<!-- \renewcommand{\chapter}{Contributions} -->
+<!-- \renewcommand{\sectionmark}[1]{\markright{\thesection~- ~#1}} -->
+<!-- \renewcommand{\fancyhead[L]{Contributions}} -->
+\fancyhead[RO]{Contributions}
+\fancyhead[LE]{Contributions}
 
 ## Published articles{-}
 
 - Tingting Wang, Takahisa Yamato, Wataru Sugiura. Site-selective Heat Current Analysis of α-Helical Protein with Linear-homopolymer-like Model. (2023) J. Chem. Phys. 158, 214105. 
   <!-- https://doi.org/10.1063/5.0149362 -->
 
-- Yamato, T., Wang, T., Sugiura, W., Laprévote, O., Katagiri, T. Computational Study on the Thermal Conductivity of a Protein. (2022) J. Phys. Chem. B. 126, 3029–3036. 
+- Takahisa Yamato, Tingting Wang, Wataru Sugiura, Olivier Laprévote, and Takahiro Katagiri.
+Computational Study on the Thermal Conductivity of a Protein. (2022) J. Phys. Chem. B. 126, 3029–3036. 
 <!-- - https://doi.org/10.1021/acs.jpcb.2c00958 -->
 
 ## Conference talks {-}
