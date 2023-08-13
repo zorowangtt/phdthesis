@@ -27,7 +27,7 @@ In summary, the frequency histogram of the calculated local thermal conductiviti
 
 ## Peptide bonds? or nonbonded contacts?
 
-![Inter-residue thermal conductivity between adjacent residue pairs along the chain.](figures/non-bonded/line-intra-inter-lambda.png){#fig:inter_lambda width=70%}
+<!-- ![Inter-residue thermal conductivity between adjacent residue pairs along the chain.](figures/non-bonded/line-intra-inter-lambda.png){#fig:inter_lambda width=70%} -->
 
 There is an ongoing debate on the dominant pathway of thermal energy transport in proteins.[@deniz2021;@mizutani2022;@buchenberg2016]
 To address the issue, we carried out site-selective heat current analysis ([@fig:histogram_lambda]).
@@ -46,16 +46,16 @@ The values of inter-residue thermal conductivity for residue pairs in contacts w
 The linear regression analysis with a scatter plot between the values of inter-residue thermal conductivity ($\lambda_{\alpha,\beta}$) between hydrogen bonded residue pairs and their hydrogen bond occurrence probability (_P_~HB~) during the MD simulations ([@fig:hb_all_ii4]a) yielded a Pearson correlation coefficient of $r$ = 0.51 (> 0.3) and a **_p_-value of 0.007 ($\ll$ 0.05), indicating a positive correlation between them.
 
 In an $\alpha$-helical protein, two types of hydrogen bonds are recognized:
-The first type, known as central hydrogen bonds stabilize the helical structure with hydrogen bonds between the carbonyl oxygen (O) of residue i and the amino group (N-H) of residue i+4.
+The first type, known as central hydrogen bonds stabilize the helical structure with hydrogen bonds between the carbonyl oxygen (O) of residue $\alpha$ and the amino group (N-H) of residue $\alpha$+4.
 The second type occurs either as a sidechain-sidechain or sidechain-mainchain hydrogen bond.
 Miño et al. reported that the heat diffusion along the $\alpha$-helical polypeptide chain containing both types of hydrogen bonds is two times faster than those containing only the first type of hydrogen bonds, highlighting the important role of the second type of hydrogen bonds in proteins.[@mino2014]
-To investigate the role of the first type of hydrogen bond in the heat transport in HP36, we selected the values of inter-residue thermal conductivity for 32 residue pairs between residue i and i+4 (n=1, 2, ..., 32).
+To investigate the role of the first type of hydrogen bond in the heat transport in HP36, we selected the values of inter-residue thermal conductivity for 32 residue pairs between residue $\alpha$ and $\alpha$+4 (n=1, 2, ..., 32).
 [@fig:hb_all_ii4]b.
 The NMR structure of HP36 (PDB: 1VII) contains three alpha-helices, H1 (residues 4-8), H2 (residues 15-18), and H3 (residues 23-32).
-We also observed transient formation of hydrogen bonds between (i, i+4) residue pairs during MD simulations, in addition to those found in the NMR structure.
+We also observed transient formation of hydrogen bonds between ($\alpha$, $i+4$) residue pairs during MD simulations, in addition to those found in the NMR structure.
 Thereby, 19 members of these hydrogen bonds are shown in @tbl:c_hb, among which 13 of the $\alpha$-helical hydrogen bonds were selected for the linear regression analysis ([@fig:hb_all_ii4]b).
 In the previous study,[@mino2014] the heat diffusion along the $\alpha$-helical chain with both types of hydrogen bonds is twice faster than those with only the first type of hydrogen bonds, indicating the important role of the second type of hydrogen bonds in proteins.
-To investigate the role of the first type of hydrogen bond in heat transport in HP36, we found that almost all hydrogen bonds between pairs of residue (i, i+4) were of the first type with only one exception between the mainchain of 16SER and the sidechain of 20SAN.
+To investigate the role of the first type of hydrogen bond in heat transport in HP36, we found that almost all hydrogen bonds between pairs of residue ($\alpha$, $\alpha$+4) were of the first type with only one exception between the mainchain of 16SER and the sidechain of 20ASN.
 
 | acceptor residue number | acceptor atom | donorH residue number | donorH atom | donor atom | _P_~HB~ | acceptor type | donor type | averaged distance |
 | :---------------------- | :------------ | :-------------------- | :---------- | :--------- | :------ | :------------ | :--------- | :---------------- |
@@ -73,7 +73,7 @@ To investigate the role of the first type of hydrogen bond in heat transport in 
 | 28ASN                   | O             | 32GLU                 | H           | N          | 0.61    | MC            | MC         | 1.96              |
 | 29LEU                   | O             | 33LYS                 | H           | N          | 0.37    | MC            | MC         | 2.12              |
 
-: Hydrogen bond occurrence probability (_P_~HB~) and averaged shortest distance ($\langle d_c \rangle$) between residue i and i+4. MC : mainchain, SC: sidechain. {#tbl:c_hb}
+: Hydrogen bond occurrence probability (_P_~HB~) and averaged shortest distance ($\langle d_c \rangle$) between residue $\alpha$ and $\alpha$+4. MC : mainchain, SC: sidechain. {#tbl:c_hb}
 
 We conducted further analysis of the properties of the interaction between residue pairs (i, i+4) (@tbl:c_hb_ii4).
 The values of inter-residue thermal conductivity for the pairs with no hydrogen bond are significantly smaller than those with hydrogen bonds.
@@ -113,13 +113,15 @@ This may be because their interactions are stronger than those contacts with no 
 | 31             | LYS          | 35             | LEU          | 0       | hydrophobic      | 2.02$\times 10^{-4}$         | 3.9                     |
 | 32             | GLU          | 36             | PHE          | 0       | hydrophobic      | 3.46$\times 10^{-4}$         | 5.72                    |
 
-: Inter-residue thermal conductivity and hydrogen bond formation capacity _P_~HB~ between residue pair i and i+4. Also the contact distance (shortest interatomic distance between the residue pair) is shown for each pair. {#tbl:c_hb_ii4}
+: Inter-residue thermal conductivity and hydrogen bond formation capacity _P_~HB~ between residue pair $\alpha$ and $\alpha$+4. Also the contact distance (shortest interatomic distance between the residue pair) is shown for each pair. {#tbl:c_hb_ii4}
 
-![Distribution of average contact distance, the shortest interatomic distance between residue pairs in nonbonded native contacts. (a) all residue pairs in nonbonded native contacts; (b) residue pairs (i, i+4) in contact with $\alpha$-helical hydrogen bonds.](figures/non-bonded/histogram-contacts-all-ii4.png){#fig:histogram-contacts-all}
+![Distribution of average contact distance, the shortest interatomic distance between residue pairs in nonbonded native contacts. (a) all residue pairs in nonbonded native contacts; (b) residue pairs ($\alpha$, $\alpha$+4) in contact with $\alpha$-helical hydrogen bonds.](figures/non-bonded/histogram-contacts-all-ii4.png){#fig:histogram-contacts-all}
 
 A smaller data set consisting of the inter-residue thermal conductivity and _P_~HB~ for residue pairs with $\alpha$-helical hydrogen bonds was used to fit a linear regression relationship, as shown in [@fig:hb_all_ii4]b.
 The Pearson correlation coefficient and **_p_-value are 0.80 (> 0.3) and 0.001 ($\ll$ 0.05), respectively, indicating a stronger correlation than that for the all hydrogen bonded residue pairs.
-The contact distance is supported to be a factor that can affect thermal transport properties.[@reid2018] 
+The contact distance is supported to be a factor that can affect thermal transport properties.[@reid2018]
+In addition, the histogram of all contact distance and contact distance for residue pairs of $\alpha$, $\alpha$+4 are shown in [@fig:histogram-contacts-all].
+We can see that the contact distance of all residue pairs has a broad range (~ 2 - 8 Å) in @fig:histogram-contacts-all]a.
 It is worth mentioning that the contact distance exhibits a broad distribution (2 - 4 Å) for the dataset used in [@fig:hb_all_ii4]a, whereas the range of those for the smaller dataset used in [@fig:hb_all_ii4]b is limited within 2.1 $\pm$ 0.2 Å ([@fig:histogram-contacts-all]b).
 
 ## Important features in thermal transport through nonbonded contacts

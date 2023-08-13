@@ -177,7 +177,7 @@ $$
 The contribution of the partial heat current, $\bm{h}_{\alpha,\beta}$, to the overall thermal transport property of the molecule can be expressed using a contribution factor, denoted as $c$,
 
 $$
-c_{\alpha,\beta} \equiv \Lambda_{\alpha, \beta} / \Lambda
+c_{\alpha,\beta} \equiv \frac{\Lambda_{\alpha, \beta}}{\Lambda}
 $$
 {#eq:eqc10}
 
@@ -688,4 +688,4 @@ The particle mesh Ewald (PME) method[@petersen1995] was used to evaluate the lon
 During the reMD simulations a force constant of 100 kcal/(mol·Å^2^) and a bin width of 0.025 nm, the conformational ensemble of the system was generated in such a way that the distance distributions of each spin label pair were restrained to those of the experimental distance distribution histograms.
 In each reMD production run, the atomic coordinates were saved every 1 ps.
 Since we have 25 copies of each spin label, a total of 625 distances were calculated for each pair of spin labels from a single snapshot of their trajectories, and a total of 1, 250 000 data points were generated for each pair of spin labels from a single reMD production run.
-Trajectory analysis and protein visualization were carried out using PyMOL[@llc2015] and VMD[@humphrey1996], respectively,
+Trajectory analysis and protein visualization were carried out using PyMOL[@llc2015] and VMD[@humphrey1996], respectively.

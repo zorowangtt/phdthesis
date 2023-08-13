@@ -6,8 +6,8 @@
 
 ![The thermal conductivity of HP36. The autocorrelation function of the heat current of the entire molecule of HP36 was calculated and ensemble-averaged, and plotted as a function of time (blue). The inset shows the short-time region (0 - 0.2 ps). The heat current autocorrelation function was integrated over time using the trapezoidal rule, yielding a quantity denoted as $\lambda$  as a function of integration time (shown in orange), and a running mean of $\lambda$ was computed with a window size of 100 fs and is illustrated in red. The volume of HP36 was set to 4845.447 $\AA^3$.[@yamato2022]](figures/cross/hcacf-100ps.jpeg){#fig:hcacf-100ps width=70%}
 
-The overall thermal conductivity, denoted as $\lambda$, of the HP36 protein was determined using equation ([@eq:eqc1]) in this study. To calculate the total volume of HP36 and individual atom volumes, we utilized the VLDP (Voronoi Laguerre Delaunay Protein) method through a web server [@esque2013].
-After obtaining the ensemble-averaged heat current autocorrelation function, we performed time integration using the trapezoidal rule, as depicted in Figure [@fig:hcacf-100ps]. The value of $\lambda$ converged at approximately $t$ = 60 ps, resulting in a thermal conductivity of 0.26 $\mathrm{\pm}$ 0.01 $\mathrm{W{/}(m{\cdot}K)}$.
+The overall thermal conductivity, denoted as $\lambda$, of the HP36 protein was determined using [@eq:eqc1] in this study. To calculate the total volume of HP36 and individual atom volumes, we utilized the VLDP (Voronoi Laguerre Delaunay Protein) method through a web server [@esque2013].
+After obtaining the ensemble-averaged heat current autocorrelation function, we performed time integration using the trapezoidal rule, as depicted in [@fig:hcacf-100ps]. The value of $\lambda$ converged at approximately $t$ = 60 ps, resulting in a thermal conductivity of 0.26 $\mathrm{\pm}$ 0.01 $\mathrm{W{/}(m{\cdot}K)}$.
 It is worth noting that the calculated value of $\lambda$ slightly differs from the previous calculation,[@yamato2022] primarily due to the utilization of a "flexible" TIP3P water model in the previous study.
 The dependence of the water model on thermal conductivity will be discussed further in @sec:watermodel.
 For subsequent analyses, we set the upper limit of the time integration of the local heat current autocorrelation function to 60 ps.
@@ -20,7 +20,7 @@ The average intra-residue contribution factor (see @eq:eqc10) was 0.029, which w
 This suggests that intra-residue thermal transport makes a dominant contribution to the overall heat current, which is consistent with the results of the master equation analysis. [@buchenberg2016]
 In addition to these two dominating thermal energy transport pathways, the contributions from sidechain-sidechain heat currents across non-bonded native contacts were relatively small.[@yamato2022]
 
-![The contribution factors without cross-correlation corrections were calculated and plotted for both intra-residue ($c(\alpha, \alpha)$, shown in red) and inter-residue ($c(\alpha, \alpha+1)$, shown in green) interactions, as described in equations (@eq:eqc11) and (@eq:eqc12), respectively. The data points, such as $c(1,2)$, represent the contribution factor between residue numbers $\alpha = 1$ and $\alpha = 2$. The horizontal axis displays the residue number, $\alpha$, along with the corresponding residue names represented in the one-letter code. The grey-shaded regions correspond to the $\alpha$-helical regions.](figures/cross/heat-conductivity-before-corrected.jpeg){#fig:heat_before width=70%}
+![The contribution factors without cross-correlation corrections were calculated and plotted for both intra-residue ($c_{\alpha, \alpha}$, shown in red) and inter-residue ($c_{\alpha, \alpha+1}$, shown in green) interactions, as described in equations (@eq:eqc11) and (@eq:eqc12), respectively. The data points, such as $c_{1,2}$, represent the contribution factor between residue numbers $\alpha = 1$ and $\alpha = 2$. The horizontal axis displays the residue number, $\alpha$, along with the corresponding residue names represented in the one-letter code. The grey-shaded regions correspond to the $\alpha$-helical regions.](figures/cross/heat-conductivity-before-corrected.jpeg){#fig:heat_before width=70%}
 
 The sum of the intra-residue contribution factors, $\sum_{\alpha=1}^{36}{c(\alpha,\alpha)}$, was 1.06, and the sum of the inter-residue contribution factors, $\sum_{\alpha=1}^{35}{c(\alpha,\alpha+1)}$, was 0.57.
 The deviation of 1.06 + 0.57 = 1.63 from 1 suggests the presence of non-negligible cross-correlation effects among different partial heat currents.
@@ -28,7 +28,7 @@ In @sec:cross-correlation, we will delve into a more detailed analysis of these 
 
 ## Cross-correlation correction {#sec:cross-correlation}
 
-![The cross-correlation contribution factor between nearest neighbor residues, $c^{\rm{cross}}(\alpha,\alpha+1)$, defined as $\xi_{\alpha,\alpha+1} / \Lambda$, was plotted as a function of the residue number. Each data point represents the value of $c^{\rm{cross}}(\alpha,\alpha+1)$ between residue $\alpha$ and $\alpha+1$. For example, the data point $c^{\rm{cross}}(1,2)$ corresponds to the cross-correlation between residues 1 and 2.](figures/cross/cross-correlation-term.jpeg){#fig:cross width=70%}
+![The cross-correlation contribution factor between nearest neighbor residues, $c^{\rm{cross}}_{\alpha,\alpha+1}$, defined as $\xi_{\alpha,\alpha+1} / \Lambda$, was plotted as a function of the residue number. Each data point represents the value of $c^{\rm{cross}}_{\alpha,\alpha+1}$ between residue $\alpha$ and $\alpha+1$. For example, the data point $c^{\rm{cross}}_{1,2}$ corresponds to the cross-correlation between residues 1 and 2.](figures/cross/cross-correlation-term.jpeg){#fig:cross width=70%}
 
 ![Contribution factors with cross-correlation correction. See the caption to [@fig:heat_before]](figures/cross/heat-conductivity-after-corrected.jpeg){#fig:heat_after width=70%}
 
@@ -45,7 +45,7 @@ To validate the linear-homopolymer-like model, we compared $\Lambda$ and $\tilde
 The former was derived from the exact heat current of the entire molecule, while the latter was based on the linear-homopolymer-like model.
 The calculation results showed that $\tilde \Lambda$ overestimated $\Lambda$ only by 0.9%, indicating that the linear-homopolymer-like model successfully represents the thermal transport property of the entire molecule.
 
-| Residue($\alpha$)| Residue($\alpha+2$) | $\xi_{\alpha, \alpha+2}$ | $c^{\rm{cross}}(\alpha, \alpha+2)$ |
+| Residue($\alpha$)| Residue($\alpha+2$) | $\xi_{\alpha, \alpha+2}$ | $c^{\rm{cross}}_{\alpha, \alpha+2}$ |
 | :--------------- | :------------------- | :----------------------- | :--------------------- |
 | ARG15            | ALA17                | 0.012                    | 0.001                  |
 | ALA17            | ALA19                | -0.010                   | -0.001                 |
@@ -82,7 +82,7 @@ The calculation results showed that $\tilde \Lambda$ overestimated $\Lambda$ onl
 | PRO22            | TRP24                | 0.014                    | 0.001                  |
 | LYS8             | VAL10                | 0.022                    | 0.002                  |
 
-: The second nearest cross-correlation. $\xi_{\alpha, \alpha+2}$ was calculated in a similar manner as $\xi_{\alpha, \alpha+1}$ using @eq:eqc11, and contribution factor, $c^{\rm{cross}}(\alpha, \alpha+2)$, was calculated as $\xi_{\alpha,\alpha+2} / \Lambda$. The values of $\xi$ are shown in the unit of ($\rm{\AA \rm{\cdot kcal/mol)^2/fs}}$. {#tbl:secondnearest}
+: The second nearest cross-correlation. $\xi_{\alpha, \alpha+2}$ was calculated in a similar manner as $\xi_{\alpha, \alpha+1}$ using @eq:eqc11, and contribution factor, $c^{\rm{cross}}_{\alpha, \alpha+2}$, was calculated as $\xi_{\alpha,\alpha+2} / \Lambda$. The values of $\xi$ are shown in the unit of ($\rm{\AA \rm{\cdot kcal/mol)^2/fs}}$. {#tbl:secondnearest}
 
 | Residue ($\alpha$)       | $\bm\tilde\Lambda_{\alpha, \alpha}$ | $\bm\tilde\Lambda_{\alpha, \alpha+1}$ |
 | :----------------------- | :--------------------------------- | :---------------------------------- |
@@ -155,7 +155,7 @@ However, in the case of heterogeneous materials such as proteins, the local dens
 This is due to the different packing of amino acid residues, resulting in a wider distribution of residue densities.
 The relationship between local density and thermal conductivity in proteins is shown in [@fig:density], a scatter plot of the residue-wise thermal conductivity versus local density of each residue.
 The local mass density values range from 1.20 to 1.70 $\rm{g/cm^3}$, shown in [@fig:density], which is somewhat broader compared to those determined experimentally and theoretically (1.33 to 1.44 $\rm{g/cm^3}$).[@fischer2009]
-This wider range of residue densities could ne mainly attributed to the residue-wise volume variation between different environments, i.e., buried or exposed.
+This wider range of residue densities could be mainly attributed to the residue-wise volume variation between different environments, i.e., buried or exposed.
 The buried residues, which are surrounded by other residues, tend to have a higher density than the exposed residues, with greater solvent accessibility,
 leading to a broader distribution of residue densities within the protein molecule.[@harpaz1994;@baud1999]
 
@@ -220,9 +220,9 @@ Other types of interfaces have also been investigated.
 For instance, ultrafast energy dissipation from peptide helices to chloroform solvents on the timescale of 0.5 ps was observed through a collaboration between experimental and theoretical approaches.[@botan2007]
 To gain insights into how different water models could affect thermal boundary conductance, it is useful to consider the vibrational density of states of both the protein and water [@xu2014a; @agbo2014a].
 In contrast to our previous study,[@yamato2022] the present study using the rigid TIP3P water model shows that some high-frequency vibrational modes of the solvent are absent, resulting in a decrease in thermal conductance at the protein-water interface.
-Consequently, it is plausible that the vibrational energy distribution, especially for surface amino acid residues near the protein-water interface, may be affected. Moreover, the local heat capacities of such amino acid residues might also be influenced, leading to changes in the overall protein thermal conductivity.
-Further investigation is needed to validate these hypotheses.
-Additionally, systematic studies on the influence of solvent models on the thermal transport properties of proteins and protein-solvent systems.
+Consequently, it is plausible that the vibrational energy distribution, especially for surface amino acid residues near the protein-water interface, may be affected.
+Moreover, the local heat capacities of such amino acid residues might also be influenced, leading to changes in the overall protein thermal conductivity.
+Systematic studies of the influence of solvent models on the thermal transport properties of proteins and protein-solvent interface should be further investigated to validate these hypotheses.
 
 <!-- ## Summary {#sec:summary-cha3}
 
