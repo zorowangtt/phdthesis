@@ -61,7 +61,7 @@ outer surfaces after folding, where the inner surface binds to a heme
 *b* cofactor and the outer surface makes contacts with the opposing
 monomer and the flanking Jα helix to form a homodimer.[@bhate2015] The dimer
 interface in FixLH homodimer is continuous and highly connected,
-comprising of α'α, Aα, Bβ helices, Gβ, Ηβ, Iβ strands and the Jα
+comprising of α'α, Aα, Bβ helices, Gβ, Ηβ, Iβ sheets and the Jα
 helix.[@ayers2008] Mutation experiments[@jasaitis2006;@dunham2003;@balland2006;@gilles-gonzalez2006;@miyatake2000;@mukai2000;@yamawaki2016;@tanaka2006] pointed out that
 multiple residues surrounding the heme core and on the dimer interface
 may play a key role in the signal transmission event according to the
@@ -219,7 +219,7 @@ Strong interactions across the dimer interface are mainly found in two
 regions: (3) N terminus and (4) C terminus.
 
 **Region (3),**
-includes charged residue pairs with ARG139, ARG141, and ARG146, for met-FixLH and met-FixLH-imd, respectively (@fig:interactions A(3) and B(3)).
+includes charged residue pairs with ARG139, ARG141, and ARG146, for met-FixLH and met-FixLH-imd, respectively (@fig:interactions R2 and R3).
 It should be noted that this region is close to neither PAS core nor heme. To save computational time, we imposed harmonic restraints on each Cα atom of ILE128 of chains A and B, and excluded PAS-A domains in the calculations.
 Without such restraints, the pair of A'α helices undergo considerable fluctuations (@fig:force-restraint).
 Although the role of the *Bj*FixL PAS-A domain remains
@@ -239,10 +239,10 @@ network of vibrational energy transfer pathways with ASP255, THR257, GLU258, GLN
 Superposition of the x-ray crystallographic structures of met-FixLH and
 met-FixLH-imd (@fig:difference B) shows a movement of the FG loop, with an
 average positional displacement of 1.4 Å,[@gong2000] together with a slight
-movement of the Gβ strand and the reorientation of heme propionate 6 and
+movement of the Gβ sheet and the reorientation of heme propionate 6 and
 7 side chains. We speculate that this structural change induced the
 reorganization of the vibrational energy transfer network between heme
-and the FG loop or Gβ strand, leading to the modulation of signal
+and the FG loop or Gβ sheet, leading to the modulation of signal
 transmission to the downstream of PAS-B domain. To evaluate the effect
 of ligand binding quantitatively, we calculated the difference (Δ*G*)
 and the relative difference (rΔ*G*) of the *G*-values for residue pairs
@@ -250,7 +250,7 @@ in native contact between met-FixLH (*G*~met~) and met-FixLH-imd
 (*G*~imd~), where Δ*G* = *G*~imd~ -- *G*~met~ and rΔ*G* = Δ*G* / *G*~met~.
 In @fig:difference A, we illustrated the reorganization of the network of vibrational energy transfer pathways, where those with increased *G* are shown in red and distinguished from those with decreased *G*, which are shown in blue.
 Ligand binding to the heme weakened (enhanced) the interaction between heme and HIS214 (HIS200, TYR203, ARG206, and ARG220).
-The intrahelical interactions within Fα were
+The intra-helical interactions within Fα were
 decreased, while those between the Fα helix and the nearby secondary
 structural units, such as ARG208-GLU246, ARG206-ASP212, TYR207-GLU240,
 ASN189-HIS200, and ARG197-LYS225, were increased. Across the dimer
@@ -260,5 +260,5 @@ ASP154, GLU135/142, ARG139/141/146/174 (ARG254) in the N(C)-terminus of
 the PAS-B domain. In addition, two residue pairs on the dimer interface,
 ASP154-ARG254 and THR262-ARG265, exhibit increased *G*-values by ligand
 binding, where the latter of which belongs to the coiled-coil linker.
-In summary, ligand binding enhanced the interactions between Fα and heme or the terminal regions of G/H/I β strands, while it weakened those within the Fα helix, β sheet, and those across the dimer interface.
-These observations suggest that the signal transmission from the heme core to the coiled-coil linker may be mainly blocked at the bridge of G/H/I β-strands, together with the ynergetic reorganization of the compact networks constructed by multiple highly conserved amino acid residues.
+In summary, ligand binding enhanced the interactions between Fα and heme or the terminal regions of G/H/I β sheets, while it weakened those within the Fα helix, β sheet, and those across the dimer interface.
+These observations suggest that the signal transmission from the heme core to the coiled-coil linker may be mainly blocked at the bridge of G/H/I β-sheets, together with the synergetic reorganization of the compact networks constructed by multiple highly conserved amino acid residues.

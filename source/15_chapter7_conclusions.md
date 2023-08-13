@@ -45,7 +45,7 @@ This model employed random forest regression analysis to investigate the relatio
 
 In the @sec:cha5, the effects of imidazole binding and dimerization on an oxygen sensor protein, *Bj*FixLH, were investigated by theoretical computations with
 the theory of energy flow and conductivity.
-Using the energy exchange network (EEN) model, the residue-residue and protein-protein interactions of dimeric FixL protein are described.
+Using the energy transport network model, the residue-residue and protein-protein interactions of dimeric FixL protein are described.
 A vibrational energy transfer pathway characterized in the active form of *Bj*FixLH protein, could be a possible signaling pathway.
 Upon imidazole bound with heme, the allosteric effect induced from heme core is propagated starting from
 the FG loop, through G/H/I α strands bridge and coiled-coil linker region, to the kinase domain.
@@ -79,4 +79,4 @@ It is unknown how the different types of secondary structures will affect the th
 
 2. The effect of solvent model on the thermal transport properties in protein.
 In this study, the thermal conductivity values of HP36 with a typical rigid TIP3P water model exhibited a decrease number, compared to the value using the same flexible TIP3P water model.
-It raises the interest of will the change of water solvent flexibility will change vibration frequency at the water-protein interface, accordingly to influence the thermal transport properties of protein itself?
+It raises the interest of "How will the change of water solvent flexibility changes vibration frequency at the water-protein interface, accordingly to influence the thermal transport properties of protein itself"?

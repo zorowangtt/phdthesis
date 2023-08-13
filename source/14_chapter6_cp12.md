@@ -34,7 +34,7 @@ The AF2 model does not contain any inter- or intra-molecular disulfide bridges b
 The experimental data (@fig:ambermd A) was compared with the estimated SAXS curve based on the AF2 model.
 The agreement of the intensity in the low-q region, ( q < 0.15 Å^–1^), was satisfactory, however that in the high-q region, (q > 0.15 Å^–1^) was unsatisfactory.
 According to the SAXS measurement[@shao2021], the AF2 model's radius of gyration (Rg) was found to be 35.7 Å, which is smaller than the experimental value of Rg (38.2 ± 0.4 Å).
-The MTSL-MTSL distance distribution was analyzed using the AF2 model for various CP12 variants, as shown in Figure D of the Amber MD analysis.
+The MTSL-MTSL distance distribution was analyzed using the AF2 model for various CP12 variants, as shown in [@fig:scheme] C of the Amber MD analysis.
 The prediction model and the DEER experiment did not show any overlap for the distance distribution of S39R1 and C150R1 spin pairs, indicating a limited applicability of AF2 to such proteins with IDRs.
 
 ## Molecular dynamic simulations
@@ -66,7 +66,7 @@ Accordingly, the ESI-MS experiment[@shao2021], partial dissociation is likely to
 ![Probability distribution of radius of gyration (Rg). We used of 20, 000 sampled structures from reMD simulations.](figures/cp12/rg-distribution.jpg){#fig:rg-distribution width=40%}
 
 To conduct a thorough assessment of the reMD sampling, a total of 20,000 structures were obtained as an ensemble structure pool with 4,000 structures extracted from each reMD trajectory.
-A GAJOR analysis was conducted to obtain the distribution of radius of gyration (Rg) for the 20,000 structures.
+A GAJOE analysis was conducted to obtain the distribution of radius of gyration (Rg) for the 20,000 structures.
 The resulting distribution is shown in @fig:rg-distribution.
 GAJOE is a genetic algorithm-based program in ATSAS package used for selecting a set of models that accurately represent experimental small-angle X-ray scattering (SAXS) data.[@tria2015]
 The Rg distribution exhibits two major peaks at approximately 38.1 and 38.9 Å.
