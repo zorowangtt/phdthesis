@@ -28,13 +28,14 @@ In summary, the frequency histogram of the calculated local thermal conductiviti
 ## Peptide bonds? or nonbonded contacts?
 
 <!-- ![Inter-residue thermal conductivity between adjacent residue pairs along the chain.](figures/non-bonded/line-intra-inter-lambda.png){#fig:inter_lambda width=70%} -->
+![Nonbonded contacts that can compete with polypeptide chain](figures/non-bonded/shortcuts.png){#fig:shortcuts width=50%}
 
 There is an ongoing debate on the dominant pathway of thermal energy transport in proteins.[@deniz2021;@mizutani2022;@buchenberg2016]
 To address the issue, we carried out site-selective heat current analysis ([@fig:histogram_lambda]).
 As a result, the distribution of local thermal transport coefficients demonstrated substantial heterogeneity in protein thermal transport at microscopic scale:
 The residue-wise $\lambda$ values are ranging from about 0.08 to 0.3 W m^–1^ K^–1^,
 while the inter-residue thermal conductivity between adjacent residue pairs along the chain ranges from about 0.01 to 0.08 W m^–1^ K^–1^, indicating that the importance of the polypeptide chain as a major pathway of thermal transport in protein.
-It should be noted that, however, that there are three exceptions $\lambda_{3, 6}=2.4 \times 10^{-2}$, $\lambda_{4, 15}=1.3 \times 10^{-2}$, and $\lambda_{5, 8}=2.1 \times 10^{-2}$, where their $\lambda$ values exceed $10^{-2}$ W m^–1^ K^–1^ being comparable to the local thermal transport coefficient for the pathways along the polypeptide chain.
+It should be noted that, however, that there are three exceptions $\lambda_{3, 6}=2.4 \times 10^{-2}$, $\lambda_{4, 15}=1.3 \times 10^{-2}$, and $\lambda_{5, 8}=2.1 \times 10^{-2}$, shown in @fig:shortcuts, where their $\lambda$ values exceed $10^{-2}$ W m^–1^ K^–1^ being comparable to the local thermal transport coefficient for the pathways along the polypeptide chain.
 It is worthy mentioning that the residue pairs, Ser3-Asp6 and Asp4-Arg15, have also been identified as having a relatively larger local energy diffusivities in the theoretical study by non-equilibrium MD simulations and master equation model,[@buchenberg2016]
 indicating their possible roles to as "shortcuts" on the thermal transport network of the protein.
 
