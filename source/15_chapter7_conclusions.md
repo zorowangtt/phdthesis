@@ -1,5 +1,5 @@
 \newpage
-# Conclusions and Future Directions{#sec:cha7}
+# Conclusions and future Directions{#sec:cha7}
 
 ## Conclusions
 <!-- the aim of this study -->
@@ -78,5 +78,5 @@ The hydrogen bonds between the main-chain NH and C'=O groups of residue α and �
 It is unknown how the different types of secondary structures will affect the thermal transport in proteins.
 
 2. The effect of solvent model on the thermal transport properties in protein.
-In this study, the thermal conductivity values of HP36 with a typical rigid TIP3P water model exhibited a decrease number, compared to the value using the same flexible TIP3P water model.
+In this study, the thermal conductivity values of HP36 with a typical rigid TIP3P water model exhibited a smaller value (0.26 W m^–1^ K^–1^) compared to the value using the same flexible TIP3P water model (0.3 W m^–1^ K^–1^).
 It raises the interest of "How will the change of water solvent flexibility changes vibration frequency at the water-protein interface, accordingly to influence the thermal transport properties of protein itself"?
