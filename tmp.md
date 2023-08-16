@@ -265,3 +265,14 @@ unit in kcal/mol
 | Imdazole-Heme | \textcolor{red}{-2276522.9} |            | -2276491.3         |
 
 
+$$
+\bm{h} = \bm{\sum}_{i}^N \bm{\sum}_{j}^N ({\bm{r}_i}-{\bm{r}_j}) \{\frac{1}{2}  \bm{F}_{ij} \cdot ({\bm{v}_i} + {\bm{v}_j})\}
+$$
+
+$$
+\bm{\sum}_{{\alpha}=1}^{36} \tilde c_{\alpha, \alpha} 
+$$
+
+$$
+\bm{\sum}_{{\alpha}=1}^{35} \tilde c_{\alpha, \alpha+1} 
+$$

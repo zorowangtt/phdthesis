@@ -474,8 +474,11 @@ met-FixLH-imd protein, respectively (@tbl:quantumcalculation).
 
 ## Equilibrium molecular dynamics simulations
 
-The procedures of MD simulations for heat current and energy flow calculations on HP36 in @sec:cha3 and @sec:cha4, and on two *Bj*FixLs proteins in @sec:cha5 were described in this chapter.
-All molecular simulations in @sec:cha3, @sec:cha4, and @sec:cha5 were performed by Amber 19 package.[@d.a.case2019]
+![Computational procedure for HP36 protein system.](figures/non-bonded/method.jpg){#fig:hp36-method width=70%}
+
+
+The procedures of MD simulations for heat current and energy flow calculations on HP36 (@fig:hp36-method) in @sec:cha3 and @sec:cha4, and on two *Bj*FixLH proteins (@fig:fixl-method) in @sec:cha5 were described in this chapter.
+All molecular simulations in @sec:cha3, @sec:cha4, and @sec:cha5 were performed by using Amber 19 package.[@d.a.case2019]
 
 ### Systems setup
 (1) HP36 system
@@ -489,6 +492,8 @@ All charged residues were considered in their standard protonation state at pH =
 Amber ff19SB force field functions[@tian2020] were used for the protein atoms.
 Four chloride and two sodium ions were added to neutralize the simulation box.
 For efficient long-range electrostatic calculations, the particle mesh Ewald (PME) method was used under periodic boundary conditions.
+
+![Computational procedure for *Bj*FixLH protein systems.](figures/fixl/method.png){#fig:fixl-method width=70%}
 
 (2) *Bj*FixL systems
 
