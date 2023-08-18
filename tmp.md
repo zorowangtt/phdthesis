@@ -276,3 +276,11 @@ $$
 $$
 \bm{\sum}_{{\alpha}=1}^{35} \tilde c_{\alpha, \alpha+1} 
 $$
+
+$$
+\lambda_{\alpha, \alpha} = \frac{\tilde \Lambda_{\alpha, \alpha}}{3V_{\alpha}k_BT^2}
+$$
+
+$$
+\tilde c_{\alpha,\alpha} \equiv \frac{\tilde{\Lambda}_{\alpha, \alpha}} {\Lambda}
+$$
