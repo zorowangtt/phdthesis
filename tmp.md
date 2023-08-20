@@ -284,3 +284,13 @@ $$
 $$
 \tilde c_{\alpha,\alpha} \equiv \frac{\tilde{\Lambda}_{\alpha, \alpha}} {\Lambda}
 $$
+
+$$
+\langle\bm h(0) \cdot \bm h(t)\rangle = \langle\bm h_{\rm A}(0) \cdot \bm h_{\rm A}(t)\rangle + \langle\bm h_{\rm B}(0) \cdot \bm h_{\rm B}(t)\rangle + \langle\bm h_{\rm AB}(0) \cdot \bm h_{\rm AB}(t)\rangle
+$$
+
+$$
+\langle\bm h_{\rm A}(0) \cdot \bm h_{\rm B}(t)\rangle \,\,\,
+\langle\bm h_{\rm A}(0) \cdot \bm h_{\rm AB}(t)\rangle \,\,\,
+\langle\bm h_{\rm B}(0) \cdot \bm h_{\rm AB}(t)\rangle
+$$
