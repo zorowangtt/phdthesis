@@ -470,7 +470,7 @@ met-FixLH-imd protein, respectively (@tbl:quantumcalculation).
 | Met-Heme      | -3402.1853060                  | -3402.1959457 | \textcolor{red}{-3402.1976629} |
 | Imdazole-Heme | \textcolor{red}{-3627.8693349} |               | -3627.8189808                  |
 
-: Quantum calculation results of met-FixLH and met-FixLH-imd. Hartree-Fork Energy (unit: a.u.) comparison among different spin states of met-FixLH and met-FixLH-imd. {#tbl:quantumcalculation}
+: Quantum calculation results of met-FixLH and met-FixLH-imd. Hartree Energy (unit: eV) comparison among different spin states of met-FixLH and met-FixLH-imd. {#tbl:quantumcalculation}
 
 ## Equilibrium molecular dynamics simulations
 

@@ -122,7 +122,7 @@ A smaller data set consisting of the inter-residue thermal conductivity and _P_~
 The Pearson correlation coefficient and **_p_-value are 0.80 (> 0.3) and 0.001 ($\ll$ 0.05), respectively, indicating a stronger correlation than that for the all hydrogen bonded residue pairs.
 The contact distance is supported to be a factor that can affect thermal transport properties.[@reid2018]
 In addition, the histogram of all contact distance and contact distance for residue pairs of $\alpha$, $\alpha$+4 are shown in [@fig:histogram-contacts-all].
-We can see that the contact distance of all residue pairs has a broad range (~ 2 - 8 Å) in @fig:histogram-contacts-all]a.
+We can see that the contact distance of all residue pairs has a broad range (~ 2 - 8 Å) in [@fig:histogram-contacts-all]a.
 It is worth mentioning that the contact distance exhibits a broad distribution (2 - 4 Å) for the dataset used in [@fig:hb_all_ii4]a, whereas the range of those for the smaller dataset used in [@fig:hb_all_ii4]b is limited within 2.1 $\pm$ 0.2 Å ([@fig:histogram-contacts-all]b).
 
 ## Important features in thermal transport through nonbonded contacts
