@@ -294,3 +294,7 @@ $$
 \langle\bm h_{\rm A}(0) \cdot \bm h_{\rm AB}(t)\rangle \,\,\,
 \langle\bm h_{\rm B}(0) \cdot \bm h_{\rm AB}(t)\rangle
 $$
+
+$$
+\lambda_{\alpha, \alpha} = \frac {1} {3V_{\alpha}k_BT^2} \bm{\int} \langle \bm{h}_{\alpha, \alpha}(t) \cdot \bm{h}_{\alpha, \alpha}(0) \rangle dt 
+$$
