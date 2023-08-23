@@ -248,7 +248,7 @@ $$
 $$
 {#eq:eqc15}
 
-![Allocation of cross-correlation term](figures/cross/allocation_principle.jpeg){#fig:allocation width=70%}
+![Allocation of cross-correlation term.](figures/cross/allocation_principle.jpeg){#fig:allocation width=70%}
 
 Let us introduce three $N \times N$ matrices: $\{\bm{\Lambda}_{\alpha, \beta}\} = \Lambda_{\alpha, \beta}$, $\{\bm{\tilde\Lambda}\}_{\alpha, \beta} = \tilde\Lambda_{\alpha, \beta}$, and $\{\bm{\xi}_{\alpha, \beta}\} = \xi_{\alpha, \beta}$, where $\bm{\xi}$ is symmetrized, i.e., $\xi_{\alpha+1, \alpha} = \xi_{\alpha, \alpha+1}$ for $(\alpha = 1, 2, \cdots, N-1)$.
 Using these matrices, we can express $\bm{\tilde\Lambda}$ by the following equation:
@@ -570,7 +570,7 @@ $$
 
 where $n_i$ is the number of hydrogen bonds formed between the pair, and _N_ is the number of snapshots in the MD trajectory.
 
-## Random forest regression
+## Random forest regression method
 The random forest regression model was applied to predict the values of inter-residue thermal conductivity, $\lambda_{\alpha,\beta}$, for residue pairs (α, β), by using sklearn's _RandomForestRegressor_ function in Python.
 The $\lambda_{\alpha,\beta}$ values were considered as the target variable and seven properties, each of which represents either static or dynamical feature of a protein, were considered as explanatory variables: inverse of contact (shortest) distance ($\langle d_c \rangle$), $P_{HB}$, the inverse of variance in the contact distance ($\langle \delta d_{c}^2 \rangle$), the summation of the volumes of contact residue pair ($V_{\alpha\beta}$), residue type (RT$_\alpha$ and RT$_\beta$), and interaction type (IT).
 The whole dataset was split into two groups for model fitting and evaluation: training set (80%) and testing set (20%).
@@ -611,7 +611,7 @@ $$
 
 where $V$ represents either $w_{\alpha,\beta}$, $\log{G}_{\alpha, \beta}$, or $\log{\lambda}_{\alpha, \beta}$. -->
 
-## Computational modeling for a homodimer _Thalassosira pseudonana_ CP12
+## Computational modeling for _Thalassosira pseudonana_ CP12 homodimer
 Although structure modeling of globular protein with its well-defined native conformation has become practical by using deep-learning algorithms based techniques,
 there still remains various obstacles to characterize the conformational ensemble of the intrinsically disordered protein (IDP) or the protein with highly flexible disordered regions (IDRs).
 To address this issue, we developed a three-stage modeling technique and applied it to _Thalassosira pseudonana_ chloroplast protein (CP12) with IDRs.
@@ -647,7 +647,7 @@ Each of the homodimeric structure of WT, S46C, and S56C mutants was predicted an
 To evaluate the reliability of the predictions residuewise,
 the predicted local distance difference test score (pLDDT, on a scale from 0 to 100, where 100 denotes the most confident) was used to assess the per-residue confidence for the model.
 
-### Harmonic restrained molecular dynamics simulations
+### Harmonic restrained MD simulations
 
 In the AF2 model (@fig:scheme B), we observed two well-structured C-terminal helices were overfolded with the coiled-coil region in the AF2 model (@fig:predicted-model), despite their high flexibility by the EPR/DEER experiment (C150 in @fig:scheme C).
 Therefore, these two C-terminal helices were manually shifted away from the dimer's coiled-coil portion (@fig:scheme B).

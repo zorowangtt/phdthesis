@@ -91,7 +91,7 @@ ubiquitous thermal vibrations and conformational fluctuations in
 biomolecules under physiological conditions[@mizuno2020;@yamashita2018] ceaseless energy
 exchange among amino acid residues occurs through interaction between
 them. It has been demonstrated the analysis of energy flow across
-non-bonded native contacts in proteins provides a useful tool for
+nonbonded native contacts in proteins provides a useful tool for
 characterizing the network of residue-residue interactions.[@leitner2020;@ishikura2015;@leitner2009;@leitner2020a;@leitner2008;@reid2020;@leitner2019;@ishikura2006;@poudel2021;@reid2018;@ota2019]
 To illustrate such transport property of local energy flow, we
 quantified a measure of the efficiency of local energy transport,
@@ -213,7 +213,7 @@ between them. Only heme-ARG220 interaction is common between met-FixLH
 and met-FixLH-imd. The heme-protein interactions are almost completely
 localized in the Fα helix and the FG loop.
 
-![Molecular dynamic simulations of met-*Bj*FixLH without force restraints on N-terminal of A’α helix. (A) The crystal structure model of MD simulations. (B) The time evolution of distance between carbon atom of residue ILE128s.](figures/fixl/force-restraint.jpg){#fig:force-restraint width=70%}
+![Molecular dynamic simulations of met-*Bj*FixLH without force restraints on N-terminal of A’α helix. (A) The crystal structure model of MD simulations. (B) The time evolution of distance between carbon atom (CA) of residue ILE128s.](figures/fixl/force-restraint.jpg){#fig:force-restraint width=70%}
 
 Strong interactions across the dimer interface are mainly found in two
 regions: (3) N terminus and (4) C terminus.

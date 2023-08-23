@@ -28,7 +28,7 @@ In summary, the frequency histogram of the calculated local thermal conductiviti
 ## Peptide bonds? or nonbonded contacts?
 
 <!-- ![Inter-residue thermal conductivity between adjacent residue pairs along the chain.](figures/non-bonded/line-intra-inter-lambda.png){#fig:inter_lambda width=70%} -->
-![Nonbonded contacts that can compete with polypeptide chain](figures/non-bonded/shortcuts.png){#fig:shortcuts width=50%}
+![Nonbonded contacts that can compete with polypeptide chain.](figures/non-bonded/shortcuts.png){#fig:shortcuts width=50%}
 
 There is an ongoing debate on the dominant pathway of thermal energy transport in proteins.[@deniz2021;@mizutani2022;@buchenberg2016]
 To address the issue, we carried out site-selective heat current analysis ([@fig:histogram_lambda]).
@@ -125,10 +125,10 @@ In addition, the histogram of all contact distance and contact distance for resi
 We can see that the contact distance of all residue pairs has a broad range (~ 2 - 8 Å) in [@fig:histogram-contacts-all]a.
 It is worth mentioning that the contact distance exhibits a broad distribution (2 - 4 Å) for the dataset used in [@fig:hb_all_ii4]a, whereas the range of those for the smaller dataset used in [@fig:hb_all_ii4]b is limited within 2.1 $\pm$ 0.2 Å ([@fig:histogram-contacts-all]b).
 
-## Important features in thermal transport through nonbonded contacts
+## Important features of thermal transport through nonbonded contacts
 <!-- ## Random Forest Analysis -->
 
-![(a) Cross plot of $\lambda_{\alpha,\beta}$ and predicted $\lambda_{\alpha,\beta}$ of nonbonded contacts ($\langle d_c \rangle$ < 8) using random forest regression model; (b) VIP score plot of variable importance of variables. $\langle d_c^2 \rangle$: contact (shortest) distance of residue $\alpha$ and $\beta$; P~HB~: hydrogen bonds occurrence probability; $\langle \delta d_c^2 \rangle$: the variance in contacts distance; $V_{\alpha\beta}$: summation of the volumes of residue pair in contacts; RT$_\alpha$ (RT$_\beta$): residue type; IT: interaction type.](figures/non-bonded/random-forest_permutation_importance_.png){#fig:random-forest-L}
+![(a) Cross plot of $\lambda_{\alpha,\beta}$ and predicted $\lambda_{\alpha,\beta}$ of nonbonded contacts ($\langle d_c \rangle$ < 6) using random forest regression model; (b) VIP score plot of variable importance of variables. $\langle d_c^2 \rangle$: contact (shortest) distance of residue $\alpha$ and $\beta$; P~HB~: hydrogen bonds occurrence probability; $\langle \delta d_c^2 \rangle$: the variance in contacts distance; $V_{\alpha\beta}$: summation of the volumes of residue pair in contacts; RT$_\alpha$ (RT$_\beta$): residue type; IT: interaction type.](figures/non-bonded/random-forest_permutation_importance_.png){#fig:random-forest-L}
 
 ![(a) Cross plot of $\lambda_{\alpha,\beta}$ between those obtained from the MD simulations and those predicted using random forest model for nonbonded native contacts ($\langle d_c \rangle$ < 4) using random forest regression model; (b) VIP score plot of variable importance. $\langle d_c^2 \rangle$: contact (minimum interactomic) distance between residue $\alpha$ and $\beta$; P~HB~: hydrogen bonds occurrence probability; $\langle \delta d_c^2 \rangle$: the variance of contact distance; $V_{\alpha\beta}$: summation volume of contacts; RT$_\alpha$ (RT$_\beta$): residue type; IT: interaction type.](figures/non-bonded/random-forest_permutation_importance_smallerthan-0.0005_backup.png){#fig:random-forest-S}
 
