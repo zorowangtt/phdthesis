@@ -18,7 +18,7 @@ The contribution factors for intra-residue and inter-residue heat currents were 
 In general, the intra-residue contribution factors were found to be higher than the inter-residue factors (_c_), except for certain pairs of terminal residues (Met1-Leu2, Leu35-Phe36 and Gly12-Met13).
 The average intra-residue contribution factor (see @eq:eqc10) was 0.029, which was nearly twice as large as the average inter-residue contribution factor (0.016).
 This suggests that intra-residue thermal transport makes a dominant contribution to the overall heat current, which is consistent with the results of the master equation analysis. [@buchenberg2016]
-In addition to these two dominating thermal energy transport pathways, the contributions from sidechain-sidechain heat currents across non-bonded native contacts were relatively small.[@yamato2022]
+In addition to these two dominating thermal energy transport pathways, the contributions from sidechain-sidechain heat currents across nonbonded native contacts were relatively small.[@yamato2022]
 
 ![The contribution factors without cross-correlation corrections were calculated and plotted for both intra-residue ($c_{\alpha, \alpha}$, shown in red) and inter-residue ($c_{\alpha, \alpha+1}$, shown in green) interactions, as described in equations (@eq:eqc11) and (@eq:eqc12), respectively. The data points, such as $c_{1,2}$, represent the contribution factor between residue numbers $\alpha = 1$ and $\alpha = 2$. The horizontal axis displays the residue number, $\alpha$, along with the corresponding residue names represented in the one-letter code. The grey-shaded regions correspond to the $\alpha$-helical regions.](figures/cross/heat-conductivity-before-corrected.jpeg){#fig:heat_before width=70%}
 
@@ -30,7 +30,7 @@ In @sec:cross-correlation, we will delve into a more detailed analysis of these 
 
 ![The cross-correlation contribution factor between nearest neighbor residues, $c^{\rm{cross}}_{\alpha,\alpha+1}$, defined as $\xi_{\alpha,\alpha+1} / \Lambda$, was plotted as a function of the residue number. Each data point represents the value of $c^{\rm{cross}}_{\alpha,\alpha+1}$ between residue $\alpha$ and $\alpha+1$. For example, the data point $c^{\rm{cross}}_{1,2}$ corresponds to the cross-correlation between residues 1 and 2.](figures/cross/cross-correlation-term.jpeg){#fig:cross width=70%}
 
-![Contribution factors with cross-correlation correction. See the caption to [@fig:heat_before]](figures/cross/heat-conductivity-after-corrected.jpeg){#fig:heat_after width=70%}
+![Contribution factors with cross-correlation correction. See the caption to [@fig:heat_before].](figures/cross/heat-conductivity-after-corrected.jpeg){#fig:heat_after width=70%}
 
 In this study, we assumed that the cross-correlation effect is short range along the polypeptide sequence (@sec:method-cross-correlation).
 Interestingly, the cross-correlation effect exhibits secondary structure dependence (@fig:cross): the α-helical regions are less affected by the cross-correlation.
@@ -143,7 +143,7 @@ We define the residue-wise thermal conductivity, $\lambda_{\alpha}$, of residue 
 ## Local density dependence{#sec:local-density-dependence}
 
 <!-- figures* environment create a two-column-sized figures  -->
-![A scatter plot and linear correlation analysis were performed to examine the relationship between the intra-residue thermal conductivity and the local density, represented by the mass density ($\rho$), calculated as the ratio of residue mass to residue volume (unit: g/$\rm{cm^3}$)](figures/cross/density_combined.jpeg){#fig:density}
+![A scatter plot and linear correlation analysis were performed to examine the relationship between the intra-residue thermal conductivity and the local density, represented by the mass density ($\rho$), calculated as the ratio of residue mass to residue volume (unit: g/$\rm{cm^3}$).](figures/cross/density_combined.jpeg){#fig:density}
 
 The density of a material is widely recognized as an important determinant of its thermophysical properties.[@mizutani2022]
 The product of material density ($\rho$) and its specific heat capacity ($c_p$), denoted as $\rho{c_p}$, is commonly used as a measure of the thermal energy storage capacity of a material.[@bergman2011]
