@@ -25,7 +25,7 @@ In this section, we have obtained an atomistic formulation for the heat current 
 The atomistic representation of the instantaneous heat current, denoted as $\bm{h}$, is derived by taking the time derivative of the energy distribution,[@yamato2022]
 
 $$
-  {\bm{h} }\equiv \frac{d}{dt} \bm{\sum}_{i=1}^N(E_i  \bm{\bm{r}_i})=\bm{\sum}_{i=1}^N { (E_i\frac{d\bm{r}_i}{dt} + \bm{r}_i} \frac{dE_i}{dt})
+{\bm{h} }\equiv \frac{d}{dt} \bm{\sum}_{i=1}^N(E_i  \bm{\bm{r}_i})=\bm{\sum}_{i=1}^N \left ( E_i\frac{d\bm{r}_i}{dt} + \bm{r}_i \frac{dE_i}{dt} \right )
 $$
 {#eq:eqc2}
 
@@ -113,14 +113,14 @@ $$
 Thus, we obtained atomistic expression for the heat current as
 
 $$
-\bm{h}=\bm{\sum}_{i=1}^N \bm{r}_i \frac{dE_i}{dt} =  \bm{\sum}_{i}^N \bm{r}_i \bm{\sum}_{j}^N  \{ \frac{1}{2} \bm{F}_{ij} \cdot ({\bm{v}_i} + {\bm{v}_j})\}, 
+\bm{h}=\bm{\sum}_{i=1}^N \bm{r}_i \frac{dE_i}{dt} =  \bm{\sum}_{i}^N \bm{r}_i \bm{\sum}_{j}^N  \left \{ \frac{1}{2} \bm{F}_{ij} \cdot ({\bm{v}_i} + {\bm{v}_j}) \right \},
 $$
 {#eq:eqc5}
 
 with the inter-atomic heat current between atoms $i$ and $j$, $\bm{h_{ij}}$, denoted as
 
 $$
-{\bm{h_{ij}}} = ({\bm{r}_i}-{\bm{r}_j}) \{\frac{1}{2}  \bm{F}_{ij} \cdot ({\bm{v}_i} + {\bm{v}_j})\}.
+{\bm{h_{ij}}} = ({\bm{r}_i}-{\bm{r}_j}) \left \{\frac{1}{2}  \bm{F}_{ij} \cdot ({\bm{v}_i} + {\bm{v}_j}) \right \}.
 $$
 {#eq:eqc6}
 
@@ -159,7 +159,7 @@ $$
 Here, $\bm{h}_{\alpha, \alpha}$ represents the intra-residue heat current within residue $\alpha$, which is the sum of heat currents between all pairs of atoms $i$ and $j$ within a single residue ($\bm{\sum}_{i}^{n_\alpha} \bm{\sum}_{j}^{n_\alpha} \bm{h}_{ij}$). Similarly, $\bm{h}_{\alpha, \alpha+1}$ represents the inter-residue heat current between a pair of adjacent residues $\alpha$ and $\alpha+1$, calculated as the sum of heat currents between all atoms $i$ in residue $\alpha$ and all atoms $j$ in residue $\alpha+1$ ($\bm{\sum}_{i}^{n_\alpha} \bm{\sum}_{j}^{n_{\alpha+1}} \bm{h}_{ij}$).
 
 In order to characterize the residuewise thermal transport property, we introduced several quantities: $\Lambda_{\alpha, \alpha}$, $\Lambda_{\alpha, \alpha+1}$, and $\Lambda$.
-These quantities are defined as the time-integrated autocorrelation functions (ACFs) of the partial heat currents within a residue ($\Lambda_{\alpha, \alpha}$), between adjacent residues ($\Lambda_{\alpha, \alpha+1}$), and for the total heat current ($\Lambda$), respectively,
+These quantities are defined as the ACFs of the partial heat currents within a residue ($\Lambda_{\alpha, \alpha}$), between adjacent residues ($\Lambda_{\alpha, \alpha+1}$), and for the total heat current ($\Lambda$), respectively,
 
 $$
 \begin{aligned}
@@ -199,7 +199,7 @@ As a result, the value of $\lambda$ cannot be accurately reconstructed using onl
 In this analysis, it is essential to consider the influence of these cross-correlations in order to obtain effective local thermal conductivities that accurately characterize the non-uniform thermal transport property of proteins.
 Thus, by incorporating the cross-correlations, we aim to derive the mathematical expression of the local thermal conductivities that are consistent with the overall thermal conductivity of the entire molecule.
 
-The analysis of the local thermal transport property using @eq:eqc8 leads to a problem: when dividing the overall heat current into the summation of partial heat currents (@eq:eqc7), @eq:eqc9 includes both autocorrelation and cross-correlation terms, while the cross-correlation terms, $\langle\bm{h}{\alpha, \beta}(0) \cdot \bm{h}{\alpha', \beta'}(t)\rangle$ with $(\alpha, \beta) \ne (\alpha', \beta')$, are missing in @eq:eqc8.
+The analysis of the local thermal transport property using @eq:eqc8 leads to a problem: when dividing the overall heat current into the summation of partial heat currents (@eq:eqc7), @eq:eqc9 includes both autocorrelation and cross-correlation terms, while the cross-correlation terms, $\langle\bm{h}_{\alpha, \beta}(0) \cdot \bm{h}_{\alpha', \beta'}(t)\rangle$ with $(\alpha, \beta) \ne (\alpha', \beta')$, are missing in @eq:eqc8.
 As a result, we anticipate that the summation of all contribution factors, $\sum_{\alpha=1}^{N} c_{\alpha, \alpha} + \sum_{\alpha=1}^{N-1} c_{\alpha, \alpha+1}$, does not equal unity. If this summation is greater (or less) than 1, it implies that the average intensity of the local thermal transport is overestimated (or underestimated) compared to its actual value.
 
 ![Short-range cross-correlation approximation. Cross-correlations are considered only for nearby pairs (dashed line).](figures/cross/cross-correlation.jpeg){#fig:cross-correlation width=70%}
@@ -368,19 +368,19 @@ All of the heat currents and their autocorrelation function calculations were pe
 
 Considering the molecular functional importance of nonbonded native contacts in a folded protein,
 it would be helpful to analyze the thermal energy transfer through such native contacts.
-We first derive atomistic expression of heat current for a molecular system based on linear response theory, and the derivation process is detailed in @sec:interatomicheatcurrent.
-The inter-atomic heat current between atoms $i$ and $j$ in a molecule, denoted as $\bm{h_{ij}}$, can be expressed as:
-$$
+<!-- We first derive atomistic expression of heat current for a molecular system based on linear response theory, and the derivation process is detailed in @sec:interatomicheatcurrent. -->
+
+<!-- $$
 {\bm{h_{ij}}} = ({\bm{r}_i}-{\bm{r}_j}) \left\{ \frac{1}{2} \bm{F}_{ij} \cdot ({\bm{v}_i} + {\bm{v}_j} ) \right\}
 $$
-{#eq:eqd1}
+{#eq:eqd1} -->
 <!-- prettier-ignore-end -->
 
-where $\bm{F}_{ij}$ is the force acting on atom $i$ from atom $j$, ${\bm{r}_i}$(${\bm{r}_j}$) and ${\bm{v}_i}$ (${\bm{v}_j}$) are positional vector and velocity of atom $i$($j$).
+<!-- where $\bm{F}_{ij}$ is the force acting on atom $i$ from atom $j$, ${\bm{r}_i}$(${\bm{r}_j}$) and ${\bm{v}_i}$ (${\bm{v}_j}$) are positional vector and velocity of atom $i$($j$). -->
 
 <!-- For a protein containing $N$ amino acid residues, the entire protein can be divided into $N$ segments in terms of residues, then the total heat current, $\bm{h}$, can be expressed by a sum of partial heat current: $\bm{h} = \sum_{\alpha=1}^{N} \bm{h_{\alpha}}$. -->
 
-Then, the heat current between residue $\alpha$ and $\beta$ can be expressed as:
+Based on the inter-atomic heat current between atoms $i$ and $j$ in a molecule, $\bm{h_{ij}}$, the heat current between residue $\alpha$ and $\beta$ can be expressed as:
 
 <!-- prettier-ignore-start -->
 $$
@@ -491,7 +491,7 @@ The HP36 protein molecule was placed in an octahedral solvent box containing 232
 All charged residues were considered in their standard protonation state at pH = 7.0.
 Amber ff19SB force field functions[@tian2020] were used for the protein atoms.
 Four chloride and two sodium ions were added to neutralize the simulation box.
-For efficient long-range electrostatic calculations, the particle mesh Ewald (PME) method was used under periodic boundary conditions.
+For efficient long-range electrostatic interaction calculations, the particle mesh Ewald (PME) method was used under periodic boundary conditions.
 
 ![Computational procedure for *Bj*FixLH protein systems.](figures/fixl/method.png){#fig:fixl-method width=70%}
 
@@ -546,7 +546,7 @@ The atomic coordinates and velocities of _NVE_ MD simulations were saved every 1
 ### Definition
 
 To describe the intramolecular interaction networks in proteins, the protein contact networks (PCNs) [@dipaola2013;@dipaola2015;@dipaola2022] have been introduced, aiming to unravel the relationship between protein structure and function.
-In PCNs, two residues whose alpha-carbon atoms (CA) are within 4-8 Å of each other are considered to have contacts and interactions.
+In PCNs, two residues whose alpha-carbon atoms (CA) are within 4 - 8 Å of each other are considered to have contacts and interactions.
 In this study, we defined nonbonded contacts based on a geometric criterion where residue pairs with the nearest atom distance of 6 Å or less at least in each _NVE_ MD simulation trajectory were considered to have a significant role in heat and energy transport, as the thermal transport becomes negligible for pairs separated farther than this threshold.
 A total of 319 residue pairs in HP36 were selected using the _pickup-respairs_ module of CURP 1.3.
 
@@ -625,17 +625,17 @@ Finally, restrained-ensemble molecular dynamics (reMD) simulations[@roux2013;@sh
 From the complete amino acid sequence of wild type of CP12, we used the segment of 163 residues (shown in blue) served as the input (WT) for AlphaFold2 modeling as follows:
 
 MKIFLASLIGSCAAFAPAPFGKSPTALFGRVDTS\textcolor{blue}{AAIEAALDASKKFGSTSSEARVLWDIVEEMDASDNSVAS
-KAPIVD\text{red}{S}EYEAKVKSL\text{red}{S}QMLTKTKAELDQVKALADDLKGVKLASPSVGSSAPDDSVMKEALAAARAATEEFGQ
+KAPIVD\textcolor{red}{S}EYEAKVKSL\textcolor{red}{S}QMLTKTKAELDQVKALADDLKGVKLASPSVGSSAPDDSVMKEALAAARAATEEFGQ
 SSPQARLAWETVEEIAASPVDIRAPLDEECLIELIEGCEALEKFQAALGSR} (WT)
 
 In addition, to consider the influence of mutants in the EPR/DEER experiment, two mutant sequences are considered to predict the CP12's dimer.
 Their sequences are as follows:
 
-AAIEAALDASKKFGSTSSEARVLWDIVEEMDASDNSVASKAPIVD\text{red}{C}EYEAKVKSLSQMLTKTKAELDQVK
+AAIEAALDASKKFGSTSSEARVLWDIVEEMDASDNSVASKAPIVD\textcolor{red}{C}EYEAKVKSLSQMLTKTKAELDQVK
 ALADDLKGVKLASPSVGSSAPDDSVMKEALAAARAATEEFGQSSPQARLAWETVEEIAASPVDIRAPLDEE
 SLIELIEGSEALEKFQAALGSR (S46C)
 
-AAIEAALDASKKFGSTSSEARVLWDIVEEMDASDNSVASKAPIVDSEYEAKVKSL\text{red}{C}QMLTKTKAELDQVK
+AAIEAALDASKKFGSTSSEARVLWDIVEEMDASDNSVASKAPIVDSEYEAKVKSL\textcolor{red}{C}QMLTKTKAELDQVK
 ALADDLKGVKLASPSVGSSAPDDSVMKEALAAARAATEEFGQSSPQARLAWETVEEIAASPVDIRAPLDEE
 SLIELIEGSEALEKFQAALGSR (S56C)
 

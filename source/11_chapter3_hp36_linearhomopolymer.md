@@ -22,7 +22,7 @@ In addition to these two dominating thermal energy transport pathways, the contr
 
 ![The contribution factors without cross-correlation corrections were calculated and plotted for both intra-residue ($c_{\alpha, \alpha}$, shown in red) and inter-residue ($c_{\alpha, \alpha+1}$, shown in green) interactions, as described in equations (@eq:eqc11) and (@eq:eqc12), respectively. The data points, such as $c_{1,2}$, represent the contribution factor between residue numbers $\alpha = 1$ and $\alpha = 2$. The horizontal axis displays the residue number, $\alpha$, along with the corresponding residue names represented in the one-letter code. The grey-shaded regions correspond to the $\alpha$-helical regions.](figures/cross/heat-conductivity-before-corrected.jpeg){#fig:heat_before width=70%}
 
-The sum of the intra-residue contribution factors, $\sum_{\alpha=1}^{36}{c(\alpha,\alpha)}$, was 1.06, and the sum of the inter-residue contribution factors, $\sum_{\alpha=1}^{35}{c(\alpha,\alpha+1)}$, was 0.57.
+The sum of the intra-residue contribution factors, $\sum_{\alpha=1}^{36} c_{\alpha,\alpha}$, was 1.06, and the sum of the inter-residue contribution factors, $\sum_{\alpha=1}^{35}c_{\alpha,\alpha+1}$, was 0.57.
 The deviation of 1.06 + 0.57 = 1.63 from 1 suggests the presence of non-negligible cross-correlation effects among different partial heat currents.
 In @sec:cross-correlation, we will delve into a more detailed analysis of these cross-correlation effects.
 
@@ -39,13 +39,13 @@ The reason for this observation is currently unclear and will be investigated fu
 All of the contribution factors decreased after the cross-correlation correction (@fig:heat_after), yielding a similar pattern to @fig:heat_before.
 The total intra-residue contribution was 0.75, approximately three times larger than that of the inter-residue contribution of 0.26.
 To validate the assumption of short-range cross-correlation, we also calculated the contributing factors for the second nearest cross-correlation between residue pairs of α and α+2 ($\xi_{\alpha, \alpha+2}$), ($\alpha$ = 1, 2, ..., 34), using the same method described in @sec:method-cross-correlation.
-The total contribution due to the second nearest cross-correlation was 0.03 (@tbl:secondnearest), while that for the nearest cross-correlation was –0.62(@tbl:nearest), indicating that the second nearest cross-correlation has a minimal impact on the overall heat current.
+The total contribution due to the second nearest cross-correlation was 0.03 (@tbl:secondnearest), while that for the nearest cross-correlation was –0.62 (@tbl:nearest), indicating that the second nearest cross-correlation has a minimal impact on the overall heat current.
 
 To validate the linear-homopolymer-like model, we compared $\Lambda$ and $\tilde \Lambda$.
 The former was derived from the exact heat current of the entire molecule, while the latter was based on the linear-homopolymer-like model.
 The calculation results showed that $\tilde \Lambda$ overestimated $\Lambda$ only by 0.9%, indicating that the linear-homopolymer-like model successfully represents the thermal transport property of the entire molecule.
 
-| Residue($\alpha$)| Residue($\alpha+2$) | $\xi_{\alpha, \alpha+2}$ | $c^{\rm{cross}}_{\alpha, \alpha+2}$ |
+| Residue ($\alpha$)| Residue ($\alpha+2$) | $\xi_{\alpha, \alpha+2}$ | $c^{\rm{cross}}_{\alpha, \alpha+2}$ |
 | :--------------- | :------------------- | :----------------------- | :--------------------- |
 | ARG15            | ALA17                | 0.012                    | 0.001                  |
 | ALA17            | ALA19                | -0.010                   | -0.001                 |
@@ -125,7 +125,7 @@ The calculation results showed that $\tilde \Lambda$ overestimated $\Lambda$ onl
 | ------------------------ | ------------------------------     | ------------------------------      |
 | total                    | 7.35                               | 2.53                                |
 
-: Local thermal trasnport property after the cross-correlation correction. $\bm\tilde\Lambda_{\alpha, \alpha}$ ($\bm\alpha$=1, 2, ..., 36) and $\bm\tilde\Lambda_{\alpha, \alpha+1}$  ($\bm\alpha$=1, 2, ..., 35) are shown in unit of $\rm{(\AA \cdot kcal)^2/fs}$ (@eq:eqc8), while the value of $\Lambda$ was 9.79 in the same unit (@eq:eqc9). {#tbl:nearest}
+: Local thermal trasnport property after the cross-correlation correction. $\bm\tilde\Lambda_{\alpha, \alpha}$ ($\alpha$=1, 2, ..., 36) and $\bm\tilde\Lambda_{\alpha, \alpha+1}$ ($\alpha$=1, 2, ..., 35) are shown in unit of $\rm{(\AA \cdot kcal)^2/fs}$ (@eq:eqc8), while the value of $\Lambda$ was 9.79 in the same unit (@eq:eqc9). {#tbl:nearest}
 
 ## Residue-type dependence{#sec:residue-type-dependence}
 
@@ -136,7 +136,7 @@ We obtained the average residue volume using five representative structures of H
 
 We observed that the values of the corrected contribution factors, $\tilde c$, are proportional to the residue volume.
 Additionally, the slope of the regression line depends on the residue type, indicating that the residue-wise thermal conductivity is sensitive to the residue type.
-We define the residue-wise thermal conductivity, $\lambda_{\alpha}$, of residue α as $\tilde\Lambda_{\alpha,\alpha}/(3V_{\alpha}k_B T)$, and we see that $\lambda_{\alpha}$ decreases in the order of charged, polar, and hydrophobic residues,in consistent with the previous report that the thermal diffusion along an α-helix composed entirely of polar residues is faster than that of its non-polar -residue counterpart.[@mino2014]
+We define the residue-wise thermal conductivity, $\lambda_{\alpha}$, of residue α as $\tilde\Lambda_{\alpha,\alpha}/(3V_{\alpha}k_B T)$, and we see that $\lambda_{\alpha}$ decreases in the order of charged, polar, and hydrophobic residues,in consistent with the previous report that the thermal diffusion along an α-helix composed entirely of polar residues is faster than that of its non-polar residue counterpart.[@mino2014]
 
 ![Volume dependence of $\tilde{c}$, a residue-wise contribution factor after cross-correlation correction, for charged (green), polar (orange) and  hydrophobic (blue) residues, respectively.](figures/cross/residue_type_dependence_volume_after_correction.jpeg){#fig:residue_type}
 
@@ -171,7 +171,7 @@ leading to a broader distribution of residue densities within the protein molecu
 Generally, a value of $|r|$ > 0.3, or a *p*-value < 0.05 is often considered to be statistically significant, indicating that the pair of variables under consideration are correlated. {#tbl:pearson}
 
 The linear regression analysis of the residue-wise thermal conductivity with cross-correlation correction shows a weak density dependence (@fig:density a).
-The data points exhibit a broad distribution, and the correlation between thermal conductivity and density is not statistically significant, as indicated by a Pearson correlation coefficient of 0.3 and a p-value of 0.078.
+The data points exhibit a broad distribution, and the correlation between thermal conductivity and density is not statistically significant, as indicated by a Pearson correlation coefficient of 0.3 and a *p*-value of 0.078.
 Pearson correlation analysis for all data in @fig:density a and sub data points classified by residue types in @fig:density b are shown in @tbl:pearson.
 
 In @fig:density b, the linear regression lines for hydrophobic and polar residues have almost constant thermal conductivity values, while charged residues show a negative proportionality, although the reason for this observation is unclear.

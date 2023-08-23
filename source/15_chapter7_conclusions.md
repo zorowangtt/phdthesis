@@ -12,9 +12,9 @@ The structural composition rules of proteins and features were introduced.
 Then, the current methods, theories, and techniques used to investigate the energy and heat transfer in proteins was summarized and introduced, along with important conclusions regarding the energy transfer properties of short peptides and proteins.
 
 <!-- summarize the methods -->
-In @sec:cha2, staring from the Geen-Kubo transport theory, the atomic expression of heat current and energy flow that is applicable to all density and situation materials under equilibrium state was derived.
+In @sec:cha2, staring from the Green-Kubo transport theory, the atomic expression of heat current and energy flow that is applicable to all density and situation materials under equilibrium state was derived.
 Then, to get a better understanding of the nature of transport properties in proteins, a linear-homopolymer-like model was introduced to divide the proteins into small pieces by residues.
-The local thermal transport properties at residue level was considered and calculated by the time-integrated autocorrelation functions (ACFs) of the partial heat currents.
+The local thermal transport properties at residue level was considered and calculated by the time-integrated ACFs of the partial heat currents.
 The interactions between two neighboring residues results in the independent movement and behavior between each other.
 Cross-correlation correction was introduced and employed to correct the overestimated contributions from partial heat currents to the total heat current for the entire protein.
 Two new concepts, _inter-residue thermal conductivity_ and _inter-residue energy conductivity_, that can represent the amount of heat and energy transferred per unit time at steady-state.
@@ -37,7 +37,7 @@ In the @sec:cha4, the thermal conductivity of peptide bonded residue pairs are f
 A strong correlation was observed between the thermal conductivity and energy conductivity of nonbonded residue pairs, despite they are representing different transport properties.
 Additionally, an empirical linear equation was derived to establish a relationship between them.
 In general, the $\lambda_{\alpha, \beta}$ values of nonbonded contacts in HP36 exhibited a decreasing trend in the following order: hydrogen bonds > π-stacking > electrostatic > hydrophobic.
-The hydrogen bond formation capacity druing MD simulations demonstrated a significant role for $\lambda_{\alpha, \beta}$ values of hydrogen bonding contacts.
+The hydrogen bond formation capacity during MD simulations demonstrated a significant role for $\lambda_{\alpha, \beta}$ values of hydrogen bonding contacts.
 In order to elucidate the factors influencing thermal transport ability in nonbonded contacts within the complex protein environment, a non-linear regression model was constructed for a wide range of contacts.
 This model employed random forest regression analysis to investigate the relationship between the thermal conductivity values ($\lambda_{\alpha, \beta}$) and various static and dynamic variables.
 
@@ -78,5 +78,5 @@ The hydrogen bonds between the main-chain NH and C'=O groups of residue α and �
 It is unknown how the different types of secondary structures will affect the thermal transport in proteins.
 
 2. The effect of solvent model on the thermal transport properties in protein.
-In this study, the thermal conductivity values of HP36 with a typical rigid TIP3P water model exhibited a smaller value (0.26 W m^–1^ K^–1^) compared to the value using the same flexible TIP3P water model (0.3 W m^–1^ K^–1^).
+In this study, the thermal conductivity values of HP36 with a typical rigid TIP3P water model exhibited a smaller value (0.26 $\mathrm{W{/} (m{\cdot}K)}$) compared to the value using the same flexible TIP3P water model (0.3 $\mathrm{W{/} (m{\cdot}K)}$).
 It raises the interest of "How will the change of water solvent flexibility changes vibration frequency at the water-protein interface, accordingly to influence the thermal transport properties of protein itself"?

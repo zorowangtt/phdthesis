@@ -19,10 +19,10 @@ The high similarity between $\Lambda_{\alpha, \beta}$ and $G_{\alpha, \beta}$ im
 ![Frequency histogram of local thermal conductivity in HP36. It shows the occurrence of $\lambda_{\alpha,\beta}$ for different types of residue pairs ($\alpha,\beta$) in nonbonded native contacts, together with the residue-wise thermal conductivity and those between adjacent residue pairs along the chain. For comparison, the value of the thermal conductivity of the entire HP36 molecule is indicated by the red dashed line, as well as that of bulk water by the black dashed line.[@wang2023]](figures/non-bonded/histogram-lambda-after.png){#fig:histogram_lambda}
 
 [@fig:histogram_lambda] shows the frequency histogram of the calculated local thermal conductivities in HP36.
-The histogram reveals that the hydrogen-bond contacts have the greatest values of $\lambda_{\alpha, \beta}$ among all the nonbonded native contacts, with a peak at around 2.5 $\times$ 10^–2^ W m^–1^ K^–1^, followed by the electrostatic contacts with $\lambda_{\alpha, \beta}$ values ranging from $10^{-5}$ to $10^{-3}$ W m^–1^ K^–1^ with having broader and less sharply peaked distributions than that of the hydrogen-bond contacts.
+The histogram reveals that the hydrogen-bond contacts have the greatest values of $\lambda_{\alpha, \beta}$ among all the nonbonded native contacts, with a peak at around 2.5 $\times$ 10^–2^ $\mathrm{W{/} (m{\cdot}K)}$, followed by the electrostatic contacts with $\lambda_{\alpha, \beta}$ values ranging from $10^{-5}$ to $10^{-3}$ $\mathrm{W{/} (m{\cdot}K)}$ with having broader and less sharply peaked distributions than that of the hydrogen-bond contacts.
 In the hydrophobic core of HP36, there are three $\pi$ stacking contacts: Phe7-Phe11 ($\lambda_{7,11}=4.9 \times 10^{-3}$), Phe7-Phe18 ($\lambda_{7,11}= 1.5 \times 10^{-3}$), and Phe11-Phe18 ($\lambda_{11,18}= 1.5 \times 10^{-3}$), with $\lambda_{\alpha, \beta}$ values comparable with hydrogen-bond contacts.
-Hydrophobic contacts, constitute the majority of the nonbonded native contacts with a broad distribution ranging from $10^{-7}$ to $10^{-2}$ W m^–1^ K^–1^.
-Their $\lambda_{\alpha, \beta}$ values are relatively smaller, with peaks at around $5.9 \times 10^{-4}$ W m^–1^ K^–1^.
+Hydrophobic contacts, constitute the majority of the nonbonded native contacts with a broad distribution ranging from $10^{-7}$ to $10^{-2}$ $\mathrm{W{/} (m{\cdot}K)}$.
+Their $\lambda_{\alpha, \beta}$ values are relatively smaller, with peaks at around $5.9 \times 10^{-4}$ $\mathrm{W{/} (m{\cdot}K)}$.
 In summary, the frequency histogram of the calculated local thermal conductivities for nonbonded native contacts exhibits a strikingly broad distribution, where different types of nonbonded contacts have significantly different contributions to thermal transport in the protein, with hydrogen bonds playing the dominant role.
 
 ## Peptide bonds? or nonbonded contacts?
@@ -33,9 +33,9 @@ In summary, the frequency histogram of the calculated local thermal conductiviti
 There is an ongoing debate on the dominant pathway of thermal energy transport in proteins.[@deniz2021;@mizutani2022;@buchenberg2016]
 To address the issue, we carried out site-selective heat current analysis ([@fig:histogram_lambda]).
 As a result, the distribution of local thermal transport coefficients demonstrated substantial heterogeneity in protein thermal transport at microscopic scale:
-The residue-wise $\lambda$ values are ranging from about 0.08 to 0.3 W m^–1^ K^–1^,
-while the inter-residue thermal conductivity between adjacent residue pairs along the chain ranges from about 0.01 to 0.08 W m^–1^ K^–1^, indicating that the importance of the polypeptide chain as a major pathway of thermal transport in protein.
-It should be noted that, however, that there are three exceptions $\lambda_{3, 6}=2.4 \times 10^{-2}$, $\lambda_{4, 15}=1.3 \times 10^{-2}$, and $\lambda_{5, 8}=2.1 \times 10^{-2}$, shown in @fig:shortcuts, where their $\lambda$ values exceed $10^{-2}$ W m^–1^ K^–1^ being comparable to the local thermal transport coefficient for the pathways along the polypeptide chain.
+The residue-wise $\lambda$ values are ranging from about 0.08 to 0.3 $\mathrm{W{/} (m{\cdot}K)}$,
+while the inter-residue thermal conductivity between adjacent residue pairs along the chain ranges from about 0.01 to 0.08 $\mathrm{W{/} (m{\cdot}K)}$, indicating that the importance of the polypeptide chain as a major pathway of thermal transport in protein.
+It should be noted that, however, that there are three exceptions $\lambda_{3, 6}=2.4 \times 10^{-2}$, $\lambda_{4, 15}=1.3 \times 10^{-2}$, and $\lambda_{5, 8}=2.1 \times 10^{-2}$, shown in @fig:shortcuts, where their $\lambda$ values exceed $10^{-2}$ $\mathrm{W{/} (m{\cdot}K)}$ being comparable to the local thermal transport coefficient for the pathways along the polypeptide chain.
 It is worthy mentioning that the residue pairs, Ser3-Asp6 and Asp4-Arg15, have also been identified as having a relatively larger local energy diffusivities in the theoretical study by non-equilibrium MD simulations and master equation model,[@buchenberg2016]
 indicating their possible roles to as "shortcuts" on the thermal transport network of the protein.
 

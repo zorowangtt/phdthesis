@@ -42,7 +42,7 @@ These methods enabled direct observation of the redistribution of excess energy 
 
 In 1997, Mizutani Yasuhisa and his colleagues utilized time-resolved ultraviolet resonance Raman spectroscopy to directly observe the energy flow in heme proteins, taking advantage of the efficient photothermal conversion properties of the heme group.[@mizutani1997]
 The redistribution of excess energy can be probed by employing anti-Stokes ultraviolet resonance Raman spectroscopy on a tryptophan residue as a probe, enabling the mapping of energy flow with high spatial resolution.
-In 2007, they observed a double exponential decay in the cooling process of the heme group in myoglobin, with time constants of 1.9 $\pm$ 0.6 and 16 $\pm$ 9 ps for vibrational population decay, and 3.0 $\pm$ 1.0 and 25 $\pm$ 14 ps for temperature relaxation.
+In 2007, they observed a double exponential decay in the cooling process of the heme group in myoglobin, with time constants of 1.9 $\pm$ 0.6 ps and 16 $\pm$ 9 ps for vibrational population decay, and 3.0 $\pm$ 1.0 ps and 25 $\pm$ 14 ps for temperature relaxation.
 Further investigations revealed that the primary pathway for energy transfer from the heme group to the protein is not mediated by the covalent bond between the heme and the proximal
 or the protein backbone, but instead occurs through atomic contacts between the heme and specific residues.[@fujii2014;@kondoh2016;@mizuno2020;@mizutani2022]
 In 2007, Gerhard Stock and his coworkers investigated the energy transfer through a 3$_{10}$-helix in chloroform solvent, whose N-terminal is attached with a heater of $\alpha$-aminoisobutyric acid, with a combined experimental-theoretical approach: UV-pump-IR-probe transients spectra and non-equilibrium molecular dynamics (MD) simulations.
@@ -56,7 +56,7 @@ Besides, John E. Straub and his coworkers have employed non-equilibrium classica
 They demonstrated that the kinetic energy decay of heme in native myoglobin and His93Gly mutant myoglobin were a single exponential with a time constant of 5.9 ps and 8.8 ps, respectively, while the kinetic energy relaxation of heme in cytochrome _c_ was a biphasic exponential decay process with relaxation time constants of 1.5 ps and 10.1 ps for fast and slow processes, respectively.[@sagnella2001;@bu2003;@bu2003a]
 
 <!-- computational methods for investigating the energy transfer in proteins. -->
-In addition to the non-equilibrium MD simulations mentioned above,[@kobus2011;@buchenberg2016;@continibali2017;@kumawat2017;@mino2014;@kurisaki2023] other computational and theoretical approaches[@leitner2010;@li2022;@thompson2014;@fujisaki2005;@pandey2017], including equilibrium MD simulations, normal mode analysis, i.e. the master equation model, and anharmonic network models, have also been employed to simulate the flow of vibrational energy in proteins.
+In addition to the non-equilibrium MD simulations mentioned above,[@kobus2011;@buchenberg2016;@continibali2017;@kumawat2017;@mino2014;@kurisaki2023] computational and theoretical approaches[@leitner2010;@li2022;@thompson2014;@fujisaki2005;@pandey2017], including equilibrium MD simulations, normal mode analysis, i.e. the master equation model, and anharmonic network models, have also been employed to simulate the flow of vibrational energy in proteins.
 
 One approach involves the utilization of a transport-coefficient-like quantity derived from the autocorrelation function of energy flow, which providing a measure of the amount of energy transferred per unit of time.[@ishikura2006]
 This methodology has been employed to construct a network of amino acid residues that mediates the propagation of intramolecular vibrational energy.
@@ -84,17 +84,17 @@ $$
 
 ## Molecular dynamics simulations
 
-Molecular dynamics (MD) simulations[@frenkel2002] are computational techniques that are widely used to study the behavior and dynamics molecules at the atomic level.
+Molecular dynamics (MD) simulations[@frenkel2002] are computational techniques that are widely used to study the behavior and dynamics of molecules at the atomic level.
 Furthermore, it can be used to explore the heat, energy and signal flow in proteins based on the linear response theory.
 The MD simulations are especially suitable for studies of such transport phenomena in proteins as it allows for the _direct_ measurement of energy/heat flows with high spatiotemporal resolution.
 Not only the biophysical properties of proteins, MD simulations are also useful for structural characterization and refinement of highly flexible proteins.
-We explored such possibility by integrating MD simulations with the experimental small-angle X-ray scattering (SAXS) and electron paramagnetic resonance/double electron–electron resonance (EPR/DEER) data.[@lipfert2007;@boldon2015;@buhrke2020;@torricella2021]
+We explored such possibility by integrating advanced MD simulation techniques with the experimental small-angle X-ray scattering (SAXS) and electron paramagnetic resonance/double electron–electron resonance (EPR/DEER) data.[@lipfert2007;@boldon2015;@buhrke2020;@torricella2021]
 
 In MD simulations, the laws of classical mechanics are used to numerically solve the equations of motion for molecular systems.
 By specifying the initial positions and velocities of the particles, the system's time evolution can be simulated.
 This allows us to observe and analyze various physical and chemical phenomena that occur on the atomic scale.
 We need force field functions to accurately capture the behavior of protein systems using MD simulations.
-In general, the force field functions consist of potential energy terms representing bonded interactions for bonds angles, dihedral angles, and nonbonded interactions of van der Waals forces and electrostatic interactions (@eq:forcefield).
+In general, the force field functions consist of potential energy terms representing bonded interactions for bonds, angles, dihedral angles, and nonbonded interactions of van der Waals forces and electrostatic interactions (@eq:forcefield).
 
 $$
 \begin{split}
@@ -146,7 +146,7 @@ automatically handles missing values and outliers,
 and is resistant to overfitting.
 The estimate of feature importance can be useful for feature selection.
 As described in @sec:factors, the thermal transfer through nonbonded contacts is influenced by multiple factors related to various static and dynamical properties of proteins, interior of which we observe complex and heterogeneous environments.
-To get a better understanding of the thermal transfer through nonbonded contacts, a non-linear regression model is developed between inter-residue thermal conductivity values and those static and dynamical properties of proteins by using the machine learning based approach of random forest methods.
+To get a better understanding of the thermal transfer through nonbonded contacts, a non-linear regression model is developed between inter-residue thermal conductivity values and static and dynamical properties of proteins by using the machine learning based approach of random forest methods.
 
 ## Knowledge gap
 
@@ -213,7 +213,7 @@ In addition, due to the complexity of protein systems, advanced machine learning
 It, then, introduces the concepts of linear response theory and molecular dynamics simulation techniques.
 It highlights the knowledge gap in understanding vibrational energy transport in proteins and protein solutions and emphasizes the significance of applying machine learning algorithms to address the protein-related problems.
 
-@sec:cha2 detailed the methodology used to investigate thermal transport properties of proteins:
+@sec:cha2 details the methodology used to investigate thermal transport properties of proteins:
 the calculations process of the overall thermal conductivity of proteins and the formalism for the site-selective heat current analysis.
 It also introduces a novel integrated approach that combines machine learning algorithms, MD simulation techniques, and SAXS and EPR/DEER experiments for the structural characterization of intrinsically disordered protein complexes.
 
